@@ -1,0 +1,52 @@
+@import "./base.scss";
+
+.checkout {
+    width: 50%;
+    margin: 35px auto;
+    padding: 30px 70px;
+    border: 1px solid #ccc;
+
+    input {
+        width: 500px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px 15px;
+    }
+
+    select {
+        width: 500px;
+        height: 40px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px;
+        color: white;
+        background-color: $c1;
+        margin: 50px 0px;
+        border: none;
+        border-radius: 5px;
+        width: 30%;
+        margin-left: 175px;
+    }
+
+    .order {
+        width: 500px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    label {
+        display: block;
+        color: $c1;
+        margin-bottom: 5px;
+    }
+
+    span {
+        color: #999;
+        margin-left: 10px;
+    }
+}

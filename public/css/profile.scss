@@ -1,0 +1,161 @@
+@import "./base.scss";
+
+.profile-page {
+    border-radius: 18px;
+    margin: 31px 2%;
+    box-shadow: rgba(0, 0, 0, 0.16) 0 0 5px;
+    overflow: hidden;
+    padding-bottom: 30px;
+
+    .title {
+        text-transform: capitalize;
+        margin-bottom: 0;
+        font-weight: 600;
+        color: $c1;
+    }
+
+    hr {
+        opacity: 0.2;
+        margin: 25px 0;
+    }
+
+    .name {
+        background-color: $c1;
+        color: white;
+        padding: 5px 20px;
+        border-radius: 15px 0px 0px 0px;
+
+        h2 {
+            font-size: 27px;
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 0;
+        }
+    }
+
+    .profile-list {
+        padding: 20px 0px 20px 0;
+        color: #999;
+
+        li {
+            transition: 0.3s all;
+            cursor: pointer;
+            text-transform: capitalize;
+            padding: 10px 0px 10px 20px;
+            border-left: 4px solid #fff;
+        }
+
+        li:hover {
+            color: black;
+            background-color: rgb(248, 248, 248);
+            border-left-color: $c1;
+        }
+
+        li.active{
+            color: black;
+            background-color: #eee;
+            border-left-color: $c1;
+        }
+    }
+
+    .personal-list {
+        input {
+            width: 350px;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        button {
+            padding: 10px;
+            color: white;
+            background-color: $c1;
+            margin: 50px 0px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        p{
+            text-transform: capitalize;
+            margin-bottom: 2px !important;
+        }
+
+
+        .shopping-cart {
+
+            .cart-page {
+                margin: 10px 10px 0px 10px;
+                border: 1px solid #bbb;
+                border-radius: 10px;
+
+                .cart-info {
+                    display: flex;
+                    justify-content: baseline;
+                    flex-wrap: wrap;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+
+
+                    th {
+                        text-align: center;
+                        padding: 5px;
+                        color: #999;
+                    }
+
+                    td {
+                        text-align: center;
+                        padding: 10px 5px;
+
+                        p {
+                            margin: 0px;
+                        }
+
+                        input {
+                            width: 40px;
+                            height: 30px;
+                            padding: 5px;
+                            text-align: center;
+                            padding: 10px;
+                        }
+
+                        small {
+                            color: red;
+                        }
+
+                        a {
+                            color: #999;
+                            font-size: 12px;
+                        }
+
+                        img {
+                            width: 80px;
+                            height: 80px;
+                            margin-right: 10px;
+                        }
+
+                        button {
+                            font-weight: bold;
+                            border: none;
+                            background-color: #fff;
+
+                        }
+                    }
+
+                    th:nth-child(1) {
+                        text-align: left;
+                    }
+
+
+
+                }
+            }
+        }
+    }
+
+}

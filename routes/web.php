@@ -1,0 +1,104 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\SearchController;
+use App\Models\Product;
+use Composer\DependencyResolver\Request;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/',                       [App\Http\Controllers\PageController::class, 'landing'])->name('landing-page');
+Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
+Route::get('/contact',                    [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
+Route::get('/recipes',                [App\Http\Controllers\PageController::class, 'recipes'])->name('recipes');
+Route::get('/recipe/preview/',    [App\Http\Controllers\PageController::class, 'recipe'])->name('recipe-preview');
+Route::get('/profile',                [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
+Route::post('/profile/update',        [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('update-profile');
+Route::get('/all',                    [App\Http\Controllers\PageController::class, 'viewall'])->name('viewall');
+Route::get('/category/{slug}',        [App\Http\Controllers\PageController::class, 'category'])->name('view-category');
+Route::get('/product/{slug}',         [App\Http\Controllers\PageController::class, 'preview'])->name('show-product');
+Route::get('/cash/checkout',          [App\Http\Controllers\CheckoutController::class, 'checkout'])->name('checkout');
+Route::post('/store/order',           [App\Http\Controllers\CheckoutController::class, 'store'])->name('store.order');
+
+
+Route::group(['prefix' => 'cart'], function () {
+    Route::get('/', [CartController::class, 'index'])->name('cart.index');
+    Route::post('/store/{product}', [CartController::class, 'store'])->name('cart.store');
+    Route::patch('/update/{product}', [CartController::class, 'update'])->name('cart.update');
+    Route::delete('/delete/{product}', [CartController::class, 'destroy'])->name('cart.destroy');
+    Route::post('/switchToSaveForLater/{product}', [CartController::class, 'switchToSaveForLater'])->name('cart.switchToSaveForLater');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+//search
+
+Route::post('search',[SearchController::class, 'search'])->name('magic_search');
+
+Route::get('test2171',[SearchController::class, 'test']);
+
+//get products 
+Route::get("aadsd.dsds.fdefef.dfsfsdgjsdf%a",function ()
+{
+    $products=Product::where('in_list', 1)->orderBy("category_name")->get();
+    return view('productsTable',with([
+        "products" =>$products
+    ]));
+});
+
+//get products 
+
+
+Route::group(["middleware"=>"auth"],function(){
+
+
+Route::get("mange_products",function ()
+{
+    
+    $products=Product::where('in_list', 1)->orderBy("category_name")->paginate(250);
+    return view('productsTableAdmin',with([
+        "products" =>$products
+    ]));
+
+});
+
+
+Route::get('updateProduct/{id}',function(Request $request,$id){
+
+    Product::find($id)->update([
+        "price" => $_REQUEST['price']
+    ]);
+
+})->name('uProduct');
+
+
+
+Route::get('deleteProduct/{id}',function($id){
+
+    Product::find($id)->update([
+        "in_list" => 0
+    ]);
+    return back();
+
+})->name('dProduct');
+
+
+});

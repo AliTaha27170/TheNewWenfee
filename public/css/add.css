@@ -1,0 +1,28 @@
+
+.products .heading {
+    justify-content: center !important;
+}
+
+
+.nav .category .menu li .dropdown-content {
+    width: auto !important;
+    min-width: 200px;
+}
+
+.nav .category .menu li .dropdown-content a {
+    white-space: nowrap !important;
+}
+
+.products-slider .slick-dots li button {
+    width: 7px;
+    height: 7px;
+    background: #d0d0d0;
+    border-radius: 15px;
+    padding: 0;
+    margin: auto;
+    display: none; /**/
+}
+
+.products-slider .slick-dots li.slick-active button {
+    background: #167db9;
+}

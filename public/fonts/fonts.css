@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Zabritzkyes Personal Use';
+    src: url('ZabritzkyesPersonalUse.woff2') format('woff2'),
+        url('ZabritzkyesPersonalUse.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
