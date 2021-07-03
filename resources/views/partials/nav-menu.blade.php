@@ -18,7 +18,7 @@
 </nav>
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="{{ route('home') }}">WenFee</a>
+        <a class="navbar-brand" href="../../../../">WenFee</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span> 
         </button>
@@ -102,10 +102,10 @@
 
 
 
-                                      <!-- basket 
+                                      <!-- basket -->
 
                                       <div id="Shopping-cart">
-                <a href="https://wenfeeusa.americommerce.com/store/shopcart.aspx" class="Shopping-cart">
+                <a href="https://wenfeeusa.americommerce.com/store/shopcart.aspx" class="Shopping-cart" target="_blank">
                <i class="fas fa-shopping-cart"></i><span class="PurchaseValue">$8.99</span>
 
             </a>     
