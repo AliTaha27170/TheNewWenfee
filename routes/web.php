@@ -56,14 +56,15 @@ Route::post('search',[SearchController::class, 'search'])->name('magic_search');
 Route::get('test2171',[SearchController::class, 'test']);
 
 //get products 
-Route::get("aadsd.dsds.fdefef.dfsfsdgjsdf%a",function ()
+Route::get("products_list",function ()
 {
-    $products=Product::where('in_list', 1)->orderBy("category_name")->get();
+    
+    $products=Product::where('in_list', 1)->orderBy("category_name")->paginate(500);
     return view('productsTable',with([
         "products" =>$products
     ]));
-});
 
+});
 //get products 
 
 

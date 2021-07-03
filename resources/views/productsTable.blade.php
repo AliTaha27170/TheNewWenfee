@@ -41,7 +41,7 @@
         <td>{{ $i++ }}</td>
         <td>{!! $item->body !!}</td>
        <td>{{   $item->name }} </td>
-       <td>{{   $item->price }} $ </td>
+       <td>{{   round($item->price + ( ($item->price*25)/100) ,2) }} $ </td>
        <td>{{   $item->size }}  LBS</td>
 
        <td>{{   $item->category_name }} </td>
@@ -55,6 +55,11 @@
     </tbody>
   </table>
 </div>
+
+<center>
+  {{ $products->links( "pagination::bootstrap-4") }}
+
+</center>
 
 </body>
 </html>
