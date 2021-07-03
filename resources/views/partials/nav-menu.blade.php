@@ -18,7 +18,7 @@
 </nav>
  <!-- Navbar -->
  <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="../../../../../">WenFee</a>
+        <a class="navbar-brand" href="{{ route('home') }}">WenFee</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mobile_nav" aria-controls="mobile_nav" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span> 
         </button>
@@ -92,9 +92,9 @@
                 </div>
             </li>
                      <!--=========-->
-                     <li class="nav-item"><a class="nav-link" href="#">Our Offers</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Who We Are</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact us</a></li>
+                     <li class="nav-item"><a class="nav-link" href="../.../../all?offer=on">Our Offers</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Who We Are</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact us</a></li>
                    
         </ul>
         </div>
