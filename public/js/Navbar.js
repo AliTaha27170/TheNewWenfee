@@ -69,8 +69,24 @@ window.addEventListener('DOMContentLoaded', function(e) {
 //Slider//
 
 //Mini cart//
-$( ".Shopping-cart" ).click(function() {
+/* $( ".Shopping-cart" ).click(function() {
   $( ".MiniCart" ).fadeToggle();
-});
+}); */
 
 //sidemessage
+
+
+//shipping box
+$(document).ready(function () {
+  if (window.innerWidth > 1000){
+  $("#ShippingBox").animate({right: '65px'}, 2000);
+  }
+  $( window ).resize(function() {
+    if (window.innerWidth > 1000){
+      $("#ShippingBox").animate({right: '65px'});
+      }
+    else if (window.innerWidth < 1000){
+      $("#ShippingBox").animate({right: '0px'});
+      } 
+      });
+});

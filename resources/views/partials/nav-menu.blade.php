@@ -101,7 +101,7 @@
                                       <!-- basket -->
 
                                       <div id="Shopping-cart">
-                <a href="#" class="Shopping-cart">
+                <a href="https://wenfeeusa.americommerce.com/store/shopcart.aspx" class="Shopping-cart">
                <i class="fas fa-shopping-cart"></i><span class="PurchaseValue">$8.99</span>
 
             </a>     
