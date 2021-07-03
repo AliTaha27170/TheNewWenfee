@@ -367,38 +367,37 @@
 
     </script>
 
-    <!-- shipping box -->
-    <section id="ShippingBox">
+     <!-- shipping box -->
+     <section id="ShippingBox">
 	<figure>
     <figcaption>
       <h3>
       Welcome To WenFee
       </h3>
             <span>
-                Check here for information about New Services
+            Check here for information about New Services
+            <br>
+                           <a class="button" href="#pop-up">Transport Service</a>
+            <br>
+                           <a class="button" href="#pop-up2">Rental Truck with a Driver</a>
 
-                <br>
-               <a class="button" href="#pop-up">
-                 * Transport Service
-                </a>
-              
          </span>
 
     <figcaption>
   </figure>
 </section>
 
-
+<!--pop-up1-->
 <div class="pop-up" id="pop-up">
     <div class="pop-up__content">
-      <a class="pop-up__close" href="#container">x</a>
+      <a class="pop-up__close" href="#container"><i class="fas fa-times"></i></a>
     </div>
   </div>
 
-
+  <!--pop-up2-->
   <div class="pop-up" id="pop-up2">
     <div class="pop-up__content2">
-      <a class="pop-up__close" href="#container">x</a>
+      <a class="pop-up__close" href="#container"><i class="fas fa-times"></i></a>
     </div>
   </div>
 

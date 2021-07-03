@@ -197,6 +197,12 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+@media (max-width: 700px) {
+    .slick-dots li button:before
+    {
+    display: none;
+    }
+  }
 .slick-dots li.slick-active button:before
 {
     opacity: .75;
