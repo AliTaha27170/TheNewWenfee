@@ -2,9 +2,9 @@
 
 $(document).ready(function () {
     $('.navbar-light .dmenu').hover(function () {
-            $(this).find('.sm-menu').first().stop(true, true).slideDown(5);
+            $(this).find('.sm-menu').first().stop(true, true).slideDown(200);
         }, function () {
-            $(this).find('.sm-menu').first().stop(true, true).slideUp(5)
+            $(this).find('.sm-menu').first().stop(true, true).slideUp(0)
         });
     }); 
      

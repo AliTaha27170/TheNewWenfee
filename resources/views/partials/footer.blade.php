@@ -31,7 +31,7 @@
                 <h3>Site Map:</h3>
                 <ul>
                     <li><a href="https://wenfee.com/"><i class="fi fi-rr-angle-double-small-right"></i> Home </a></li>
-                    <li><a href="{{ route('viewall') }}" class="offer-link"
+                    <li><a href="../.../../all?offer=on" class="offer-link"
                         onclick="event.preventDefault(); document.getElementById('offer-form').submit();"><i class="fi fi-rr-angle-double-small-right"></i>Our Offers
                     </a>
                 
