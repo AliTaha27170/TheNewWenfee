@@ -41,7 +41,7 @@
         <td>{{ $i++ }}</td>
         <td>{!! $item->body !!}</td>
        <td>{{   $item->name }} </td>
-       <td>{{   round($item->price + ( ($item->price*25)/100) ,2) }} $ </td>
+       <td>$ {{   round($item->price + ( ($item->price*25)/100) ,2) }}  </td>
        <td>{{   $item->size }}  LBS</td>
 
        <td>{{   $item->category_name }} </td>
