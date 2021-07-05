@@ -6,7 +6,7 @@
         <div class="pro-details-box">
             <div class="row">
                 <?php $images = json_decode($product->gallery); ?>
-                <div class="col-md-1">
+                <div class="col-md-1 product_mob">
                     <div class="slider-nav">
                         <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="70px" height="auto"
                                 alt=""></div>
