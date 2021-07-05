@@ -686,7 +686,7 @@ display: none;
 .pop-up__content {
   height:300px;
   width:90%;
-  background-image: url(https://wenfee.com/img/i123.jpg);
+  background-image: url(../img/desktop1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   border-radius:8px;
@@ -709,7 +709,14 @@ display: none;
 }
 @media  (max-width: 1000px) {
   .pop-up__content {
-    background-image: url(../img/mob.jpg);
+    width : 333px ;
+    height :333px ;
+    background-image: url(../img/mob1.jpg);
+  }
+  .pop-up__content2 {
+    width : 333px ;
+    height :333px ;
+    background-image: url(../img/mob2.jpg);
   }
  }
 .pop-up:target .pop-up__content {

@@ -1983,6 +1983,12 @@ textarea.input1 {
 .pro-details-page .product2 img {
   width: 100%;
 }
+@media (max-width: 1000px) {
+  .product_mob
+  {
+    display: none;
+  }
+}
 
 .pro-details-page .slider-for {
   margin-top: 40px;
