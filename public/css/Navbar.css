@@ -684,11 +684,12 @@ display: none;
 } /* */
 
 .pop-up__content {
-  height:300px;
-  width:90%;
+  height:310px;
+  width:94%;
   background-image: url(../img/desktop1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   border-radius:8px;
   transform:scale(.5);
   transition: all .5s;
@@ -696,11 +697,12 @@ display: none;
   position:fixed;
 }
 .pop-up__content2 {
-  height:300px;
-  width:90%;
+  height:310px;
+  width:94%;
   background-image: url(https://wenfee.com/img/e123.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: right;
   border-radius:8px;
   transform:scale(.5);
   transition: all .5s;
@@ -709,13 +711,13 @@ display: none;
 }
 @media  (max-width: 1000px) {
   .pop-up__content {
-    width : 333px ;
-    height :333px ;
+    width : 350px ;
+    height :350px ;
     background-image: url(../img/mob1.jpg);
   }
   .pop-up__content2 {
-    width : 333px ;
-    height :333px ;
+    width : 350px ;
+    height :350px ;
     background-image: url(../img/mob2.jpg);
   }
  }
