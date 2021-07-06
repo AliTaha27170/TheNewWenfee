@@ -6,6 +6,7 @@ use App\Models\CookBook;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\Recipe;
+use App\Models\RecipeCategory;
 use App\Models\Slide;
 use CategoriesTableSeeder;
 use Illuminate\Http\Request;
@@ -23,9 +24,10 @@ class PageController extends Controller
    {
      $slideCategories=ProductCategory::where('is_homepage',1)->get();
        $slides=Slide::all();
+       $recipes=Recipe::take(3)->inRandomOrder()->get();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
-       return view('index',compact('slides','books','slideCategories','cookbooks'));
+       return view('index',compact('slides','books','slideCategories','recipes','cookbooks'));
    }
 
    public function about()
@@ -45,18 +47,30 @@ class PageController extends Controller
     return view('products.show',compact('product','products'));
    }
 
-   public function recipes()
-   {
-       $recipes=Recipe::orderBy('created_at','desc')->get();
-       return view('recipes',compact('recipes'));
-   }
-   public function recipe()
-   {
-    //$recipe=Recipe::whereId($id)->first();
-        return view('recipe-preview');
-      // return view('recipe-preview',compact('recipe'));
-   }
-
+   public function recipes($slug=null)
+   
+      {  
+       $recipes_categories=RecipeCategory::all();
+   
+       if($slug){
+          $cat=RecipeCategory::where('slug',$slug)->first()->id;
+          $recipes=Recipe::where('recipe_category_id',$cat)->orderBy('created_at','desc')->paginate(6);
+   
+       } 
+       else{
+           $recipes=Recipe::orderBy('created_at','desc')->paginate(6);
+   
+       }
+       
+          return view('recipes',compact('recipes','recipes_categories'));
+      }
+   
+      public function recipe($slug)
+      {
+       $recipe=Recipe::where('slug',$slug)->first();
+         return view('recipe-preview',compact('recipe'));
+      }
+   
    public function category($slug){
     $category_parent_id=ProductCategory::where('slug',$slug)->first()->parent_id;
     $categories=ProductCategory::where('parent_id',$category_parent_id)->orderBy('order','asc')->get();  
