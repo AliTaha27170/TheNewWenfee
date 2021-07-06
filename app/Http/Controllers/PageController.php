@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Brand;
 use App\Models\CookBook;
 use App\Models\Product;
 use App\Models\ProductCategory;
@@ -25,9 +25,10 @@ class PageController extends Controller
      $slideCategories=ProductCategory::where('is_homepage',1)->get();
        $slides=Slide::all();
        $recipes=Recipe::take(3)->inRandomOrder()->get();
+       $brands=Brand::all();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
-       return view('index',compact('slides','books','slideCategories','recipes','cookbooks'));
+       return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands'));
    }
 
    public function about()
@@ -80,7 +81,14 @@ class PageController extends Controller
     $products=$products->get();
     return view('viewall',compact('categories','products',));
    }
-
+   public function brand($slug){
+    $categories=ProductCategory::where('parent_id','<>',null)->orderBy('order','asc')->get();  
+    $products = Product::with('brand')->whereHas('brand', function ($query) use($slug) {
+        $query->where('slug',$slug);
+    });
+    $products=$products->paginate(9);
+    return view('viewall',compact('categories','products'));
+   }
    public function viewall(Request $request)
    {
       
@@ -95,6 +103,10 @@ class PageController extends Controller
         
         else{
             $products=Product::where('is_active',1);
+        }
+        if(isset($request->brand)){
+            $brand=Brand::where('slug',$request->brand)->first()->id;
+            $products=$products->where('brand_id',$brand);
         }
 
         if(isset($request->minPrice) || $request->maxPrice){
@@ -115,7 +127,11 @@ class PageController extends Controller
 
        return view('viewall',compact('categories','products',));
    }
-
+   public function brands()
+   {
+       $brands=Brand::all();
+       return view('brands',compact('brands'));
+   }
   
 
 }

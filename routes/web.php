@@ -24,6 +24,8 @@ Route::get('/recipes/{slug?}',        [App\Http\Controllers\PageController::clas
 Route::get('/recipe/preview/{slug}',  [App\Http\Controllers\PageController::class, 'recipe'])->name('recipe-preview');
 Route::get('/profile',                [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
 Route::post('/profile/update',        [App\Http\Controllers\ProfileController::class, 'editProfile'])->name('update-profile');
+Route::get('/brands',                 [App\Http\Controllers\PageController::class, 'brands'])->name('brands');
+Route::get('/brand/{slug}',             [App\Http\Controllers\PageController::class, 'brand'])->name('brand');
 Route::get('/all',                    [App\Http\Controllers\PageController::class, 'viewall'])->name('viewall');
 Route::get('/category/{slug}',        [App\Http\Controllers\PageController::class, 'category'])->name('view-category');
 Route::get('/product/{slug}',         [App\Http\Controllers\PageController::class, 'preview'])->name('show-product');
