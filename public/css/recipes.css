@@ -154,10 +154,10 @@ button {
 }
 
 .ft-recipe .ft-recipe__content .content__header .row-wrapper .recipe-title {
-  font-weight: 600;
+  font-weight: 500;
   position: relative;
   z-index: 5;
-  font-size: 20px;
+  font-size: 24px;
   margin: 5px 0px;
   color: #009688;
 }
@@ -165,7 +165,7 @@ button {
 .ft-recipe .ft-recipe__content .content__header .recipe-details {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: none; /*flex*/ /*hidden*/
   list-style: none;
   padding: 1.4em 0 1em;
   margin: 0;
@@ -211,7 +211,9 @@ button {
 .ft-recipe .ft-recipe__content .description {
   margin: 0.3em 0 0.8em;
   color: #888;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 400;
+  min-height: 70px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
@@ -228,7 +230,7 @@ button {
   text-align: center;
   border-radius: 5px;
   color: #f7b036;
-  font-weight: 500;
+  font-weight: bold;
   letter-spacing: 0.2px;
   font-size: 17px;
   -webkit-transition: -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
@@ -240,6 +242,7 @@ button {
 .ft-recipe:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
+          border : 1px solid #007B70;
 }
 
 .ft-recipe:hover .recipe-details-item,
