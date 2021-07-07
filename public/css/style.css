@@ -1007,6 +1007,7 @@ body .anim1 .counterrotate {
 .products {
   padding: 10px 1%;
   background: #fff;
+  overflow: hidden;
 }
 
 .products .grid {
@@ -1930,6 +1931,7 @@ textarea.input1 {
   font-family: 'Zabritzkyes Personal Use';
   color: #f7b036;
   font-size: 36px;
+  margin: 10px;
 }
 
 .recipes-section {
@@ -2482,6 +2484,7 @@ textarea.input1 {
 }
 
 .recipes-page .recipes-box .ft-recipe {
+  height : 400px ;
   margin-right: auto;
   margin-left: auto;
 }

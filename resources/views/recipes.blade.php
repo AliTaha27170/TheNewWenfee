@@ -10,7 +10,7 @@
             </div>
         </h1>
         <div class="row">
-            <div class="col-md-3" style="position: relative">
+            <!-- <div class="col-md-3" style="position: relative">
                 <div class="left-panel">
                     <h3>Recipes Categories</h3>
                     <ul class="recipes-cats-list">
@@ -26,8 +26,8 @@
                         </ul>
 
                     </div>
-                </div>
-                <div class="col-md-9">
+                </div> -->
+                <div class="col-md-12">
                     <div class="right-panel">
 
                         <div class="recipes-box">
