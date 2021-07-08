@@ -95,7 +95,7 @@
             <li>
                 <img src="/img/features/cart.svg">
                 <div>
-                    <h1> Best Products Ever </h1>
+                    <h1> Mediterranean Products </h1>
                     <p>Start Shopping for Your Favorite Products.</p>
                 </div>
             </li>

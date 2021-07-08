@@ -2106,11 +2106,47 @@ textarea.input1 {
   -webkit-transition: 0.5s all;
   transition: 0.5s all;
 }
+.RecipesMethodBox
+{
+  background: #fff;
+    width: 97%;
+    margin: 15px auto;
+    margin-bottom: 80px;
+    border-radius: 10px;
+    -webkit-box-shadow: rgb(0 0 0 / 16%) 0 5px 6px;
+    box-shadow: rgb(0 0 0 / 16%) 0 5px 6px;
+    border: #ebebeb 1px solid;
+    padding: 15px;
+    counter-reset: listCounter;
+}
+.RecipesMethodBox h3
+{
+  color: #F7B036;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.RecipesMethodBox .continuous-list {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 2.8rem;
+}
+.RecipesMethodBox ol
+{
+  padding-left: 20px;
+}
+.RecipesMethodBox ul
+{
+  padding-left: 0px;
+}
+.RecipesMethodBox .continuous-list li {
+  margin-bottom: 0.6rem;
+}
 
 .pro-details-page {
   background: #fff;
   padding: 25px 0;
-  padding-top: 85px;
+  padding-top: 25px;
 }
 
 .pro-details-page .pro-details-box {
@@ -2177,12 +2213,13 @@ textarea.input1 {
 .pro-details-page .about h3 .brand {
   font-weight: bold;
   font-size: 30px;
+  margin: 0px 14.3906px 0px 28.7969px;
 }
 
 .pro-details-page .about h4 {
   color: #222;
   text-align: left;
-  margin: 0;
+  margin: 0px 14.3906px 0px 28.7969px;
   margin-top: 0;
   font-size: 26px;
   font-weight: bold;
