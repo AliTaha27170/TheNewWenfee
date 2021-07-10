@@ -8,26 +8,35 @@
                     Dolore,
                     ipsam sit!</p>
                 -->
-                <div class="contact-info-box">
-                    <div class="contact-info">
-                        <i class="fi fi-rr-building"></i>
-                        <p>(410) 379-2267</p>
-                        
-                    </div>
-                    <div class="contact-info">
-                        <i class="fi fi-rr-envelope"></i>
-                        <p>info@wenfee.com</p>
-                    </div>
-                </div>
-                <div class="social">
-                    <!-- 
-                    <a href="#"><img src="{{ asset('img/facebook.svg') }}"></a>
-                    <a href="#"><img src="{{ asset('img/instagram.svg') }}" /></a>
-                -->
+     
 
+                    <div class="contact-info-box">
+                        <div class="contact-info">
+                            <i class="fi fi-rr-building"></i>
+                            <p>{{ isset($contact->phone) ? $contact->phone : "(410) 379-2267"}}</p>
+
+                            
+                        </div>
+                        <div class="contact-info">
+                            <i class="fi fi-rr-envelope"></i>
+                            {{ isset($contact->mail) ? $contact->mail : "info@wenfee.com"}}
+                        </div>
+                    </div>
+                    <div class="social">
+
+                        <!-- Facebook -->
+                        @if (isset($contact->facebook))
+                            <a href="{{$contact->facebook}}"><img src="{{ asset('img/facebook.svg') }}"></a>
+                        @endif
+
+                        <!-- Instagram -->
+                        @if (isset($contact->instagram))
+                            <a href="{{ $contact->instagram }}"><img src="{{ asset('img/instagram.svg') }}" /></a>
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
+
 
         <div class="col-md-2">
             <div class="part">
