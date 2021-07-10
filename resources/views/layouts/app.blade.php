@@ -19,6 +19,7 @@
         @stack('styles')
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="{{ asset('js/ac.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
 
         {{-- nav and menu  --}}
         <link rel="stylesheet"  href="{{asset('css/bootstrap.css')}} ">

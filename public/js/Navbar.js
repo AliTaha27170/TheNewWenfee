@@ -69,9 +69,9 @@ window.addEventListener('DOMContentLoaded', function(e) {
 //Slider//
 
 //Mini cart//
-/* $( ".Shopping-cart" ).click(function() {
+ $( ".Shopping-cart" ).click(function() {
   $( ".MiniCart" ).fadeToggle();
-}); */
+}); 
 
 //sidemessage
 
