@@ -26,7 +26,7 @@
                     <h4>{{$recipe->title}}
                     </h4>
 
-                    <ul class="recipe-details">
+                    <!-- <ul class="recipe-details">
                         <li class="recipe-details-item time">
                             <img src="/img/fi-rr-time-check.svg" alt="">
                             <span class="value">{{$recipe->preparation_time}}</span><span class="title">Minutes</span>
@@ -35,7 +35,7 @@
                             <img src="/img/fi-rr-users.svg" alt="">
                             <span class="value">{{$recipe->serving_range}}</span><span class="title">Serving</span>
                         </li>
-                    </ul>
+                    </ul> -->
 
                     <div class="description">
                             {!!$recipe->main_desc!!}
@@ -57,4 +57,32 @@
     </div>
 
 </div>
+
+
+<div class="RecipesMethodBox">
+        <div class="row">
+            <div class="col-md-6">
+                <h3>Ingredients</h3>
+                <ol class="continuous-list">
+                    <li>Bread</li>
+                    <li>Eggs</li>
+                    <li>Apples</li>
+                    <li>Cereal</li>
+                    <li>Canned Soup</li>
+                    <li>Frozen Pizza</li>
+                    <li>Chocolate</li>
+                </ol>
+            </div>
+                <div class="col-md-6">
+                    <h3>Method</h3>
+                    <ul class="continuous-list">
+                    <li>1-In a pot, add the frozen blackberries along with honey on a low medium heat.</li>
+                    <li>2-In a pot, add the frozen blackberries along with honey on a low medium heat.</li>
+                    <li>3-In a pot, add the frozen blackberries along with honey on a low medium heat.</li>
+                    </ul>
+
+                </div>
+</div>
+</div>
+
 @endsection

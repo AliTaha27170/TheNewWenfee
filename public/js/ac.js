@@ -1,5 +1,39 @@
 var current_item_id;
 
+
+
+
+
+
+
+
+function setCookie(cname,cvalue,exdays) {
+	const d = new Date();
+	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+	let expires = "expires=" + d.toGMTString();
+	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+  
+  function getCookie(cname) {
+	let name = cname + "=";
+	let decodedCookie = decodeURIComponent(document.cookie);
+	let ca = decodedCookie.split(';');
+	for(let i = 0; i < ca.length; i++) {
+	  let c = ca[i];
+	  while (c.charAt(0) == ' ') {
+		c = c.substring(1);
+	  }
+	  if (c.indexOf(name) == 0) {
+		return c.substring(name.length, c.length);
+	  }
+	}
+	return "";
+  }
+
+
+
+
+
 function toggleNavbar() {
     var x = document.getElementById("myTopNav");
     if (x.className === "menu-container topNav") {
@@ -276,10 +310,23 @@ function closeSideNav()
 	document.getElementById("mySidenav").style.width = "0px";
 }
 
-function add_to_cart_main(ac_id,id){
-  
+function add_to_cart_main(ac_id,id,del=0){
+
+
 	var qid="#qty"+id;
 	var quantity=$(qid).val();
+	
+	if(del)
+		quantity = 0 ; 
+
+	setCookie('p'+id,id,30);
+	setCookie('q'+id,quantity,30);
+	if( quantity == 0)
+	{
+		setCookie('q'+id,quantity,-930);
+		setCookie('p'+id,id,-9555);
+	}
+	
 	// sendItemToWenfee(id, quantity);
 	add_to_cart(ac_id,quantity);
 }
@@ -291,6 +338,8 @@ function add_to_cart_pview(){
 
 function add_to_cart(id,quantity)
 {
+
+
 	var item={};
 	item.itemId = id;
 	item.quantity = parseInt(quantity);
@@ -301,10 +350,17 @@ function add_to_cart(id,quantity)
 
 		//Adham
 
-		wait(1300);
+	
+
 
 		
-		window.open('https://wenfeeusa.americommerce.com/store/shopcart.aspx', '_blank');
+		$('#cd-cart').load("../../../../../../maincart");
+
+
+			total =  '$ '+getCookie('total');
+			$('#total').text(total);
+		 
+		 
 		show_checkout_dialog();
 
 	});
@@ -339,6 +395,14 @@ function add_to_cart(id,quantity)
 	*/
 }
 
+function checkout(){
+		document.cookie.split(';').forEach(function(c) {
+		document.cookie = c.trim().split('=')[0] + '=;' + 'expires=Thu, 01 Jan 1970 00:00:00 UTC;';
+		$('#total').text('$ 0');
+		});
+		window.location.href ='https://wenfeeusa.americommerce.com/store/shopcart.aspx';
+}
+
 function add_to_cart_book(ac_id,id)
 {
 	var qid="#qty"+id;
@@ -352,7 +416,7 @@ function add_to_cart_book(ac_id,id)
 		// show_badge();
 		//show_checkout_dialog();
 
-	window.open('https://wenfeeusa.americommerce.com/store/shopcart.aspx', '_blank');
+
 	
 	
     

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\MainnCartController;
 use App\Http\Controllers\SearchController;
 use App\Models\Product;
 use Composer\DependencyResolver\Request;
@@ -107,3 +108,7 @@ Route::get('deleteProduct/{id}',function($id){
 
 
 });
+
+// Cart with ameriecommerce
+Route::get('maincart/{id}/{q}' , [MainnCartController::class   , 'update']);
+Route::get('maincart'          , [MainnCartController::class   , 'index' ])->name('maincart');
