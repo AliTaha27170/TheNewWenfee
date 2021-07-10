@@ -43,7 +43,23 @@
             </tr>
         </tbody></table>
     </div>
-</center>
+    </center>
+    <div class="col-md-4">
+        
+                    <div class="part">
+                        <h3>Contact Us</h3>
+                        <form action="" method="POST" action="{{ route('contact.store') }}">
+                            {{ csrf_field() }}
+                            <input type="text" name="mail" value="mail" class="input1" placeholder="Your Email Address" /><br>
+                            <textarea class="input1" placeholder="Your Message" name="message" value="message"></textarea>
+                            <div class="ta-r">
+                                <input type="submit" name="send" value="Submit" class="btn btn-dark btn-block">
+                                
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 <style>
     .carousel{
         display: none;

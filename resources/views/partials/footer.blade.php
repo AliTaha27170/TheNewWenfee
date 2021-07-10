@@ -8,24 +8,25 @@
                     Dolore,
                     ipsam sit!</p>
                 -->
+                @foreach($contacts as $contact)
                 <div class="contact-info-box">
                     <div class="contact-info">
                         <i class="fi fi-rr-building"></i>
-                        <p>(410) 379-2267</p>
+                        <p>{{$contact->phone}}</p>
                         
                     </div>
                     <div class="contact-info">
                         <i class="fi fi-rr-envelope"></i>
-                        <p>info@wenfee.com</p>
+                        <p>{{$contact->mail}}</p>
                     </div>
                 </div>
                 <div class="social">
-                    <a href="#"><img src="{{ asset('img/facebook.svg') }}"></a>
-                    <a href="#"><img src="{{ asset('img/instagram.svg') }}" /></a>
+                    <a href="{{$contact->facebook}}"><img src="{{ asset('img/facebook.svg') }}"></a>
+                    <a href="{{$contact->instagram}}"><img src="{{ asset('img/instagram.svg') }}" /></a>
                 </div>
             </div>
         </div>
-
+@endforeach 
         <div class="col-md-2">
             <div class="part">
                 <h3>Site Map:</h3>
@@ -56,22 +57,7 @@
             </div>
         </div>
 
-        <div class="col-md-4">
-
-            <div class="part">
-                <h3>Contact Us</h3>
-                <form action="" class="contact-form">
-                    <input class="input1" placeholder="Your Email Address" /><br>
-                    <textarea class="input1" placeholder="Your Message"></textarea>
-                    <div class="ta-r">
-                        <button class="mbtn">
-                            <i class="fi fi-rr-paper-plane"></i> &nbsp;Send
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+        
 
     <div class="copy-right">
         <p>Wenfee - All Rights Reserved © 2021</p>

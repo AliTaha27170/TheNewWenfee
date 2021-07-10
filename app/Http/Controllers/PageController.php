@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Brand;
+use App\Models\Message;
+use App\Models\ContactInfo;
 use App\Models\CookBook;
 use App\Models\Product;
 use App\Models\ProductCategory;
@@ -28,6 +30,7 @@ class PageController extends Controller
        $brands=Brand::all();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
+       
        return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands'));
    }
 
@@ -38,7 +41,8 @@ class PageController extends Controller
 
    public function contact()
    {
-       return view('contact');
+    $contacts=ContactInfo::all();
+       return view('contact',compact('contacts'));
    }
 
    public function preview($id)
@@ -133,6 +137,15 @@ class PageController extends Controller
          $brands = '';
        return view('brands',compact('brands'));
    }
-  
+
+
+//    public function messagePost(Request $request) 
+//    {
+//     $data = Message::create([
+//         'mail' => request('mail'),
+//         'message' => request('message')
+//     ]);
+//     return test;
+//    }
 
 }
