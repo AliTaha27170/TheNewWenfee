@@ -18,8 +18,10 @@ use Composer\DependencyResolver\Request;
 */
 
 Route::get('/',                       [App\Http\Controllers\PageController::class, 'landing'])->name('landing-page');
+Route::post('message', 'PageController@messagePost');
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 Route::get('/contact',                    [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
+Route::post('/contact', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 Route::get('/recipes/{slug?}',        [App\Http\Controllers\PageController::class, 'recipes'])->name('recipes');
 Route::get('/recipe/preview/{slug}',  [App\Http\Controllers\PageController::class, 'recipe'])->name('recipe-preview');
 Route::get('/profile',                [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
