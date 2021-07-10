@@ -111,16 +111,16 @@
         </div>
         <div class="tcb-box dark" style="background-image: url('/img/cats/cat2-min.jpg')">
             <div class="content">
-                <h1>Best<br>Bakery</h1>
+                <h1>Bread &<br>Bakery</h1>
                 <a href="/category/bread" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
         
         
-        <div class="tcb-box" style="background-image: url('/img/cats/cat3-min.jpg')">
+        <div class="tcb-box" style="background-image: url('/img/nuts.jpg')">
             <div class="content">
-                <h1>Fresh Vegetables</h1>
-                <a href="/category/dried-fruit-and-dates" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
+                <h1>Raw Nuts & Seeds</h1>
+                <a href="/category/raw-nuts-and-seeds" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
         
