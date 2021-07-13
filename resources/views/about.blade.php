@@ -1,26 +1,166 @@
 @extends('layouts.app')
 
 @section('content')
-<center>
  
-    <div style="margin: 15%">
-        <center><h1>WENFEE</h1></center>
+<section class="section_all bg-light" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section_title_all text-center">
+                            <h3 class="font-weight-bold">Welcome To <span class="text-custom">WENFEE</span></h3>
+                        </div>
+                    </div>
+                </div>
 
-Welcome to Wenfee.com
-We have specialized in gourmet foods since 1965, and we aim to offer our customers a variety of the latest Middle Eastern Products. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget friendly products. We offer all of this while providing excellent customer service and friendly support.
+                <div class="row vertical_content_manage mt-5">
+                    <div class="col-lg-6">
+                        <div class="about_header_main mt-3">
+                            <div class="about_icon_box">
+                            </div>
+                            <p class="About-Text text-muted mt-3">Welcome to Wenfee.com We have specialized in gourmet foods since 1965, and we aim to offer our customers a variety of the latest Middle Eastern Products. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget friendly products. We offer all of this while providing excellent customer service and friendly support. The interests of our customers are always the top priority for us, so we hope you will enjoy our products as much as we enjoy making them available to you. We know you have a choice. Thank You for Choosing to Shop with us. We Appreciate your Business.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="img_about mt-3">
+                            <img src="https://blog.shift4shop.com/hubfs/ThinkstockPhotos-502255976.png" alt="" class="About-image img-fluid mx-auto d-block">
+                        </div>
+                    </div>
+                </div>
 
-The interests of our customers are always the top priority for us, so we hope you will enjoy our products as much as we enjoy making them available to you.
+                <div class="row mt-3">
+                    <div class="col-lg-4">
+                        <div class="about_content_box_all mt-3">
+                            <div class="about_detail text-center">
+                                <div class="about_icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">Order Delivery</h5>
+                                <p class="edu_desc mt-3 mb-0 text-muted">To any State.</p>
+                            </div>
+                        </div>
+                    </div>
 
-We know you have a choice.
-Thank You for Choosing to Shop with us.
-We Appreciate your Business.
-    </div>
-</center>
+                    <div class="col-lg-4">
+                        <div class="about_content_box_all mt-3">
+                            <div class="about_detail text-center">
+                                <div class="about_icon">
+                                    <i class="far fa-money-bill-alt"></i>
+                                </div>
+                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">Trusted Payment</h5>
+                                <p class="edu_desc mb-0 mt-3 text-muted">100% Payment Protection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="about_content_box_all mt-3">
+                            <div class="about_detail text-center">
+                                <div class="about_icon">
+                                    <i class="fas fa-shipping-fast"></i>
+                                </div>
+                                <h5 class="text-dark text-capitalize mt-3 font-weight-bold">Shipping</h5>
+                                <p class="edu_desc mb-0 mt-3 text-muted">Get a Safety Shipping Process By Land or Sea.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 <style>
-    .carousel{
-        display: none;
-    }
+   h1, h2, h3, h4, h5, h6 {
+    color: #2c3145;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.section_all {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    min-height: 100vh;
+}
+.section-title {
+    font-weight: 700;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    letter-spacing: 0.4px;
+    line-height: 28px;
+    max-width: 550px;
+}
+
+.section-title-border {
+    background-color: #000;
+    height: 1 3px;
+    width: 44px;
+}
+
+.section-title-border-white {
+    background-color: #fff;
+    height: 2px;
+    width: 100px;
+}
+.text_custom {
+    color: #00bd2a;
+}
+
+.about_icon i {
+    font-size: 35px;
+    height: 65px;
+    width: 65px;
+    line-height: 65px;
+    display: inline-block;
+    background: #fff;
+    border-radius: 35px;
+    color: #007B70;
+    box-shadow: 0 8px 20px -2px rgba(158, 152, 153, 0.5);
+}
+
+.about_header_main .about_heading {
+    max-width: 450px;
+    font-size: 24px;
+}
+
+.about_icon span {
+    position: relative;
+    top: -10px;
+}
+
+.about_content_box_all {
+    padding: 28px;
+}
+.text-custom
+{
+    font-size: 40px;
+    color: #007b70;
+    font-weight: 500;
+}
+.About-image
+{ 
+    margin-top :50px ;
+    border-radius: 8px;
+    height: 333px;
+}
+.About-Text
+{
+    font-size: 19px;
+}
+.About-Text::first-letter
+{
+    font-size :30px;
+    font-weight : 500 ;
+    color : #007B70;
+}
 
 </style>
 @endsection

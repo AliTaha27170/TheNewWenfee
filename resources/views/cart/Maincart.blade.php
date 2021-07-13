@@ -31,6 +31,11 @@ foreach ($_COOKIE as $key => $value) {
                     <img src="https://wenfee.com/strorge/{{ $product->image }}" alt="" class="cart_img">
               
                     <span class="cd-qty"> {{ $q }} x</span> {!! $product->body !!}
+                    <div class="product-count">
+                            <button class="button-count no-active" disabled>-</button>
+                            <input type="text" id="Counter" readonly class="number-product" value="1">
+                            <button class="button-count">+</button>
+                      </div>
                     <div class="cd-price">${{ round($product->price * $q ,2) }}</div>
 
                     @php
@@ -79,3 +84,27 @@ setcookie("total", $total, time() + (86400 * 30), "/");
               
             
               <a href="#0" class="checkout-btn" onclick="checkout()">Checkout</a>
+              <script>
+                //Product counter//
+var num;
+
+$('.button-count:first-child').click(function(){
+  num = parseInt($('.number-product').val());
+  if (num > 1) {
+    $('.number-product').val(num - 1);
+  }
+  if (num == 2) {
+    $('.button-count:first-child').prop('disabled', true);
+  }
+});
+
+$('.button-count:last-child').click(function(){
+  num = parseInt($('.number-product').val());
+    $('.number-product').val(num + 1);
+  if (num > 0) {
+    $('.button-count:first-child').prop('disabled', false);
+  }
+
+});
+//Product counter//
+              </script>

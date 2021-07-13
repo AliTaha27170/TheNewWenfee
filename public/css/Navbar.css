@@ -293,7 +293,6 @@ margin: 0 auto;
   float: right;
 }
 .product-count {
-  position: absolute;
   top: 40%;
   left: 29%;
   height: 30px;
@@ -1085,6 +1084,7 @@ header271 {
 }
 #cd-cart .cd-price {
   margin-top: .4em;
+  font-size: 22px;
 }
 #cd-cart .cd-item-remove {
   position: absolute;
@@ -1107,8 +1107,6 @@ header271 {
 #cd-cart .cd-cart-total {
   padding-top: 1em;
   padding-bottom: 1em;
-  width: 80%;
-  margin: 0 auto;
 }
 #cd-cart .cd-cart-total p
 {
