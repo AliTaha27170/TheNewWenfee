@@ -159,7 +159,6 @@
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
                                     <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
-                                    <div class="FrozenProduct"><i class="fas fa-snowflake"></i></div>
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
@@ -174,8 +173,9 @@
                                         </h3>
                                       
                                 
-                                        <h4 style="height: 150px">{!! $prod->body !!}</h4>
-
+                                        <h4 style="height: 150px">{!! $prod->body !!}
+                                        <span class="NewProduct">NEW</span>
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div></h4>
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>

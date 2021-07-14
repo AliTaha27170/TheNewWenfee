@@ -42,7 +42,8 @@
                         <h4 style="height: 150px">
                         <p class="ProductName" style="margin-top: 50px;">{!! $product->body  !!}</p>
                         </h4>
-
+                        <span class="NewProduct">NEW</span>
+                        <div class="FrozenProduct" style=" padding : 0;"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                         <ul class="props-list">
                             <li>
                                 <img src="/img/hashtag.svg">
@@ -162,7 +163,7 @@
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
                                         <h4 style="height: 150px">{!! $prod->body  !!}</h4>
-
+                                        
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>
@@ -195,6 +196,30 @@
             </div>
         </section>
     </div>
+        <!-- adding to cart alert -->
+<div class="alert hide">
+  <span class="fas fa-exclamation-circle"></span>
+  <span class="msg">You added Product to your shopping cart.</span>
+  <div class="close-btn">
+    <span class="fas fa-times"></span>
+  </div>
+</div>
+<script>
+    $('.add-cart-btn').click(function(){
+  $('.alert').addClass("show");
+  $('.alert').removeClass("hide");
+  $('.alert').addClass("showAlert");
+  setTimeout(function(){
+    $('.alert').removeClass("show");
+    $('.alert').addClass("hide");
+  },2000);
+});
+$('.close-btn').click(function(){
+  $('.alert').removeClass("show");
+  $('.alert').addClass("hide");
+});
+</script>
+    <!-- adding to cart alert -->
     
     <style>
         .carousel{

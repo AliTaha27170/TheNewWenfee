@@ -960,7 +960,7 @@ body .anim1 .counterrotate {
   .top-cats-box .tcb-box {
     width: 100%;
     margin-bottom: 18px;
-    height: 240px;
+    height: 180px;
   }
 }
 
@@ -1133,23 +1133,25 @@ body .anim1 .counterrotate {
 /*SnowFlake icon */
 .FrozenProduct
 {
-  position: absolute;
-  top: 18px;
-  left: 10px;
-  background: none;
-  border: none;
-  padding: 0;
-  z-index: 8;
-  -webkit-transition: 0.3s all;
-  transition: 0.3s all;
-  font-size: 24px;
-  background: #89C5F6;
-  border-radius: 50px;
-  width: 35px;
-  height: 35px;
-  color: #fff;
-  text-align: center;
-   display: none;
+    margin-top: 10px;
+    border: none;
+    padding: 4px;
+    z-index: 8;
+    transition: 0.3s all;
+    font-size: 20px;
+    background: #89C5F6;
+    border-radius: 7px;
+    width: 100px;
+    height: 32px;
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+.FrozenProduct span
+{
+  font-size: 15px;
+  line-height: 0;
+  padding: 6px;
 }
 /*refrigerator icon */
 .RefrigeratedProduct
@@ -1180,35 +1182,32 @@ body .anim1 .counterrotate {
   display: flex;
   color: #fff;
   font-size: 14px;
-  padding: 3px;
   position: absolute;
   top: 20px;
   left: 0;
   margin: 0;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   height: auto;
   min-width: 65px;
-  background-color: #f44336;
+  background: #e92e2e;
+  padding: 5px 15px;
+  -webkit-transform: skewX( 
+3deg
+);
+  transform: skewX( 
+1deg
+);
+  /* right: -10px; */
+  /* top: 0; */
+  border-radius: 0 3px 24px 0;
 }
 
-.products .item .sale::after {
-  content: '';
-  width: 23px;
-  background: #f44336;
-  height: 100%;
-  position: absolute;
-  -webkit-transform: skewX(-18deg);
-          transform: skewX(-18deg);
-  right: -10px;
-  top: 0;
-  border-radius: 0 5px 5px 0;
-  z-index: -1;
-}
+
 
 .products .item .background-image {
   width: 100%;
@@ -1259,7 +1258,15 @@ body .anim1 .counterrotate {
   bottom: 0;
   right: 0;
 }
-
+.NewProduct
+{
+  font-weight: bold;
+  color: #fff;
+  background: #e92e2e;
+  padding: 1px 15px;
+  border-radius: 7px;
+  display: none /****/;
+}
 .products .item .code {
   color: #888;
   font-size: 14px;
@@ -1525,6 +1532,41 @@ body .anim1 .counterrotate {
 .cart .counter .plus-btn:hover {
   background: #bbb;
 }
+/*Ribbon*/
+.ribbon {
+  width: 140px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 220px;
+  height: 25px;
+  padding: 4px 0;
+  background-color: #dc3434;
+  box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+  color: #fff;
+  font: 700 18px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgb(0 0 0 / 20%);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* top left*/
+.ribbon-top-left {
+  top: 0;
+  left: 0;
+}
+
+.ribbon-top-left span {
+  right: -5px;
+  top: 22px;
+  transform: rotate(-45deg);
+}
+
 
 .footer {
   background-color: #ffffff;

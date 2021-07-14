@@ -65,7 +65,10 @@
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                        <h4 style="height: 150px">{!! $prod->body  !!}</h4>
+                                        <h4 style="height: 150px">{!! $prod->body  !!}
+                                        <span class="NewProduct">NEW</span>
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                    </h4>
 
                                         @if ($prod->discount)
                                             <p class="price">
@@ -105,7 +108,46 @@
             </div>
         </div>
     </div>
-
+    <!-- adding to cart alert -->
+    <div class="alert hide">
+  <span class="fas fa-exclamation-circle"></span>
+  <span class="msg">You added Product to your shopping cart.</span>
+  <div class="close-btn">
+    <span class="fas fa-times"></span>
+  </div>
+</div>
+<style>
+    .alert{
+  background: #007b71c6;
+  padding: 20px 40px;
+  width: 600px;
+  position: fixed;
+  right: -15px;
+  top: 80%;
+  border-radius: 4px;
+  border-left: 8px solid #007B70;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+</style>
+<script>
+    $('.add-cart-btn').click(function(){
+  $('.alert').addClass("show");
+  $('.alert').removeClass("hide");
+  $('.alert').addClass("showAlert");
+  setTimeout(function(){
+    $('.alert').removeClass("show");
+    $('.alert').addClass("hide");
+  },2000);
+});
+$('.close-btn').click(function(){
+  $('.alert').removeClass("show");
+  $('.alert').addClass("hide");
+});
+</script>
+    <!-- adding to cart alert -->
 @endsection
 
 @push('styles')
