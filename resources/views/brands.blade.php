@@ -354,6 +354,66 @@
 
 </div>
 
+
+
+
+
+
+<section class="products">
+  <div class="heading">
+      <h3>Related Products</h3>
+  </div>
+  <br>
+  <div class="products-slider-pr">
+      <div class="products-slider">
+                  <div>
+                    <div class="item">
+                      <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
+                      <a href="#" class="content">
+
+                          <p class="sale">50 % OFF</p>
+                          <small class="sale">Free Shipping</small>
+
+                          <div class="background-image"
+                              style="background-image: url('#');"></div>
+
+                          <h3>
+                              <span class="brand">Ali Taha</span>
+                              <span class="code">#g55525</span>
+                          </h3>
+                          <h4 style="height: 150px">Hello World ! </h4>
+                          
+                              <p class="price">
+                                  <strong>$50</strong>
+                                  <span><del>$52</del></span>
+                              </p>
+                       
+                      </a>
+
+                      <div class="cart-pr">
+                          <div class="cart">
+                              <a  class="add-cart-btn"  onclick="add_to_cart_main(" href="javascript:void(0);">
+                                  <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                  Add to cart</a>
+                              <div class="counter">
+                                  <button type="button" class="minus-btn"><img
+                                          src=""></button>
+                                  <input readonly name="qty" type="text" value="1" id="">
+                                  <button type="button" class="plus-btn"><img
+                                          src="#"></button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+
 <style>
     .page-brands {
   padding-bottom: 30px;
