@@ -22,7 +22,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="img_about mt-3">
-                            <img src="https://blog.shift4shop.com/hubfs/ThinkstockPhotos-502255976.png" alt="" class="About-image img-fluid mx-auto d-block">
+                            <img src="https://www.moda-sitesi.com/wp-content/uploads/2019/05/3.png" alt="" class="About-image img-fluid mx-auto d-block">
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ ul {
 }
 .About-image
 { 
-    margin-top :50px ;
+    margin-top :2rem ;
     border-radius: 8px;
     height: 333px;
 }

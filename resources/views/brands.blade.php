@@ -359,7 +359,7 @@
 
 
 
-<section class="products">
+<!-- <section class="products">
   <div class="heading">
       <h3>Related Products</h3>
   </div>
@@ -408,7 +408,7 @@
                   </div>
       </div>
   </div>
-</section>
+</section> -->
 
 
 
