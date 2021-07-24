@@ -19,7 +19,6 @@ use Composer\DependencyResolver\Request;
 */
 
 Route::get('/',                       [App\Http\Controllers\PageController::class, 'landing'])->name('landing-page');
-Route::post('message', 'PageController@messagePost');
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 Route::get('/contact',                    [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
@@ -34,6 +33,9 @@ Route::get('/category/{slug}',        [App\Http\Controllers\PageController::clas
 Route::get('/product/{slug}',         [App\Http\Controllers\PageController::class, 'preview'])->name('show-product');
 Route::get('/cash/checkout',          [App\Http\Controllers\CheckoutController::class, 'checkout'])->name('checkout');
 Route::post('/store/order',           [App\Http\Controllers\CheckoutController::class, 'store'])->name('store.order');
+Route::post('/signin'  , [App\Http\Auth\RegisterController::class, 'create'])->name('user.create');
+Route::get('signin',                    [App\Http\Controllers\SigninController::class, 'signin'])->name('signin');
+
 
 
 Route::group(['prefix' => 'cart'], function () {

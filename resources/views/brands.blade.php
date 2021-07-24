@@ -31,10 +31,15 @@
   </div>
   <span id="Letter">A<hr></span>
   <ul class="brands_list">
+      
+    @foreach($brands as $brand)
+    
     <li class="brand_item">
-      <h2 class="brand_logo"><a title="URBAN OUTFITTERS" href="https://www.terminalx.com/brands/urban-outfitters"> <img class="brand_logo" src="https://media.terminalx.com/pub/media/resized/225_96//catalog/category/urbanoutfitters-brand.jpg" alt="URBAN OUTFITTERS" /> </a></h2>
+      <h2 class="brand_logo"><a title="{{$brand->name}}" href="#"> <img class="brand_logo" src="{{Voyager::image($brand->logo)}}" alt="" /> </a></h2>
     </li>
-    <li class="brand_item">
+    @endforeach
+
+    {{-- <li class="brand_item">
       <h2 class="brand_logo"><a title="MANGO" href="https://www.terminalx.com/brands/mango"> <img class="brand_logo" src="https://media.terminalx.com/pub/media/resized/195_96//catalog/category/mango-logo-2018.jpg" alt="MANGO" /> </a></h2>
     </li>
     <li class="brand_item">
@@ -340,7 +345,7 @@
     </li>
     <li class="brand_item">
       <h2 class="brand_logo"><a title="SNEAKER LAB" href="https://www.terminalx.com/brands/sneaker-lab"><img class="brand_logo" src="https://media.terminalx.com/pub/media/catalog/category/sneaker_lab_logo.jpg" alt="SNEAKER LAB" /></a></h2>
-    </li>
+    </li> --}}
     <li class="brands-messages" style="display:none;">
       <p>
         

@@ -133,8 +133,8 @@ class PageController extends Controller
    }
    public function brands()
    {
-      // $brands=Brand::all();
-         $brands = '';
+      $brands=Brand::all();
+         
        return view('brands',compact('brands'));
    }
 

@@ -33,16 +33,16 @@
     <div class="right-side">
       <div class="topic-text">Send us a message</div>
       <p>If you have any Question , you can send us message from here.<br> It's our pleasure to help you.</p>
-      <form action="#">
+      <form action="#" method="POST" action="{{ route('contact.store') }}">
+        {{ csrf_field() }}
+        {{-- <div class="input-box">
+          <input type="text" placeholder="Enter Your name" name="mail" value="mail">
+        </div> --}}
         <div class="input-box">
-          <input type="text" placeholder="Enter Your name">
-        </div>
-        <div class="input-box">
-          <input type="Email" placeholder="Enter Your Email">
+          <input type="Email" placeholder="Enter Your Email" name="mail" value="mail">
         </div>
         <div class="input-box message-box">
-           <textarea name="message" id="message" class="form-control" rows="3" placeholder="Your Message" required></textarea>
-
+           <textarea name="message" value="message" id="message" class="form-control" rows="3" placeholder="Your Message" required></textarea>
         </div>
         <div class="button">
           <input type="submit" value="Send Now" >
