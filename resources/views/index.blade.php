@@ -208,7 +208,70 @@
             </div>
         </div>
     @endif
-{{-- comment 
+    <!-- Brands Slider -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        .slick-dots li.slick-active button:before{
+        color: #007B70;
+        }
+        .slick-dots li button::before
+        {
+        font-size: 12px;
+        }
+    </style>
+    <section class="BrandsSection">
+        <h2>Our Brands</h2>
+    <div class="BrandsSlider">
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+            </div>
+            </section>         
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script>
+                $('.BrandsSlider').slick(
+                    {
+                    slidesToShow : 4 ,
+                    slidesToScroll : 2 ,
+                    dots : true ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true 
+                    }
+                );
+
+            </script>
+    <!-- Brands Slider -->
 
     <section class="albums-home-box">
         <div class="slider-title">
@@ -342,7 +405,6 @@
             </div>
         </div>
     </section>
---}}
     <script>
         $(document).ready(function() {
 
