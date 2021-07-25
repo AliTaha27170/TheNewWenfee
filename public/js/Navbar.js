@@ -1,7 +1,7 @@
 // NavBar //
 
 $(document).ready(function () {
-    $('.navbar-light .dmenu').hover(function () {
+    $('.navbar-light .dmenu').click(function () {
             $(this).find('.sm-menu').first().stop(true, true).slideDown(200);
         }, function () {
             $(this).find('.sm-menu').first().stop(true, true).slideUp(0)

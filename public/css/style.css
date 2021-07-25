@@ -1826,10 +1826,10 @@ textarea.input1 {
 .Brands-item
 {
   background: #fff ;
-  box-shadow: 0 4px 5px #aaa6a6;
+  box-shadow: rgb(0 0 0 / 16%) 0 5px 10px;
   border-radius: 8px;
   padding: 15px;
-  border: 1px solid #000;
+  border: 1px solid #777;
 }
 .Brands-item:hover
 {
@@ -1844,8 +1844,8 @@ textarea.input1 {
 
 /*Brands Slider*/
 .albums-home-box {
-  background-image: url("/img/rec2.png");
-  background-size: auto 131%;
+  background-image: url("../img/Cook\ Books.jpg");
+  background-size: 40% 100%;
   background-position: top left;
   position: relative;
   padding: 25px 5%;

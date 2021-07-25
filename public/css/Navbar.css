@@ -1047,6 +1047,7 @@ header271 {
   position: fixed;
 }
 
+
 #cd-cart {
   right: -100%;
   background: #FFF;
@@ -1066,7 +1067,13 @@ header271 {
   color: #007b70;
   font-size: 20px;
   text-transform: uppercase;
-  margin: 50px 0 15px 0;
+  margin: 65px 0 15px 0;
+}
+@media  (max-width: 388px) {
+  #cd-cart h2
+  {
+    margin: 120px 0 15px 0;
+  }
 }
 #cd-cart .cd-cart-items {
   padding: 0;
