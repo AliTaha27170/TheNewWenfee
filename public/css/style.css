@@ -1793,6 +1793,37 @@ body .anim1 .counterrotate {
 textarea.input1 {
   resize: vertical;
 }
+.ViewAllButton {
+  position: relative;
+  margin-top : 20px ;
+  display: flex;
+  justify-content: flex-end;
+}
+.ViewAllButton a {
+  background-color: #fff;
+  margin-bottom: 0;
+  color: #007b70;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 9;
+  padding-bottom: 5px;
+  padding-right: 25px;
+}
+.ViewAllButton a:hover {
+  color: #005951;
+}
+.ViewAllButton::after {
+  position: absolute;
+  bottom: 12px;
+  width: 90%;
+  right: 5%;
+  height: 1px;
+  width: 99%;
+  content: '';
+  background-color: #e7e7e7;
+  z-index: -1;
+}
 /*brands Slider*/
 .item img
 {

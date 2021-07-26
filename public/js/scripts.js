@@ -23,6 +23,7 @@ $(function () {
 
     $(".products-slider").slick({
         dots: true,
+        arrows : true ,
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,

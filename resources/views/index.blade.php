@@ -206,6 +206,9 @@
                     @endforeach
                 </div>
             </div>
+            <div  class="container ViewAllButton" >
+            <a href="#">View all</a>
+            </div>
         </div>
     @endif
     <!-- Brands Slider -->
@@ -223,8 +226,27 @@
         {
             width : 100% ;
         }
+        .slick-next:before, .slick-prev:before
+        {
+            color:#007B70;
+            font-size:24px;
+        }
+        @media  (max-width: 600px) {
+            .slick-next:before
+        {
+            position: absolute;
+            right: 15px;
+        }
+            .slick-prev:before
+            {
+                position: absolute;
+                left: 15px;
+            }
+        }
+
+
     </style>
-    <section class="BrandsSection">
+    <section class="container BrandsSection">
         <h2>Our Brands</h2>
     <div class="BrandsSlider">
         <div class="Brands-item">
@@ -264,7 +286,7 @@
             <script>
                 $('.BrandsSlider').slick(
                     {
-                    slidesToShow : 4 ,
+                    slidesToShow : 5 ,
                     slidesToScroll : 2 ,
                     dots : true ,
                     arrows : true ,
@@ -275,7 +297,7 @@
                     {
                     breakpoint: 1024,
                     settings: {
-                    slidesToShow : 4 ,
+                    slidesToShow : 5 ,
                     slidesToScroll : 2 ,
                     dots : true ,
                     arrows : true ,
