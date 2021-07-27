@@ -41,10 +41,10 @@ foreach ($_COOKIE as $key => $value) {
                     @php
                         $total += round($product->price * $q ,2);
                     @endphp
-                    <!-- 
+                   
                       <a href="#0" class="cd-item-remove cd-img-replace"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }},1);">Remove</a>
 
-                     -->
+                   
                   </li>
               
         
