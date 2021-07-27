@@ -37,11 +37,7 @@
       </div>
     
     
-     
-      <div class="slide">
     
-        <img src="https://wenfee.com/Slides/7.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
     
       
       <div class="slide">
