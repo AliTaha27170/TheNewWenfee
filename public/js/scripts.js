@@ -24,11 +24,40 @@ $(function () {
     $(".products-slider").slick({
         dots: true,
         arrows : true ,
-        slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToShow: 3,
+        slidesToScroll: 2,
         autoplay: true,
         autoplaySpeed: 4000,
-        pauseOnHover: false
+        pauseOnHover: false,
+        responsive: [
+            {
+            breakpoint: 1324,
+            settings: {
+            slidesToShow : 3 ,
+            slidesToScroll : 2 ,
+            dots : true ,
+            arrows : false ,
+            autoplay : true ,
+            autoplayspeed : 2000 ,
+            infinite : true ,
+            }
+            },
+            {
+            breakpoint: 950,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                arrows : false ,
+            }
+            },
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            }
+        ]
     });
 
     $('.slider-for').slick({
