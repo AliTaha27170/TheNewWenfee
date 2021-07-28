@@ -6,15 +6,14 @@
         <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
       </form>
-      {{-- comment 
-    
-    <div class="Registration">
-               <i class="fas fa-user User-Icon"></i>
-               <a href="/login" class="FirstNavLinks">Login</a>
-               <span id="NavSpan">|</span>
-               <a href="/register" class="FirstNavLinks">Register</a>
-               </div>
-  </div>--}}
+      
+      <div class="Registration">
+          <i class="fas fa-user User-Icon"></i>
+          <a href="/login" class="FirstNavLinks">Login</a>
+          <span id="NavSpan">|</span>
+          <a href="/register" class="FirstNavLinks">Register</a>
+          </div>
+</div>
   </nav>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light ">
