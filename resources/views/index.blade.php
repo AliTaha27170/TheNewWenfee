@@ -301,6 +301,7 @@
                     autoplayspeed : 2000 ,
                     infinite : true ,
                     }
+                    
                     },
                     {
                     breakpoint: 600,
