@@ -99,23 +99,23 @@
     </div>
 
     <div class="top-cats-box">
-        <div class="tcb-box" style="background-image: url('/img/cats/cat1-min.jpg')">
+        <div class="tcb-box" style="background-image: url('https://i.ibb.co/bmD40gk/dairy.jpg');background-position: left;">
             <div class="content">
                 <h1>Dairy Products</h1>
                 <a href="/category/cheese" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
-        <div class="tcb-box dark" style="background-image: url('/img/cats/cat2-min.jpg')">
+        <div class="tcb-box dark" style="background-image: url('https://images.unsplash.com/photo-1523294587484-bae6cc870010?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=864&amp;q=80">
             <div class="content">
-                <h1>Bread &<br>Bakery</h1>
+                <h1>Bread &amp;<br>Bakery</h1>
                 <a href="/category/bread" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
         
         
-        <div class="tcb-box" style="background-image: url('/img/nuts.jpg')">
+        <div class="tcb-box" style="background-image: url('https://i.ibb.co/TwmG5bg/nuts.jpg');/* background-size: cover; */">
             <div class="content">
-                <h1>Raw Nuts & Seeds</h1>
+                <h1>Raw Nuts &amp; Seeds</h1>
                 <a href="/category/raw-nuts-and-seeds" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
