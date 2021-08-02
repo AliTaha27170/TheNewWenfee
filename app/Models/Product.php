@@ -14,6 +14,7 @@ class Product extends Model
         'ac_id',
         'ac_img_id',
         "in_list" ,
+        "offer_n" ,
         "price"
     ];
     public function category()
