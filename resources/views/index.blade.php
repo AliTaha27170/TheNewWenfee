@@ -82,7 +82,7 @@
                 </div>
             </li>
             <li>
-                <img  src="https://i.ibb.co/qBTxBzZ/iconfinder-address-shipping-4301321.png" style="width: 36px">
+                <img  src="https://i.ibb.co/qBTxBzZ/iconfinder-address-shipping-4301321.png" style="width: 30px">
                 <div>
                     <h1> Shipping</h1>
                     <p>Get a Safety Shipping Process By Land or Sea.</p>

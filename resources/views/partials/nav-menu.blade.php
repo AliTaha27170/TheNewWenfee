@@ -95,7 +95,7 @@
         </li>
         <!--=========-->
         <li class="nav-item"><a class="nav-link" href="../.../../all?offer=on">Our Offers</a></li>
-        <li class="nav-item"><a class="nav-link" href="{{ route('about') }}">Who We Are</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('HowToOrder') }}">How To Order</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ route('contact') }}">Contact us</a></li>
 
       </ul>

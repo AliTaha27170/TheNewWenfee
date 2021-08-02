@@ -37,6 +37,7 @@
                     </a>
                 
                 </li>
+                <li><a href="{{ route('HowToOrder') }}"><i class="fi fi-rr-angle-double-small-right"></i> How To Order </a></li>
                 {{-- comment 
                 
                     <li><a href="#"><i class="fi fi-rr-angle-double-small-right"></i> CookBooks</a></li>
@@ -48,8 +49,8 @@
             <div class="part">
             <h3 style="visibility: hidden">Site Map:</h3>
                 <ul>
-                    <li><a href="https://wenfee.com/contact"><i class="fi fi-rr-angle-double-small-right"></i> Contact Us</a></li>
-                    <li><a href="https://wenfee.com/about"><i class="fi fi-rr-angle-double-small-right"></i> About Us</a></li>
+                    <li><a href="{{ route('contact') }}"><i class="fi fi-rr-angle-double-small-right"></i> Contact Us</a></li>
+                    <li><a href="{{ route('about') }}"><i class="fi fi-rr-angle-double-small-right"></i> About Us</a></li>
                     {{-- comment 
                     
                     <li><a href="#"><i class="fi fi-rr-angle-double-small-right"></i> Privacy Policy</a></li>--}}

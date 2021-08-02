@@ -896,6 +896,12 @@ body .anim1 .counterrotate {
     margin-bottom: 25px;
   }
 }
+@media  (max-width: 500px) {
+  .features-box ul li {
+    width: 100%;
+    margin-bottom: 25px;
+  }
+}
 
 /* Responsive */
 
@@ -2499,7 +2505,7 @@ textarea.input1 {
 
 .product-page {
   margin: 0 10px;
-  padding-top: 75px;
+  padding-top: 0px ;
 }
 
 .product-page .col-md-3,
@@ -2526,6 +2532,7 @@ textarea.input1 {
   font-size: 17px;
   margin-bottom: 6px;
   font-weight: bold;
+  padding: 20px 0 0 2px;
 }
 
 .product-page .products {

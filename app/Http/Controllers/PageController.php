@@ -38,6 +38,10 @@ class PageController extends Controller
    {
        return view('about');
    }
+   public function HowToOrder()
+   {
+       return view('HowToOrder');
+   }
 
    public function contact()
    {

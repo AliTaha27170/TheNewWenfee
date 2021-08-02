@@ -1,7 +1,8 @@
 /*First Navbar*/
 .navbar:first-of-type 
 {
-  height: 50px;
+  height: auto;
+  padding: 10px 0;
 background-color: #007b70;
 border-radius: 0;
 
@@ -25,6 +26,15 @@ border-radius: 0;
 {
   height: 20px;
 }
+
+@media  (max-width: 1000px) {
+  .Registration
+{
+  height: 30px;
+  padding-top:10px ;
+}
+}
+
 .FirstNavLinks
 {
   color: #Fff;
@@ -438,18 +448,15 @@ margin: 0 auto;
 
  /* Previous slide button */
  .previous-button {
-   position: absolute;
-   left: 0;
-   top: calc(var(--carousel-height)/2 - 40px);
-   
-   padding: 5px 15px;
-   z-index: 3;
-   
-   font-size: 40px;
-   
-   border-top-right-radius: 10px;
-   border-bottom-right-radius: 10px;
-   border-left: 0;
+    position: absolute;
+    left: 0;
+    top: calc(var(--carousel-height)/2 - 40px);
+    padding: 5px 15px;
+    z-index: 3;
+    font-size: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 0;
  }
 
  /* Next slide button */
@@ -461,14 +468,33 @@ margin: 0 auto;
    padding: 5px 15px;
    z-index: 1;
    
-   font-size: 40px;
+   font-size: 30px;
    
    border-top-left-radius: 10px;
    border-bottom-left-radius: 10px;
    border-right: 0;
  }
+ @media  (max-width: 1000px) {
+    /* Pause/play toggle for autoplay */
+ .slick-autoplay-toggle-button {
+  bottom: 15px;
+  left: 10px;
+}
 
-/**
+/* Previous slide button */
+.previous-button {
+   top: calc(var(--carousel-height)/2 - 100px);
+   font-size: 30px;
+}
+
+/* Next slide button */
+.next-button {
+  top: calc(var(--carousel-height)/2 - 100px);
+  font-size: 30px;
+}
+
+ }
+  /**
  Single slide
 */
 .slide {
@@ -485,17 +511,10 @@ margin: 0 auto;
  .slide .background-image
   {
     width: 100%;
-    height: 50%;
-    margin: 0;
+    height: auto;
+    margin: 25px 0 0 0;
 
 }
-.previous-button {
-  display: none;
-}
-.next-button {
-display: none;
-}
-
 }
 
 
@@ -1074,12 +1093,38 @@ header271 {
   padding: 0 1em;
 }
 #cd-cart h2 {
+  display: inline-block;
+  margin: 0 auto 20px auto;
+}
+#cd-cart h2 {
   font-weight: bold;
   text-align: center;
   color: #007b70;
   font-size: 20px;
   text-transform: uppercase;
   margin: 65px 0 15px 0;
+}
+#cart-button
+{
+  width: 100px;
+    padding: 5px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+    border-radius: 20px;
+    color: #fff;
+    background: #007b70;
+}
+#cart-header
+{
+  margin-top: 65px;
+  margin-bottom: 15px;
+  padding: 5px 5px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 @media  (max-width: 388px) {
   #cd-cart h2

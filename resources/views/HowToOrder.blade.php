@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section_title_all text-center">
-                            <h3 class="font-weight-bold">Welcome To <span class="text-custom">WENFEE</span></h3>
+                            <h3 class="font-weight-bold">How To <span class="text-custom">Order</span></h3>
                         </div>
                     </div>
                 </div>
@@ -17,7 +17,11 @@
                         <div class="about_header_main mt-3">
                             <div class="about_icon_box">
                             </div>
-                            <p class="About-Text text-muted mt-3">Welcome to Wenfee.com <br> We have specialized in gourmet foods since 1965, and we aim to offer our customers a variety of the latest Middle Eastern Products. We’ve come a long way, so we know exactly which direction to take when supplying you with high quality yet budget friendly products. We offer all of this while providing excellent customer service and friendly support. <br> <br> The interests of our customers are always the top priority for us, so we hope you will enjoy our products as much as we enjoy making them available to you. <br> <br> <span style="color : #007B70 ; font-weight : 500">We know you have a choice. <br> Thank You for Choosing to Shop with us. <br> We Appreciate your Business. </span> </p>
+                            <p class="About-Text text-muted mt-3">Shopping has never been as easy as it is nowadays.<br> With few clicks using your computer's mouse and providing as little information as possible, you can place your order on-line. We will take care of the rest... Our orders department will carefully pack and ship your order to arrive safely to your home.
+We have made it possible for you to place an order using our on-line shopping cart or your fax machine at home. Please visit our contact information page for more information.
+All methods of placing orders are safe and secure. We use the latest technologies available to insure the safety and confidentiality of your order and personal information.
+All collected information from you is strictly confidential. We do not share it with any other organization for commercial purposes.
+Wenfee will fully cooperate in the eventuality that we are required by law or legal process to provide information about a customer. </p>
                         </div>
                     </div>
                     <!--
@@ -53,7 +57,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-lg-4">
                         <div class="about_content_box_all mt-3">
                             <div class="about_detail text-center">
