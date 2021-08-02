@@ -51,6 +51,7 @@
                 <ul>
                     <li><a href="{{ route('contact') }}"><i class="fi fi-rr-angle-double-small-right"></i> Contact Us</a></li>
                     <li><a href="{{ route('about') }}"><i class="fi fi-rr-angle-double-small-right"></i> About Us</a></li>
+                    <li><a href="{{ route('ShippingInformation') }}"><i class="fi fi-rr-angle-double-small-right"></i> Shipping Information</a></li>
                     {{-- comment 
                     
                     <li><a href="#"><i class="fi fi-rr-angle-double-small-right"></i> Privacy Policy</a></li>--}}

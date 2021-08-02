@@ -42,7 +42,10 @@ class PageController extends Controller
    {
        return view('HowToOrder');
    }
-
+   public function ShippingInformation()
+   {
+       return view('ShippingInformation');
+   }
    public function contact()
    {
     $contacts=ContactInfo::all();
