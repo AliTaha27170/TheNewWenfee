@@ -7,19 +7,23 @@
 
     <div class="carousel">
     
+        <!--
       <div class="slide">
     
         <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+    -->
       <div class="slide">
         <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     
+      <!-- 
         <div class="slide">
     
         <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
+    -->
+
         <div class="slide">
     
         <img src="https://wenfee.com/Slides/4.jpg" class="background-image" alt="Small succulent in round planter">
@@ -51,6 +55,35 @@
         <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     
+
+      <div class="slide">
+    
+        <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+    
+
+
+      <div class="slide">
+    
+        <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+    
+
+
+      <div class="slide">
+    
+        <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+    
+
+
+      <div class="slide">
+    
+        <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+    
+
+
 
      
     </div>
@@ -242,6 +275,7 @@
 
 
     </style>
+    <!-- 
     <section class="container BrandsSection">
         <h2>Our Brands</h2>
     <div class="BrandsSlider">
@@ -277,6 +311,7 @@
         </div>
             </div>
             </section>         
+        -->
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
             <script>
@@ -322,7 +357,7 @@
 
             </script>
     <!-- Brands Slider -->
-
+<!--  
     <section class="albums-home-box">
         <div class="slider-title">
             <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
@@ -351,7 +386,8 @@
         </div>
 
     </section>
-
+-->
+<!--  
     <section class="recipes-section">
         <div class="content-box">
 
@@ -455,6 +491,7 @@
             </div>
         </div>
     </section>
+-->
     <script>
         $(document).ready(function() {
 

@@ -19,7 +19,7 @@ class SearchController extends Controller
         $validator   =   validator::make($request->all(), $rules);
 
     
-        if(strlen($request['search'])<=4)
+        if(strlen($request['search'])<=4 or 1==1)
 {
    
     $products    =  Product::where(
