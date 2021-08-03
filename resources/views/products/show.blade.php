@@ -65,6 +65,7 @@
                                
 
                                 @if ($product->size==0)
+                                <img src="/img/offer.png">
                                 <p>
                                     <span>Offer  </span>
                                     <b>Shipping included</b>

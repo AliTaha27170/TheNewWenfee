@@ -2340,13 +2340,13 @@ textarea.input1 {
 .pro-details-page .about h3 .brand {
   font-weight: bold;
   font-size: 30px;
-  margin: 0px 14.3906px 0px 28.7969px;
+ /* margin: 0px 14.3906px 0px 28.7969px;*/
 }
 
 .pro-details-page .about h4 {
   color: #222;
   text-align: left;
-  margin: 0px 14.3906px 0px 28.7969px;
+ /* margin: 0px 14.3906px 0px 28.7969px;*/
   margin-top: 0;
   font-size: 26px;
   font-weight: bold;

@@ -36,10 +36,10 @@
       <form action="#" method="POST" action="{{ route('contact.store') }}">
         {{ csrf_field() }}
         {{-- <div class="input-box">
-          <input type="text" placeholder="Enter Your name" name="mail" value="mail">
+          <input type="text" placeholder="Enter Your name" name="mail">
         </div> --}}
         <div class="input-box">
-          <input type="Email" placeholder="Enter Your Email" name="mail" value="mail">
+          <input type="Email" placeholder="Enter Your Email" name="mail">
         </div>
         <div class="input-box message-box">
            <textarea name="message" value="message" id="message" class="form-control" rows="3" placeholder="Your Message" required></textarea>

@@ -968,14 +968,14 @@ header271 {
     transform: scale(1);
   }
 }
-
+/*
 #cd-hamburger-menu, #cd-cart-trigger {
 
 }
 #cd-hamburger-menu a, #cd-cart-trigger a {
 
 }
-
+*/
 #cd-hamburger-menu {
   left: 0;
 }
