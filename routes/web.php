@@ -21,6 +21,7 @@ use Composer\DependencyResolver\Request;
 Route::get('/',                       [App\Http\Controllers\PageController::class, 'landing'])->name('landing-page');
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 Route::get('/HowToOrder',                    [App\Http\Controllers\PageController::class, 'HowToOrder'])->name('HowToOrder');
+Route::get('/Medical',                    [App\Http\Controllers\PageController::class, 'Medical'])->name('Medical');
 Route::get('/ShippingInformation',                    [App\Http\Controllers\PageController::class, 'ShippingInformation'])->name('ShippingInformation');
 Route::get('/contact',                    [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');

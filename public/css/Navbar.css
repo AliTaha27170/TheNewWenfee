@@ -22,6 +22,10 @@ border-radius: 0;
   align-items: center;
   transition: 2s;
   }
+  .Username
+  {
+    display: none;
+  }
   .Registration
 {
   display: none; /****/

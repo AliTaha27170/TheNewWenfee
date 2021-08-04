@@ -42,6 +42,13 @@ class PageController extends Controller
    {
        return view('HowToOrder');
    }
+   public function Medical()
+   {
+    $category_parent_id=ProductCategory::get()->first()->parent_id;
+    $categories=ProductCategory::where('parent_id',$category_parent_id)->orderBy('order','asc')->get();  
+    $products = Product::limit(10)->get();
+    return view('Medical',compact('categories','products',));
+   }
    public function ShippingInformation()
    {
        return view('ShippingInformation');

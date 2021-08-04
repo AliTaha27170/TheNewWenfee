@@ -2425,6 +2425,7 @@ textarea.input1 {
   font-size: 15px;
   color: #666;
   padding: 15px 0;
+  display: none;
 }
 
 .pro-details-page .about .share-box {
