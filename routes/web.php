@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MainnCartController;
 use App\Http\Controllers\SearchController;
 use App\Models\Product;
@@ -117,3 +118,7 @@ Route::get('deleteProduct/{id}',function($id){
 // Cart with ameriecommerce
 Route::get('maincart/{id}/{q}' , [MainnCartController::class   , 'update']);
 Route::get('maincart'          , [MainnCartController::class   , 'index' ])->name('maincart');
+
+//FAV products
+Route::get('like/{id}'   , [LikeController::class , 'Like'])->name('Like');
+Route::get('unLike/{id}' , [LikeController::class , 'UnLike'])->name('UnLike');

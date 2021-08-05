@@ -47,4 +47,10 @@ class User extends \TCG\Voyager\Models\User
     {
         return $this->hasMany('App\Models\Order');
     }
+    
+    public function favProducts()
+    {
+        return $this->hasMany(like::class, 'user_id', 'id');
+    }
+   
 }
