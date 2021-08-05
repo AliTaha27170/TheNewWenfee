@@ -1114,7 +1114,8 @@ body .anim1 .counterrotate {
   right: 20px;
   background: none;
   border: none;
-  padding: 0;
+  padding: 7px;
+  padding-top: 3px;
   z-index: 8;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
@@ -1124,8 +1125,6 @@ body .anim1 .counterrotate {
   width: 35px;
   height: 35px;
   color: #ff7474;
-  display: none; /***************/
-
 }
 
 .products .item .fav-btn i {
@@ -2740,4 +2739,129 @@ body .modal a.close-modal {
   right: 5px;
   top: 5px;
 }
+
+/*Fav Products Page*/
+#Fav_Header {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+#Fav_Header::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: #007B70;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.Favourite-Page-search {
+  text-align: center;
+  padding: 0 8px;
+  height: 25px;
+  margin-bottom: 25px;
+}
+.search_questions_wrap {
+  margin-bottom: 70px;
+  text-align: center;
+  min-width: 400px;
+  width: 400px;
+  max-width: 100% !important;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.search_questions_wrap svg.icon {
+  right: 10px;
+  left: initial;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.search_questions_wrap button.btn-grey {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: calc(100% + 15px);
+  width: 120px;
+  margin: auto;
+  opacity: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: #000;
+  height: 40px;
+}
+.search_questions_wrap button.btn-grey svg {
+  margin-left: 8px;
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+.search_questions_wrap > input.input-text {
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 8px;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #d5d9de;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+  direction: rtl;
+  padding: 5px 40px 5px 20px;
+  padding-right: 40px;
+  min-height: 40px;
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+  text-overflow: ellipsis;
+}
+.search_questions_wrap {
+  margin-bottom: 70px;
+  text-align: center;
+  min-width: 400px;
+  width: 400px;
+  max-width: 100% !important;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.search_questions_wrap > input.input-text:hover,.search_questions_wrap > input.input-text:focus, .search_questions_wrap > input.input-text:active {
+  border: 1px solid #007b70;
+}
+.NumberOfProducts {
+  position: relative;
+  margin-top : 20px ;
+  display: flex;
+  justify-content: flex-end;
+}
+.NumberOfProducts span {
+  background-color: #fff;
+  margin-bottom: 0;
+  color: #007b70;
+  display: inline-block;
+  font-size: 20px;
+  z-index: 9;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.NumberOfProducts::after {
+  position: absolute;
+  bottom: 12px;
+  width: 90%;
+  right: 5%;
+  height: 1px;
+  width: 99%;
+  content: '';
+  background-color: #e7e7e7;
+  z-index: -1;
+}
+/*Fav Product*/
 /*# sourceMappingURL=style.css.map */

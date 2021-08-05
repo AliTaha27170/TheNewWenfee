@@ -187,7 +187,7 @@
                         @foreach ($item->products as $prod)
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
-                                    <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
+                                    <a href="#" class="fav-btn"><i class="fi fi-rr-heart"></i><!--class="fas fa-heart"--></a>
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
