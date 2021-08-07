@@ -1,8 +1,17 @@
+
 @extends('layouts.app')
 
 @section('content')
+@php
+use     App\hellpers\like_;
+@endphp
+
+<script>
+    var x=0;
+</script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
+    
     <!--_____________________________________________________________________-->
 
     <div class="carousel">
@@ -187,7 +196,17 @@
                         @foreach ($item->products as $prod)
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
-                                    <a href="#" class="fav-btn"><i class="fi fi-rr-heart"></i><!--class="fas fa-heart"--></a>
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"    
+
+                                        @if (isset(auth()->user()->id) and like_::check($item->id))
+                                        onclick="unLike(this,{{ $prod->id }})"
+                                        @else
+                                        onclick="like(this,{{ $prod->id }})"
+
+
+                                        @endif
+                                        
+                                        ></i><!--class="fas fa-heart"--></a>
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
@@ -575,4 +594,8 @@ $('.close-btn').click(function(){
 });
 </script>
     <!-- adding to cart alert -->
+
+
+
+
 @endsection

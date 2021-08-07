@@ -53,8 +53,10 @@ class PageController extends Controller
    {
     $category_parent_id=ProductCategory::get()->first()->parent_id;
     $categories=ProductCategory::where('parent_id',$category_parent_id)->orderBy('order','asc')->get();  
-    $products = Product::limit(10)->get();
-    return view('Fav',compact('categories','products',));
+
+    $likes = auth()->user()->favProducts ;
+    return view('Fav',compact('categories','likes',));
+
    }
    public function ShippingInformation()
    {

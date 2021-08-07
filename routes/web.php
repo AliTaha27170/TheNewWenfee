@@ -23,7 +23,7 @@ Route::get('/',                       [App\Http\Controllers\PageController::clas
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 Route::get('/HowToOrder',                    [App\Http\Controllers\PageController::class, 'HowToOrder'])->name('HowToOrder');
 Route::get('/Medical',                    [App\Http\Controllers\PageController::class, 'Medical'])->name('Medical');
-Route::get('/Fav',                    [App\Http\Controllers\PageController::class, 'Fav'])->name('Fav');
+Route::get('/Fav',                    [App\Http\Controllers\PageController::class, 'Fav'])->name('Fav')->middleware('auth');
 Route::get('/ShippingInformation',                    [App\Http\Controllers\PageController::class, 'ShippingInformation'])->name('ShippingInformation');
 Route::get('/contact',                    [App\Http\Controllers\PageController::class, 'contact'])->name('contact');
 Route::post('/contact', [App\Http\Controllers\ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');

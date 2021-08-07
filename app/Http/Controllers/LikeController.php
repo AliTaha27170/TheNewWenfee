@@ -18,7 +18,8 @@ class LikeController extends Controller
                 "product_id" => $id 
             ]
             );
-        
+            return back();
+
     }
 /** END like */   
 
@@ -27,6 +28,7 @@ class LikeController extends Controller
     public function UnLike ($id)
     {
         Like::where('product_id',$id)->where('user_id',auth()->user()->id)->delete();
+        return back();
     }
 /** END UnLike */   
 
