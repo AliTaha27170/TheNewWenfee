@@ -22,13 +22,18 @@ border-radius: 0;
   align-items: center;
   transition: 2s;
   }
-  .Username
-  {
-    display: none;
+  .Username a
+  { 
+    color: #fff;
   }
+  .Username a :hover
+  {
+    color:#f7b036;
+  }
+
   .Registration
 {
-  display: none; /****/
+  /**display: none; **/
   height: 20px;
 }
 

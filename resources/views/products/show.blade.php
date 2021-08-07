@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-
+@php
+use     App\hellpers\like_;
+@endphp
     <div class="pro-details-page">
         <div class="pro-details-box">
             <div class="row">
@@ -147,8 +149,17 @@
                         @foreach ($products as $prod)
                             <div>
                                 <div class="item">
-                                    <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
-                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"    
+
+                                        @if (isset(auth()->user()->id) and like_::check($prod->id))
+                                        onclick="unLike(this,{{ $prod->id }})"
+                                        @else
+                                        onclick="like(this,{{ $prod->id }})"
+
+
+                                        @endif
+                                        
+                                        ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
 
                                         @if ($prod->is_offer and isset($prod->discount) )
                                         <p class="sale">{{ $prod->discount }}% OFF</p>

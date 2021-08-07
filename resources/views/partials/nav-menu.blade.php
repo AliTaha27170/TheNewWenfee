@@ -7,26 +7,34 @@
         <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
       </form>
 
-              <div class="Username">
-                <i class="fas fa-user User-Icon"></i>
-                <button style="
-            border: 0;
-            background: transparent;
-            color: #fff;
-            /* font-size: 17px; */
-            padding: 0;">
-        <i class="fas fa-heart" style="padding: 0 5px;"></i>
-        <span> Favourite List </span>
-      </button>
-                <span style="color: #fff;padding: 0 5px;">|</span>
-                <a href="#" class="FirstNavLinks">Welcome Name</a>
-              </div>
+      @if (isset(auth()->user()->id))
+          
+      <div class="Username">
+        <i class="fas fa-user User-Icon"></i>
+        <button style="
+    border: 0;
+    background: transparent;
+    color: #fff;
+    /* font-size: 17px; */
+    padding: 0;">
+<a href="{{ route('Fav') }}">
+<span>        <i class="fas fa-heart" style="padding: 0 5px;"></i>
+  Favourite List </span> </a>
+</button>
+        <span style="color: #fff;padding: 0 5px;">|</span>
+        <a href="#" class="FirstNavLinks">{{ auth()->user()->name }}</a>
+      </div>
+
+      @else
       <div class="Registration">
         <i class="fas fa-user User-Icon"></i>
         <a href="/login" class="FirstNavLinks">Login</a>
         <span id="NavSpan">|</span>
         <a href="/register" class="FirstNavLinks">Register</a>
       </div>
+      @endif
+
+
     </div>
   </nav>
   <!-- Navbar -->

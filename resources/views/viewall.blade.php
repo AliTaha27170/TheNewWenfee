@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+use     App\hellpers\like_;
+@endphp
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>
 
@@ -51,8 +54,17 @@
                             @if ($products->count() > 0)
                                 @foreach ($products as $prod)
                                 <div class="item">
-                                    <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
-                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"    
+
+                                        @if (isset(auth()->user()->id) and like_::check($item->id))
+                                        onclick="unLike(this,{{ $prod->id }})"
+                                        @else
+                                        onclick="like(this,{{ $prod->id }})"
+
+
+                                        @endif
+                                        
+                                        ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer and isset($prod->discount) )
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
                                             @elseif ($prod->is_offer)

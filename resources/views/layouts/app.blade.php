@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
+    
 <head>
     <head>
         <meta charset="UTF-8">
@@ -50,7 +51,45 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="{{ asset('libs/slick/slick.js') }}"></script>
     <script src="{{ asset('js/scripts.js') }}?v=2"></script>
+    <script>
 
+        function like (e,id)
+        {
+      
+
+            @if(!(isset(auth()->user()->id)))
+
+            return alert('You must login first ! ');
+                
+            @endif
+
+
+
+            $.get("../../../like/"+id, function(data, status){
+                $(e).removeClass('fi fi-rr-heart');
+                $(e).addClass(' fas fa-heart ');
+                $(e).attr("onclick","unLike(this," + id + ")");
+
+            });
+
+        }
+
+        function unLike (e,id)
+        {
+
+
+            $.get("../../../unLike/"+id, function(data, status){
+                
+                 $(e).removeClass(' fas fa-heart ');
+                 $(e).addClass('fi fi-rr-heart');
+                 $(e).attr("onclick","like(this," + id + ")");
+
+            });
+
+        }
+
+        
+    </script>
 
 
     {{-- *** --}}
