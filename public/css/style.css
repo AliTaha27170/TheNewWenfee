@@ -2864,4 +2864,226 @@ body .modal a.close-modal {
   z-index: -1;
 }
 /*Fav Product*/
+
+
+/*Medical Supplies Page*/
+#Medical_Header {
+  padding-top: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  margin-bottom: 40px;
+}
+#Medical_Header::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: #007B70;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+/* Silder*/
+:root {
+ --carousel-height: 300px;
+}
+
+/** Wrapper */
+.Medical-carousel {
+ position: relative;
+ margin-bottom: 20px !important;
+}
+
+/* Resets for all buttons */
+.Medical-carousel .is-control {
+ z-index: 1;
+ background: none;
+ color: rgba(0,0,0,.7);
+ border: 0;
+ cursor: pointer;
+ transition: all .2s linear;
+}
+
+.Medical-carousel .is-control:focus {
+   outline: none;
+   background-color: rgba(0,0,0,.8);
+   color: rgba(255,255,255,1);
+ }
+
+ /* Pause/play toggle for autoplay */
+ .Medical-carousel .slick-autoplay-toggle-button {
+   bottom: 15px;
+   left: 10px;
+ }
+
+ /* Previous slide button */
+ .Medical-carousel .previous-button {
+    position: absolute;
+    left: 0;
+    top: calc(var(--carousel-height)/2 - 40px);
+    padding: 5px 15px;
+    z-index: 3;
+    font-size: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-left: 0;
+ }
+
+ /* Next slide button */
+ .Medical-carousel .next-button {
+   position: absolute;
+   right: 0;
+   top: calc(var(--carousel-height)/2 - 40px);
+   
+   padding: 5px 15px;
+   z-index: 1;
+   
+   font-size: 30px;
+   
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   border-right: 0;
+ }
+ @media  (max-width: 1000px) {
+    /* Pause/play toggle for autoplay */
+    .Medical-carousel .slick-autoplay-toggle-button {
+  bottom: 15px;
+  left: 10px;
+}
+
+/* Previous slide button */
+.Medical-carousel .previous-button {
+   top: calc(var(--carousel-height)/2 - 100px);
+   font-size: 30px;
+}
+
+/* Next slide button */
+.Medical-carousel .next-button {
+  top: calc(var(--carousel-height)/2 - 100px);
+  font-size: 30px;
+}
+
+ }
+  /**
+ Single slide
+*/
+.Medical-carousel .slide {
+ position: relative;
+ height: var(--carousel-height);
+}
+
+.Medical-carousel .slide .background-image {
+   width: 1250px;
+   height: 100%;
+   margin: 0 auto;
+ }
+ @media  (max-width: 1000px) {
+  .Medical-carousel .slide .background-image
+  {
+    width: 100%;
+    height: auto;
+}
+}
+
+
+/**
+ Slide 2 content
+*/
+.Medical-carousel .slide .content {
+ position: absolute;
+ top: 20px;
+ left: 15%;
+
+ max-width: 400px;
+ width: 50%;
+ max-height: 70%;
+ padding: 15px;
+
+ white-space: normal;
+ color: white;
+ background-color: royalblue;
+ box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);
+}
+
+.Medical-carousel .slide .content h2 {
+   margin: 0;
+   font-size: 1.7rem;
+ }
+
+ .Medical-carousel .slide .content p {
+   margin: 10px 0 20px 0;
+ }
+
+ .Medical-carousel .slide .content .cta-link {
+   display: inline-block;
+   padding: 5px 10px;
+
+   background-color: white;
+   color: rgba(0,0,0,.7);
+   text-decoration: none;
+   font-weight: 800;
+   box-shadow: 3px 3px 0 0 rgba(0,0,0,.3);
+ }
+
+ .Medical-carousel .slide .content .cta-link:focus,
+ .Medical-carousel .slide .content .cta-link:hover {
+      text-decoration: underline;
+     color: black;
+   }
+
+   .Medical-carousel .slide .content .cta-link:focus {
+     outline: 3px solid rgba(0,0,0,1);
+   }
+
+/** Slide dots */
+.Medical-carousel .slick-dots {
+ bottom: 15px;
+}
+
+.Medical-carousel .slick-dots li {
+   padding: 0;
+   margin: 0 1px;
+ }
+
+/** Credits at bottom */
+.Medical-carousel .credits {
+ margin-right: 20px;
+ padding: 5px;
+ float: right;
+ font-size: 14px;
+ color: black;
+ text-decoration: none;
+ opacity: .7;
+}
+
+.Medical-carousel .credits img {
+   height: 30px;
+   margin-left: 5px;
+   margin-top: -2px;
+   vertical-align: middle;
+ }
+
+ .Medical-carousel .credits:hover,
+ .Medical-carousel .credits:focus {
+   opacity: 1;
+ }
+#Medical_Categories
+{
+  font-size: 22px;
+  color: #007b70;
+}
+#Medical_List li
+{
+  margin: 10px 0;
+}
+#Medical_List a
+{
+  color: #000;
+  font-weight: 500;
+}
+/* End Of Silder*/
+/*Medical Supplies Page*/
 /*# sourceMappingURL=style.css.map */

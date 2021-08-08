@@ -3,9 +3,45 @@
 @section('content')
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>
-     <!--_____________________________________________________________________-->
+    <div class="product-page">
+        <div class="row">
 
-     <div class="carousel">
+            <div class="col-md-3">
+                <form id="search-form" action="{{ route('viewall') }}" method="GET">
+
+                    <div class="left-panel">
+                        <h2 id="Medical_Categories">Medical Supplies</h2>
+                        <ul id="Medical_List">  
+                            <li><a href="#"> Vitamins & Dietary Supplements </a></li>
+                            <li><a href="#"> Pain Relievers </a></li>
+                            <li><a href="#"> Disposable Face Masks & Gloves </a></li>
+                            <li><a href="#"> Band Aids </a></li>
+                            <li><a href="#"> Sexual Wellness </a></li>
+                            <li><a href="#"> Pregnancy Tests </a></li>
+                            <li><a href="#"> Gift Bags </a></li>
+                        </ul>
+
+
+                        <h2>Price</h2>
+                        <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
+                            type="text" id="maxPrice">
+                        <input hidden name="minPrice" value="{{ request()->minPrice ? request()->minPrice : 0 }}"
+                            type="text" id="minPrice">
+
+                        <div class="my-js-slider"></div>
+                        <br>
+                        <h2>Offer/Discount </h2>
+                        <input type="checkbox" name="offer" {{ request()->offer ? 'checked' : '' }} id="box-1">
+                        <label for="box-1">Offer</label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-9">
+            <h2 id="Medical_Header">Medical Supplies</h2>
+            <!--_____________________________________________________________________-->
+
+    <div class="Medical-carousel">
     
     <!--
   <div class="slide">
@@ -81,55 +117,9 @@
 
     <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
-
-
-
-
- 
 </div>
 
 <!--_____________________________________________________________________-->
-    <div class="product-page">
-        <div class="row">
-
-            <div class="col-md-3">
-                <form id="search-form" action="{{ route('viewall') }}" method="GET">
-
-                    <div class="left-panel">
-                        <h2>Category</h2>
-                        <div class="select">
-                            <select name="slug">
-                                <option value="">All Categories</option>
-                                @foreach ($categories as $item)
-                                    @if (request()->slug)
-                                        <option value="{{ $item->slug }}"
-                                            {{ $item->slug == request()->slug ? 'selected' : '' }}>{{ $item->name }}
-                                        </option>
-                                    @else
-                                        <option value="{{ $item->slug }}">{{ $item->name }}</option>
-                                    @endif
-                                @endforeach
-
-                            </select>
-                            <div class="select__arrow"></div>
-                        </div>
-
-                        <h2>Price</h2>
-                        <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
-                            type="text" id="maxPrice">
-                        <input hidden name="minPrice" value="{{ request()->minPrice ? request()->minPrice : 0 }}"
-                            type="text" id="minPrice">
-
-                        <div class="my-js-slider"></div>
-                        <br>
-                        <h2>Offer/Discount </h2>
-                        <input type="checkbox" name="offer" {{ request()->offer ? 'checked' : '' }} id="box-1">
-                        <label for="box-1">Offer</label>
-                    </div>
-                </form>
-            </div>
-
-            <div class="col-md-9">
                 <div class="right-panel">
                     <div class="products">
                         <div class="grid">
@@ -290,9 +280,31 @@ $('.close-btn').click(function(){
         }
 
         /*Pagination*/
-            .carousel{
-                display: none;
-            }
-     
+        .slide .background-image {
+            margin : 0 ;
+        }
     </style>
+    <Script>
+        //SLider//
+
+window.addEventListener('DOMContentLoaded', function(e) {
+    $('.Medical-carousel').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 7000,
+      prevArrow: '<button class="previous-button is-control">' +
+                 '  <span class="fas fa-angle-left" aria-hidden="true"></span>' +
+                 '  <span class="sr-only">Previous slide</span>' +
+                 '</button>',
+      nextArrow: '<button class="next-button is-control">' +
+                 '  <span class="fas fa-angle-right" aria-hidden="true"></span>' +
+                 '  <span class="sr-only">Next slide</span>' +
+                 '</button>'
+    });
+  });
+
+
+
+//Slider//
+    </Script>
 @endpush

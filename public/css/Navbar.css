@@ -43,8 +43,11 @@ border-radius: 0;
   height: 30px;
   padding-top:10px ;
 }
+.User-Icon
+{
+  display: none;
 }
-
+}
 .FirstNavLinks
 {
   color: #Fff;
