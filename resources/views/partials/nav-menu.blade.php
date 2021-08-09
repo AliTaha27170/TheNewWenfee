@@ -23,6 +23,12 @@
 </button>
         <span style="color: #fff;padding: 0 5px;">|</span>
         <a href="#" class="FirstNavLinks">{{ auth()->user()->name }}</a>
+        <div class="User-Menu" style="display: block;">
+      <ul>
+        <li><a href="#"> Account Settings<i class="fas fa-cog"></i></a></li>
+        <li><a href="#"> Logout <i class="fas fa-sign-out-alt"></i></a></li>
+      </ul>
+    </div>
       </div>
 
       @else
@@ -33,9 +39,8 @@
         <a href="/register" class="FirstNavLinks">Register</a>
       </div>
       @endif
-
-
     </div>
+
   </nav>
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light ">

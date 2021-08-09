@@ -90,3 +90,7 @@ $(document).ready(function () {
       } 
       });
 });
+
+$(".User-Icon").click(function(){
+  $(".User-Menu").fadeToggle();
+});
