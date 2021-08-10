@@ -2429,7 +2429,6 @@ textarea.input1 {
 
 .pro-details-page .about .share-box {
   padding-top: 30px;
-  display: none; /**/
 }
 
 .pro-details-page .about .share-box strong {
@@ -2446,8 +2445,16 @@ textarea.input1 {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
+.pro-details-page .about .share-box .social a i
+{
+  position: relative;
+  color: #00e676;
+  font-size: 35px;
+  top: 8px;
+  left: 4px;
+}
 
-.pro-details-page .about .share-box .social a:hover img {
+.pro-details-page .about .share-box .social a:hover img , .pro-details-page .about .share-box .social a:hover i {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }

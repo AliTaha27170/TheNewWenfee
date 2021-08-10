@@ -125,9 +125,21 @@ use     App\hellpers\like_;
                         <div class="share-box">
                             <strong>Share The Product</strong>
                             <div class="social">
-                                <a href="#"><img src="{{ asset('img/sc/facebook.png') }}"></a>
-                                <a href="#"><img src="{{ asset('img/sc/instagram.png') }}"></a>
-                                <a href="#"><img src="{{ asset('img/sc/twitter.png') }}"></a>
+                                <a href="#" id="FB_Share" target="_blank"><img src="{{ asset('img/sc/facebook.png') }}"></a>
+                                <a href="#" id="Twitter_Share" target="_blank"><img src="{{ asset('img/sc/twitter.png') }}"></a>
+                                <a href="#" id="Whatsapp_Share" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                <script>
+                                                                        /* Share Buttons */
+                                    var FB_ShareButton = document.getElementById('FB_Share') ; //FaceBook
+                                    FB_ShareButton.href = "https://www.facebook.com/sharer.php?u=" +  window.location.href; //Facebook
+
+                                    var Twitter_ShareButton = document.getElementById('Twitter_Share') ; //Twitter
+                                    Twitter_ShareButton.href = "https://www.twitter.com/share?text=text&url=" +  window.location.href +"&hashtags=#Wenfee"; //Twitter
+
+                                    var Whatsapp_ShareButton = document.getElementById('Whatsapp_Share') ; //Whatsapp
+                                    Whatsapp_ShareButton.href = "https://api.whatsapp.com/send?phone=&text=" +  window.location.href; //Whatsapp
+
+                                </script>
                             </div>
 
                         </div>
