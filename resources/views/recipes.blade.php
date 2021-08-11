@@ -22,7 +22,7 @@
                                 src="/img/cloche.svg" alt=""> <span>{{$cat->title}}</span></a></li>
                             @endforeach
                         @endif
-                      
+
                         </ul>
 
                     </div>
@@ -57,7 +57,7 @@
                         <p class="description">{{$item->short_desc}}</p>
                         <footer class="content__footer"><a href="{{route('recipe-preview',$item->slug)}}">View Recipe</a></footer>
                     </div>
-                </div> 
+                </div>
                                 @endforeach
                             @endif
                             {{$recipes->links()}}

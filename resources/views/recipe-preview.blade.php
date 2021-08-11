@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@php
+use     App\hellpers\like_;
+@endphp
 @section('content')
 
 <div class="pro-details-page">
@@ -84,5 +86,77 @@
                 </div>
 </div>
 </div>
+
+
+<section class="products">
+    <div class="heading">
+        <h3>Ingredients </h3>
+    </div>
+    <br>
+    <div class="products-slider-pr">
+        <div class="products-slider">
+            @if ( isset($recipe->res_products))
+                @foreach ($recipe->res_products as $prod)
+                    <div>
+                        <div class="item">
+                            <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->product->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
+
+                                @if (isset(auth()->user()->id) and like_::check($prod->product->id))
+                                onclick="unLike(this,{{ $prod->product->id }})"
+                                @else
+                                onclick="like(this,{{ $prod->product->id }})"
+
+
+                                @endif
+
+                                ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->product->id) }}" class="content">
+
+                                @if ($prod->product->is_offer and isset($prod->product->discount) )
+                                <p class="sale">{{ $prod->discount }}% OFF</p>
+                                @elseif ($prod->product->is_offer)
+                                <small class="sale">Free Shipping</small>
+                                @endif
+
+                                <div class="background-image"
+                                    style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->product->image}}');"></div>
+
+                                <h3>
+                                    <span class="brand">{{ $prod->product->name }}</span>
+                                    <span class="code">#{{ $prod->code }}</span>
+                                </h3>
+                                <h4 style="height: 150px">{!! $prod->product->body  !!}</h4>
+
+                                @if ($prod->product->discount)
+                                    <p class="price">
+                                        <strong>${{ $prod->product->price - $prod->product->price * ($prod->product->discount / 100) }}</strong>
+                                        <span><del>${{ $prod->product->price }}</del></span>
+                                    </p>
+                                @else
+                                    <p class="price"><strong>${{ $prod->product->price }}</strong></p>
+                                @endif
+                            </a>
+
+                            <div class="cart-pr">
+                                <div class="cart">
+                                    <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->product->ac_id }},{{ $prod->product->id }});" href="javascript:void(0);">
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart</a>
+                                    <div class="counter">
+                                        <button type="button" class="minus-btn"><img
+                                                src="{{ asset('img/minus.svg') }}"></button>
+                                        <input readonly name="qty" type="text" value="1" id="qty{{  $prod->product->id }}">
+                                        <button type="button" class="plus-btn"><img
+                                                src="{{ asset('img/plus.svg') }}"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+</section>
+
 
 @endsection
