@@ -1084,6 +1084,33 @@ body .anim1 .counterrotate {
   padding: 5px;
   background-color: #009688;
 }
+.Number-Of-Products {
+  position: relative;
+  margin-top : 20px ;
+  padding-right: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+.Number-Of-Products span {
+  background-color: #fff;
+  margin-bottom: 0;
+  color: #007b70;
+  display: inline-block;
+  font-size: 20px;
+  z-index: 9;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.Number-Of-Products::after {
+  position: absolute;
+  bottom: 12px;
+  width: 90%;
+  right: 5%;
+  height: 1px;
+  content: '';
+  background-color: #e7e7e7;
+  z-index: -1;
+}
 
 .products .item {
   width: 300px;

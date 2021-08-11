@@ -9,7 +9,7 @@
                 <h2 id="Fav_Header">Your Favourite Products</h2>
                
                   <div class="container NumberOfProducts">
-            <span>{{ $likes->count() }} Items</span>
+            <span><!--{{ $likes->count() }} --> Items</span>
             </div>
                 <div class="right-panel">
                     <div class="products">
