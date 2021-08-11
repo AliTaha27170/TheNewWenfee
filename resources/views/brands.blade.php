@@ -31,6 +31,7 @@
   </div>
   <span id="Letter">A<hr></span>
   <ul class="brands_list">
+<<<<<<< Updated upstream
     <li class="brand_item">
       <h2 class="brand_logo"><a title="URBAN OUTFITTERS" href="https://www.terminalx.com/brands/urban-outfitters"> <img class="brand_logo" src="https://media.terminalx.com/pub/media/resized/225_96//catalog/category/urbanoutfitters-brand.jpg" alt="URBAN OUTFITTERS" /> </a></h2>
     </li>
@@ -39,6 +40,13 @@
     </li>
     <li class="brand_item">
       <h2 class="brand_logo"><a title="CALVIN KLEIN" href="https://www.terminalx.com/brands/calvin-klein"> <img class="brand_logo" src="https://media.terminalx.com/pub/media/resized/248_96//catalog/category/ckyvo-brand.jpg" alt="CALVIN KLEIN" /> </a></h2>
+=======
+
+    @foreach($brands as $brand)
+
+    <li class="brand_item">
+      <h2 class="brand_logo"><a title="{{$brand->name}}" href="#"> <img class="brand_logo" src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{$brand->logo}}" alt="" /> </a></h2>
+>>>>>>> Stashed changes
     </li>
     <li class="brand_item">
       <h2 class="brand_logo"><a title="NIKE" href="https://www.terminalx.com/brands/nike"> <img class="brand_logo" src="https://media.terminalx.com/pub/media/resized/139_96//catalog/category/nike-brand.jpg" alt="NIKE" /> </a></h2>
@@ -354,6 +362,69 @@
 
 </div>
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+<!-- <section class="products">
+  <div class="heading">
+      <h3>Related Products</h3>
+  </div>
+  <br>
+  <div class="products-slider-pr">
+      <div class="products-slider">
+                  <div>
+                    <div class="item">
+                      <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
+                      <a href="#" class="content">
+
+                          <p class="sale">50 % OFF</p>
+                          <small class="sale">Free Shipping</small>
+
+                          <div class="background-image"
+                              style="background-image: url('#');"></div>
+
+                          <h3>
+                              <span class="brand">Ali Taha</span>
+                              <span class="code">#g55525</span>
+                          </h3>
+                          <h4 style="height: 150px">Hello World ! </h4>
+
+                              <p class="price">
+                                  <strong>$50</strong>
+                                  <span><del>$52</del></span>
+                              </p>
+
+                      </a>
+
+                      <div class="cart-pr">
+                          <div class="cart">
+                              <a  class="add-cart-btn"  onclick="add_to_cart_main(" href="javascript:void(0);">
+                                  <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                  Add to cart</a>
+                              <div class="counter">
+                                  <button type="button" class="minus-btn"><img
+                                          src=""></button>
+                                  <input readonly name="qty" type="text" value="1" id="">
+                                  <button type="button" class="plus-btn"><img
+                                          src="#"></button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+      </div>
+  </div>
+</section> -->
+
+
+
+
+
+>>>>>>> Stashed changes
 <style>
     .page-brands {
   padding-bottom: 30px;

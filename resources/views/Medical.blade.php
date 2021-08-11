@@ -3,7 +3,6 @@
 @section('content')
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>
-
     <div class="product-page">
         <div class="row">
 
@@ -11,23 +10,17 @@
                 <form id="search-form" action="{{ route('viewall') }}" method="GET">
 
                     <div class="left-panel">
-                        <h2>Category</h2>
-                        <div class="select">
-                            <select name="slug">
-                                <option value="">All Categories</option>
-                                @foreach ($categories as $item)
-                                    @if (request()->slug)
-                                        <option value="{{ $item->slug }}"
-                                            {{ $item->slug == request()->slug ? 'selected' : '' }}>{{ $item->name }}
-                                        </option>
-                                    @else
-                                        <option value="{{ $item->slug }}">{{ $item->name }}</option>
-                                    @endif
-                                @endforeach
+                        <h2 id="Medical_Categories">Medical Supplies</h2>
+                        <ul id="Medical_List">
+                            <li><a href="#"> Vitamins & Dietary Supplements </a></li>
+                            <li><a href="#"> Pain Relievers </a></li>
+                            <li><a href="#"> Disposable Face Masks & Gloves </a></li>
+                            <li><a href="#"> Band Aids </a></li>
+                            <li><a href="#"> Sexual Wellness </a></li>
+                            <li><a href="#"> Pregnancy Tests </a></li>
+                            <li><a href="#"> Gift Bags </a></li>
+                        </ul>
 
-                            </select>
-                            <div class="select__arrow"></div>
-                        </div>
 
                         <h2>Price</h2>
                         <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
@@ -45,28 +38,96 @@
             </div>
 
             <div class="col-md-9">
+            <h2 id="Medical_Header">Medical Supplies</h2>
+            <!--_____________________________________________________________________-->
+
+    <div class="Medical-carousel">
+
+    <!--
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+-->
+  <div class="slide">
+    <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+  <!--
+    <div class="slide">
+
+    <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+-->
+
+    <div class="slide">
+
+    <img src="https://wenfee.com/Slides/4.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+    <div class="slide">
+
+
+    <img src="https://wenfee.com/Slides/5.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+    <div class="slide">
+
+    <img src="https://wenfee.com/Slides/6.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+
+
+
+
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+
+
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+
+
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+
+
+
+  <div class="slide">
+
+    <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
+  </div>
+</div>
+
+<!--_____________________________________________________________________-->
                 <div class="right-panel">
                     <div class="products">
                         <div class="grid">
                             @if ($products->count() > 0)
                                 @foreach ($products as $prod)
                                 <div class="item">
-<<<<<<< Updated upstream
                                     <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
-=======
-                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
-
-                                        @if (isset(auth()->user()->id) and like_::check($item->id))
-                                        onclick="unLike(this,{{ $prod->id }})"
-                                        @else
-                                        onclick="like(this,{{ $prod->id }})"
-
-
-                                        @endif
-
-                                        ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
->>>>>>> Stashed changes
                                         @if ($prod->is_offer and isset($prod->discount) )
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
                                             @elseif ($prod->is_offer)
@@ -79,7 +140,10 @@
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                        <h4 style="height: 150px">{!! $prod->body  !!}</h4>
+                                        <h4 style="height: 150px">{!! $prod->body  !!}
+                                        <span class="NewProduct">NEW</span>
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                    </h4>
 
                                         @if ($prod->discount)
                                             <p class="price">
@@ -119,7 +183,46 @@
             </div>
         </div>
     </div>
-
+    <!-- adding to cart alert -->
+    <div class="alert hide">
+  <span class="fas fa-exclamation-circle"></span>
+  <span class="msg">You added Product to your shopping cart.</span>
+  <div class="close-btn">
+    <span class="fas fa-times"></span>
+  </div>
+</div>
+<style>
+    .alert{
+  background: #007b71c6;
+  padding: 20px 40px;
+  width: 600px;
+  position: fixed;
+  right: -15px;
+  top: 80%;
+  border-radius: 4px;
+  border-left: 8px solid #007B70;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+</style>
+<script>
+    $('.add-cart-btn').click(function(){
+  $('.alert').addClass("show");
+  $('.alert').removeClass("hide");
+  $('.alert').addClass("showAlert");
+  setTimeout(function(){
+    $('.alert').removeClass("show");
+    $('.alert').addClass("hide");
+  },2000);
+});
+$('.close-btn').click(function(){
+  $('.alert').removeClass("show");
+  $('.alert').addClass("hide");
+});
+</script>
+    <!-- adding to cart alert -->
 @endsection
 
 @push('styles')
@@ -177,9 +280,31 @@
         }
 
         /*Pagination*/
-            .carousel{
-                display: none;
-            }
-
+        .slide .background-image {
+            margin : 0 ;
+        }
     </style>
+    <Script>
+        //SLider//
+
+window.addEventListener('DOMContentLoaded', function(e) {
+    $('.Medical-carousel').slick({
+      dots: true,
+      autoplay: true,
+      autoplaySpeed: 7000,
+      prevArrow: '<button class="previous-button is-control">' +
+                 '  <span class="fas fa-angle-left" aria-hidden="true"></span>' +
+                 '  <span class="sr-only">Previous slide</span>' +
+                 '</button>',
+      nextArrow: '<button class="next-button is-control">' +
+                 '  <span class="fas fa-angle-right" aria-hidden="true"></span>' +
+                 '  <span class="sr-only">Next slide</span>' +
+                 '</button>'
+    });
+  });
+
+
+
+//Slider//
+    </Script>
 @endpush

@@ -6,7 +6,7 @@ $total =0 ;
 <script>
   total =  '$ '+getCookie('total');
   $('#total').text(total);
- 
+
 </script>
 
 <h2> Shopping Cart </h2>
@@ -15,7 +15,7 @@ $total =0 ;
 
 @php
 foreach ($_COOKIE as $key => $value) {
-   
+
     if($key[0]=='p')
         {
             try
@@ -23,35 +23,46 @@ foreach ($_COOKIE as $key => $value) {
                $product =  Product::find($value);
                $id      =  $product->id;
                $q       =  $_COOKIE['q'.$id];
-    
+
                 @endphp
-              
+
 
                   <li>
-                    <img src="https://wenfee.com/strorge/{{ $product->image }}" alt="" class="cart_img">
-              
+                    <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image }}" alt="" class="cart_img">
+
                     <span class="cd-qty"> {{ $q }} x</span> {!! $product->body !!}
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
                     <div class="cd-price">${{ round($product->price * $q ,2) }}</div>
 
                     @php
                         $total += round($product->price * $q ,2);
                     @endphp
+<<<<<<< Updated upstream
                     <!-- 
                       <a href="#0" class="cd-item-remove cd-img-replace"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }},1);">Remove</a>
 
                      -->
+=======
+
+
+
+
+>>>>>>> Stashed changes
                   </li>
-              
-        
-              
+
+
+
 
 
 
                 @php
-                    
-             
 
-               
+
+
+
 
             }
            //catch exception
@@ -59,14 +70,14 @@ foreach ($_COOKIE as $key => $value) {
               echo 'Message: ' .$e->getMessage();
             }
         }
-        
+
 }
 setcookie("total", $total, time() + (86400 * 30), "/");
 @endphp
 
 
   </ul> <!-- cd-cart-items -->
-              
+
                 @if ( isset($_COOKIE['total'])  && ($_COOKIE['total'] != '0'))
                 <div class="cd-cart-total">
                   <p>Total <span>${{ $total }}</span></p>
@@ -76,6 +87,36 @@ setcookie("total", $total, time() + (86400 * 30), "/");
                   <p>Empty ! <span> </span></p>
                 </div> <!-- cd-cart-total -->
                 @endif
+<<<<<<< Updated upstream
               
             
               <a href="#0" class="checkout-btn" onclick="checkout()">Checkout</a>
+=======
+
+
+              <a href="#checkout" class="checkout-btn" onclick="checkout()">Checkout</a>
+              <script>
+                //Product counter//
+var num;
+
+$('.button-count:first-child').click(function(){
+  num = parseInt($('.number-product').val());
+  if (num > 1) {
+    $('.number-product').val(num - 1);
+  }
+  if (num == 2) {
+    $('.button-count:first-child').prop('disabled', true);
+  }
+});
+
+$('.button-count:last-child').click(function(){
+  num = parseInt($('.number-product').val());
+    $('.number-product').val(num + 1);
+  if (num > 0) {
+    $('.button-count:first-child').prop('disabled', false);
+  }
+
+});
+//Product counter//
+              </script>
+>>>>>>> Stashed changes

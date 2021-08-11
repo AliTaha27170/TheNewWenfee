@@ -3,38 +3,57 @@
 @section('content')
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
+<<<<<<< Updated upstream
     <!--_____________________________________________________________________-->
 
     <div class="carousel">
     
+=======
+
+    <!--_____________________________________________________________________-->
+
+    <div class="carousel">
+
+        <!--
+>>>>>>> Stashed changes
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     
       <div class="slide">
         <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
+<<<<<<< Updated upstream
     
+=======
+
+
+>>>>>>> Stashed changes
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/4.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
         <div class="slide">
-    
-    
+
+
         <img src="https://wenfee.com/Slides/5.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/6.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
+<<<<<<< Updated upstream
     
     
      
@@ -44,26 +63,66 @@
       </div>
     
       
+=======
+
+
+
+
+
+>>>>>>> Stashed changes
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-         
+
+
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
 
+
+<<<<<<< Updated upstream
      
+=======
+      <div class="slide">
+
+        <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+
+
+
+      <div class="slide">
+
+        <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+
+
+
+      <div class="slide">
+
+        <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+
+
+
+      <div class="slide">
+
+        <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
+      </div>
+
+
+
+
+
+>>>>>>> Stashed changes
     </div>
-    
+
     <!--_____________________________________________________________________-->
 
     <div class="features-box">
         <ul>
-           
+
             {{-- <li>
                 <img src="/img/features/heart.svg">
                 <div>
@@ -115,15 +174,21 @@
                 <a href="/category/bread" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
+<<<<<<< Updated upstream
         
         
         <div class="tcb-box" style="background-image: url('/img/cats/cat3-min.jpg')">
+=======
+
+
+        <div class="tcb-box" style="background-image: url('https://i.ibb.co/TwmG5bg/nuts.jpg');/* background-size: cover; */">
+>>>>>>> Stashed changes
             <div class="content">
                 <h1>Fresh Vegetables</h1>
                 <a href="/category/dried-fruit-and-dates" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
-        
+
     </div>
 
     @if ($slideCategories)
@@ -158,24 +223,46 @@
                         @foreach ($item->products as $prod)
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
+<<<<<<< Updated upstream
                                     <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
                                     <div class="FrozenProduct"><i class="fas fa-snowflake"></i></div>
+=======
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
+
+                                        @if (isset(auth()->user()->id) and like_::check($item->id))
+                                        onclick="unLike(this,{{ $prod->id }})"
+                                        @else
+                                        onclick="like(this,{{ $prod->id }})"
+
+
+                                        @endif
+
+                                        ></i><!--class="fas fa-heart"--></a>
+>>>>>>> Stashed changes
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
                                         @endif
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}');"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}');"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
+<<<<<<< Updated upstream
                                       
                                 
                                         <h4 style="height: 150px">{!! $prod->body !!}</h4>
 
+=======
+
+
+                                        <h4 style="height: 150px">{!! $prod->body !!}
+                                        <span class="NewProduct">NEW</span>
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div></h4>
+>>>>>>> Stashed changes
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>
@@ -210,6 +297,93 @@
     @endif
 {{-- comment 
 
+<<<<<<< Updated upstream
+=======
+    </style>
+    <!--
+    <section class="container BrandsSection">
+        <h2>Our Brands</h2>
+    <div class="BrandsSlider">
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+            </div>
+            </section>
+        -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+            <script>
+                $('.BrandsSlider').slick(
+                    {
+                    slidesToShow : 5 ,
+                    slidesToScroll : 2 ,
+                    dots : true ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true ,
+                    responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                    slidesToShow : 5 ,
+                    slidesToScroll : 2 ,
+                    dots : true ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true ,
+                    }
+                    },
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                ]
+                    }
+                );
+
+            </script>
+    <!-- Brands Slider -->
+<!--
+>>>>>>> Stashed changes
     <section class="albums-home-box">
         <div class="slider-title">
             <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
@@ -238,7 +412,12 @@
         </div>
 
     </section>
+<<<<<<< Updated upstream
 
+=======
+-->
+<!--
+>>>>>>> Stashed changes
     <section class="recipes-section">
         <div class="content-box">
 
@@ -360,9 +539,9 @@
                 } else {
                 }
             });
-            
+
             $(".nav").removeClass("is-scrolled");
-            
+
         })
 
     </script>
@@ -426,4 +605,12 @@ $('.close-btn').click(function(){
 });
 </script>
     <!-- adding to cart alert -->
+<<<<<<< Updated upstream
 @endsection
+=======
+
+
+
+
+@endsection
+>>>>>>> Stashed changes

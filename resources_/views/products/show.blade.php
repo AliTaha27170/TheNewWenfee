@@ -8,7 +8,7 @@
                 <?php $images = json_decode($product->gallery); ?>
                 <div class="col-md-1 product_mob">
                     <div class="slider-nav">
-                        <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="70px" height="auto"
+                        <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image}}" width="70px" height="auto"
                                 alt=""></div>
                         @if ($images)
                             @if (count($images) > 0)
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="slider-for">
-                        <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="250px" height="auto"
+                        <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image}}" width="250px" height="auto"
                                 alt=""></div>
                         @if ($images)
                             @if (count($images) > 0)
@@ -59,7 +59,7 @@
                                 </li>
                             @endif
                             <li>
-                               
+
 
                                 @if ($product->size==0)
                                 <p>
@@ -75,7 +75,7 @@
                             @endif
 
 
-                               
+
                             </li>
                         </ul>
 
@@ -93,7 +93,7 @@
                         </div>
 
 
-                     
+
                             <div class="cart-pr">
                                 <div class="cart">
                                     <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }});" href="javascript:void(0);">
@@ -108,7 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                  
+
 
                         <div class="share-box">
                             <strong>Share The Product</strong>
@@ -147,7 +147,7 @@
                                         @endif
 
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}');"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}');"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
