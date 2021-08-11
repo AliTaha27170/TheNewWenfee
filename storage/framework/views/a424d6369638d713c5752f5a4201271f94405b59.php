@@ -1,6 +1,9 @@
 
 
 <?php $__env->startSection('content'); ?>
+<?php
+use     App\hellpers\like_;
+?>
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>
 
@@ -46,14 +49,26 @@
             </div>
 
             <div class="col-md-9">
+                <div class="container Number-Of-Products">
+                  <span></span>
+                </div>
                 <div class="right-panel">
                     <div class="products">
                         <div class="grid">
                             <?php if($products->count() > 0): ?>
                                 <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="item">
-                                    <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
-                                    <a href="<?php echo e(route('show-product', $prod->id)); ?>" class="content">
+                                    <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"    
+
+                                        <?php if(isset(auth()->user()->id) and like_::check($item->id)): ?>
+                                        onclick="unLike(this,<?php echo e($prod->id); ?>)"
+                                        <?php else: ?>
+                                        onclick="like(this,<?php echo e($prod->id); ?>)"
+
+
+                                        <?php endif; ?>
+                                        
+                                        ></i><!--class="fas fa-heart"--></a>                                    <a href="<?php echo e(route('show-product', $prod->id)); ?>" class="content">
                                         <?php if($prod->is_offer and isset($prod->discount) ): ?>
                                             <p class="sale"><?php echo e($prod->discount); ?>% OFF</p>
                                             <?php elseif($prod->is_offer): ?>

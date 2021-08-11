@@ -113,7 +113,8 @@ class PageController extends Controller
     $products = Product::with('brand')->whereHas('brand', function ($query) use($slug) {
         $query->where('slug',$slug);
     });
-    $products=$products->paginate(9);
+    $products=$products->get();
+    //dd($products);
     return view('viewall',compact('categories','products'));
    }
    public function viewall(Request $request)
@@ -156,9 +157,19 @@ class PageController extends Controller
    }
    public function brands()
    {
-      $brands=Brand::all();
+      $brands=Brand::all();      
+      $fbrands=Brand::orderBy('name','asc')->get();
+      $groups=$fbrands->reduce(function($carry,$brand){
+        $first=$brand['name'][0];
+        if(!isset($carry[$first])){
+            $carry[$first]=[];
+        }
+        $carry[$first][]=$brand;
+        return $carry;
+    },[]);
+    //dd($groups);
          
-       return view('brands',compact('brands'));
+       return view('brands',compact('brands','groups'));
    }
 
 

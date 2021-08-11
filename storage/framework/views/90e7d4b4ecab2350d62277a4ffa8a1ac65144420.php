@@ -29,19 +29,19 @@
              autofocus placeholder="Brands Search" class="input-text" maxlength="128">
     </div>
   </div>
-  <div class="CustomLetter">
-<h2>A</h2>
-</div>
-  <ul class="brands_list">
+  
+      <?php $__currentLoopData = $groups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $letter =>$group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <div class="CustomLetter">
+      <h2><?php echo e($letter); ?></h2>
+         <?php $__currentLoopData = $group; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bbrand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+      <ul class="brands_list">
+          <li class="brand_item">
+              <h2 class="brand_logo"><a title="<?php echo e($bbrand->name); ?>" href="/brand/<?php echo e($bbrand->slug); ?>"> <img class="brand_logo" src="https://wenfee.com/strorge/<?php echo e($bbrand->logo); ?>" alt="" /> </a></h2>
+            </li>
       
-    <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    
-    <li class="brand_item">
-      <h2 class="brand_logo"><a title="<?php echo e($brand->name); ?>" href="#"> <img class="brand_logo" src="<?php echo e(Voyager::image($brand->logo)); ?>" alt="" /> </a></h2>
-    </li>
-    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-    
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+      <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>    
   </ul>
 
 </div>

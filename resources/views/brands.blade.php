@@ -29,23 +29,19 @@
              autofocus placeholder="Brands Search" class="input-text" maxlength="128">
     </div>
   </div>
-  <div class="CustomLetter">
-<h2>A</h2>
-</div>
-  <ul class="brands_list">
-      
-    @foreach($brands as $brand)
-    
-    <li class="brand_item">
-      <h2 class="brand_logo"><a title="{{$brand->name}}" href="#"> <img class="brand_logo" src="{{Voyager::image($brand->logo)}}" alt="" /> </a></h2>
-    </li>
-    @endforeach
-
-    {{--
-    <li class="brand_item">
-      <h2 class="brand_logo"><a title="NIKE" href="https://www.terminalx.com/brands/nike"> <img class="brand_logo" src="https://media.terminalx.com/pub/media/resized/139_96//catalog/category/nike-brand.jpg" alt="NIKE" /> </a></h2>
-    </li>
-     --}}
+  
+      @foreach($groups as $letter =>$group)
+      <div class="CustomLetter">
+      <h2>{{$letter}}</h2>
+         @foreach($group as $bbrand)
+      <ul class="brands_list">
+          <li class="brand_item">
+              <h2 class="brand_logo"><a title="{{$bbrand->name}}" href="/brand/{{$bbrand->slug}}"> <img class="brand_logo" src="https://wenfee.com/strorge/{{ $bbrand->logo}}" alt="" /> </a></h2>
+            </li>
+      {{-- <li>{{$bbrand['name']}}</li> --}}
+      @endforeach
+    </div>
+      @endforeach    
   </ul>
 
 </div>
