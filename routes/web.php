@@ -63,7 +63,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //search
 
 Route::post('search',[SearchController::class, 'search'])->name('magic_search');
-
+Route::post('brand/search',[SearchController::class, 'searchBrand'])->name('brand_search');
 Route::get('test2171',[SearchController::class, 'test']);
 
 //get products 

@@ -15,20 +15,11 @@
 
   </div>
 <!--   <ul class="brand-letters"></ul> -->
-  <div class="page-brands__search">
-    <div class="search_questions_wrap">
-      <svg width="19" height="19" viewBox="0 0 19 19" fill="none" class="icon" xmlns="http://www.w3.org/2000/svg">
-        <path d="M13.6224 11.9819C14.5359 10.7345 15.0823 9.20224 15.0823 7.5412C15.0823 3.38312 11.6992 0 7.54112 0C3.38307 0 0 3.38312 0 7.5412C0 11.6993 3.3831 15.0824 7.54115 15.0824C9.20219 15.0824 10.7345 14.5359 11.982 13.6225L16.9223 18.5629L18.5629 16.9223C18.5629 16.9223 13.6224 11.9819 13.6224 11.9819ZM7.54115 12.762C4.66223 12.762 2.32037 10.4201 2.32037 7.5412C2.32037 4.66226 4.66223 2.32038 7.54115 2.32038C10.4201 2.32038 12.7619 4.66226 12.7619 7.5412C12.7619 10.4201 10.42 12.762 7.54115 12.762Z" fill="#007b70" />
-      </svg>
-      <button class="btn-grey brands-clear">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8 16C12.4111 16 16 12.4111 16 8C16 3.58887 12.4111 0 8 0C3.58887 0 0 3.58887 0 8C0 12.4111 3.58887 16 8 16ZM4.76437 5.70706C4.63416 5.57691 4.63416 5.36584 4.76437 5.23566L5.23563 4.76437C5.36584 4.63422 5.57684 4.63422 5.70706 4.76437L8 7.05728L10.2929 4.76434C10.4232 4.63419 10.6342 4.63419 10.7644 4.76434L11.2357 5.23566C11.3659 5.36581 11.3659 5.57688 11.2357 5.70706L8.94272 8.00003L11.2357 10.293C11.3659 10.4231 11.3659 10.6342 11.2357 10.7644L10.7644 11.2357C10.6342 11.3658 10.4232 11.3658 10.2929 11.2357L8 8.94275L5.70706 11.2357C5.57684 11.3658 5.36584 11.3658 5.23563 11.2357L4.76434 10.7644C4.63413 10.6342 4.63413 10.4232 4.76434 10.293L7.05728 8.00003L4.76437 5.70706Z" fill="black"/>
-</svg>
-      </button>
-      <input id="search_questions" name="search" type="search"
-             autofocus placeholder="Brands Search" class="input-text" maxlength="128">
-    </div>
-  </div>
+<form class="d-flex" action="{{ route('brand_search') }}" method="POST" id="Navbar_Search">
+    @csrf
+    <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+  </form>
   
       @foreach($groups as $letter =>$group)
       <div class="CustomLetter">

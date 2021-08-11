@@ -294,11 +294,18 @@ use     App\hellpers\like_;
 
 
     </style>
-    <!-- 
+    
     <section class="container BrandsSection">
         <h2>Our Brands</h2>
     <div class="BrandsSlider">
+        @foreach($brands as $brand)
         <div class="Brands-item">
+            <a href="/brand/{{$brand->slug}}">
+                <img src="https://wenfee.com/strorge/{{ $brand->logo}}" alt="BrandLogo">
+            </a>
+        </div>
+        @endforeach
+        {{-- <div class="Brands-item">
             <a href="#">
                 <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
             </a>
@@ -322,15 +329,10 @@ use     App\hellpers\like_;
             <a href="#">
                 <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
             </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
+        </div> --}}
             </div>
             </section>         
-        -->
+        
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
             <script>
