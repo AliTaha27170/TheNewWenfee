@@ -406,10 +406,9 @@ use     App\hellpers\like_;
 
     </section>
 -->
-<!--  
+  
     <section class="recipes-section">
         <div class="content-box">
-
             <h1 class="title-with-img">
                 <img src="/img/chef.png">
                 <div>
@@ -417,14 +416,15 @@ use     App\hellpers\like_;
                 </div>
             </h1>
             <div class="recipes-box">
+                    @foreach($recipes as $recipe)
                 <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="/img/thumb_rec1.jpg" />
+                        <img src="{{ Voyager::image($recipe->recipe_image) }}" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">
                             <div class="row-wrapper">
-                                <h2 class="recipe-title">Fried Kebbeh</h2>
+                                <h2 class="recipe-title">{{$recipe->title}}</h2>
                                 <div class="user-rating"></div>
                             </div>
                             <ul class="recipe-details">
@@ -442,11 +442,14 @@ use     App\hellpers\like_;
                             There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
                             treat
                             with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="#">View Recipe</a></footer>
+                        <footer class="content__footer"><a href="/recipe/preview/{{ $recipe->slug }}">View Recipe</a></footer>
                     </div>
+                  
                 </div>
+                @endforeach
+                
 
-                <div class="ft-recipe">
+                {{-- <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
                         <img src="/img/thumb_rec2.jpg" />
                     </div>
@@ -503,14 +506,14 @@ use     App\hellpers\like_;
                         <footer class="content__footer"><a href="#">View Recipe</a></footer>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="ta-c">
-                <a href="#" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
+                <a href="/recipes" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
     </section>
--->
+
     <script>
         $(document).ready(function() {
 

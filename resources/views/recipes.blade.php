@@ -10,7 +10,7 @@
             </div>
         </h1>
         <div class="row">
-            <!-- <div class="col-md-3" style="position: relative">
+            {{-- <!-- <div class="col-md-3" style="position: relative">
                 <div class="left-panel">
                     <h3>Recipes Categories</h3>
                     <ul class="recipes-cats-list">
@@ -26,7 +26,7 @@
                         </ul>
 
                     </div>
-                </div> -->
+                </div> --> --}}
                 <div class="col-md-12">
                     <div class="right-panel">
 
@@ -71,7 +71,7 @@
             </div>
         </div>
 
-        <section class="products">
+        {{-- <section class="products">
   <div class="heading">
       <h3>Recipe Products</h3>
   </div>
@@ -119,6 +119,6 @@
                   </div>
                   </div>
       </div>
-  </div>
+  </div> --}}
 </section>
 @endsection

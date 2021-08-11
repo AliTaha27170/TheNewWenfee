@@ -216,6 +216,7 @@ button {
   min-height: 70px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
+  display: none ;
 }
 
 .ft-recipe .ft-recipe__content .content__footer {
