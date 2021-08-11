@@ -39,8 +39,7 @@ class PageController extends Controller
    {
        return view('about');
    }
-<<<<<<< Updated upstream
-=======
+   
    public function HowToOrder()
    {
        return view('HowToOrder');
@@ -59,8 +58,12 @@ class PageController extends Controller
 
     $likes = auth()->user()->favProducts ;
     return view('Fav',compact('categories','likes',));
->>>>>>> Stashed changes
 
+   }
+   public function ShippingInformation()
+   {
+       return view('ShippingInformation');
+   }
    public function contact()
    {
     $contacts=ContactInfo::all();
@@ -168,11 +171,7 @@ class PageController extends Controller
           $products=$products->where('price','>=',(int)$request->minPrice)->where('price','<=',(int)$request->maxPrice);
         }
         if(isset($request->offer)){
-<<<<<<< Updated upstream
-            $products=$products->where('is_offer',1);  
-=======
             $products=$products->where('is_offer',1)->orderBy('offer_n',"ASC");
->>>>>>> Stashed changes
         }
         if(isset($request->keyword)){
             $products=$products->where('name','Like', '%' .$request->keyword. '%');
@@ -188,13 +187,8 @@ class PageController extends Controller
    }
    public function brands()
    {
-<<<<<<< Updated upstream
-      // $brands=Brand::all();
-         $brands = '';
-=======
       $brands=Brand::all();
 
->>>>>>> Stashed changes
        return view('brands',compact('brands'));
    }
 
