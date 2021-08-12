@@ -28,7 +28,7 @@ class PageController extends Controller
      $slideCategories=ProductCategory::where('is_homepage',1)->get();
        $slides=Slide::all();
        $recipes=Recipe::take(3)->inRandomOrder()->get();
-       $brands=Brand::all();
+       $brands=Brand::inRandomOrder()->get();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
 
@@ -93,7 +93,7 @@ class PageController extends Controller
 
        foreach($recipes as $item)
        {
-           if(!($item->processed))
+           if(!($item->processed) and isset($item->products))
            {
                $j=0;
                while (  $j < strlen($item->products) )
@@ -138,14 +138,25 @@ class PageController extends Controller
     $products=$products->get();
     return view('viewall',compact('categories','products',));
    }
+// get products || brands
+
    public function brand($slug){
-    $categories=ProductCategory::where('parent_id','<>',null)->orderBy('order','asc')->get();
-    $products = Product::with('brand')->whereHas('brand', function ($query) use($slug) {
-        $query->where('slug',$slug);
-    });
-    $products=$products->get();
-    return view('viewall',compact('categories','products'));
+
+    try {
+        $categories = ProductCategory::where('parent_id','<>',null)->orderBy('order','asc')->get();
+        $products   = Product::where('name',$slug)->get();
+
+        return view('viewall',compact('categories','products'));
+
+    } catch (\Throwable $th) {
+
+        return back();
+        }
+
+
    }
+
+
    public function viewall(Request $request)
    {
 

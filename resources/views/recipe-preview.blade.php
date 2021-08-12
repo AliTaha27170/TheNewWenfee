@@ -9,14 +9,14 @@ use     App\hellpers\like_;
         <div class="row">
             <div class="col-md-1">
                 <div class="slider-nav">
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="70px" height="auto" alt=""></div>
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="70px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="slider-for">
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="250px" height="auto" alt=""></div>
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="250px" height="auto" alt=""></div>
+                    <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
 
                 </div>
             </div>
@@ -25,8 +25,7 @@ use     App\hellpers\like_;
                     <h3>
                         <span class="brand">{{$recipe->title}}</span>
                     </h3>
-                    <h4>{{$recipe->title}}
-                    </h4>
+
 
                     <!-- <ul class="recipe-details">
                         <li class="recipe-details-item time">
@@ -77,7 +76,7 @@ use     App\hellpers\like_;
                 <div class="col-md-6">
                     <h3>Method</h3>
                     <ul class="continuous-list">
-                        {!!$recipe->Method!!}
+                        {!!$recipe->main_desc!!}
 
                     </ul>
 
@@ -120,7 +119,7 @@ use     App\hellpers\like_;
 
                                 <h3>
                                     <span class="brand">{{ $prod->product->name }}</span>
-                                    <span class="code">#{{ $prod->code }}</span>
+                                    <span class="code">#{{ $prod->product->code }}</span>
                                 </h3>
                                 <h4 style="height: 150px">{!! $prod->product->body  !!}</h4>
 

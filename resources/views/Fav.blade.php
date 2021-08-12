@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <h2 id="Fav_Header">Your Favourite Products</h2>
-               
+
                   <div class="container NumberOfProducts">
             <span><!--{{ $likes->count() }} --> Items</span>
             </div>
@@ -16,7 +16,7 @@
                         <div class="grid">
                             @if ($likes->count() > 0)
                                 @foreach ($likes as $like)
-                                
+
                                 <div class="item">
                                     <button class="fav-btn"><a style="color: #e92e2e" href="{{ route('UnLike',$like->product->id) }}"><i class="fas fa-heart"></i></a></button>
                                     <a href="{{ route('show-product', $like->product->id) }}" class="content">
@@ -26,7 +26,7 @@
                                             <small class="sale">Free Shipping</small>
                                         @endif
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $like->product->image}}')"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $like->product->image}}')"></div>
 
                                         <h3>
                                             <span class="brand">{{ $like->product->name }}</span>
@@ -47,8 +47,8 @@
                                         @endif
                                     </a>
 
-                              
-                     
+
+
                                     <div class="cart-pr">
                                         <div class="cart">
                                             <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $like->product->ac_id }},{{ $like->product->id }});" href="javascript:void(0);">
@@ -67,13 +67,13 @@
                                 @endforeach
 
                                 @else
-                                <center>                            
+                                <center>
                                         <h4>No items ! <br><br></h4> <br><br><br>
                                 </center>
                             @endif
 
                         </div>
-            
+
                     </div>
                 </div>
             </div>
@@ -179,6 +179,6 @@ $('.close-btn').click(function(){
             .carousel{
                 display: none;
             }
-     
+
     </style>
 @endpush

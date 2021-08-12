@@ -26,7 +26,7 @@
                         </ul>
 
                     </div>
-                </div> --> --}} 
+                </div> --> --}}
                 <div class="col-md-12">
                     <div class="right-panel">
 
@@ -35,7 +35,7 @@
                                 @foreach ($recipes as $item)
                                     <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="{{Voyager::image($item->recipe_image)}}" />
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $item->recipe_image }}" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">

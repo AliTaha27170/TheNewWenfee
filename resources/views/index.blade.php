@@ -11,97 +11,97 @@ use     App\hellpers\like_;
 </script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-    
+
     <!--_____________________________________________________________________-->
 
     <div class="carousel">
-    
+
         <!--
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     -->
       <div class="slide">
         <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-      <!-- 
+
+      <!--
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     -->
 
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/4.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
         <div class="slide">
-    
-    
+
+
         <img src="https://wenfee.com/Slides/5.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/6.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-    
-    
-    
-      
+
+
+
+
+
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-         
+
+
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
 
 
 
-     
+
+
     </div>
-    
+
     <!--_____________________________________________________________________-->
 
     <div class="features-box">
         <ul>
-           
+
             {{-- <li>
                 <img src="/img/features/heart.svg">
                 <div>
@@ -153,15 +153,15 @@ use     App\hellpers\like_;
                 <a href="/category/bread" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
-        
-        
+
+
         <div class="tcb-box" style="background-image: url('https://i.ibb.co/TwmG5bg/nuts.jpg');/* background-size: cover; */">
             <div class="content">
                 <h1>Raw Nuts &amp; Seeds</h1>
                 <a href="/category/raw-nuts-and-seeds" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
-        
+
     </div>
 
     @if ($slideCategories)
@@ -196,7 +196,7 @@ use     App\hellpers\like_;
                         @foreach ($item->products as $prod)
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
-                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"    
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
                                         @if (isset(auth()->user()->id) and like_::check($item->id))
                                         onclick="unLike(this,{{ $prod->id }})"
@@ -205,7 +205,7 @@ use     App\hellpers\like_;
 
 
                                         @endif
-                                        
+
                                         ></i><!--class="fas fa-heart"--></a>
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
@@ -213,14 +213,14 @@ use     App\hellpers\like_;
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
                                         @endif
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}');"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}');"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                      
-                                
+
+
                                         <h4 style="height: 150px">{!! $prod->body !!}
                                         <span class="NewProduct">NEW</span>
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div></h4>
@@ -254,9 +254,7 @@ use     App\hellpers\like_;
                     @endforeach
                 </div>
             </div>
-            <div  class="container ViewAllButton" >
-            <a href="#">View all</a>
-            </div>
+
         </div>
     @endif
     <!-- Brands Slider -->
@@ -294,14 +292,18 @@ use     App\hellpers\like_;
 
 
     </style>
-    
+
     <section class="container BrandsSection">
-        <h2>Our Brands</h2>
+
+        <h2> <br> <br> Brands</h2>
+        <div  class="container ViewAllButton" >
+            <a href="{{ route('brands') }}" target="_blank">View all</a>
+            </div>
     <div class="BrandsSlider">
         @foreach($brands as $brand)
         <div class="Brands-item">
             <a href="/brand/{{$brand->slug}}">
-                <img src="https://wenfee.com/strorge/{{ $brand->logo}}" alt="BrandLogo">
+                <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $brand->logo}}" alt="BrandLogo">
             </a>
         </div>
         @endforeach
@@ -331,8 +333,8 @@ use     App\hellpers\like_;
             </a>
         </div> --}}
             </div>
-            </section>         
-        
+            </section>
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
             <script>
@@ -378,7 +380,7 @@ use     App\hellpers\like_;
 
             </script>
     <!-- Brands Slider -->
-<!--  
+<!--
     <section class="albums-home-box">
         <div class="slider-title">
             <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
@@ -408,7 +410,7 @@ use     App\hellpers\like_;
 
     </section>
 -->
-  
+
     <section class="recipes-section">
         <div class="content-box">
             <h1 class="title-with-img">
@@ -421,7 +423,7 @@ use     App\hellpers\like_;
                     @foreach($recipes as $recipe)
                 <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="{{ Voyager::image($recipe->recipe_image) }}" />
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">
@@ -446,10 +448,10 @@ use     App\hellpers\like_;
                             with your pup!!! Strawberries...</p>
                         <footer class="content__footer"><a href="/recipe/preview/{{ $recipe->slug }}">View Recipe</a></footer>
                     </div>
-                  
+
                 </div>
                 @endforeach
-                
+
 
                 {{-- <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
@@ -533,9 +535,9 @@ use     App\hellpers\like_;
                 } else {
                 }
             });
-            
+
             $(".nav").removeClass("is-scrolled");
-            
+
         })
 
     </script>
@@ -601,6 +603,24 @@ $('.close-btn').click(function(){
     <!-- adding to cart alert -->
 
 
+    <style>
+        .slick-dots li{
+            display: none;
+
+        }
+        .BrandsSlider .slick-slide
+        {
+            height: 235px ;
+        }
+.slick-slide img {
+    width: 80%;
+    height: 70%;
+    position: relative;
+    top: 26px;
+    left: 26px;
+
+}
+    </style>
 
 
 @endsection

@@ -57,7 +57,7 @@ use     App\hellpers\like_;
                             @if ($products->count() > 0)
                                 @foreach ($products as $prod)
                                 <div class="item">
-                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"    
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
                                         @if (isset(auth()->user()->id) and like_::check($item->id))
                                         onclick="unLike(this,{{ $prod->id }})"
@@ -66,7 +66,7 @@ use     App\hellpers\like_;
 
 
                                         @endif
-                                        
+
                                         ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer and isset($prod->discount) )
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
@@ -74,7 +74,7 @@ use     App\hellpers\like_;
                                             <small class="sale">Free Shipping</small>
                                         @endif
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}')"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}')"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
@@ -95,8 +95,8 @@ use     App\hellpers\like_;
                                         @endif
                                     </a>
 
-                              
-                     
+
+
                                     <div class="cart-pr">
                                         <div class="cart">
                                             <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);">
@@ -117,7 +117,7 @@ use     App\hellpers\like_;
                             @endif
 
                         </div>
-            
+
                     </div>
                 </div>
             </div>
@@ -223,6 +223,6 @@ $('.close-btn').click(function(){
             .carousel{
                 display: none;
             }
-     
+
     </style>
 @endpush
