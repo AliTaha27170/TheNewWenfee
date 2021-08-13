@@ -11,7 +11,7 @@
 
                     <div class="left-panel">
                         <h2 id="Medical_Categories">Medical Supplies</h2>
-                        <ul id="Medical_List">  
+                        <ul id="Medical_List">
                             <li><a href="#"> Vitamins & Dietary Supplements </a></li>
                             <li><a href="#"> Pain Relievers </a></li>
                             <li><a href="#"> Disposable Face Masks & Gloves </a></li>
@@ -42,7 +42,7 @@
             <!--_____________________________________________________________________-->
 
     <div class="Medical-carousel">
-    
+
     <!--
   <div class="slide">
 
@@ -53,7 +53,7 @@
     <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
 
-  <!-- 
+  <!--
     <div class="slide">
 
     <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
@@ -79,13 +79,13 @@
 
 
 
-  
+
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
 
-     
+
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
@@ -134,7 +134,7 @@
                                             <small class="sale">Free Shipping</small>
                                         @endif
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}')"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}')"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
@@ -155,8 +155,8 @@
                                         @endif
                                     </a>
 
-                              
-                     
+
+
                                     <div class="cart-pr">
                                         <div class="cart">
                                             <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);">
@@ -177,7 +177,7 @@
                             @endif
 
                         </div>
-            
+
                     </div>
                 </div>
             </div>

@@ -10,7 +10,7 @@ use     App\hellpers\like_;
                 <?php $images = json_decode($product->gallery); ?>
                 <div class="col-md-1 product_mob">
                     <div class="slider-nav">
-                        <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="70px" height="auto"
+                        <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image}}" width="70px" height="auto"
                                 alt=""></div>
                         @if ($images)
                             @if (count($images) > 0)
@@ -24,7 +24,7 @@ use     App\hellpers\like_;
                 </div>
                 <div class="col-md-5">
                     <div class="slider-for">
-                        <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="250px" height="auto"
+                        <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image}}" width="250px" height="auto"
                                 alt=""></div>
                         @if ($images)
                             @if (count($images) > 0)
@@ -64,7 +64,7 @@ use     App\hellpers\like_;
                                 </li>
                             @endif
                             <li>
-                               
+
 
                                 @if ($product->size==0)
                                 <img src="/img/offer.png">
@@ -82,12 +82,12 @@ use     App\hellpers\like_;
                                         color: #999;
                                         font-weight: bold;
                                         padding-left: 7px;
-                                    ">LBS 
-                                </span>                         
+                                    ">LBS
+                                </span>
                                    @endif
 
 
-                               
+
                             </li>
                         </ul>
 
@@ -105,7 +105,7 @@ use     App\hellpers\like_;
                         </div>
 
 
-                     
+
                             <div class="cart-pr">
                                 <div class="cart">
                                     <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }});" href="javascript:void(0);">
@@ -120,7 +120,7 @@ use     App\hellpers\like_;
                                     </div>
                                 </div>
                             </div>
-                  
+
 
                         <div class="share-box">
                             <strong>Share The Product</strong>
@@ -161,7 +161,7 @@ use     App\hellpers\like_;
                         @foreach ($products as $prod)
                             <div>
                                 <div class="item">
-                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"    
+                                    <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
                                         @if (isset(auth()->user()->id) and like_::check($prod->id))
                                         onclick="unLike(this,{{ $prod->id }})"
@@ -170,7 +170,7 @@ use     App\hellpers\like_;
 
 
                                         @endif
-                                        
+
                                         ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->id) }}" class="content">
 
                                         @if ($prod->is_offer and isset($prod->discount) )
@@ -180,14 +180,14 @@ use     App\hellpers\like_;
                                         @endif
 
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}');"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}');"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
                                         <h4 style="height: 150px">{!! $prod->body  !!}</h4>
-                                        
+
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>
@@ -244,7 +244,7 @@ $('.close-btn').click(function(){
 });
 </script>
     <!-- adding to cart alert -->
-    
+
     <style>
         .carousel{
             display: none;

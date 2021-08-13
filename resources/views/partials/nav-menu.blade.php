@@ -8,7 +8,7 @@
       </form>
 
       @if (isset(auth()->user()->id))
-          
+
       <div class="Username">
         <i class="fas fa-user User-Icon"></i>
         <button style="
@@ -23,7 +23,7 @@
 </button>
         <span style="color: #fff;padding: 0 5px;">|</span>
         <a href="#" class="FirstNavLinks">{{ auth()->user()->name }}</a>
-        <div class="User-Menu" style="display: block;">
+        <div class="User-Menu" style="display: none;">
       <ul>
         <li><a href="#"> Account Settings<i class="fas fa-cog"></i></a></li>
         <li><a href="#"> Logout <i class="fas fa-sign-out-alt"></i></a></li>
@@ -119,9 +119,12 @@
         </li>
         <!--=========-->
         <li class="nav-item"><a class="nav-link" href="../.../../all?offer=on">Our Offers</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('brands') }}">Brands</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('recipes') }}">Recipes</a></li>
+        {{--
         <li class="nav-item"><a class="nav-link" href="{{ route('HowToOrder') }}">How To Order</a></li>
         <li class="nav-item"><a class="nav-link" href="{{ route('ShippingInformation') }}">Shipping Information</a></li>
-
+--}}
       </ul>
     </div>
 

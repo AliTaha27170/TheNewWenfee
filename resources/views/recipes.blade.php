@@ -10,7 +10,7 @@
             </div>
         </h1>
         <div class="row">
-            {{-- <!-- <div class="col-md-3" style="position: relative">
+           {{--  <div class="col-md-3" style="position: relative">
                 <div class="left-panel">
                     <h3>Recipes Categories</h3>
                     <ul class="recipes-cats-list">
@@ -22,7 +22,7 @@
                                 src="/img/cloche.svg" alt=""> <span>{{$cat->title}}</span></a></li>
                             @endforeach
                         @endif
-                      
+
                         </ul>
 
                     </div>
@@ -35,7 +35,7 @@
                                 @foreach ($recipes as $item)
                                     <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="{{Voyager::image($item->recipe_image)}}" />
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $item->recipe_image }}" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">
@@ -57,7 +57,7 @@
                         <p class="description">{{$item->short_desc}}</p>
                         <footer class="content__footer"><a href="{{route('recipe-preview',$item->slug)}}">View Recipe</a></footer>
                     </div>
-                </div> 
+                </div>
                                 @endforeach
                             @endif
                             {{$recipes->links()}}
@@ -71,54 +71,4 @@
             </div>
         </div>
 
-        {{-- <section class="products">
-  <div class="heading">
-      <h3>Recipe Products</h3>
-  </div>
-  <br>
-  <div class="products-slider-pr">
-      <div class="products-slider">
-                  <div>
-                    <div class="item">
-                      <button class="fav-btn"><i class="fi fi-rr-heart"></i></button>
-                      <a href="#" class="content">
-
-                          <p class="sale">50 % OFF</p>
-                          <small class="sale">Free Shipping</small>
-
-                          <div class="background-image"
-                              style="background-image: url('#');"></div>
-
-                          <h3>
-                              <span class="brand">Ali Taha</span>
-                              <span class="code">#g55525</span>
-                          </h3>
-                          <h4 style="height: 150px">Hello World ! </h4>
-                          
-                              <p class="price">
-                                  <strong>$50</strong>
-                                  <span><del>$52</del></span>
-                              </p>
-                       
-                      </a>
-
-                      <div class="cart-pr">
-                          <div class="cart">
-                              <a  class="add-cart-btn"  onclick="add_to_cart_main(" href="javascript:void(0);">
-                                  <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                  Add to cart</a>
-                              <div class="counter">
-                                  <button type="button" class="minus-btn"><img
-                                          src=""></button>
-                                  <input readonly name="qty" type="text" value="1" id="">
-                                  <button type="button" class="plus-btn"><img
-                                          src="#"></button>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-                  </div>
-      </div>
-  </div> --}}
-</section>
 @endsection

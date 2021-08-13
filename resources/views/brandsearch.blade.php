@@ -5,7 +5,7 @@
         @foreach($brands as $brand)
         <div class="Brands-item">
             <a href="/brand/{{$brand->slug}}">
-                <img src="https://wenfee.com/strorge/{{ $brand->logo}}" alt="BrandLogo">
+                <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $brand->logo}}" alt="BrandLogo">
             </a>
         </div>
         @endforeach

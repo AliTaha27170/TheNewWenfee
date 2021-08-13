@@ -12,7 +12,7 @@
 
 <div class="container">
   <h2>Wenfee</h2>
-  <p>All wenfee products</p>            
+  <p>All wenfee products</p>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -31,11 +31,11 @@
           $i=1;
       @endphp
       @foreach ($products as $item)
-          
+
       <tr>
         @php
-           
-            $image="https://wenfee.com/strorge/";
+
+            $image="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/";
             $img=$item->image;
         @endphp
         <td>{{ $i++ }}</td>

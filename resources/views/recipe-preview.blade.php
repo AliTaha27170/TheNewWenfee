@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@php
+use     App\hellpers\like_;
+@endphp
 @section('content')
 
 <div class="pro-details-page">
@@ -7,14 +9,14 @@
         <div class="row">
             <div class="col-md-1">
                 <div class="slider-nav">
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="70px" height="auto" alt=""></div>
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="70px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
                 </div>
             </div>
             <div class="col-md-5">
                 <div class="slider-for">
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="250px" height="auto" alt=""></div>
-                    <div class="product2"><img src="{{Voyager::image($recipe->recipe_image)}}" width="250px" height="auto" alt=""></div>
+                    <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
 
                 </div>
             </div>
@@ -23,10 +25,9 @@
                     <h3>
                         <span class="brand">{{$recipe->title}}</span>
                     </h3>
-                    <h4>
-                    </h4>
 
-                    {{-- <!-- <ul class="recipe-details">
+
+                    <!-- <ul class="recipe-details">
                         <li class="recipe-details-item time">
                             <img src="/img/fi-rr-time-check.svg" alt="">
                             <span class="value">{{$recipe->preparation_time}}</span><span class="title">Minutes</span>
@@ -35,21 +36,25 @@
                             <img src="/img/fi-rr-users.svg" alt="">
                             <span class="value">{{$recipe->serving_range}}</span><span class="title">Serving</span>
                         </li>
-                    </ul> --> --}}
+                    </ul> -->
 
-                    {{-- <div class="description">
+                    {{--
+                    <div class="description">
                             {!!$recipe->main_desc!!}
-                    </div> --}}
+                    </div>
 
-                    {{-- <div class="share-box">
+                     --}}
+
+                     {{--
+                    <div class="share-box">
                         <strong>Share The Recipe</strong>
                         <div class="social">
                             <a href="#"><img src="{{ asset('img/sc/facebook.png') }}"></a>
                             <a href="#"><img src="{{ asset('img/sc/instagram.png') }}"></a>
                             <a href="#"><img src="{{ asset('img/sc/twitter.png') }}"></a>
-                        </div> --}}
+                        </div>
 
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -65,15 +70,90 @@
                 <h3>Ingredients</h3>
                 <ol class="continuous-list">
                     {!!$recipe->Ingredients!!}
+
                 </ol>
             </div>
                 <div class="col-md-6">
                     <h3>Method</h3>
-                    {!!$recipe->Method!!}
-                        
+                    <ul class="continuous-list">
+                        {!!$recipe->main_desc!!}
+
+                    </ul>
 
                 </div>
 </div>
 </div>
+
+
+<section class="products">
+    <div class="heading">
+        <h3>Ingredients </h3>
+    </div>
+    <br>
+    <div class="products-slider-pr">
+        <div class="products-slider">
+            @if ( isset($recipe->res_products))
+                @foreach ($recipe->res_products as $prod)
+                    <div>
+                        <div class="item">
+                            <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->product->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
+
+                                @if (isset(auth()->user()->id) and like_::check($prod->product->id))
+                                onclick="unLike(this,{{ $prod->product->id }})"
+                                @else
+                                onclick="like(this,{{ $prod->product->id }})"
+
+
+                                @endif
+
+                                ></i><!--class="fas fa-heart"--></a>                                    <a href="{{ route('show-product', $prod->product->id) }}" class="content">
+
+                                @if ($prod->product->is_offer and isset($prod->product->discount) )
+                                <p class="sale">{{ $prod->discount }}% OFF</p>
+                                @elseif ($prod->product->is_offer)
+                                <small class="sale">Free Shipping</small>
+                                @endif
+
+                                <div class="background-image"
+                                    style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->product->image}}');"></div>
+
+                                <h3>
+                                    <span class="brand">{{ $prod->product->name }}</span>
+                                    <span class="code">#{{ $prod->product->code }}</span>
+                                </h3>
+                                <h4 style="height: 150px">{!! $prod->product->body  !!}</h4>
+
+                                @if ($prod->product->discount)
+                                    <p class="price">
+                                        <strong>${{ $prod->product->price - $prod->product->price * ($prod->product->discount / 100) }}</strong>
+                                        <span><del>${{ $prod->product->price }}</del></span>
+                                    </p>
+                                @else
+                                    <p class="price"><strong>${{ $prod->product->price }}</strong></p>
+                                @endif
+                            </a>
+
+                            <div class="cart-pr">
+                                <div class="cart">
+                                    <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->product->ac_id }},{{ $prod->product->id }});" href="javascript:void(0);">
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart</a>
+                                    <div class="counter">
+                                        <button type="button" class="minus-btn"><img
+                                                src="{{ asset('img/minus.svg') }}"></button>
+                                        <input readonly name="qty" type="text" value="1" id="qty{{  $prod->product->id }}">
+                                        <button type="button" class="plus-btn"><img
+                                                src="{{ asset('img/plus.svg') }}"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
+        </div>
+    </div>
+</section>
+
 
 @endsection
