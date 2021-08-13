@@ -197,7 +197,6 @@ use     App\hellpers\like_;
                                         <?php else: ?>
                                         onclick="like(this,<?php echo e($prod->id); ?>)"
 
-
                                         <?php endif; ?>
                                         
                                         ></i><!--class="fas fa-heart"--></a>

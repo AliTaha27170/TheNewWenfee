@@ -203,7 +203,6 @@ use     App\hellpers\like_;
                                         @else
                                         onclick="like(this,{{ $prod->id }})"
 
-
                                         @endif
                                         
                                         ></i><!--class="fas fa-heart"--></a>

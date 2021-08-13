@@ -13,8 +13,5 @@ class Recipe extends Model
     {
         return $this->belongsTo(RecipeCategory::class,'recipe_category_id');
     }
-    public function product()
-    {
-        return $this->hasMany(Product::class);
-    }
+    
 }
