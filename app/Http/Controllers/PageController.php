@@ -26,7 +26,7 @@ class PageController extends Controller
    public function landing()
    {
      $slideCategories=ProductCategory::where('is_homepage',1)->get();
-       $slides=Slide::all();
+       $slides=Slide::inRandomOrder()->get();
        $recipes=Recipe::take(3)->inRandomOrder()->get();
        $brands=Brand::inRandomOrder()->get();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
