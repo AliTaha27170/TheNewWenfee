@@ -58,7 +58,7 @@ use     App\hellpers\like_;
                             <?php if($products->count() > 0): ?>
                                 <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                 <div class="item">
-                                    <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"    
+                                    <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"
 
                                         <?php if(isset(auth()->user()->id) and like_::check($item->id)): ?>
                                         onclick="unLike(this,<?php echo e($prod->id); ?>)"
@@ -67,7 +67,7 @@ use     App\hellpers\like_;
 
 
                                         <?php endif; ?>
-                                        
+
                                         ></i><!--class="fas fa-heart"--></a>                                    <a href="<?php echo e(route('show-product', $prod->id)); ?>" class="content">
                                         <?php if($prod->is_offer and isset($prod->discount) ): ?>
                                             <p class="sale"><?php echo e($prod->discount); ?>% OFF</p>
@@ -75,7 +75,7 @@ use     App\hellpers\like_;
                                             <small class="sale">Free Shipping</small>
                                         <?php endif; ?>
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/<?php echo e($prod->image); ?>')"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($prod->image); ?>')"></div>
 
                                         <h3>
                                             <span class="brand"><?php echo e($prod->name); ?></span>
@@ -97,8 +97,8 @@ use     App\hellpers\like_;
                                         <?php endif; ?>
                                     </a>
 
-                              
-                     
+
+
                                     <div class="cart-pr">
                                         <div class="cart">
                                             <a  class="add-cart-btn"  onclick="add_to_cart_main(<?php echo e($prod->ac_id); ?>,<?php echo e($prod->id); ?>);" href="javascript:void(0);">
@@ -119,7 +119,7 @@ use     App\hellpers\like_;
                             <?php endif; ?>
 
                         </div>
-            
+
                     </div>
                 </div>
             </div>
@@ -225,7 +225,7 @@ $('.close-btn').click(function(){
             .carousel{
                 display: none;
             }
-     
+
     </style>
 <?php $__env->stopPush(); ?>
 

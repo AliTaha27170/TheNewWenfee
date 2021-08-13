@@ -8,7 +8,7 @@
       </form>
 
       <?php if(isset(auth()->user()->id)): ?>
-          
+
       <div class="Username">
         <i class="fas fa-user User-Icon"></i>
         <button style="
@@ -23,7 +23,7 @@
 </button>
         <span style="color: #fff;padding: 0 5px;">|</span>
         <a href="#" class="FirstNavLinks"><?php echo e(auth()->user()->name); ?></a>
-        <div class="User-Menu" style="display: block;">
+        <div class="User-Menu" style="display: none;">
       <ul>
         <li><a href="#"> Account Settings<i class="fas fa-cog"></i></a></li>
         <li><a href="#"> Logout <i class="fas fa-sign-out-alt"></i></a></li>
@@ -119,9 +119,9 @@
         </li>
         <!--=========-->
         <li class="nav-item"><a class="nav-link" href="../.../../all?offer=on">Our Offers</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('HowToOrder')); ?>">How To Order</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('ShippingInformation')); ?>">Shipping Information</a></li>
-
+        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('brands')); ?>">Brands</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?php echo e(route('recipes')); ?>">Recipes</a></li>
+        
       </ul>
     </div>
 
@@ -171,4 +171,5 @@
       $('#cd-cart').load("<?php echo e(route('maincart')); ?>");
     }
   );
-</script><?php /**PATH C:\wamp64\www\adham\resources\views/partials/nav-menu.blade.php ENDPATH**/ ?>
+</script>
+<?php /**PATH C:\wamp64\www\adham\resources\views/partials/nav-menu.blade.php ENDPATH**/ ?>

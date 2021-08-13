@@ -11,97 +11,97 @@ use     App\hellpers\like_;
 </script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 
-    
+
     <!--_____________________________________________________________________-->
 
     <div class="carousel">
-    
+
         <!--
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     -->
       <div class="slide">
         <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-      <!-- 
+
+      <!--
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
     -->
 
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/4.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
         <div class="slide">
-    
-    
+
+
         <img src="https://wenfee.com/Slides/5.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
         <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/6.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-    
-    
-    
-      
+
+
+
+
+
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
-         
+
+
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
+
 
 
       <div class="slide">
-    
+
         <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
       </div>
-    
 
 
 
-     
+
+
     </div>
-    
+
     <!--_____________________________________________________________________-->
 
     <div class="features-box">
         <ul>
-           
+
             
             <li>
                 <img src="https://i.ibb.co/wLVpsQK/iconfinder-equipmentrental-2318443.png" style="width: 40px">
@@ -147,15 +147,15 @@ use     App\hellpers\like_;
                 <a href="/category/bread" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
-        
-        
+
+
         <div class="tcb-box" style="background-image: url('https://i.ibb.co/TwmG5bg/nuts.jpg');/* background-size: cover; */">
             <div class="content">
                 <h1>Raw Nuts &amp; Seeds</h1>
                 <a href="/category/raw-nuts-and-seeds" class="mbtn">Shop Now <i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
         </div>
-        
+
     </div>
 
     <?php if($slideCategories): ?>
@@ -188,9 +188,10 @@ use     App\hellpers\like_;
                 <div class="grid">
                     <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php $__currentLoopData = $item->products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <?php if(!$prod->out_stock): ?>
                             <div class="<?php echo e($item->slug); ?> filter-item">
                                 <div class="item">
-                                    <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"    
+                                    <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"
 
                                         <?php if(isset(auth()->user()->id) and like_::check($item->id)): ?>
                                         onclick="unLike(this,<?php echo e($prod->id); ?>)"
@@ -198,26 +199,29 @@ use     App\hellpers\like_;
                                         onclick="like(this,<?php echo e($prod->id); ?>)"
 
                                         <?php endif; ?>
-                                        
+
                                         ></i><!--class="fas fa-heart"--></a>
+                                        <?php if($prod->is_ref): ?>
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
+                                    <?php endif; ?>
                                     <a href="<?php echo e(route('show-product', $prod->id)); ?>" class="content">
                                         <?php if($prod->is_offer): ?>
                                             <p class="sale"><?php echo e($prod->discount); ?>% OFF</p>
                                         <?php endif; ?>
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/<?php echo e($prod->image); ?>');"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($prod->image); ?>');"></div>
 
                                         <h3>
                                             <span class="brand"><?php echo e($prod->name); ?></span>
                                             <span class="code">#<?php echo e($prod->code); ?></span>
                                         </h3>
-                                      
-                                
-                                        <h4 style="height: 150px"><?php echo $prod->body; ?>
 
+
+                                        <h4 style="height: 150px"><?php echo $prod->body; ?></h4>
                                         <span class="NewProduct">NEW</span>
-                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div></h4>
+                                        <?php if($prod->is_frozen): ?>
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                        <?php endif; ?>
                                         <?php if($prod->discount): ?>
                                             <p class="price">
                                                 <strong>$<?php echo e($prod->price - $prod->price * ($prod->discount / 100)); ?></strong>
@@ -244,13 +248,12 @@ use     App\hellpers\like_;
                                     </div>
                                 </div>
                             </div>
+                            <?php endif; ?>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </div>
             </div>
-            <div  class="container ViewAllButton" >
-            <a href="#">View all</a>
-            </div>
+
         </div>
     <?php endif; ?>
     <!-- Brands Slider -->
@@ -288,21 +291,25 @@ use     App\hellpers\like_;
 
 
     </style>
-    
+
     <section class="container BrandsSection">
-        <h2>Our Brands</h2>
+
+        <h2> <br> <br> Brands</h2>
+        <div  class="container ViewAllButton" >
+            <a href="<?php echo e(route('brands')); ?>" target="_blank">View all</a>
+            </div>
     <div class="BrandsSlider">
         <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="Brands-item">
             <a href="/brand/<?php echo e($brand->slug); ?>">
-                <img src="https://wenfee.com/strorge/<?php echo e($brand->logo); ?>" alt="BrandLogo">
+                <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($brand->logo); ?>" alt="BrandLogo">
             </a>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         
             </div>
-            </section>         
-        
+            </section>
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
             <script>
@@ -348,7 +355,7 @@ use     App\hellpers\like_;
 
             </script>
     <!-- Brands Slider -->
-<!--  
+<!--
     <section class="albums-home-box">
         <div class="slider-title">
             <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
@@ -378,7 +385,7 @@ use     App\hellpers\like_;
 
     </section>
 -->
-  
+
     <section class="recipes-section">
         <div class="content-box">
             <h1 class="title-with-img">
@@ -391,7 +398,7 @@ use     App\hellpers\like_;
                     <?php $__currentLoopData = $recipes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recipe): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="<?php echo e(Voyager::image($recipe->recipe_image)); ?>" />
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($recipe->recipe_image); ?>" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">
@@ -416,10 +423,10 @@ use     App\hellpers\like_;
                             with your pup!!! Strawberries...</p>
                         <footer class="content__footer"><a href="/recipe/preview/<?php echo e($recipe->slug); ?>">View Recipe</a></footer>
                     </div>
-                  
+
                 </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                
+
 
                 
 
@@ -446,9 +453,9 @@ use     App\hellpers\like_;
                 } else {
                 }
             });
-            
+
             $(".nav").removeClass("is-scrolled");
-            
+
         })
 
     </script>
@@ -514,7 +521,26 @@ $('.close-btn').click(function(){
     <!-- adding to cart alert -->
 
 
+    <style>
+        .slick-dots li{
+            display: none;
+
+        }
+        .BrandsSlider .slick-slide
+        {
+            height: 235px ;
+        }
+.slick-slide img {
+    width: 80%;
+    height: 70%;
+    position: relative;
+    top: 26px;
+    left: 26px;
+
+}
+    </style>
 
 
 <?php $__env->stopSection(); ?>
+
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\adham\resources\views/index.blade.php ENDPATH**/ ?>

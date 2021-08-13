@@ -193,7 +193,8 @@ use     App\hellpers\like_;
             <div class="products">
                 <div class="grid">
                     @foreach ($slideCategories as $item)
-                        @foreach ($item->products as $prod)
+                        @foreach ($item->products as  $prod)
+                        @if(!$prod->out_stock)
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
                                     <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
@@ -206,7 +207,9 @@ use     App\hellpers\like_;
                                         @endif
 
                                         ></i><!--class="fas fa-heart"--></a>
+                                        @if($prod->is_ref)
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
+                                    @endif
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
@@ -220,9 +223,14 @@ use     App\hellpers\like_;
                                         </h3>
 
 
-                                        <h4 style="height: 150px">{!! $prod->body !!}
+                                        <h4 style="height: 150px">{!! $prod->body !!}</h4>
                                         <span class="NewProduct">NEW</span>
-                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div></h4>
+                                        @if($prod->is_frozen)
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                        @endif
+                                        {{-- @if($prod->call)
+                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                        @endif --}}
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>
@@ -249,6 +257,7 @@ use     App\hellpers\like_;
                                     </div>
                                 </div>
                             </div>
+                            @endif
                         @endforeach
                     @endforeach
                 </div>
