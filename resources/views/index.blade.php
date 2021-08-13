@@ -16,80 +16,21 @@ use     App\hellpers\like_;
 
     <div class="carousel">
 
-        <!--
+
+
+    @foreach ($slides as $item)
       <div class="slide">
+          @if (isset($item->url))
 
-        <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
+          <a href="{{ $item->url }}">
+            <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $item->image}}" class="background-image" alt="{{ $item->title}}">
+         </a>
+         @else
+            <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $item->image}}" class="background-image" alt="{{ $item->title}}">
+          @endif
       </div>
-    -->
-      <div class="slide">
-        <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
+    @endforeach
 
-      <!--
-        <div class="slide">
-
-        <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-    -->
-
-        <div class="slide">
-
-        <img src="https://wenfee.com/Slides/4.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-        <div class="slide">
-
-
-        <img src="https://wenfee.com/Slides/5.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-        <div class="slide">
-
-        <img src="https://wenfee.com/Slides/6.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-
-
-
-
-      <div class="slide">
-
-        <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-
-      <div class="slide">
-
-        <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-
-      <div class="slide">
-
-        <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-
-
-      <div class="slide">
-
-        <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-
-
-      <div class="slide">
-
-        <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
-
-
-
-      <div class="slide">
-
-        <img src="https://wenfee.com/Slides/13.jpg" class="background-image" alt="Small succulent in round planter">
-      </div>
 
 
 
@@ -97,7 +38,6 @@ use     App\hellpers\like_;
 
     </div>
 
-    <!--_____________________________________________________________________-->
 
     <div class="features-box">
         <ul>
@@ -140,6 +80,8 @@ use     App\hellpers\like_;
         </ul>
     </div>
 
+    <!--_____________________________________________________________________-->
+
     <div class="top-cats-box">
         <div class="tcb-box" style="background-image: url('https://i.ibb.co/bmD40gk/dairy.jpg');background-position: left;">
             <div class="content">
@@ -163,6 +105,53 @@ use     App\hellpers\like_;
         </div>
 
     </div>
+
+
+
+    <section class="container BrandsSection">
+
+        <h2> <br> <br> Brands</h2>
+        <div  class="container ViewAllButton" >
+            <a href="{{ route('brands') }}" target="_blank">View all</a>
+            </div>
+    <div class="BrandsSlider">
+        @foreach($brands as $brand)
+        <div class="Brands-item">
+            <a href="/brand/{{$brand->slug}}">
+                <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $brand->logo}}" alt="BrandLogo">
+            </a>
+        </div>
+        @endforeach
+        {{-- <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div>
+        <div class="Brands-item">
+            <a href="#">
+                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
+            </a>
+        </div> --}}
+            </div>
+            </section>
+
+
+
 
     @if ($slideCategories)
         <div class="filter-box">
@@ -301,47 +290,7 @@ use     App\hellpers\like_;
 
     </style>
 
-    <section class="container BrandsSection">
 
-        <h2> <br> <br> Brands</h2>
-        <div  class="container ViewAllButton" >
-            <a href="{{ route('brands') }}" target="_blank">View all</a>
-            </div>
-    <div class="BrandsSlider">
-        @foreach($brands as $brand)
-        <div class="Brands-item">
-            <a href="/brand/{{$brand->slug}}">
-                <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $brand->logo}}" alt="BrandLogo">
-            </a>
-        </div>
-        @endforeach
-        {{-- <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div> --}}
-            </div>
-            </section>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
@@ -461,6 +410,13 @@ use     App\hellpers\like_;
                 @endforeach
 
 
+            </div>
+            <div class="ta-c">
+                <a href="/recipes" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
+            </div>
+            <br><br>
+
+
                 {{-- <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
                         <img src="/img/thumb_rec2.jpg" />
@@ -520,9 +476,6 @@ use     App\hellpers\like_;
                 </div>
             </div> --}}
 
-            <div class="ta-c">
-                <a href="/recipes" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
-            </div>
         </div>
     </section>
 
