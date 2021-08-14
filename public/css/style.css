@@ -1167,7 +1167,7 @@ body .anim1 .counterrotate {
 {
     margin-top: 10px;
     border: none;
-    padding: 4px;
+    padding: 0;
     z-index: 8;
     transition: 0.3s all;
     font-size: 20px;
@@ -1188,23 +1188,25 @@ body .anim1 .counterrotate {
 /*refrigerator icon */
 .RefrigeratedProduct
 {
-  position: absolute;
-  top: 18px;
-  left: 10px;
-  background: none;
+  margin-top: 10px;
   border: none;
   padding: 0;
   z-index: 8;
-  -webkit-transition: 0.3s all;
   transition: 0.3s all;
-  font-size: 24px;
+  font-size: 20px;
   background: #89C5F6;
-  border-radius: 50px;
-  width: 35px;
-  height: 35px;
+  border-radius: 7px;
+  width: 150px;
+  height: 32px;
   color: #fff;
   text-align: center;
-   display: none;
+  display: none;
+}
+.RefrigeratedProduct span
+{
+  font-size: 15px;
+  line-height: 0;
+  padding: 6px;
 }
 /*refrigerator icon */
 

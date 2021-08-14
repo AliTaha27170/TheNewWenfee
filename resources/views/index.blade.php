@@ -111,9 +111,6 @@ use     App\hellpers\like_;
     <section class="container BrandsSection">
 
         <h2> <br> <br> Brands</h2>
-        <div  class="container ViewAllButton" >
-            <a href="{{ route('brands') }}" target="_blank">View all</a>
-            </div>
     <div class="BrandsSlider">
         @foreach($brands as $brand)
         <div class="Brands-item">
@@ -147,6 +144,9 @@ use     App\hellpers\like_;
                 <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
             </a>
         </div> --}}
+            </div>
+            <div  class="container ViewAllButton" >
+            <a href="{{ route('brands') }}" target="_blank">View all</a>
             </div>
             </section>
 
@@ -195,9 +195,12 @@ use     App\hellpers\like_;
                                         @endif
 
                                         ></i><!--class="fas fa-heart"--></a>
+<<<<<<< HEAD
                                         @if($prod->is_ref)
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     @endif
+=======
+>>>>>>> 81a4cf96aa6d6a95267a4d6dd6cd6e84f9f1778e
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
@@ -213,12 +216,8 @@ use     App\hellpers\like_;
 
                                         <h4 style="height: 150px">{!! $prod->body !!}</h4>
                                         <span class="NewProduct">NEW</span>
-                                        @if($prod->is_frozen)
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        @endif
-                                        {{-- @if($prod->call)
-                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        @endif --}}
+                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>
