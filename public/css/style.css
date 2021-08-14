@@ -2685,7 +2685,7 @@ textarea.input1 {
 }
 
 .recipes-page .recipes-box .ft-recipe {
-  height : 400px ;
+  height : auto ;
   margin-right: auto;
   margin-left: auto;
 }

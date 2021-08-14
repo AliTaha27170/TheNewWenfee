@@ -27,8 +27,9 @@
         </form>
          --}}
         @foreach ($groups as $letter => $group)
-            <div class="CustomLetter" style="margin-bottom: 150px">
+            <div class="CustomLetter">
                 <h2>{{ $letter }}</h2>
+                </div>
                 <ul class="brands_list">
                     @foreach ($group as $bbrand)
 
@@ -43,7 +44,7 @@
                     @endforeach
                 </ul>
 
-            </div>
+            
         @endforeach
 
 
