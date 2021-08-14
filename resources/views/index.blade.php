@@ -183,7 +183,6 @@ use     App\hellpers\like_;
                 <div class="grid">
                     @foreach ($slideCategories as $item)
                         @foreach ($item->products as  $prod)
-                        @if(!$prod->out_stock)
                             <div class="{{ $item->slug }} filter-item">
                                 <div class="item">
                                     <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
@@ -229,7 +228,7 @@ use     App\hellpers\like_;
                                             <p class="price"><strong>${{ $prod->price }}</strong></p>
                                         @endif
                                     </a>
-
+@if(!$prod->out_stock)
                                     <div class="cart-pr">
                                         <div class="cart">
                                             <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);">
@@ -244,9 +243,10 @@ use     App\hellpers\like_;
                                             </div>
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
-                            @endif
+                           
                         @endforeach
                     @endforeach
                 </div>
