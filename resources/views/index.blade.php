@@ -568,18 +568,17 @@ $('.close-btn').click(function(){
             display: none;
 
         }
-        .BrandsSlider .slick-slide
-        {
-            height: 235px ;
+        .BrandsSlider .slick-slide{
+            height: 235px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-.slick-slide img {
-    width: 80%;
-    height: 70%;
-    position: relative;
-    top: 26px;
-    left: 26px;
+        .slick-slide img {
+            width: 100%;
+            height: auto;
 
-}
+        }
     </style>
 
 

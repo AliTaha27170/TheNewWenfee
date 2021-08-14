@@ -46,6 +46,7 @@ use     App\hellpers\like_;
                         </h4>
                         <span class="NewProduct">NEW</span>
                         <div class="FrozenProduct" style=" padding : 0;"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                         <ul class="props-list">
                             <li>
                                 <img src="/img/hashtag.svg">
