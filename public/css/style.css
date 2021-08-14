@@ -1459,11 +1459,11 @@ body .anim1 .counterrotate {
 .cart .callforprice
 {
   pointer-events: none;
-  font-size: 10px;
+  font-size: 15px;
   text-align: center;
   cursor: default;
   color: white;
-  padding: 1px 10px;
+  padding: 5px 20px;
   background-color: #565656;
   border-radius: 5px;
   border: none;
