@@ -143,6 +143,7 @@
                                         <h4 style="height: 150px">{!! $prod->body  !!}
                                         <span class="NewProduct">NEW</span>
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                                     </h4>
 
                                         @if ($prod->discount)
