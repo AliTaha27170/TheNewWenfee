@@ -34,8 +34,16 @@
                                         </h3>
                                         <h4 style="height: 150px">{!! $like->product->body  !!}
                                         <span class="NewProduct">NEW</span>
+
+
+                                        @if ($like->product->frozen)
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                                    @endif
+
+                                    @if ($like->product->refrigerated)
+                                         <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                                    @endif
+
                                     </h4>
 
                                         @if ($like->product->discount)
@@ -52,9 +60,26 @@
 
                                     <div class="cart-pr">
                                         <div class="cart">
-                                            <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $like->product->ac_id }},{{ $like->product->id }});" href="javascript:void(0);">
-                                                <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                                Add to cart</a>
+                                            <a
+                                            @if($like->product->call_for_price)
+                                            class="callforprice" href="{{ route('contact') }}"
+                                        @elseif($like->product->out_of_stock)
+                                        class="outofstock"
+                                        @else
+                                        class="add-cart-btn"  onclick="add_to_cart_main({{ $like->product->ac_id }},{{ $like->product->id }});" href="javascript:void(0);"
+                                        @endif
+                                            >
+                                            @if(call_for_price)
+                                                <span> call for price </span>
+                                        @elseif($like->product->out_of_stock)
+                                             <span> Out of stock </span>
+                                        @else
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart
+                                                    @endif
+
+
+                                            </a>
                                             <div class="counter">
                                                 <button type="button" class="minus-btn"><img
                                                         src="{{ asset('img/minus.svg') }}"></button>
