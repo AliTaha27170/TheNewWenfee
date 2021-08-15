@@ -87,7 +87,7 @@ class PageController extends Controller
 
        }
        else{
-           $recipes=Recipe::orderBy('created_at','desc')->paginate(6);
+           $recipes=Recipe::orderBy('created_at','desc')->paginate(60);
 
        }
 
