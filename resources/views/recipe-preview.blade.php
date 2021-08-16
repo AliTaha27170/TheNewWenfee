@@ -121,8 +121,7 @@ use     App\hellpers\like_;
                                     <span class="brand">{{ $prod->product->name }}</span>
                                     <span class="code">#{{ $prod->product->code }}</span>
                                 </h3>
-<<<<<<< Updated upstream
-                                <h4 style="height: 150px">{!! $prod->product->body  !!}</h4>
+                               <h4 style="height: 192px">{!! $prod->product->body  !!}</h4>
 
                                 @if ($prod->product->frozen)
                                     <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
@@ -131,11 +130,6 @@ use     App\hellpers\like_;
                                 @if ($prod->product->refrigerated)
                                      <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                                 @endif
-=======
-                                <h4 style="height: 192px">{!! $prod->product->body  !!}</h4>
-                                <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                 <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
->>>>>>> Stashed changes
 
                                 @if ($prod->product->discount)
                                     <p class="price">
