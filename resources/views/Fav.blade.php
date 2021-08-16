@@ -32,7 +32,7 @@
                                             <span class="brand">{{ $like->product->name }}</span>
                                             <span class="code">#{{ $like->product->code }}</span>
                                         </h3>
-                                        <h4 style="height: 150px">{!! $like->product->body  !!}
+                                        <h4 style="height: 192px">{!! $like->product->body  !!}
                                         <span class="NewProduct">NEW</span>
 
 

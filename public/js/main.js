@@ -80,3 +80,9 @@ function move_navigation( $navigation, $MQ) {
 		$navigation.insertAfter('header');
 	}
 }
+
+/*Account Settings*/
+$('#Edit_Full_Name').click(function(){
+	document.getElementById('Full_Name').setAttribute("contenteditable", "true");
+	$("Full_Name").addClass("Editing-is-enabled");
+  });

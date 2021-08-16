@@ -38,10 +38,11 @@
                 
                 </li>
                 <li><a href="{{ route('HowToOrder') }}"><i class="fi fi-rr-angle-double-small-right"></i> How To Order </a></li>
+                <li><a href="{{ route('brands') }}"><i class="fi fi-rr-angle-double-small-right"></i> Brands </a></li>
                 {{-- comment 
                 
                     <li><a href="#"><i class="fi fi-rr-angle-double-small-right"></i> CookBooks</a></li>
-                    <li><a href="#"><i class="fi fi-rr-angle-double-small-right"></i> Recipes </a></li>--}}
+                --}}
                 </ul>
             </div>
         </div>
@@ -52,6 +53,7 @@
                     <li><a href="{{ route('contact') }}"><i class="fi fi-rr-angle-double-small-right"></i> Contact Us</a></li>
                     <li><a href="{{ route('about') }}"><i class="fi fi-rr-angle-double-small-right"></i> About Us</a></li>
                     <li><a href="{{ route('ShippingInformation') }}"><i class="fi fi-rr-angle-double-small-right"></i> Shipping Information</a></li>
+                    <li><a href="{{ route('recipes') }}"><i class="fi fi-rr-angle-double-small-right"></i> Recipes </a></li>
                     {{-- comment 
                     
                     <li><a href="#"><i class="fi fi-rr-angle-double-small-right"></i> Privacy Policy</a></li>--}}

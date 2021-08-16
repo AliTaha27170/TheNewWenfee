@@ -121,7 +121,7 @@ use     App\hellpers\like_;
                                     <span class="brand">{{ $prod->product->name }}</span>
                                     <span class="code">#{{ $prod->product->code }}</span>
                                 </h3>
-                                <h4 style="height: 150px">{!! $prod->product->body  !!}</h4>
+                               <h4 style="height: 192px">{!! $prod->product->body  !!}</h4>
 
                                 @if ($prod->product->frozen)
                                     <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>

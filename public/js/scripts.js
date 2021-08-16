@@ -28,7 +28,28 @@ $(function () {
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
-        pauseOnHover: false
+        pauseOnHover: false,
+        responsive: [
+            {
+            breakpoint: 1330,
+            settings: {
+            slidesToShow : 2 ,
+            slidesToScroll : 2 ,
+            dots : true ,
+            arrows : true ,
+            autoplay : true ,
+            autoplayspeed : 2000 ,
+            infinite : true ,
+            }
+            },
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            },
+        ]
     });
 
     $('.slider-for').slick({
