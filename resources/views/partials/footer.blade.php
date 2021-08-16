@@ -58,7 +58,23 @@
                 </ul>
             </div>
         </div>
-                    </div>
+            <div class="col-md-4">
+                    
+                                <div class="part">
+                                    <h3>Contact Us</h3>
+                                    <form action="{{route('contact.store')}}" method="POST" class="contact-form">
+                                            {{ csrf_field() }}
+                                            <input class="input1" type="Email" placeholder="Enter Your Email" name="mail" /><br>
+                                        <textarea class="input1" name="message" value="message" id="message" placeholder="Your Message"></textarea>
+                                        <div class="ta-r">
+                                            <button  type="submit" class="mbtn">
+                                                <i class="fi fi-rr-paper-plane"></i> &nbsp;Send
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                    
         
 
     <div class="copy-right">

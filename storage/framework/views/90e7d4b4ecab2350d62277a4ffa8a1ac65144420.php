@@ -21,8 +21,9 @@
         <!--   <ul class="brand-letters"></ul> -->
         
         <?php $__currentLoopData = $groups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $letter => $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="CustomLetter" style="margin-bottom: 150px">
+            <div class="CustomLetter">
                 <h2><?php echo e($letter); ?></h2>
+                </div>
                 <ul class="brands_list">
                     <?php $__currentLoopData = $group; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $bbrand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
@@ -37,7 +38,7 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
 
-            </div>
+            
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
 

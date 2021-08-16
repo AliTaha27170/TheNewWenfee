@@ -25,9 +25,10 @@ class PageController extends Controller
     }
    public function landing()
    {
-     $slideCategories=ProductCategory::where('is_homepage',1)->get();
+     $slideCategories=ProductCategory::where('is_homepage',1)->with('products')->get();    
+     
        $slides=Slide::inRandomOrder()->get();
-       $recipes=Recipe::take(3)->inRandomOrder()->get();
+       $recipes=Recipe::orderby('created_at','DESC')->take(3)->get();
        $brands=Brand::inRandomOrder()->get();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
@@ -35,6 +36,8 @@ class PageController extends Controller
        return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands'));
    }
 
+
+   
    public function about()
    {
        return view('about');

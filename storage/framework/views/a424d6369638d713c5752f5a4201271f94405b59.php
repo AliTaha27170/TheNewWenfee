@@ -84,7 +84,13 @@ use     App\hellpers\like_;
                                         <h4 style="height: 150px"><?php echo $prod->body; ?>
 
                                         <span class="NewProduct">NEW</span>
-                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                             <?php if($prod->frozen): ?>
+                                <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                            <?php endif; ?>
+
+                            <?php if($prod->refrigerated): ?>
+                                 <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                            <?php endif; ?>
                                     </h4>
 
                                         <?php if($prod->discount): ?>
@@ -101,9 +107,26 @@ use     App\hellpers\like_;
 
                                     <div class="cart-pr">
                                         <div class="cart">
-                                            <a  class="add-cart-btn"  onclick="add_to_cart_main(<?php echo e($prod->ac_id); ?>,<?php echo e($prod->id); ?>);" href="javascript:void(0);">
-                                                <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                                Add to cart</a>
+                                            <a
+                                            <?php if($prod->call_for_price): ?>
+                                            class="callforprice" href="<?php echo e(route('contact')); ?>"
+                                        <?php elseif($prod->out_of_stock): ?>
+                                        class="outofstock"
+                                        <?php else: ?>
+                                        class="add-cart-btn"  onclick="add_to_cart_main(<?php echo e($prod->ac_id); ?>,<?php echo e($prod->id); ?>);" href="javascript:void(0);"
+                                        <?php endif; ?>
+                                            >
+                                            <?php if($prod->call_for_price): ?>
+                                                <span> call for price </span>
+                                        <?php elseif($prod->out_of_stock): ?>
+                                             <span> Out of stock </span>
+                                        <?php else: ?>
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart
+                                                    <?php endif; ?>
+
+
+                                            </a>
                                             <div class="counter">
                                                 <button type="button" class="minus-btn"><img
                                                         src="<?php echo e(asset('img/minus.svg')); ?>"></button>
