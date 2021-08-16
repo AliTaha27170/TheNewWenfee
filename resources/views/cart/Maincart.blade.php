@@ -31,11 +31,7 @@ foreach ($_COOKIE as $key => $value) {
                     <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image }}" alt="" class="cart_img">
 
                     <span class="cd-qty"> {{ $q }} x</span> {!! $product->body !!}
-                    <div class="product-count">
-                            <button class="button-count no-active" disabled>-</button>
-                            <input type="text" id="Counter" readonly class="number-product" value="1">
-                            <button class="button-count">+</button>
-                      </div>
+
                     <div class="cd-price">${{ round($product->price * $q ,2) }}</div>
 
                     @php

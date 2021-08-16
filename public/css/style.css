@@ -1167,7 +1167,7 @@ body .anim1 .counterrotate {
 {
     margin-top: 10px;
     border: none;
-    padding: 0;
+    padding: 2px;
     z-index: 8;
     transition: 0.3s all;
     font-size: 20px;
@@ -1177,7 +1177,6 @@ body .anim1 .counterrotate {
     height: 32px;
     color: #fff;
     text-align: center;
-    display: none;
 }
 .FrozenProduct span
 {
@@ -1190,7 +1189,7 @@ body .anim1 .counterrotate {
 {
   margin-top: 10px;
   border: none;
-  padding: 0;
+  padding: 2px;
   z-index: 8;
   transition: 0.3s all;
   font-size: 20px;
@@ -1200,7 +1199,6 @@ body .anim1 .counterrotate {
   height: 32px;
   color: #fff;
   text-align: center;
-  display: none;
 }
 .RefrigeratedProduct span
 {
@@ -1230,10 +1228,10 @@ body .anim1 .counterrotate {
   min-width: 65px;
   background: #e92e2e;
   padding: 5px 15px;
-  -webkit-transform: skewX( 
+  -webkit-transform: skewX(
 3deg
 );
-  transform: skewX( 
+  transform: skewX(
 1deg
 );
   /* right: -10px; */
@@ -2973,12 +2971,12 @@ body .modal a.close-modal {
    position: absolute;
    right: 0;
    top: calc(var(--carousel-height)/2 - 40px);
-   
+
    padding: 5px 15px;
    z-index: 1;
-   
+
    font-size: 30px;
-   
+
    border-top-left-radius: 10px;
    border-bottom-left-radius: 10px;
    border-right: 0;

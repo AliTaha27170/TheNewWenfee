@@ -82,8 +82,13 @@ use     App\hellpers\like_;
                                         </h3>
                                         <h4 style="height: 150px">{!! $prod->body  !!}
                                         <span class="NewProduct">NEW</span>
-                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                             @if ($prod->frozen)
+                                <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                            @endif
+
+                            @if ($prod->refrigerated)
+                                 <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                            @endif
                                     </h4>
 
                                         @if ($prod->discount)
@@ -100,9 +105,26 @@ use     App\hellpers\like_;
 
                                     <div class="cart-pr">
                                         <div class="cart">
-                                            <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);">
-                                                <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                                Add to cart</a>
+                                            <a
+                                            @if($prod->call_for_price)
+                                            class="callforprice" href="{{ route('contact') }}"
+                                        @elseif($prod->out_of_stock)
+                                        class="outofstock"
+                                        @else
+                                        class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);"
+                                        @endif
+                                            >
+                                            @if($prod->call_for_price)
+                                                <span> call for price </span>
+                                        @elseif($prod->out_of_stock)
+                                             <span> Out of stock </span>
+                                        @else
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart
+                                                    @endif
+
+
+                                            </a>
                                             <div class="counter">
                                                 <button type="button" class="minus-btn"><img
                                                         src="{{ asset('img/minus.svg') }}"></button>
