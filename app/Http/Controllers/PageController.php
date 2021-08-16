@@ -43,6 +43,10 @@ class PageController extends Controller
    {
        return view('HowToOrder');
    }
+   public function AccountSettings()
+   {
+       return view('AccountSettings');
+   }
    public function Medical()
    {
     $category_parent_id=ProductCategory::get()->first()->parent_id;

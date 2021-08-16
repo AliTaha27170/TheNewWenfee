@@ -70,6 +70,8 @@ Route::get('/brands',                 [App\Http\Controllers\PageController::clas
 
 Route::get('/brand/{slug}',             [App\Http\Controllers\PageController::class, 'brand'])->name('brand');
 
+Route::get('/AccountSettings',             [App\Http\Controllers\PageController::class, 'AccountSettings'])->name('AccountSettings');
+
 Route::get('/all',                    [App\Http\Controllers\PageController::class, 'viewall'])->name('viewall');
 
 Route::get('/category/{slug}',        [App\Http\Controllers\PageController::class, 'category'])->name('view-category');
