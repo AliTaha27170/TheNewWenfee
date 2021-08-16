@@ -105,9 +105,6 @@ use     App\hellpers\like_;
     <section class="container BrandsSection">
 
         <h2> <br> <br> Brands</h2>
-        <div  class="container ViewAllButton" >
-            <a href="<?php echo e(route('brands')); ?>" target="_blank">View all</a>
-            </div>
     <div class="BrandsSlider">
         <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="Brands-item">
@@ -117,6 +114,9 @@ use     App\hellpers\like_;
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         
+            </div>
+            <div  class="container ViewAllButton" >
+            <a href="<?php echo e(route('brands')); ?>" target="_blank">View all</a>
             </div>
             </section>
 
@@ -183,10 +183,8 @@ use     App\hellpers\like_;
 
                                         <h4 style="height: 150px"><?php echo $prod->body; ?></h4>
                                         <span class="NewProduct">NEW</span>
-                                        <?php if($prod->is_frozen): ?>
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        <?php endif; ?>
-                                        
+                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                                         <?php if($prod->discount): ?>
                                             <p class="price">
                                                 <strong>$<?php echo e($prod->price - $prod->price * ($prod->discount / 100)); ?></strong>
@@ -480,18 +478,17 @@ $('.close-btn').click(function(){
             display: none;
 
         }
-        .BrandsSlider .slick-slide
-        {
-            height: 235px ;
+        .BrandsSlider .slick-slide{
+            height: 235px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-.slick-slide img {
-    width: 80%;
-    height: 70%;
-    position: relative;
-    top: 26px;
-    left: 26px;
+        .slick-slide img {
+            width: 100%;
+            height: auto;
 
-}
+        }
     </style>
 
 

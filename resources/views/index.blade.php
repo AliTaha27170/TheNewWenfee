@@ -195,12 +195,9 @@ use     App\hellpers\like_;
                                         @endif
 
                                         ></i><!--class="fas fa-heart"--></a>
-<<<<<<< HEAD
                                         @if($prod->is_ref)
                                     <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
                                     @endif
-=======
->>>>>>> 81a4cf96aa6d6a95267a4d6dd6cd6e84f9f1778e
                                     <a href="{{ route('show-product', $prod->id) }}" class="content">
                                         @if ($prod->is_offer)
                                             <p class="sale">{{ $prod->discount }}% OFF</p>
