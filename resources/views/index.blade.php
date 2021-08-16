@@ -214,7 +214,7 @@ use     App\hellpers\like_;
                                         </h3>
 
 
-                                        <h4 style="height: 150px">{!! $prod->body !!}</h4>
+                                        <h4 style="height: 192px">{!! $prod->body !!}</h4>
                                         <span class="NewProduct">NEW</span>
                              @if ($prod->frozen)
                                 <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>

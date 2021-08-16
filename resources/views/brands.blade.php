@@ -77,7 +77,7 @@
                                   <span class="brand">Ali Taha</span>
                                   <span class="code">#g55525</span>
                               </h3>
-                              <h4 style="height: 150px">Hello World ! </h4>
+                              <h4 style="height: 192px">Hello World ! </h4>
 
                                   <p class="price">
                                       <strong>$50</strong>

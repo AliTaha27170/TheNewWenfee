@@ -39,7 +39,7 @@
                         <h3>
                             <span class="brand">{{ $product->name }}</span>
                         </h3>
-                        <h4 style="height: 150px">{!! $product->body  !!}</h4>
+                        <h4 style="height: 192px">{!! $product->body  !!}</h4>
 
                         <ul class="props-list">
                             <li>
@@ -153,7 +153,7 @@
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                        <h4 style="height: 150px">{!! $prod->body  !!}</h4>
+                                        <h4 style="height: 192px">{!! $prod->body  !!}</h4>
 
                                         @if ($prod->discount)
                                             <p class="price">

@@ -41,7 +41,7 @@ use     App\hellpers\like_;
                         <h3>
                             <span class="brand">{{ $product->name }}</span>
                         </h3>
-                        <h4 style="height: 150px">
+                        <h4 style="height: 192px">
                         <p class="ProductName" style="margin-top: 50px;">{!! $product->body  !!}</p>
                         </h4>
                         <span class="NewProduct">NEW</span>
@@ -193,7 +193,7 @@ use     App\hellpers\like_;
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                        <h4 style="height: 150px">{!! $prod->body  !!}</h4>
+                                        <h4 style="height: 192px">{!! $prod->body  !!}</h4>
 
                                         @if ($prod->discount)
                                             <p class="price">
