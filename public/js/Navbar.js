@@ -89,7 +89,14 @@ $(document).ready(function () {
       $("#ShippingBox").animate({right: '0px'});
       } 
       });
+      $("#Close_Shipping_Box").click(function() { 
+        $("#ShippingBox").animate({right: '-500px'}, 2000);
+      });
+      
 });
+
+
+
 
 $(".User-Icon").click(function(){
   $(".User-Menu").fadeToggle();
