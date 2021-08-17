@@ -25,8 +25,8 @@
         <a href="#" class="FirstNavLinks"><?php echo e(auth()->user()->name); ?></a>
         <div class="User-Menu" style="display: none;">
       <ul>
-        <li><a href="#"> Account Settings<i class="fas fa-cog"></i></a></li>
-        <li><a href="#"> Logout <i class="fas fa-sign-out-alt"></i></a></li>
+        <li><a href="#" style="display : none ;"> Account Settings<i class="fas fa-cog"></i></a></li>
+        <li><a href="#" > Logout <i class="fas fa-sign-out-alt"></i></a></li>
       </ul>
     </div>
       </div>

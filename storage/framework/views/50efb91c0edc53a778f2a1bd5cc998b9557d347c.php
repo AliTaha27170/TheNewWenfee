@@ -5,6 +5,7 @@
 <?php
 use     App\hellpers\like_;
 ?>
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
 <script>
     var x=0;
@@ -105,9 +106,6 @@ use     App\hellpers\like_;
     <section class="container BrandsSection">
 
         <h2> <br> <br> Brands</h2>
-        <div  class="container ViewAllButton" >
-            <a href="<?php echo e(route('brands')); ?>" target="_blank">View all</a>
-            </div>
     <div class="BrandsSlider">
         <?php $__currentLoopData = $brands; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $brand): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <div class="Brands-item">
@@ -118,22 +116,26 @@ use     App\hellpers\like_;
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         
             </div>
+            <div  class="container ViewAllButton" >
+            <a href="<?php echo e(route('brands')); ?>" target="_blank">View all</a>
+            </div>
             </section>
 
 
 
-
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            
     <?php if($slideCategories): ?>
         <div class="filter-box">
             <div class="filter-head">
                 <ul>
                     <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><button class="mbtn" onclick="filter('.<?php echo e($item->slug); ?>', this)"><?php echo e($item->name); ?></button>
+                        <li><button class="mbtn" value="<?php echo e($item->id); ?>" ><?php echo e($item->name); ?></button>
                         </li>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-
+            
             <script>
                 function filter(t, btn) {
                     $(".filter-head .active").removeClass("active");
@@ -153,7 +155,7 @@ use     App\hellpers\like_;
                 <div class="grid">
                     <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php $__currentLoopData = $item->products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                            <div class="<?php echo e($item->slug); ?> filter-item">
+                            <div  class="<?php echo e($item->slug); ?> filter-item" value="<?php echo e($item->id); ?>">
                                 <div class="item">
                                     <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"
 
@@ -183,10 +185,8 @@ use     App\hellpers\like_;
 
                                         <h4 style="height: 150px"><?php echo $prod->body; ?></h4>
                                         <span class="NewProduct">NEW</span>
-                                        <?php if($prod->is_frozen): ?>
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        <?php endif; ?>
-                                        
+                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                                         <?php if($prod->discount): ?>
                                             <p class="price">
                                                 <strong>$<?php echo e($prod->price - $prod->price * ($prod->discount / 100)); ?></strong>
@@ -221,6 +221,7 @@ use     App\hellpers\like_;
             </div>
 
         </div>
+    
     <?php endif; ?>
     <!-- Brands Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
@@ -480,18 +481,17 @@ $('.close-btn').click(function(){
             display: none;
 
         }
-        .BrandsSlider .slick-slide
-        {
-            height: 235px ;
+        .BrandsSlider .slick-slide{
+            height: 235px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-.slick-slide img {
-    width: 80%;
-    height: 70%;
-    position: relative;
-    top: 26px;
-    left: 26px;
+        .slick-slide img {
+            width: 100%;
+            height: auto;
 
-}
+        }
     </style>
 
 
