@@ -530,6 +530,7 @@ use     App\hellpers\like_;
      <!-- shipping box -->
      <section id="ShippingBox">
 	<figure>
+    <i class="fas fa-times" id="Close_Shipping_Box"></i>
     <figcaption>
       <h3>
       Welcome To WenFee

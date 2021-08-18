@@ -35,8 +35,9 @@ border-radius: 0;
   {
     height: auto;
     width: 230px;
-    right: 0;
-    top: 55px;
+    border: 1px solid #ddd;
+    right: 0px;
+    top: 45px;
     background-color: #fff;
     border-radius: 5px;
     position: absolute;
@@ -688,6 +689,15 @@ margin: 0 auto;
   margin: auto;
   position: absolute;
   z-index: 2;
+}
+#Close_Shipping_Box
+{
+  color: #007b70;
+  position: absolute;
+  font-size: 25px;
+  right: 10px;
+  top: 5px;
+  cursor: pointer;
 }
 #ShippingBox figure {
 	position: relative;
