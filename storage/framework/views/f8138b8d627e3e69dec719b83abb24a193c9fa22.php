@@ -38,6 +38,7 @@
                 
                 </li>
                 <li><a href="<?php echo e(route('HowToOrder')); ?>"><i class="fi fi-rr-angle-double-small-right"></i> How To Order </a></li>
+                <li><a href="<?php echo e(route('brands')); ?>"><i class="fi fi-rr-angle-double-small-right"></i> Brands </a></li>
                 
                 </ul>
             </div>
@@ -49,6 +50,7 @@
                     <li><a href="<?php echo e(route('contact')); ?>"><i class="fi fi-rr-angle-double-small-right"></i> Contact Us</a></li>
                     <li><a href="<?php echo e(route('about')); ?>"><i class="fi fi-rr-angle-double-small-right"></i> About Us</a></li>
                     <li><a href="<?php echo e(route('ShippingInformation')); ?>"><i class="fi fi-rr-angle-double-small-right"></i> Shipping Information</a></li>
+                    <li><a href="<?php echo e(route('recipes')); ?>"><i class="fi fi-rr-angle-double-small-right"></i> Recipes </a></li>
                     
                 </ul>
             </div>

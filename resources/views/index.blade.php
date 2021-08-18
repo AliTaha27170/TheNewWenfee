@@ -166,7 +166,32 @@ use     App\hellpers\like_;
                 </ul>
             </div>
             
-            <script>
+// <div id="product">  @include('product')   </div>
+
+
+                    // $('mbtn').on('change', function () {
+                    //     var selected = $(this).find(":selected").attr('value');
+                    //     $.ajax({
+                    //                 url: base_url + '/productCategory/'+selected+'/products/',
+                    //                 type: 'GET',
+                    //                 dataType: 'json',
+                
+                    //         }).done(function (data) {
+                
+                    //             var select = $('select[name=product]');
+                    //             select.empty();
+                    //             select.append('<option value="0" >Please Select Product</option>');
+                    //             $.each(data,function(key, value) {
+                    //                 select.append('<option value=' + key.id + '>' + value.name + '</option>');
+                    //             });
+                    //             console.log("success");
+                    //     })
+                    // });
+                });
+                </script>
+
+
+            {{-- <script>
                 function filter(t, btn) {
                     $(".filter-head .active").removeClass("active");
                     $(".filter-box .grid").isotope({
@@ -179,7 +204,7 @@ use     App\hellpers\like_;
                     $(".filter-head li button")[0].click();
                 })
 
-            </script>
+            </script> --}}
 
             <div class="products">
                 <div class="grid">

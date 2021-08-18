@@ -36,6 +36,7 @@ class PageController extends Controller
        return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands'));
    }
 
+   
 
    
    public function about()

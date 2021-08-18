@@ -135,21 +135,55 @@ use     App\hellpers\like_;
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-            
             <script>
-                function filter(t, btn) {
-                    $(".filter-head .active").removeClass("active");
-                    $(".filter-box .grid").isotope({
-                        filter: t
-                    });
-                    $(btn).addClass("active");
-                }
+                jQuery(document).ready(function ($) {
+                    alert('hello');
+                    $("button").click(function() {
+    var fired_button = $(this).val();
+    var base_url = "<?php echo e(URL::to('/')); ?>";
 
-                $(document).ready(function() {
-                    $(".filter-head li button")[0].click();
-                })
+    alert(fired_button);
+    $.ajax({
+        url: base_url + '/productCategory/'+fired_button+'/products/',
+        type: 'POST',
+        data: {'submit': true ,name:name,_token: '<?php echo e(csrf_token()); ?>'},
+        dataType:'html',
+        success: function (products) {
+            $("#product").empty().html(products);
+            location.hash = page;
+            console.log('success');
+            console.log(data);
+                  alert('Treatment has been saved');
+           }
 
-            </script>
+         });
+});
+// <div id="product">  <?php echo $__env->make('product', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>   </div>
+
+
+                    // $('mbtn').on('change', function () {
+                    //     var selected = $(this).find(":selected").attr('value');
+                    //     $.ajax({
+                    //                 url: base_url + '/productCategory/'+selected+'/products/',
+                    //                 type: 'GET',
+                    //                 dataType: 'json',
+                
+                    //         }).done(function (data) {
+                
+                    //             var select = $('select[name=product]');
+                    //             select.empty();
+                    //             select.append('<option value="0" >Please Select Product</option>');
+                    //             $.each(data,function(key, value) {
+                    //                 select.append('<option value=' + key.id + '>' + value.name + '</option>');
+                    //             });
+                    //             console.log("success");
+                    //     })
+                    // });
+                });
+                </script>
+
+
+            
 
             <div class="products">
                 <div class="grid">
@@ -183,7 +217,7 @@ use     App\hellpers\like_;
                                         </h3>
 
 
-                                        <h4 style="height: 150px"><?php echo $prod->body; ?></h4>
+                                        <h4 style="height: 192px"><?php echo $prod->body; ?></h4>
                                         <span class="NewProduct">NEW</span>
                                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                                         <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>

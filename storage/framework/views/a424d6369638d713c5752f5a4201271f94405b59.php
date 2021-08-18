@@ -81,7 +81,7 @@ use     App\hellpers\like_;
                                             <span class="brand"><?php echo e($prod->name); ?></span>
                                             <span class="code">#<?php echo e($prod->code); ?></span>
                                         </h3>
-                                        <h4 style="height: 150px"><?php echo $prod->body; ?>
+                                        <h4 style="height: 192px"><?php echo $prod->body; ?>
 
                                         <span class="NewProduct">NEW</span>
                              <?php if($prod->frozen): ?>
