@@ -641,6 +641,8 @@ body .anim1 .counterrotate {
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
   border: none;
+  float: left;
+  margin: 0 0 10px 0;
 }
 
 .mbtn.c2 {
