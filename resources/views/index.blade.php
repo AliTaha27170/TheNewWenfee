@@ -5,7 +5,6 @@
 @php
 use     App\hellpers\like_;
 @endphp
-<meta name="csrf-token" content="{{ csrf_token() }}">
 
 <script>
     var x=0;
@@ -153,20 +152,41 @@ use     App\hellpers\like_;
 
 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            
+
     @if ($slideCategories)
         <div class="filter-box">
             <div class="filter-head">
                 <ul>
                     @foreach ($slideCategories as $item)
+<<<<<<< HEAD
                         <li><button class="mbtn" onclick="getProducts({{$item->id}})" >{{ $item->name }}</button>
+=======
+                        <li><button class="mbtn" onclick="filter('.{{ $item->slug }}', this)">{{ $item->name }}</button>
+>>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
                         </li>
                     @endforeach
                 </ul>
             </div>
+<<<<<<< HEAD
            
                 <div name="product" id="products_view">
+=======
+
+            <script>
+                function filter(t, btn) {
+                    $(".filter-head .active").removeClass("active");
+                    $(".filter-box .grid").isotope({
+                        filter: t
+                    });
+                    $(btn).addClass("active");
+                }
+
+                $(document).ready(function() {
+                    $(".filter-head li button")[0].click();
+                })
+
+            </script>
+>>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
 
                 </div>
 {{---
@@ -174,7 +194,11 @@ use     App\hellpers\like_;
                 <div class="grid">
                     @foreach ($slideCategories as $item)
                         @foreach ($item->products as  $prod)
+<<<<<<< HEAD
                             <div name="slug" class="{{ $item->slug }} filter-item" value="{{$item->id}}">
+=======
+                            <div class="{{ $item->slug }} filter-item">
+>>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
                                 <div class="item">
                                     <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
@@ -202,10 +226,15 @@ use     App\hellpers\like_;
                                         </h3>
 
 
-                                        <h4 style="height: 192px">{!! $prod->body !!}</h4>
+                                        <h4 style="height: 150px">{!! $prod->body !!}</h4>
                                         <span class="NewProduct">NEW</span>
-                                        <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                                        <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                             @if ($prod->frozen)
+                                <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                            @endif
+
+                            @if ($prod->refrigerated)
+                                 <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                            @endif
                                         @if ($prod->discount)
                                             <p class="price">
                                                 <strong>${{ $prod->price - $prod->price * ($prod->discount / 100) }}</strong>
@@ -218,9 +247,26 @@ use     App\hellpers\like_;
 @if(!$prod->out_stock)
                                     <div class="cart-pr">
                                         <div class="cart">
-                                            <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);">
-                                                <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                                Add to cart</a>
+                                            <a
+                                            @if($prod->call_for_price)
+                                            class="callforprice" href="{{ route('contact') }}"
+                                        @elseif($prod->out_of_stock)
+                                        class="outofstock"
+                                        @else
+                                        class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);"
+                                        @endif
+                                            >
+                                            @if($prod->call_for_price)
+                                                <span> call for price </span>
+                                        @elseif($prod->out_of_stock)
+                                             <span> Out of stock </span>
+                                        @else
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart
+                                                    @endif
+
+
+                                            </a>
                                             <div class="counter">
                                                 <button type="button" class="minus-btn"><img
                                                         src="{{ asset('img/minus.svg') }}"></button>
@@ -233,14 +279,17 @@ use     App\hellpers\like_;
                                     @endif
                                 </div>
                             </div>
-                           
+
                         @endforeach
                     @endforeach
                 </div>
             </div>
 
         </div>
+<<<<<<< HEAD
     --}}
+=======
+>>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
     @endif
     <!-- Brands Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">

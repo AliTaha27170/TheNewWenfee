@@ -3,6 +3,11 @@
 @section('content')
 
 
+<!-- Back to top button -->
+<a id="button"> <i class="fas fa-angle-up Arrow"></i> </a>
+<!-- Back to top button -->
+
+
     <div class="page-main page-brands">
         <div class="page-head-banner page-head-banner-layout-text">
 
@@ -20,33 +25,33 @@
 				<div class="characters">
     <ul class="characters-filter">
 		<li class="active"><a href="#">ALL</a></li>
-        				            <li class=""><a href="#">0-9</a></li>
-                                    <li class=""><a href="#">A</a></li>
-                                    <li class=""><a href="#">B</a></li>
-                                    <li class=""><a href="#">C</a></li>
-                                    <li class=""><a href="#">D</a></li>
-                                    <li class=""><a href="#">E</a></li>
-                                    <li class=""><a href="#">F</a></li>
-                                    <li class=""><a href="#">G</a></li>
-                                    <li class=""><a href="#">H</a></li>
-                                    <li class=""><a href="#">I</a></li>
-                                    <li class=""><a href="#">J</a></li>
-                                    <li class=""><a href="#">K</a></li>
-                                    <li class=""><a href="#">L</a></li>
-                                    <li class=""><a href="#">M</a></li>
-                                    <li class=""><a href="#">N</a></li>
-                                    <li class=""><a href="#">O</a></li>
-                                    <li class=""><a href="#">P</a></li>
-                                    <li class=""><a href="#">Q</a></li>
-                                    <li class=""><a href="#">R</a></li>
-                                    <li class=""><a href="#">S</a></li>
-                                    <li class=""><a href="#">T</a></li>
-                                    <li class=""><a href="#">U</a></li>
-                                    <li class=""><a href="#">V</a></li>
-                                    <li class=""><a href="#">W</a></li>
-                                    <li class=""><a href="#">X</a></li>
-                                    <li class=""><a href="#">Y</a></li>
-                                    <li class=""><a href="#">Z</a></li>
+        				            <li id=""><a href="#">0-9</a></li>
+                                    <li class=""><a href="#A">A</a></li>
+                                    <li class=""><a href="#B">B</a></li>
+                                    <li class=""><a href="#C">C</a></li>
+                                    <li class=""><a href="#D">D</a></li>
+                                    <li class=""><a href="#E">E</a></li>
+                                    <li class=""><a href="#F">F</a></li>
+                                    <li class=""><a href="#G">G</a></li>
+                                    <li class=""><a href="#H">H</a></li>
+                                    <li class=""><a href="#I">I</a></li>
+                                    <li class=""><a href="#L">J</a></li>
+                                    <li class=""><a href="#K">K</a></li>
+                                    <li class=""><a href="#L">L</a></li>
+                                    <li class=""><a href="#M">M</a></li>
+                                    <li class=""><a href="#N">N</a></li>
+                                    <li class=""><a href="#O">O</a></li>
+                                    <li class=""><a href="#P">P</a></li>
+                                    <li class=""><a href="#Q">Q</a></li>
+                                    <li class=""><a href="#R">R</a></li>
+                                    <li class=""><a href="#S">S</a></li>
+                                    <li class=""><a href="#T">T</a></li>
+                                    <li class=""><a href="#U">U</a></li>
+                                    <li class=""><a href="#V">V</a></li>
+                                    <li class=""><a href="#W">W</a></li>
+                                    <li class=""><a href="#X">X</a></li>
+                                    <li class=""><a href="#Y">Y</a></li>
+                                    <li class=""><a href="#Z">Z</a></li>
 				                        </ul>
 	<div class="clearfix"></div>
 </div>			</div>
@@ -80,7 +85,7 @@
          --}}
          <div class="container">
         @foreach ($groups as $letter => $group)
-            <div class="CustomLetter">
+            <div class="CustomLetter" id="{{ $letter }}">
                 <h2>{{ $letter }}</h2>
                 </div>
                 <ul class="brands_list">
@@ -97,7 +102,7 @@
                     @endforeach
                 </ul>
 
-            
+
         @endforeach
 
         </div>
@@ -158,6 +163,24 @@
           </div>
       </div>
     </section> -->
+    <script>
+        var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+
+
+    </script>
     <style>
         .page-brands {
             padding-bottom: 30px;
@@ -556,7 +579,7 @@
             background-color: #e7e7e7;
             z-index: -1;
         }
-    #page-title-heading::after 
+    #page-title-heading::after
     {
     content: '';
     position: absolute;
@@ -639,6 +662,39 @@
     display: flex;
     justify-content: center;
 }
+}
+#button {
+  display: inline-block;
+  background-color: #007B70;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+.Arrow
+{
+    color: #fff;
+    font-size: 38px;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+  border-radius : 50% ;
 }
     </style>
 

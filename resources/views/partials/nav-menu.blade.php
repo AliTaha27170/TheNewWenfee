@@ -18,8 +18,10 @@
     /* font-size: 17px; */
     padding: 0;">
 <a href="{{ route('Fav') }}">
-<span>        <i class="fas fa-heart" style="padding: 0 5px;"></i>
-  Favourite List </span> </a>
+<span>
+  Favourite List
+  <i class="fas fa-heart" style="padding: 0 5px;"></i>
+ </span> </a>
 </button>
         <span style="color: #fff;padding: 0 5px;">|</span>
         <a href="#" class="FirstNavLinks">{{ auth()->user()->name }}</a>
