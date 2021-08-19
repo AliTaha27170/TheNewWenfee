@@ -1,7 +1,7 @@
 <div class="products">
     <div class="grid">
             @foreach ($products as  $prod)
-                <div  class="{{ $item->slug }} filter-item" value="{{$item->id}}">
+                <div  class="{{ $prod->slug }} filter-item" value="{{$prod->id}}">
                     <div class="item">
                         <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
@@ -62,6 +62,7 @@
                 </div>
                
             @endforeach
+            
     </div>
+
 </div>
-{!! $products->render() !!}

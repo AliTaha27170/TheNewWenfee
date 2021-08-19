@@ -1,25 +1,82 @@
 
 
 <?php $__env->startSection('content'); ?>
-    <link rel="stylesheet" type="text/css" media="all"
-        href="https://www.terminalx.com/pub/static/version1581550074/_cache/merged-1581550074/83fc09b07a60fa1ee5e912888d4d1078.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen and (min-width: 768px)"
-        href="https://www.terminalx.com/pub/static/version1581550074/frontend/Idus/terminalx/he_IL/css/styles-l.min.css" />
-    <link rel="stylesheet" type="text/css" media="print"
-        href="https://www.terminalx.com/pub/static/version1581550074/frontend/Idus/terminalx/he_IL/css/print.min.css" />
-    <link rel="stylesheet" type="text/css" media="all" href="/pub/idus/style.css" />
+
 
     <div class="page-main page-brands">
         <div class="page-head-banner page-head-banner-layout-text">
 
             <h1 class="page-head-banner-title page-title" id="page-title-heading"
                 aria-labelledby="page-title-heading toolbar-amount">
-                <span class="base" data-ui-id="page-title-wrapper">BRANDS</span>
+                BRANDS
             </h1>
 
         </div>
+        <!-- char Filters -->
+
+        <div class="row top_up2">
+		<div class="col-sm-9">
+			<div class="brand-search">
+				<div class="characters">
+    <ul class="characters-filter">
+		<li class="active"><a href="#">ALL</a></li>
+        				            <li class=""><a href="#">0-9</a></li>
+                                    <li class=""><a href="#">A</a></li>
+                                    <li class=""><a href="#">B</a></li>
+                                    <li class=""><a href="#">C</a></li>
+                                    <li class=""><a href="#">D</a></li>
+                                    <li class=""><a href="#">E</a></li>
+                                    <li class=""><a href="#">F</a></li>
+                                    <li class=""><a href="#">G</a></li>
+                                    <li class=""><a href="#">H</a></li>
+                                    <li class=""><a href="#">I</a></li>
+                                    <li class=""><a href="#">J</a></li>
+                                    <li class=""><a href="#">K</a></li>
+                                    <li class=""><a href="#">L</a></li>
+                                    <li class=""><a href="#">M</a></li>
+                                    <li class=""><a href="#">N</a></li>
+                                    <li class=""><a href="#">O</a></li>
+                                    <li class=""><a href="#">P</a></li>
+                                    <li class=""><a href="#">Q</a></li>
+                                    <li class=""><a href="#">R</a></li>
+                                    <li class=""><a href="#">S</a></li>
+                                    <li class=""><a href="#">T</a></li>
+                                    <li class=""><a href="#">U</a></li>
+                                    <li class=""><a href="#">V</a></li>
+                                    <li class=""><a href="#">W</a></li>
+                                    <li class=""><a href="#">X</a></li>
+                                    <li class=""><a href="#">Y</a></li>
+                                    <li class=""><a href="#">Z</a></li>
+				                        </ul>
+	<div class="clearfix"></div>
+</div>			</div>
+		</div>
+		<div class="col-sm-3">
+			<div class="brand-search">
+			<div class="search">
+	<div class="content-heading search_title">
+		<span id="Brands_Search">Search</span>
+	</div>
+	<div class="search_brand_form search_box">
+    <form id="Search_Box" class="d-flex" action="<?php echo e(route('brand_search')); ?>" method="POST" id="Navbar_Search" hidden>
+            <?php echo csrf_field(); ?>
+            <input  id="Brands_Search_Input" class="form-control me-2" type="search" placeholder="Brand Name" name="search" aria-label="Search">
+            <button id="Brands_Search_Button" class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+        </form>
+	</div>
+</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+                <!-- char Filters -->
+
         <!--   <ul class="brand-letters"></ul> -->
         
+         <div class="container">
         <?php $__currentLoopData = $groups; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $letter => $group): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="CustomLetter">
                 <h2><?php echo e($letter); ?></h2>
@@ -41,7 +98,7 @@
             
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-
+        </div>
     </div>
 
 
@@ -71,7 +128,7 @@
                                   <span class="brand">Ali Taha</span>
                                   <span class="code">#g55525</span>
                               </h3>
-                              <h4 style="height: 150px">Hello World ! </h4>
+                              <h4 style="height: 192px">Hello World ! </h4>
 
                                   <p class="price">
                                       <strong>$50</strong>
@@ -99,11 +156,6 @@
           </div>
       </div>
     </section> -->
-
-
-
-
-
     <style>
         .page-brands {
             padding-bottom: 30px;
@@ -502,7 +554,90 @@
             background-color: #e7e7e7;
             z-index: -1;
         }
-
+    #page-title-heading::after 
+    {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: #007B70;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    }
+#page-title-heading {
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  position: relative;
+  margin-bottom: 60px;
+}
+#page-title-heading::after {
+  content: '';
+  position: absolute ;
+  width: 100px;
+  height: 4px;
+  background : #007B70;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin : 0 auto ;
+}
+.characters-filter li {
+    float: left;
+    height: 36px;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 400;
+}
+.characters-filter li a {
+    color: #007B70;
+    display: block;
+    font-size : 20px ;
+}
+.characters-filter li.active a {
+    font-weight: bold;
+}
+.characters-filter li a:hover
+{
+    color : #00b8a8 ;
+}
+#Brands_Search
+{
+    color : #007B70;
+    font-size: 20px;
+    margin-left: 2px;
+}
+#Brands_Search_Button
+{
+    color: #007B70;
+    background-color: #fff;
+    border-color: #007B70;
+}
+#Brands_Search_Button:hover
+{
+    color: #fff;
+    background-color: #007B70;
+    border-color: #fff;
+}
+#Brands_Search_Input
+{
+    border : 1px solid #007B70;
+}
+@media (max-width: 900px) {
+    #Search_Box
+{
+    width : 80%;
+    margin : 0 auto ;
+}
+#Brands_Search{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+}
     </style>
 
 <?php $__env->stopSection(); ?>

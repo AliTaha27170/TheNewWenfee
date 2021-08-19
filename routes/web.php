@@ -297,3 +297,9 @@ Route::get('/config-cache', function() {
     $exitCode = Artisan::call('config:cache');
     return '<h1>Clear Config cleared</h1>';
 });
+
+
+
+//get prodcts 
+
+Route::get('get_p/{id}',[PageController::class , 'getProducts'])->name('g_products');

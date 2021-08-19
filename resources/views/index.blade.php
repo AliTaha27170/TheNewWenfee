@@ -160,57 +160,21 @@ use     App\hellpers\like_;
             <div class="filter-head">
                 <ul>
                     @foreach ($slideCategories as $item)
-                        <li><button class="mbtn" value="{{$item->id}}" >{{ $item->name }}</button>
+                        <li><button class="mbtn" onclick="getProducts({{$item->id}})" >{{ $item->name }}</button>
                         </li>
                     @endforeach
                 </ul>
             </div>
-            
-// <div id="product">  @include('product')   </div>
+           
+                <div name="product" id="products_view">
 
-
-                    // $('mbtn').on('change', function () {
-                    //     var selected = $(this).find(":selected").attr('value');
-                    //     $.ajax({
-                    //                 url: base_url + '/productCategory/'+selected+'/products/',
-                    //                 type: 'GET',
-                    //                 dataType: 'json',
-                
-                    //         }).done(function (data) {
-                
-                    //             var select = $('select[name=product]');
-                    //             select.empty();
-                    //             select.append('<option value="0" >Please Select Product</option>');
-                    //             $.each(data,function(key, value) {
-                    //                 select.append('<option value=' + key.id + '>' + value.name + '</option>');
-                    //             });
-                    //             console.log("success");
-                    //     })
-                    // });
-                });
-                </script>
-
-
-            {{-- <script>
-                function filter(t, btn) {
-                    $(".filter-head .active").removeClass("active");
-                    $(".filter-box .grid").isotope({
-                        filter: t
-                    });
-                    $(btn).addClass("active");
-                }
-
-                $(document).ready(function() {
-                    $(".filter-head li button")[0].click();
-                })
-
-            </script> --}}
-
+                </div>
+{{---
             <div class="products">
                 <div class="grid">
                     @foreach ($slideCategories as $item)
                         @foreach ($item->products as  $prod)
-                            <div  class="{{ $item->slug }} filter-item" value="{{$item->id}}">
+                            <div name="slug" class="{{ $item->slug }} filter-item" value="{{$item->id}}">
                                 <div class="item">
                                     <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
@@ -276,7 +240,7 @@ use     App\hellpers\like_;
             </div>
 
         </div>
-    
+    --}}
     @endif
     <!-- Brands Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
@@ -530,7 +494,6 @@ use     App\hellpers\like_;
      <!-- shipping box -->
      <section id="ShippingBox">
 	<figure>
-    <i class="fas fa-times" id="Close_Shipping_Box"></i>
     <figcaption>
       <h3>
       Welcome To WenFee
@@ -585,6 +548,8 @@ $('.close-btn').click(function(){
   $('.alert').removeClass("show");
   $('.alert').addClass("hide");
 });
+$('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}});
+
 </script>
     <!-- adding to cart alert -->
 

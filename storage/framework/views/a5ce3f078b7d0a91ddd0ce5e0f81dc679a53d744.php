@@ -91,11 +91,22 @@
     </script>
 
 
+   
+    
+
+    <script>
+        function getProducts(id) {
+            $('#products_view').load("../../../../../get_p/" +id);
+        }
+        
+
+          </script>
+      
+
     
     <?php echo $__env->yieldPushContent('scripts'); ?>
 
-    
-
+ 
 </body>
 
 </html>

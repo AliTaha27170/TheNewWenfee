@@ -91,11 +91,22 @@
     </script>
 
 
+   
+    {{-- get products  --}}
+
+    <script>
+        function getProducts(id) {
+            $('#products_view').load("../../../../../get_p/" +id);
+        }
+        
+
+          </script>
+      
+
     {{-- *** --}}
     @stack('scripts')
 
-    
-
+ 
 </body>
 
 </html>

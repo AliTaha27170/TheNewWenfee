@@ -25,18 +25,39 @@ class PageController extends Controller
     }
    public function landing()
    {
-     $slideCategories=ProductCategory::where('is_homepage',1)->with('products')->get();    
-     
+    $slideCategories  =  ProductCategory::where('is_homepage',1)->with('products')->get();    
+    $slideCategory    =  ProductCategory::where('is_homepage',1)->with('products')->inRandomOrder()->first();   
+    
        $slides=Slide::inRandomOrder()->get();
        $recipes=Recipe::orderby('created_at','DESC')->take(3)->get();
        $brands=Brand::inRandomOrder()->get();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
 
-       return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands'));
+       return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands','slideCategory'));
    }
+//Start 
+   public function getProducts($id){
+    
+    if($id  ){
+        $products  = Product::where('product_category_id' , $id)->paginate(4);
+    }else{
+        $prod = Product::all();
+        //dd($products);
+        // $returnHTML = view("product");
+        // $returnHTML=$returnHTML->render();
+        
+    }
+    return view('product')->with(
+        [
+            "products" => $products
+        ]
+    );
+    
+   // return response()->json($products);   
+    //return Response::json(['html' => $html]);
+}
 
-   
 
    
    public function about()
