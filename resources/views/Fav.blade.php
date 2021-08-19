@@ -32,7 +32,7 @@
                                             <span class="brand">{{ $like->product->name }}</span>
                                             <span class="code">#{{ $like->product->code }}</span>
                                         </h3>
-                                        <h4 style="height: 192px">{!! $like->product->body  !!}
+                                        <h4 style="height: 150px">{!! $like->product->body  !!}
                                         <span class="NewProduct">NEW</span>
 
 
@@ -69,7 +69,7 @@
                                         class="add-cart-btn"  onclick="add_to_cart_main({{ $like->product->ac_id }},{{ $like->product->id }});" href="javascript:void(0);"
                                         @endif
                                             >
-                                            @if(call_for_price)
+                                            @if($like->product->call_for_price)
                                                 <span> call for price </span>
                                         @elseif($like->product->out_of_stock)
                                              <span> Out of stock </span>
