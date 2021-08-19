@@ -25,7 +25,11 @@ use     App\hellpers\like_;
                     <h3>
                         <span class="brand">{{$recipe->title}}</span>
                     </h3>
+                    <h3 id="Ingredients_tittle">Ingredients</h3>
+                <ol class="continuous-list" id="Ingredients">
+                    {!!$recipe->Ingredients!!}
 
+                </ol>
 
                     <!-- <ul class="recipe-details">
                         <li class="recipe-details-item time">
@@ -66,14 +70,7 @@ use     App\hellpers\like_;
 
 <div class="RecipesMethodBox">
         <div class="row">
-            <div class="col-md-6">
-                <h3>Ingredients</h3>
-                <ol class="continuous-list">
-                    {!!$recipe->Ingredients!!}
-
-                </ol>
-            </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <h3>Method</h3>
                     <ul class="continuous-list">
                         {!!$recipe->main_desc!!}

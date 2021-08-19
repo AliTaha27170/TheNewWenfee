@@ -2278,7 +2278,20 @@ textarea.input1 {
   font-weight: bold;
   font-size: 32px;
 }
+#Ingredients_tittle
+{
+  font-size: 20px;
+  margin: 10px 0;
+}
 
+#Ingredients
+{
+  padding-left: 0;
+}
+.MsoNormal
+{
+  padding: 10px 0;
+}
 .RecipesMethodBox .continuous-list {
   font-size: 20px;
   font-weight: 400;
