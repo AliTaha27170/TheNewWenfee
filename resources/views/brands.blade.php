@@ -80,7 +80,7 @@
          --}}
          <div class="container">
         @foreach ($groups as $letter => $group)
-            <div class="CustomLetter">
+            <div class="CustomLetter" id="{{ $letter }}">
                 <h2>{{ $letter }}</h2>
                 </div>
                 <ul class="brands_list">
@@ -97,7 +97,7 @@
                     @endforeach
                 </ul>
 
-            
+
         @endforeach
 
         </div>
@@ -556,7 +556,7 @@
             background-color: #e7e7e7;
             z-index: -1;
         }
-    #page-title-heading::after 
+    #page-title-heading::after
     {
     content: '';
     position: absolute;
