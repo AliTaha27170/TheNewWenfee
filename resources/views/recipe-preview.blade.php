@@ -7,19 +7,7 @@ use     App\hellpers\like_;
 <div class="pro-details-page">
     <div class="pro-details-box">
         <div class="row">
-            <div class="col-md-1">
-                <div class="slider-nav">
-                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
-                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
-                </div>
-            </div>
-            <div class="col-md-5">
-                <div class="slider-for">
-                    <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
-                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
 
-                </div>
-            </div>
             <div class="col-md-6">
                 <div class="about">
                     <h3>
@@ -61,6 +49,22 @@ use     App\hellpers\like_;
                     </div> --}}
                 </div>
             </div>
+
+            
+            <div class="col-md-5">
+                <div class="slider-for">
+                    <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
+                </div>
+            </div>
+            <div class="col-md-1">
+                <div class="slider-nav">
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
+                    <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
+                </div>
+            </div>
+
+
         </div>
 
     </div>
