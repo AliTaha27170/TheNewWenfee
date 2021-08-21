@@ -158,19 +158,11 @@ use     App\hellpers\like_;
             <div class="filter-head">
                 <ul>
                     @foreach ($slideCategories as $item)
-<<<<<<< HEAD
-                        <li><button class="mbtn" onclick="getProducts({{$item->id}})" >{{ $item->name }}</button>
-=======
                         <li><button class="mbtn" onclick="filter('.{{ $item->slug }}', this)">{{ $item->name }}</button>
->>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
                         </li>
                     @endforeach
                 </ul>
             </div>
-<<<<<<< HEAD
-           
-                <div name="product" id="products_view">
-=======
 
             <script>
                 function filter(t, btn) {
@@ -186,7 +178,6 @@ use     App\hellpers\like_;
                 })
 
             </script>
->>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
 
                 </div>
 {{---
@@ -194,11 +185,7 @@ use     App\hellpers\like_;
                 <div class="grid">
                     @foreach ($slideCategories as $item)
                         @foreach ($item->products as  $prod)
-<<<<<<< HEAD
-                            <div name="slug" class="{{ $item->slug }} filter-item" value="{{$item->id}}">
-=======
                             <div class="{{ $item->slug }} filter-item">
->>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
                                 <div class="item">
                                     <a  class="fav-btn"><i class="{{ (isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart' }}"
 
@@ -286,10 +273,7 @@ use     App\hellpers\like_;
             </div>
 
         </div>
-<<<<<<< HEAD
     --}}
-=======
->>>>>>> c9db98334f4cf81b6d41625332164cfd140c159a
     @endif
     <!-- Brands Slider -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
@@ -543,6 +527,7 @@ use     App\hellpers\like_;
      <!-- shipping box -->
      <section id="ShippingBox">
 	<figure>
+    <i class="fas fa-times" id="Close_Shipping_Box"></i>
     <figcaption>
       <h3>
       Welcome To WenFee

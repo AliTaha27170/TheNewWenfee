@@ -98,6 +98,16 @@ $(document).ready(function () {
 
 
 
-$(".User-Icon").click(function(){
-  $(".User-Menu").fadeToggle();
+// $(".User-Icon").click(function(){
+//   $(".User-Menu").fadeToggle();
+// });
+
+
+$('.User-avtar').click(function(){
+  if( $(".User-Dropdown").hasClass( "U-open" ) ){
+          $('.User-Dropdown').removeClass("U-open");
+  }
+  else {
+          $('.User-Dropdown').addClass("U-open");
+  }
 });

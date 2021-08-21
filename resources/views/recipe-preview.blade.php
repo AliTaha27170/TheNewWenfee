@@ -10,8 +10,8 @@ use     App\hellpers\like_;
 
             <div class="col-md-6">
                 <div class="about">
-                    <h3>
-                        <span class="brand">{{$recipe->title}}</span>
+                    <h3 id="Recipe_Name">
+                        {{$recipe->title}}
                     </h3>
                     <h3 id="Ingredients_tittle">Ingredients</h3>
                 <ol class="continuous-list" id="Ingredients">

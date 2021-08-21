@@ -2280,6 +2280,22 @@ textarea.input1 {
   font-weight: bold;
   font-size: 32px;
 }
+#Recipe_Name
+{
+  font-weight: bold;
+  font-size: 30px;
+}
+#Recipe_Name::after {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 4px;
+  background: #f7b036;
+  bottom: 0;
+  left: 12px;
+  top: 35px;
+  border-radius: 20px;
+}
 #Ingredients_tittle
 {
   font-size: 20px;
