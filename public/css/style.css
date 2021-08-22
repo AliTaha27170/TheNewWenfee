@@ -2278,7 +2278,7 @@ textarea.input1 {
 {
   color: #F7B036;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
 }
 #Recipe_Name
 {
@@ -2298,8 +2298,8 @@ textarea.input1 {
 }
 #Ingredients_tittle
 {
-  font-size: 20px;
-  margin: 10px 0;
+  font-size: 26px;
+  margin: 30px 0 10px 0;
 }
 
 #Ingredients
@@ -2314,6 +2314,16 @@ textarea.input1 {
   font-size: 20px;
   font-weight: 400;
   margin-bottom: 2.8rem;
+}
+#chief_Image_Section
+{
+  display: flex;
+  align-items: flex-end;
+}
+#chief_Image
+{
+  height: auto;
+  width: 100%;
 }
 .RecipesMethodBox ol
 {
@@ -2973,6 +2983,7 @@ body .modal a.close-modal {
 }
 .settings-page .settings-container .settings-section .my-form .form-submit .btn {
   width: 50%;
+  cursor: pointer;
 }
 .settings-page .settings-container .settings-section .my-form .form-group.editable .input-group {
   display: flex;
@@ -3011,6 +3022,15 @@ body .modal a.close-modal {
   margin-bottom: 0;
   font-size: 1rem;
   cursor: default;
+}
+#Email , #Number , #Address ,#Full_Name
+{
+  border : none ;
+  width: 300px;
+}
+.Save-Buttons
+{
+  background-color: #007b70;
 }
 .Editing-is-enabled
 {
@@ -3059,7 +3079,6 @@ body .modal a.close-modal {
   text-align: left;
   font-size: 16px;
   color: #555;
-  cursor: pointer;
   transition: all 0.5s;
 }
 .img-upload-container h4:hover {
@@ -3130,8 +3149,25 @@ body .modal a.close-modal {
 .my-form .form-submit .btn:disabled {
   opacity: 0.75;
 }
-.my-form .form-submit .btn:not(:disabled):not(.disabled) {
-  background-color: #E59500;
+.upload-image input {
+  display: block !important;
+  width: 158px !important;
+  height: 45px !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+}
+.upload-image {
+  cursor:pointer;
+  width: 158px;
+  height: 45px;
+  overflow:hidden;
+  position:relative;
+  display:inline-block;
+  /*background-color:#fff;*/
+  background-repeat: no-repeat;
+  background-image:
+    url('http://icons.iconarchive.com/icons/martz90/circle/512/camera-icon.png');
+  background-size:20px 20px;
 }
 
 

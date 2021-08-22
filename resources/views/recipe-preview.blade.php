@@ -74,13 +74,14 @@ use     App\hellpers\like_;
 
 <div class="RecipesMethodBox">
         <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                     <h3>Method</h3>
                     <ul class="continuous-list">
                         {!!$recipe->main_desc!!}
-
                     </ul>
-
+                </div>
+                <div class="col-md-2" id="chief_Image_Section">
+                    <img src="https://i.ibb.co/j8vSrwP/chef-wenfee.png" id="chief_Image" alt="">
                 </div>
 </div>
 </div>

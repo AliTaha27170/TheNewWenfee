@@ -4,7 +4,7 @@
       <form class="d-flex" action="{{ route('magic_search') }}" method="POST" id="Navbar_Search">
         @csrf
         <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+        <button id="Nav_Bar_Search_Button" class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
       </form>
 
       @if (isset(auth()->user()->id))
@@ -35,10 +35,10 @@
 
       @else
       <div class="Registration">
-        <i class="fas fa-user User-Icon"></i>
         <a href="/login" class="FirstNavLinks">Login</a>
         <span id="NavSpan">|</span>
         <a href="/register" class="FirstNavLinks">Register</a>
+        <i class="fas fa-user User-Icon"></i>
       </div>
       @endif
     </div>

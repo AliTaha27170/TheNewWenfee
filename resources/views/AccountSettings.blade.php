@@ -8,21 +8,21 @@
     <div class="settings-section">
       <h2 class="settings-title">General Information</h2>
         <div class="non-active-form">
-          <p id="Full_Name">Adham Jammal</p><i id="Edit_Full_Name" class="fas fa-pen"></i>
+          <input type="text" id="Full_Name" name="FullName" value="Adham Jammal" ><i id="Edit_Full_Name" class="fas fa-pen"></i>
         </div>
    <div>
      <div class="non-active-form">
-       <p  id="Address" class="capitalize">Lattakia Street NO.9</p><i id="Edit_Address"class="fas fa-pen"></i>
+       <input type="text" id="Address" name="Address" class="capitalize" value="Lattakia Street NO.9"><i id="Edit_Address"class="fas fa-pen"></i>
      </div>
     </div>
     <div>
       <div class="non-active-form">
-        <p class="capitalize" id="Number">+963 992 452 012</p><i id="Edit_Number" class="fas fa-pen"></i>
+        <input type="text" name="PhoneNumber" class="capitalize" id="Number" value="+963 992 452 012"><i id="Edit_Number" class="fas fa-pen"></i>
       </div>
     </div>
     <div>
       <div class="non-active-form">
-        <p id="Email">Adhamjammal@test.com</p><i id="Edit_Email" class="fas fa-pen"></i>
+        <input type="email" name="Email" id="Email" value="Adhamjammal@test.com"><i id="Edit_Email" class="fas fa-pen"></i>
       </div>
     </div>
     <button id="Save_Button" class="btn button full" type="submit">Save</button>
@@ -35,13 +35,16 @@
         <input type="file" accept=".jpg, .png, .jpeg, .gif" value="">
       </label>
       <h4>Change Your Profile Picture</h4>
+      <div class="upload-image">
+      <input type="file" class="imgInp" data-id="img1">
+      </div>
       <div class="img-preview-container">
         <div class="img-preview" style="background-image: url('http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png');">
         </div>
       </div>
     </div>
     <div class="form-submit">
-      <button class="btn button full" type="submit" disabled="">Save New Picture</button>
+      <button class="btn button full" type="submit">Save New Picture</button>
     </div>
   </form>
 </div>
@@ -61,7 +64,7 @@
       </div>
     </div>
    <div class="form-submit right">
-     <button class="btn button full" type="submit" disabled="">Change Password</button>
+     <button class="btn button full" type="submit" class="Save-Buttons">Change Password</button>
     </div>
   </form>
 </div>
@@ -70,23 +73,23 @@
 <script>
     //full name
 $('#Edit_Full_Name').click(function(){
-	document.getElementById('Full_Name').setAttribute("contenteditable", "true");
-    $("#Full_Name").addClass("Editing-is-enabled");
+  $("#Full_Name").select();
+    // $("#Full_Name").addClass("Editing-is-enabled");
   });
   //address
   $('#Edit_Address').click(function(){
-	document.getElementById('Address').setAttribute("contenteditable", "true");
-    $("#Address").addClass("Editing-is-enabled");
+    $("#Address").select();
+    // $("#Address").addClass("Editing-is-enabled");
   });
   //number
   $('#Edit_Number').click(function(){
-	document.getElementById('Number').setAttribute("contenteditable", "true");
-    $("#Number").addClass("Editing-is-enabled");
+    $("#Number").select();
+    // $("#Number").addClass("Editing-is-enabled");
   });
   //email
   $('#Edit_Email').click(function(){
-	document.getElementById('Email').setAttribute("contenteditable", "true");
-    $("#Email").addClass("Editing-is-enabled");
+    $("#Email").select();
+    // $("#Email").addClass("Editing-is-enabled");
   });
 </script>
 @endsection
