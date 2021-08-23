@@ -167,8 +167,15 @@ use     App\hellpers\like_;
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: 400;
 }
+@media  (max-width: 1000px) {
+  .alert
+   {
+    width: 100%;
+  }
+ }
+
 </style>
 <script>
     $('.add-cart-btn').click(function(){
@@ -246,6 +253,5 @@ $('.close-btn').click(function(){
             .carousel{
                 display: none;
             }
-
     </style>
 @endpush

@@ -303,7 +303,7 @@ border-radius: 0;
 
 .megamenu {
  overflow-y: scroll;
- height: 590px;
+ height: 535px;
  position: absolute;
  width: 100%;
  left: 0;
@@ -978,13 +978,13 @@ margin: 0 auto;
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: 400;
 }
 @media  (max-width: 1000px) {
   .alert
    {
     width: 100%;
- }
+  }
  }
 .alert.showAlert{
   opacity: 1;
