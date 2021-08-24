@@ -48,6 +48,10 @@ button {
 
 .ta-c {
   text-align: center;
+  display: flex;
+  width: auto;
+  height: 50px;
+  justify-content: center;
 }
 
 .ta-r {

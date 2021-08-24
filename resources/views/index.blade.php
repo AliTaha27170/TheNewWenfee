@@ -82,6 +82,56 @@ use     App\hellpers\like_;
 
     <!--_____________________________________________________________________-->
 
+        <!--____________________Section_____________________-->
+
+        <section class="Our-Categories" style =" display : none ;" >
+        <div class="container-fluid">
+            <h2 style="top: 25px;">Our Categories</h2>
+            <div class="row">
+
+                <div class="col-md-4 col-sm-12 Feature">
+                    <img src="Images/1.png" alt="">
+                    <span>Shipping</span>
+                </div>
+
+                <div class="col-md-2 col-sm-12 Feature">
+                    <img src="Images/2.png" alt="">
+                    <span>
+                    1
+                </span>
+                </div>
+
+                <div class="col-md-2 col-sm-12 Feature">
+                    <img src="Images/3.png" alt="">
+                    <span>
+                        2                  
+                    </span>
+                </div>
+
+                <div class="col-md-2 col-sm-12 Feature">
+                    <img src="Images/4.png" alt="">
+                    <span>
+                3
+                </span>
+                </div>
+
+                <div class="col-md-2 col-sm-12 Feature">
+                    <img src="Images/4.png" alt="">
+                    <span>
+                4
+                </span>
+                </div>
+
+            </div>
+    </div>
+</section>
+
+
+
+
+        <!--____________________Section_____________________-->
+
+
     <div class="top-cats-box">
         <div class="tcb-box" style="background-image: url('https://i.ibb.co/bmD40gk/dairy.jpg');background-position: left;">
             <div class="content">
@@ -320,7 +370,7 @@ use     App\hellpers\like_;
                     {
                     slidesToShow : 5 ,
                     slidesToScroll : 2 ,
-                    dots : true ,
+                    dots : false ,
                     arrows : true ,
                     autoplay : true ,
                     autoplayspeed : 2000 ,
@@ -329,15 +379,16 @@ use     App\hellpers\like_;
                     {
                     breakpoint: 1024,
                     settings: {
-                    slidesToShow : 5 ,
-                    slidesToScroll : 2 ,
-                    dots : true ,
+                    slidesToShow : 3 ,
+                    slidesToScroll : 3 ,
+                    dots : false ,
                     arrows : true ,
                     autoplay : true ,
                     autoplayspeed : 2000 ,
                     infinite : true ,
                     }
                     },
+
                     {
                     breakpoint: 600,
                     settings: {
@@ -589,10 +640,7 @@ $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}});
 
 
     <style>
-        .slick-dots li{
-            display: none;
 
-        }
         .BrandsSlider .slick-slide{
             height: 235px;
             display: flex;
