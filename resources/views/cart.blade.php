@@ -113,12 +113,6 @@
 
 
     <!--------------------------------------------------------------------------------->
-    <html lang="en" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml"><head>
-	<title>Wenfee</title>
-	<meta name="description" content="Wenfee">
-	<meta name="keywords" content="">
-	
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <!--JQUERYUI_CORE--><link type="text/css" rel="stylesheet" href="https://wenfeeusa.americommerce.com///ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.min.css">
 <!--FRONTEND_AUTOCOMPLETE_CSS--><link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//store/inc/style/jquery.ui.autocomplete.css">
 <script type="text/javascript" async="" src="https://www.gstatic.com/recaptcha/releases/Eyd0Dt8h04h7r-D86uAD1JP-/recaptcha__en.js" crossorigin="anonymous" integrity="sha384-Cm1nQr6Xj7E/8hYK0ZQgt50B1y7qtncPBm9tQGQV453cb5N/2ou4jkkZbzQejCpR"></script><script type="text/javascript" src="https://wenfeeusa.americommerce.com///ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -529,12 +523,6 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
     }
 </script>
 
-
-
-  <!-- Top Widgets -->
-  
-  <!-- END Top Widgets -->
-
   <div class="OnePageCheckOut-checkoutArea checkout row m-0">
     <div class="checkout-wrap col-xl-7">
       <div class="errortext-wrap mb-2"> <div id="UpdatePanelErrorArea">
@@ -558,6 +546,33 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
         
         <!-- END Mobile Log In Link -->
         <div class="checkout-container card-body bg-accent">
+        <div id="Buttons">
+        <button id="Continue_Buttons">Continue Shopping </button>
+        <button id="Cancel_Button">cancel</button>
+        </div>
+        <style>
+        #Buttons
+        {
+          display: flex;
+          justify-content: space-between;
+        }
+        #Cancel_Button
+        {
+          background: #ba0000;
+          border-radius: 5px;
+          padding: 12px;
+          color: #fff;
+          margin-bottom: 5px;
+        }
+        #Continue_Buttons
+        {
+          background: #007b70;
+          border-radius: 5px;
+          padding: 12px;
+          color: #fff;
+          margin-bottom: 5px;
+        }
+        </style>
           <!-- Account -->
           <div class="checkout-existingCustomer step-item active hide-notext-in" id="contact-container" notext=".step-body">
             <div class="checkout-existingCustomer-header step-header row row-cols-auto m-0 pt-2 col-12 align-items-center">
@@ -636,254 +651,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                           
 
                           <div class="checkoutShipping-country col-12 p-0">
-                            <label><span id="addrShipping_lblCountry">Country</span></label>
-                            <select name="addrShipping$ddCountryID" onchange="javascript:setTimeout('__doPostBack(\'addrShipping$ddCountryID\',\'\')', 0)" id="addrShipping_ddCountryID" class="AddressEditorEmailTextbox validation-required form-control">
-	<option selected="selected" value="1">United States</option>
-	<option value="4">Afghanistan</option>
-	<option value="7">Albania</option>
-	<option value="60">Algeria</option>
-	<option value="13">American Samoa</option>
-	<option value="2">Andorra</option>
-	<option value="10">Angola</option>
-	<option value="6">Anguilla</option>
-	<option value="11">Antarctica</option>
-	<option value="5">Antigua and Barbuda</option>
-	<option value="12">Argentina</option>
-	<option value="8">Armenia</option>
-	<option value="16">Aruba</option>
-	<option value="15">Australia</option>
-	<option value="14">Austria</option>
-	<option value="17">Azerbaijan</option>
-	<option value="31">Bahamas</option>
-	<option value="24">Bahrain</option>
-	<option value="20">Bangladesh</option>
-	<option value="19">Barbados</option>
-	<option value="35">Belarus</option>
-	<option value="21">Belgium</option>
-	<option value="36">Belize</option>
-	<option value="26">Benin</option>
-	<option value="27">Bermuda</option>
-	<option value="32">Bhutan</option>
-	<option value="29">Bolivia</option>
-	<option value="18">Bosnia-Herzegovina</option>
-	<option value="34">Botswana</option>
-	<option value="33">Bouvet Island</option>
-	<option value="30">Brazil</option>
-	<option value="103">British Indian Ocean Territory</option>
-	<option value="28">Brunei Darussalam</option>
-	<option value="23">Bulgaria</option>
-	<option value="22">Burkina Faso</option>
-	<option value="25">Burundi</option>
-	<option value="113">Cambodia</option>
-	<option value="45">Cameroon</option>
-	<option value="37">Canada</option>
-	<option value="51">Cape Verde</option>
-	<option value="120">Cayman Islands</option>
-	<option value="39">Central African Republic</option>
-	<option value="207">Chad</option>
-	<option value="44">Chile</option>
-	<option value="46">China</option>
-	<option value="52">Christmas Island</option>
-	<option value="38">Cocos (Keeling) Islands</option>
-	<option value="47">Colombia</option>
-	<option value="115">Comoros</option>
-	<option value="40">Congo</option>
-	<option value="43">Cook Islands</option>
-	<option value="48">Costa Rica</option>
-	<option value="42">Cote D'Ivoire (Ivory Coast)</option>
-	<option value="96">Croatia</option>
-	<option value="50">Cuba</option>
-	<option value="247">Curacao</option>
-	<option value="53">Cyprus</option>
-	<option value="54">Czech Republic</option>
-	<option value="49">Czechoslovakia (former)</option>
-	<option value="57">Denmark</option>
-	<option value="56">Djibouti</option>
-	<option value="58">Dominica</option>
-	<option value="59">Dominican Republic</option>
-	<option value="216">East Timor</option>
-	<option value="61">Ecuador</option>
-	<option value="63">Egypt</option>
-	<option value="203">El Salvador</option>
-	<option value="86">Equatorial Guinea</option>
-	<option value="65">Eritrea</option>
-	<option value="62">Estonia</option>
-	<option value="67">Ethiopia</option>
-	<option value="70">Falkland Islands (Malvinas)</option>
-	<option value="72">Faroe Islands</option>
-	<option value="69">Fiji</option>
-	<option value="68">Finland</option>
-	<option value="73">France</option>
-	<option value="74">France, Metropolitan</option>
-	<option value="79">French Guiana</option>
-	<option value="170">French Polynesia</option>
-	<option value="208">French Southern Territories</option>
-	<option value="75">Gabon</option>
-	<option value="83">Gambia</option>
-	<option value="78">Georgia, Republic of</option>
-	<option value="55">Germany</option>
-	<option value="80">Ghana</option>
-	<option value="81">Gibraltar</option>
-	<option value="87">Greece</option>
-	<option value="82">Greenland</option>
-	<option value="77">Grenada</option>
-	<option value="85">Guadeloupe</option>
-	<option value="90">Guam</option>
-	<option value="89">Guatemala</option>
-	<option value="84">Guinea</option>
-	<option value="91">Guinea-Bissau</option>
-	<option value="92">Guyana</option>
-	<option value="97">Haiti</option>
-	<option value="94">Heard and McDonald Islands</option>
-	<option value="95">Honduras</option>
-	<option value="93">Hong Kong</option>
-	<option value="98">Hungary</option>
-	<option value="106">Iceland</option>
-	<option value="102">India</option>
-	<option value="99">Indonesia</option>
-	<option value="105">Iran</option>
-	<option value="104">Iraq</option>
-	<option value="100">Ireland</option>
-	<option value="101">Israel</option>
-	<option value="107">Italy</option>
-	<option value="108">Jamaica</option>
-	<option value="110">Japan</option>
-	<option value="109">Jordan</option>
-	<option value="121">Kazakhstan</option>
-	<option value="111">Kenya</option>
-	<option value="114">Kiribati</option>
-	<option value="117">Korea, Democratic Peoples Republic of (North Korea)</option>
-	<option value="118">Korea, Republic of (South Korea)</option>
-	<option value="119">Kuwait</option>
-	<option value="112">Kyrgyzstan</option>
-	<option value="122">Laos</option>
-	<option value="131">Latvia</option>
-	<option value="123">Lebanon</option>
-	<option value="128">Lesotho</option>
-	<option value="127">Liberia</option>
-	<option value="132">Libya</option>
-	<option value="125">Liechtenstein</option>
-	<option value="129">Lithuania</option>
-	<option value="130">Luxembourg</option>
-	<option value="142">Macau</option>
-	<option value="138">Macedonia</option>
-	<option value="136">Madagascar</option>
-	<option value="150">Malawi</option>
-	<option value="152">Malaysia</option>
-	<option value="149">Maldives</option>
-	<option value="139">Mali</option>
-	<option value="147">Malta</option>
-	<option value="137">Marshall Islands</option>
-	<option value="144">Martinique</option>
-	<option value="145">Mauritania</option>
-	<option value="148">Mauritius</option>
-	<option value="238">Mayotte</option>
-	<option value="151">Mexico</option>
-	<option value="71">Micronesia</option>
-	<option value="135">Moldova</option>
-	<option value="134">Monaco</option>
-	<option value="141">Mongolia</option>
-	<option value="246">Montenegro</option>
-	<option value="146">Montserrat</option>
-	<option value="133">Morocco</option>
-	<option value="153">Mozambique</option>
-	<option value="140">Myanmar</option>
-	<option value="154">Namibia</option>
-	<option value="163">Nauru</option>
-	<option value="162">Nepal</option>
-	<option value="160">Netherlands</option>
-	<option value="164">Neutral Zone</option>
-	<option value="155">New Caledonia</option>
-	<option value="166">New Zealand</option>
-	<option value="159">Nicaragua</option>
-	<option value="156">Niger</option>
-	<option value="158">Nigeria</option>
-	<option value="165">Niue</option>
-	<option value="157">Norfolk Island</option>
-	<option value="143">Northern Mariana Islands</option>
-	<option value="161">Norway</option>
-	<option value="167">Oman</option>
-	<option value="173">Pakistan</option>
-	<option value="179">Palau</option>
-	<option value="168">Panama</option>
-	<option value="171">Papua New Guinea</option>
-	<option value="180">Paraguay</option>
-	<option value="169">Peru</option>
-	<option value="172">Philippines</option>
-	<option value="176">Pitcairn</option>
-	<option value="174">Poland</option>
-	<option value="178">Portugal</option>
-	<option value="177">Puerto Rico</option>
-	<option value="181">Qatar</option>
-	<option value="182">Reunion</option>
-	<option value="183">Romania</option>
-	<option value="184">Russia</option>
-	<option value="185">Rwanda</option>
-	<option value="88">S. Georgia and S. Sandwich Isls.</option>
-	<option value="116">Saint Kitts and Nevis</option>
-	<option value="124">Saint Lucia</option>
-	<option value="229">Saint Vincent and the Grenadines</option>
-	<option value="236">Samoa</option>
-	<option value="197">San Marino</option>
-	<option value="201">Sao Tome and Principe</option>
-	<option value="186">Saudi Arabia</option>
-	<option value="198">Senegal</option>
-	<option value="245">Serbia</option>
-	<option value="188">Seychelles</option>
-	<option value="196">Sierra Leone</option>
-	<option value="191">Singapore</option>
-	<option value="248">Sint Maarten</option>
-	<option value="195">Slovak Republic</option>
-	<option value="193">Slovenia</option>
-	<option value="187">Solomon Islands</option>
-	<option value="199">Somalia</option>
-	<option value="240">South Africa</option>
-	<option value="66">Spain</option>
-	<option value="126">Sri Lanka</option>
-	<option value="192">St. Helena</option>
-	<option value="175">St. Pierre and Miquelon</option>
-	<option value="189">Sudan</option>
-	<option value="200">Suriname</option>
-	<option value="194">Svalbard and Jan Mayen Islands</option>
-	<option value="205">Swaziland</option>
-	<option value="190">Sweden</option>
-	<option value="41">Switzerland</option>
-	<option value="204">Syria</option>
-	<option value="220">Taiwan</option>
-	<option value="211">Tajikistan</option>
-	<option value="221">Tanzania</option>
-	<option value="210">Thailand</option>
-	<option value="209">Togo</option>
-	<option value="212">Tokelau</option>
-	<option value="215">Tonga</option>
-	<option value="218">Trinidad and Tobago</option>
-	<option value="214">Tunisia</option>
-	<option value="217">Turkey</option>
-	<option value="213">Turkmenistan</option>
-	<option value="206">Turks and Caicos Islands</option>
-	<option value="219">Tuvalu</option>
-	<option value="223">Uganda</option>
-	<option value="222">Ukraine</option>
-	<option value="3">United Arab Emirates</option>
-	<option value="224">United Kingdom</option>
-	<option value="226">Uruguay</option>
-	<option value="225">US Minor Outlying Islands</option>
-	<option value="227">Uzbekistan</option>
-	<option value="234">Vanuatu</option>
-	<option value="228">Vatican City State (Holy See)</option>
-	<option value="230">Venezuela</option>
-	<option value="233">Vietnam</option>
-	<option value="231">Virgin Islands (British)</option>
-	<option value="232">Virgin Islands (U.S.)</option>
-	<option value="235">Wallis and Futuna Islands</option>
-	<option value="64">Western Sahara</option>
-	<option value="237">Yemen</option>
-	<option value="239">Yugoslavia</option>
-	<option value="242">Zaire</option>
-	<option value="241">Zambia</option>
-	<option value="243">Zimbabwe</option>
 
-</select>
                           </div>
 
                           <div class="checkoutShipping-geolocal row col-12 m-0 p-0">
@@ -1101,37 +869,72 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
 	
 	<div id="ucShippingMethod_dvShippingMethod">
 	    
-	    
+                        <!-- Shipping Section -->
+
                 <div id="dvShippingClassificationCodePickerArea">
+
+                  <p></p>
+                  <input type="radio" name="tab" value="Shipping" onclick="show1();" />
+                  <label>Ground Shipping (Wenfee UPSUSPS) - $15.99USPS)</label>
+                  <br>
+                  <br>
+                  <input type="radio" name="tab" value="pickup" onclick="show2();" />
+                  <label>pick up For Free</label>
+                  <div id="div1" class="hidden">
+                  <label for="start" style="margin-top: 7px;"><b>date:</b></label>
+                  <input type="date" id="Date">
+                  <br>
+                  <br>
+                  <label><b>Hello Ali :</b></label>
+                  <br>
+                  <input type="radio" name="Location"> location1
+                  <br>
+                  <br>
+                  <input type="radio" name="Location"> location2
+                  <br>
+                  <br>
+                  <input type="radio" name="Location"> location3
+
+                  
+
+
+
+                  </div>
                     
-                    
-            
-                    <div id="dvShippingClassificationCodePickerSubHeader">
-                        
-                        
-	                    
-                        
-                    </div>
-                    <div id="dvShippingClassificationCodePicker">
-                        
-                        <table id="ucShippingMethod_rpShippingSet_ctl01_ShippingMethodsRadioButtons_rbShippingMethods" class="CheckOutText shipping-as-list" cellpadding="5" onchange="if (document.getElementById('lbtnRecalcShipping')) document.getElementById('lbtnRecalcShipping').href='#'" border="0" ranchanges="true">
-	<tbody class="list-group"><label class="list-group-item list-group-action">
-		<input id="ucShippingMethod_rpShippingSet_ctl01_ShippingMethodsRadioButtons_rbShippingMethods_0" type="radio" name="ucShippingMethod$rpShippingSet$ctl01$ShippingMethodsRadioButtons$rbShippingMethods" value="Custom;6;pick up" onclick="javascript:setTimeout('__doPostBack(\'ucShippingMethod$rpShippingSet$ctl01$ShippingMethodsRadioButtons$rbShippingMethods$0\',\'\')', 0)" class="shipping-as-list" data-lpignore="true" ranchanges="true"><label for="ucShippingMethod_rpShippingSet_ctl01_ShippingMethodsRadioButtons_rbShippingMethods_0"><span class="shipping-desc"><span class="shipping-name">pick up </span><span class="estimated-date"></span></span><span class="shipping-cost">Free</span></label>
-	</label><label class="list-group-item list-group-action">
-		<input id="ucShippingMethod_rpShippingSet_ctl01_ShippingMethodsRadioButtons_rbShippingMethods_1" type="radio" name="ucShippingMethod$rpShippingSet$ctl01$ShippingMethodsRadioButtons$rbShippingMethods" value="Custom;1;Ground Shipping (Wenfee - UPS - USPS)" checked="checked" class="shipping-as-list" data-lpignore="true"><label for="ucShippingMethod_rpShippingSet_ctl01_ShippingMethodsRadioButtons_rbShippingMethods_1"><span class="shipping-desc"><span class="shipping-name">Ground Shipping (Wenfee </span><span class="shipping-class">UPS</span><span class="estimated-date">USPS) - $15.99</span></span><span class="shipping-cost">USPS)</span></label>
-	</label>
-</tbody></table>
-
-
-
-	                    
-                    </div>
-	        
                 </div>
-            
+                <style>
+                #Date
+                {
+                  float: right;
+                  border-radius: 5px;
+                  border: 1px solid #DDF;
+                  padding: 5px;
+                }
+                #div1
+                {
+                  margin: 10px 0px;
+                  padding: 20px;
+                  background: #eee;
+                  border-radius: 5px;
+                  font-size : 18px ;
+                }
+                .hidden
+                {
+                  display : none ;
+                }
+                </style>
+                <script>
+                        function show1(){
+                              document.getElementById('div1').style.display ='none';
+                            }
+                            function show2(){
+                              document.getElementById('div1').style.display = 'block';
+                            }
+                        
+                        </script>
 	    
 
-		Shipping costs are estimated.<br><br>
+		<br> Shipping costs are estimated.<br><br>
 		
 		
 	</div>
@@ -1218,100 +1021,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                       </div>
 
                       <!-- Credit Card Payment Method -->
-                      <div class="checkout-creditCard payment-method CreditCard list-group-item list-group-item-action active">
-                        <div class="checkout-creditCard">
-                          <div data-payment-name="CreditCard" class="CreditCard-header payment-name row row-cols-auto m-0 align-items-center">
-                            Credit Card <span class="ms-auto d-none d-xl-block"><div class="acceptedCreditCardLogos"><div class="amex"><span>Amex</span></div><div class="discover"><span>Discover</span></div><div class="mastercard"><span>MasterCard</span></div><div class="visa"><span>Visa</span></div></div></span>
-                          </div>
-                          
-                            <div class="CreditCard-body d-grid gap-3 p-2" ranchanges="true">
-                               
-                              <!-- Tabs navs -->
-                              <ul class="nav nav-tabs row m-0 border-0 d-none" role="tablist">
-                                <li class="nav-item col-6 p-0" role="presentation">
-                                  <button class="nav-link active mx-auto" data-bs-target=".single-card-content" data-bs-toggle="tab" type="button" role="tab">
-                                    Single Card Payment
-                                  </button>
-                                  <hr>
-                                </li>
-                                <li class="nav-item col-6 p-0" role="presentation">
-                                  <button class="nav-link  mx-auto" data-bs-target=".multiple-card-content" data-bs-toggle="tab" type="button" role="tab">
-                                    Multiple Cards Payment
-                                  </button>
-                                  <hr>
-                                </li>
-                              </ul>
-                              
-                                
-                                <div class="CreditCard-type row d-none">
-                                  <div class="col-sm-3">
-                                    <label>Card Type</label>
-                                    <select name="CreditCardTypeDropDown1$ddCreditCardTypes" id="CreditCardTypeDropDown1_ddCreditCardTypes" class="form-control">
-	<option selected="selected" value="3">Amex</option>
-	<option value="4">Discover</option>
-	<option value="2">MasterCard</option>
-	<option value="1">Visa</option>
-
-</select>
-                                    
-                                  </div>
-                                </div>
-                                
-                                  <div class="CreditCard-number row">
-                                    <div class="col-12">
-                                      <label class="d-none">Card Number</label>
-                                      <div id="CardNumber"><input name="txtCardNumber" type="text" id="txtCardNumber" class="CreditCardTextbox form-control" autocomplete="off" data-lpignore="true"><input type="hidden" name="hfccToken" id="hfccToken" data-lpignore="true"><input type="hidden" name="hfGenerateCCToken" id="hfGenerateCCToken" value="0" data-lpignore="true"></div>
-                                      
-                                    </div>
-                                  </div>
-                                
-                                <div class="CreditCard-name row">
-                                  <div class="col-12">
-                                    <label class="d-none">Name on Card</label>
-                                    <input name="txtNameOnCard" type="text" maxlength="50" id="txtNameOnCard" class="CreditCardTextbox form-control" data-lpignore="true" placeholder="Name on card">
-                                    
-                                  </div>
-                                </div>
-                                <div class="row d-grid gap-3 d-sm-flex gap-sm-0">
-                                  <div class="CreditCard-expiration col-12 col-sm-6 position-relative">
-                                    <div class="d-none checkoutCreditCard-expiration-label label">
-                                      Expiration Date
-                                    </div>
-                                    
-                                      <input name="txtCCExpiration" type="text" id="txtCCExpiration" class="form-control" data-lpignore="true" placeholder="Expiration Date (MM/YY)"> 
-                                      <span style="padding:0;clear:left;"></span>
-                                      
-                                    
-                                  </div>
-                                  <div class="CreditCard-cvv row m-0 p-0 col-12 col-sm-6">
-                                    <label class="d-none">CVV Number </label>
-                                    <div class="position-relative">
-                                      <div class="input-left-icon">
-                                        <span class=""><a href="ExplainCVV.aspx" id="hlExplainCvv" target="_blank" class="ExplainCVVText" ranchanges="true"><i class="fas fa-info-circle explaincvv-icon"></i></a></span>
-                                        
-                                      </div>
-                                      <input name="txtCVV" type="text" maxlength="4" id="txtCVV" class="form-control" autocomplete="off" data-lpignore="true" placeholder="CVV">
-                                    </div>
-                                    
-                                  </div>
-                                  <div class="CreditCard-saveCard col-12 mt-2"></div>
-                                </div>
-                              
-                              <div class="tab-content">
-                                <div class="tab-pane fade show active single-card-content" role="tabpanel">
-                                  <div class="creditCard-fees align-self-center fw-bold mb-2">
-                                    <span class="creditcard-fee-label d-none"><i class="fas fa-exclamation-circle"></i></span>
-                                    <span class="creditCard-fee-anchor"></span>
-                                  </div>
-                                </div>
-                                <div class="tab-pane fade multiple-card-content" role="tabpanel" ranchanges="true">
-                                  
-                                </div>
-                              </div>
-                            </div>
-                          
-                        </div>
-                      </div>
+                      
                       <!-- END Credit Card Payment Method -->
 
                       <!-- ECheck Payment Method -->
@@ -1385,78 +1095,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                       <!-- Custom Payments Payments -->
 
 
-                      <div class="checkout-customWrap CustomPayments Custom active">
-                        <div class="checkout-custom ActiveCustomPayment hide"></div>
-                      <div class="payment-method Custom list-group-item list-group-item-action border-top-0" data-payment-name="Cash payment"><div class=""><div class="payment-name custom-payment-name row m-0 align-items-center" data-payment-name="Cash payment">Cash payment</div><div class="payment-wrapper"></div></div></div><div class="payment-method Custom list-group-item list-group-item-action active" data-payment-name="Pay with Check/Money Order"><div class=""><div class="payment-name custom-payment-name row m-0 align-items-center" data-payment-name="Pay with Check/Money Order">Pay with Check/Money Order</div><div class="payment-wrapper">
-                          <!--[ac] This section is populated by the OnePageCheckoutCustomPaymentMethodsArea layoutarea below -->
-                          
-    
-            	
-	    
-            
-          <div class="checkout-custom-item checkoutCustomItem CustomPayment">
-            <div class="checkoutCustomItem-header hide"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_lblPaymentTypeName" class="CheckOutText">Pay with Check/Money Order</span></div>
-            <div class="checkoutCustomItem-body card-body">
-              <div class="checkoutCustomItem-text CheckoutText mb-2">
-                
-              </div>
-              <!--[ac] This section is populated by the OnePageCheckoutCustomPaymentMethodField layoutarea below -->
-              
-
-              <table id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields" cellspacing="0" border="0" style="border-collapse:collapse;">
-	<tbody><tr>
-		<td>
-                                            
-          <label class="checkoutCustomItem-field custom-field d-flex flex-wrap custom-form-control">
-            <input name="CustomPaymentMethods1$rpCustomMethods$ctl01$dlCustomMethodFields$ctl00$txtField" type="text" id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl00_txtField" class="form-control" data-lpignore="true">
-            <label class="custom-form-control"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl00_lblFieldName" class="CheckOutText">Company Name</span></label>
-          </label>
-        
-									        
-									        
-									        
-									        
-									        
-									        
-								        </td>
-	</tr><tr>
-		<td>
-                                            
-          <label class="checkoutCustomItem-field custom-field d-flex flex-wrap custom-form-control">
-            <input name="CustomPaymentMethods1$rpCustomMethods$ctl01$dlCustomMethodFields$ctl01$txtField" type="text" id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl01_txtField" class="form-control" data-lpignore="true">
-            <label class="custom-form-control"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl01_lblFieldName" class="CheckOutText">First Name on Account</span></label>
-          </label>
-        
-									        
-									        
-									        
-									        
-									        
-									        
-								        </td>
-	</tr><tr>
-		<td>
-                                            
-          <label class="checkoutCustomItem-field custom-field d-flex flex-wrap custom-form-control">
-            <input name="CustomPaymentMethods1$rpCustomMethods$ctl01$dlCustomMethodFields$ctl02$txtField" type="text" id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl02_txtField" class="form-control" data-lpignore="true">
-            <label class="custom-form-control"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl02_lblFieldName" class="CheckOutText">Last Name on Account</span></label>
-          </label>
-        
-									        
-									        
-									        
-									        
-									        
-									        
-								        </td>
-	</tr>
-</tbody></table>
-            </div>
-          </div>
-        	
-	    
-
-                        </div></div></div></div>
+                      
 
 
 
@@ -1470,7 +1109,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                 <li data-cont=".two">Cash payment</li>
                                 <li data-cont=".three">Pay with Check/Money Order</li>
                               </ul>
-                              <div class="content">
+                              <div id="content">
                                 <div class="one">
                                 <div class="CreditCard-body d-grid gap-3 p-2" ranchanges="true">
                                
@@ -1643,22 +1282,26 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                       }
                                       .tabs li {
                                         padding: 10px;
-                                        background-color: #f6f4f4;
+                                        background-color: #fff;
                                         border-right: 1px solid white;
                                         cursor: pointer;
                                         transition: 0.2s;
+                                        font-weight: bold;
+                                         color: #007b70;
                                       }
                                       .tabs li.active,
                                       .tabs li:hover {
-                                        background-color: #ddd;
+                                        background-color: #eee;
+                                        border-radius: 5px;
                                       }
-                                      .content {
-                                        background-color: #ddd;
+                                      #content {
+                                        background-color: #eee;
+                                        border-radius : 5px
                                       }
-                                      .content > div {
+                                      #content > div {
                                         padding: 20px;
                                       }
-                                      .content > div:not(:first-child) {
+                                      #content > div:not(:first-child) {
                                         display: none;
                                       }
                                       </style>
@@ -1667,11 +1310,8 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                       <script>
                                       let tabs = document.querySelectorAll(".tabs li");
                                       let tabsArray = Array.from(tabs);
-                                      let divs = document.querySelectorAll(".content > div");
+                                      let divs = document.querySelectorAll("#content > div");
                                       let divsArray = Array.from(divs);
-
-                                      // console.log(tabsArray);
-
                                       tabsArray.forEach((ele) => {
                                         ele.addEventListener("click", function (e) {
                                           tabsArray.forEach((ele) => {
@@ -1723,12 +1363,16 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
             </div>
             <!-- Place Order -->
             <div class="checkout-placeOrder w-200px ms-auto">
-              <div class="checkout-placeOrderBtn mt-2 d-grid"><input type="submit" name="btnPlaceOrder" value="Place Order" id="btnPlaceOrder" class="ThemeButton PlaceOrderThemeButton OnePageCheckoutPlaceOrderThemeButton btn btn-dark"></div>
+              <div class="checkout-placeOrderBtn mt-2 d-grid"><input type="submit" name="btnPlaceOrder" value="Place Order" id="btnPlaceOrder" class="ThemeButton PlaceOrderThemeButton OnePageCheckoutPlaceOrderThemeButton btn btn-dark" onclick='popup()' style="background: #007b70;"></div>
             </div>
             <!-- END Place Order -->
           </div>
         </div>
         <!-- END Payment Methods -->
+
+                                           
+
+
 
         <!-- Applied Payment -->
         <!--[ac] The following layoutareas are rendered via the  merge code above -->
@@ -1858,7 +1502,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                     
                     
                       <div class="totalArea-total row row-cols-auto m-0 justify-content-between border-top mt-2 pt-2 fw-bolder h3">
-                        <div class="totalArea-total-label ShoppingCartTotals"><b>Total:</b></div>
+                        <div class="totalArea-total-label ShoppingCartTotals"><b style="color: #007b70;">Total:</b></div>
                         <div class="totalArea-total-text ShoppingCartPrice"><span id="lblTotal">$148.92</span></div>
                       </div>
                     
@@ -2083,7 +1727,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
             // define date -> str convertion
             format: function (date) {
                 var day = date.getDate();
-                var month = date.getMonth() + 1;
+                var month = date.getMonth() + 1; 
                 var year = date.getFullYear().toString().substr(-2);
 
                 if (day < 10) day = "0" + day;
@@ -2109,6 +1753,34 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
         });
     }
 </script>
+<style>
+.navbar-expand-lg .navbar-nav .nav-link
+{
+  display: none;
+}
+.fa, .fab, .fad, .fal, .far, .fas
+{
+  display: flex ;
+}
+.navbar-light .navbar-brand
+{
+  color : #007b70 ;
+}
+input[type="radio"]:checked, .active.payment-method .payment-name:not(.arrow):before, .radio.checked:before
+{
+  background:#007b70;
+}
+.btn-outline-success
+{
+  color : #fff;
+  border-color:#fff ;
+}
+h4, .h4
+{
+  color : #007b70 ;
+}
+
+</style>
 
 
 
@@ -2117,6 +1789,99 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
         </div>
       </section>
       <!-- END Content -->
+
+
+      <!-- POP UP -->
+                                            <div class='overlay'>
+                                      <div class='popup-container'>
+                                        <div class='title'>
+                                          TITLE
+                                        </div>
+                                        <div class='pop-up-content'>
+                                          Lorem ipsum dolor sit amet, tota iuvaret efficiantur no eum. Qui aliquid efficiendi ea, vel possit aperiri invenire ea. Ut suscipit eleifend eos, te nisl affert duo, at est cetero iriure sapientem. His qualisque concludaturque ex, his ex habeo efficiendi. An mei probo impedit, per putent adipisci liberavisse at, usu lobortis theophrastus cu.
+                                        </div>
+                                        <button class='close' onclick='closePopup()'>
+                                          Close
+                                        </button>
+                                      </div>
+                                    </div>
+                                    <style>
+                                      
+                                      /* POP UP */
+                                      .overlay {
+                                        position: absolute;
+                                        top: 0;
+                                        bottom: 0;
+                                        left: 0;
+                                        right: 0;
+                                        background: rgba(0,0,0,0.51);
+                                        display: none;
+                                        animation: fade 0.6s;
+                                      }
+                                      .popup-container {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        justify-content: center;
+                                        align-items: center;
+                                        position: relative;
+                                        background: #fff;
+                                        width: 65%;
+                                        margin: 200px auto;
+                                        padding: 40px;
+                                        border-radius: 5px;
+                                      }
+                                      .title {
+                                        color : #007b70;
+                                        font-size: 25px;
+                                        font-weight: bold;
+                                      }
+                                      .pop-up-content {
+                                        margin-top: 10px;
+                                        line-height: 20px;
+                                      }
+                                      .close {
+                                        padding: 0 15px;
+                                        margin-top: 20px;
+                                        height: 35px;
+                                        width : 120px;
+                                        background: #007b70;
+                                        border-radius: 5px;
+                                        border: none;
+                                        color: #fff;
+                                        font-size: 16px;
+                                        font-weight: bold;
+                                      }
+                                      .close:hover {
+                                        background: #003c50;
+                                        transition: background-color 300ms linear;
+                                      }
+
+                                      @keyframes fade {
+                                        0% {
+                                          opacity: 0;
+                                        }
+                                        100% {
+                                          opacity: 1;
+                                        }
+                                      }
+                                      /*PoPUP */
+                                    </style>
+                                    <script>
+                                      //pop up
+                                      const disclaimer = document.querySelector('.overlay')
+
+                                      function popup(){
+                                        disclaimer.style.display = "block";
+                                        disclaimer.style.opacity = 1
+                                      }
+
+                                      function closePopup(){
+                                        disclaimer.style.display = "none";
+                                      }
+
+                                      </script>
+
+                                    <!-- POP UP -->
 
       
 
