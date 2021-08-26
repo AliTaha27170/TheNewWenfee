@@ -1459,6 +1459,242 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                         </div></div></div></div>
 
 
+
+
+                        <!----------------------------------------->
+
+                                                      <ul class="tabs">
+                                                      <!------- One ----------->
+
+                                <li class="active" data-cont=".one">Credit Card <span class="ms-auto d-none d-xl-block"><div class="acceptedCreditCardLogos"><div class="amex"><span>Amex</span></div><div class="discover"><span>Discover</span></div><div class="mastercard"><span>MasterCard</span></div><div class="visa"><span>Visa</span></div></div></span></li>
+                                <li data-cont=".two">Cash payment</li>
+                                <li data-cont=".three">Pay with Check/Money Order</li>
+                              </ul>
+                              <div class="content">
+                                <div class="one">
+                                <div class="CreditCard-body d-grid gap-3 p-2" ranchanges="true">
+                               
+                              <!-- Tabs navs -->
+                              <ul class="nav nav-tabs row m-0 border-0 d-none" role="tablist">
+                                <li class="nav-item col-6 p-0" role="presentation">
+                                  <button class="nav-link active mx-auto" data-bs-target=".single-card-content" data-bs-toggle="tab" type="button" role="tab">
+                                    Single Card Payment
+                                  </button>
+                                  <hr>
+                                </li>
+                                <li class="nav-item col-6 p-0" role="presentation">
+                                  <button class="nav-link  mx-auto" data-bs-target=".multiple-card-content" data-bs-toggle="tab" type="button" role="tab">
+                                    Multiple Cards Payment
+                                  </button>
+                                  <hr>
+                                </li>
+                              </ul>
+                              
+                                
+                                <div class="CreditCard-type row d-none">
+                                  <div class="col-sm-3">
+                                    <label>Card Type</label>
+                                    <select name="CreditCardTypeDropDown1$ddCreditCardTypes" id="CreditCardTypeDropDown1_ddCreditCardTypes" class="form-control">
+	<option selected="selected" value="3">Amex</option>
+	<option value="4">Discover</option>
+	<option value="2">MasterCard</option>
+	<option value="1">Visa</option>
+
+</select>
+                                    
+                                  </div>
+                                </div>
+                                
+                                  <div class="CreditCard-number row">
+                                    <div class="col-12">
+                                      <label class="d-none">Card Number</label>
+                                      <div id="CardNumber"><input name="txtCardNumber" type="text" id="txtCardNumber" class="CreditCardTextbox form-control" autocomplete="off" data-lpignore="true"><input type="hidden" name="hfccToken" id="hfccToken" data-lpignore="true"><input type="hidden" name="hfGenerateCCToken" id="hfGenerateCCToken" value="0" data-lpignore="true"></div>
+                                      
+                                    </div>
+                                  </div>
+                                
+                                <div class="CreditCard-name row">
+                                  <div class="col-12">
+                                    <label class="d-none">Name on Card</label>
+                                    <input name="txtNameOnCard" type="text" maxlength="50" id="txtNameOnCard" class="CreditCardTextbox form-control" data-lpignore="true" placeholder="Name on card">
+                                    
+                                  </div>
+                                </div>
+                                <div class="row d-grid gap-3 d-sm-flex gap-sm-0">
+                                  <div class="CreditCard-expiration col-12 col-sm-6 position-relative">
+                                    <div class="d-none checkoutCreditCard-expiration-label label">
+                                      Expiration Date
+                                    </div>
+                                    
+                                      <input name="txtCCExpiration" type="text" id="txtCCExpiration" class="form-control" data-lpignore="true" placeholder="Expiration Date (MM/YY)"> 
+                                      <span style="padding:0;clear:left;"></span>
+                                      
+                                    
+                                  </div>
+                                  <div class="CreditCard-cvv row m-0 p-0 col-12 col-sm-6">
+                                    <label class="d-none">CVV Number </label>
+                                    <div class="position-relative">
+                                      <div class="input-left-icon">
+                                        <span class=""><a href="ExplainCVV.aspx" id="hlExplainCvv" target="_blank" class="ExplainCVVText" ranchanges="true"><i class="fas fa-info-circle explaincvv-icon"></i></a></span>
+                                        
+                                      </div>
+                                      <input name="txtCVV" type="text" maxlength="4" id="txtCVV" class="form-control" autocomplete="off" data-lpignore="true" placeholder="CVV">
+                                    </div>
+                                    
+                                  </div>
+                                  <div class="CreditCard-saveCard col-12 mt-2"></div>
+                                </div>
+                              
+                              <div class="tab-content">
+                                <div class="tab-pane fade show active single-card-content" role="tabpanel">
+                                  <div class="creditCard-fees align-self-center fw-bold mb-2">
+                                    <span class="creditcard-fee-label d-none"><i class="fas fa-exclamation-circle"></i></span>
+                                    <span class="creditCard-fee-anchor"></span>
+                                  </div>
+                                </div>
+                                <div class="tab-pane fade multiple-card-content" role="tabpanel" ranchanges="true">                                 
+                                </div>
+                              </div>
+                            </div>   
+                                </div>
+                                <!------- End of One ----------->
+
+                                <!------- TWo ----------->
+                                <div class="two">
+                                You have selected "Cash payment"
+                                </div>
+                                <!------- end of TWo ----------->
+
+
+
+
+
+                                <!------- three ----------->
+
+                                <div class="three">
+                                <div class="checkoutCustomItem-body card-body">
+              <div class="checkoutCustomItem-text CheckoutText mb-2">
+                
+              </div>
+              <!--[ac] This section is populated by the OnePageCheckoutCustomPaymentMethodField layoutarea below -->
+              
+
+              <table id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields" cellspacing="0" border="0" style="border-collapse:collapse;">
+	<tbody><tr>
+		<td>
+                                            
+          <label class="checkoutCustomItem-field custom-field d-flex flex-wrap custom-form-control">
+            <input name="CustomPaymentMethods1$rpCustomMethods$ctl01$dlCustomMethodFields$ctl00$txtField" type="text" id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl00_txtField" class="form-control" data-lpignore="true">
+            <label class="custom-form-control"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl00_lblFieldName" class="CheckOutText">Company Name</span></label>
+          </label>
+        
+									        
+									        
+									        
+									        
+									        
+									        
+								        </td>
+	</tr><tr>
+		<td>
+                                            
+          <label class="checkoutCustomItem-field custom-field d-flex flex-wrap custom-form-control">
+            <input name="CustomPaymentMethods1$rpCustomMethods$ctl01$dlCustomMethodFields$ctl01$txtField" type="text" id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl01_txtField" class="form-control" data-lpignore="true">
+            <label class="custom-form-control"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl01_lblFieldName" class="CheckOutText">First Name on Account</span></label>
+          </label>
+        
+									        
+									        
+									        
+									        
+									        
+									        
+								        </td>
+	</tr><tr>
+		<td>
+                                            
+          <label class="checkoutCustomItem-field custom-field d-flex flex-wrap custom-form-control">
+            <input name="CustomPaymentMethods1$rpCustomMethods$ctl01$dlCustomMethodFields$ctl02$txtField" type="text" id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl02_txtField" class="form-control" data-lpignore="true">
+            <label class="custom-form-control"><span id="CustomPaymentMethods1_rpCustomMethods_ctl01_dlCustomMethodFields_ctl02_lblFieldName" class="CheckOutText">Last Name on Account</span></label>
+          </label>
+        
+									        
+									        
+									        
+									        
+									        
+									        
+								        </td>
+	</tr>
+</tbody></table>
+            </div>
+                                
+                                </div>
+                              </div>
+                              <!------- End of three ----------->
+
+                              <!--------------- Payemnt Script And Style ------------->
+                              <style>
+                              .tabs {
+                                        display: flex;
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0;
+                                      }
+                                      .tabs li {
+                                        padding: 10px;
+                                        background-color: #f6f4f4;
+                                        border-right: 1px solid white;
+                                        cursor: pointer;
+                                        transition: 0.2s;
+                                      }
+                                      .tabs li.active,
+                                      .tabs li:hover {
+                                        background-color: #ddd;
+                                      }
+                                      .content {
+                                        background-color: #ddd;
+                                      }
+                                      .content > div {
+                                        padding: 20px;
+                                      }
+                                      .content > div:not(:first-child) {
+                                        display: none;
+                                      }
+                                      </style>
+                                      
+
+                                      <script>
+                                      let tabs = document.querySelectorAll(".tabs li");
+                                      let tabsArray = Array.from(tabs);
+                                      let divs = document.querySelectorAll(".content > div");
+                                      let divsArray = Array.from(divs);
+
+                                      // console.log(tabsArray);
+
+                                      tabsArray.forEach((ele) => {
+                                        ele.addEventListener("click", function (e) {
+                                          tabsArray.forEach((ele) => {
+                                            ele.classList.remove("active");
+                                          });
+                                          e.currentTarget.classList.add("active");
+                                          divsArray.forEach((div) => {
+                                            div.style.display = "none";
+                                          });
+                                          document.querySelector(e.currentTarget.dataset.cont).style.display = "block";
+                                        });
+                                      });
+                                                                            
+                                      </script>
+
+
+
+
+                            <!--------------- Payemnt Script And Style ------------->
+
+
+
+
                         
                       <!-- END Custom Payments Payments -->
 
