@@ -30,7 +30,7 @@
             <li><a href="#">Edit Profile</a><i class="fas fa-cog"></i></li>
             <li  id="Fav_Mobile"><a href="{{ route('Fav') }}">Favourite List</a><i class="fas fa-heart"></i></li>
 
-            <li  id="logout"><a href="#">Logout <i class="fas fa-sign-out-alt"></i> </a></li>
+            <li  id="logout"><a href="#">Logout </a><i class="fas fa-sign-out-alt"></i></li>
             <button id="logout_btn" hidden></button>
         </form>
           </ul>
