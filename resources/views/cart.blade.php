@@ -875,17 +875,25 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
 
                   <p></p>
                   <input type="radio" name="tab" value="Shipping" onclick="show1();" />
+                  <label>One</label>
+                  <br>
+                  <br>
+                  <input type="radio" name="tab" value="Shipping" onclick="show1();" />
+                  <label>Two</label>
+                  <br>
+                  <br>
+                  <input type="radio" name="tab" value="Shipping" onclick="show1();" />
                   <label>Ground Shipping (Wenfee UPSUSPS) - $15.99USPS)</label>
                   <br>
                   <br>
                   <input type="radio" name="tab" value="pickup" onclick="show2();" />
                   <label>pick up For Free</label>
                   <div id="div1" class="hidden">
-                  <label for="start" style="margin-top: 7px;"><b>date:</b></label>
+                  <label for="start" style="margin-top: 7px;"><span id="Date_span">date:</span></label>
                   <input type="date" id="Date">
                   <br>
                   <br>
-                  <label><b>Hello Ali :</b></label>
+                  <label id="Radio_Div"><span>Hello Ali :</span></label>
                   <br>
                   <input type="radio" name="Location"> location1
                   <br>
@@ -977,9 +985,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
             <div id="PaymentMethodArea" class="PaymentMethodArea">
               <div class="checkout-payment ">
                 <div class="checkout-payment-header step-header step-header-nomin row m-0 pt-2 col-auto align-items-center">
-                  <div class="title col-md-auto h3 fw-bold p-0 m-0">
-                    Payment Information
-                  </div>
+
                 </div>
                 <div class="step-body">
                   <div id="UpdatePanelPaymentArea">
@@ -1105,7 +1111,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                                       <ul class="tabs">
                                                       <!------- One ----------->
 
-                                <li class="active" data-cont=".one">Credit Card <span class="ms-auto d-none d-xl-block"><div class="acceptedCreditCardLogos"><div class="amex"><span>Amex</span></div><div class="discover"><span>Discover</span></div><div class="mastercard"><span>MasterCard</span></div><div class="visa"><span>Visa</span></div></div></span></li>
+                                <li class="active" data-cont=".one">Credit Card</li>
                                 <li data-cont=".two">Cash payment</li>
                                 <li data-cont=".three">Pay with Check/Money Order</li>
                                 <li data-cont=".Four"> Hello Ali </li>
@@ -1782,6 +1788,23 @@ input[type="radio"]:checked, .active.payment-method .payment-name:not(.arrow):be
 }
 h4, .h4
 {
+  color : #007b70 ;
+}
+.alert.alert-danger 
+{
+    width: 200px;
+}
+#Radio_Div
+{
+  color : #007b70 ;
+  margin : 0 0 20px 0 ;
+}
+#Radio_Div span
+{
+  font-weight : 500 ;
+}
+#Date_span{
+  font-weight : 500;
   color : #007b70 ;
 }
 
