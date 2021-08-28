@@ -96,9 +96,7 @@ var num;
   if (num > 1) {
     $(id).val(num - 1);
   }
-  if (num == 2) {
-    $(e).prop('disabled', true);
-  }
+
 
 }
 

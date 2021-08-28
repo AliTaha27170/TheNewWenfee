@@ -50,7 +50,7 @@ use     App\hellpers\like_;
                 </div>
             </div>
 
-            
+
             <div class="col-md-5">
                 <div class="slider-for">
                     <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
@@ -123,7 +123,7 @@ use     App\hellpers\like_;
                                     <span class="brand">{{ $prod->product->name }}</span>
                                     <span class="code">#{{ $prod->product->code }}</span>
                                 </h3>
-                               <h4 style="height: 192px">{!! $prod->product->body  !!}</h4>
+                               <h4 style="height: 192px">{!! $prod->product->body  !!}
 
                                 @if ($prod->product->frozen)
                                     <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
@@ -132,7 +132,7 @@ use     App\hellpers\like_;
                                 @if ($prod->product->refrigerated)
                                      <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                                 @endif
-
+                               </h4>
                                 @if ($prod->product->discount)
                                     <p class="price">
                                         <strong>${{ $prod->product->price - $prod->product->price * ($prod->product->discount / 100) }}</strong>
