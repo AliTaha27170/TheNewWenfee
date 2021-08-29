@@ -164,7 +164,6 @@
 
 <link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//Shared/Themes/Foundation1/css/variables.css?v=132722889695037886">
 <link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//Shared/Themes/Foundation1/css/bootstrap-override.css?v=132722889691741079">
-<link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//Shared/Themes/Foundation1/css/margin-and-padding-override.min.css?v=132722889693318956">
 <link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//Shared/Themes/Foundation1/css/base.css?v=132722889691428566">
 <link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//Shared/Themes/Foundation1/css/style.css?v=132722889694725301">
 <link rel="stylesheet" type="text/css" href="https://wenfeeusa.americommerce.com//Shared/Themes/Foundation1/css/response.css?v=132722889693631493">
@@ -1765,10 +1764,16 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
     }
 </script>
 <style>
-.navbar-expand-lg .navbar-nav .nav-link
-{
-  display: none;
+.number-product {
+    display: inline-block;
+    width: 38px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 24px;
+    border: 1px solid silver;
+    text-align: center;
 }
+
 .fa, .fab, .fad, .fal, .far, .fas
 {
   display: flex ;
@@ -1785,6 +1790,10 @@ input[type="radio"]:checked, .active.payment-method .payment-name:not(.arrow):be
 {
   color : #fff;
   border-color:#fff ;
+  height: 38px;
+  width: 42px;
+  padding: 6px 12px;
+}
 }
 h4, .h4
 {
@@ -1807,8 +1816,43 @@ h4, .h4
   font-weight : 500;
   color : #007b70 ;
 }
+a {
+    color: #007b70;
+}
+input[type="text"], input[type="email"], textarea {
+  
+  display: block;
+    width: 100%;
+    padding:10px ;
+    font-weight: 400px;
+    background-clip: padding-box;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.cd-cart-items input[type="text"] {
+  display: inline-block;
+    width: 38px;
+    height: 32px;
+    background: #fff;
+    font-size: 24px;
+    font-weight: 500;
+
+}
+textarea.form-control {
+    min-height: 70px;
+    width : 100% ;
+}
+.navbar input[type="search"]
+{
+  height : 38px ;
+}
+.btn-outline-success {
+    color: #fff;
+    border-color: #fff;
+}
 
 </style>
+<link rel='stylesheet' href="{{ asset('css/Navbar.css') }}" />
 
 
 

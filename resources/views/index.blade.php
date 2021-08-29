@@ -6,12 +6,12 @@
 use     App\hellpers\like_;
 @endphp
 
-<script>
-    var x=0;
-</script>
+
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <!--_____________________________________________________________________-->
 
     <div class="carousel">
@@ -169,31 +169,7 @@ use     App\hellpers\like_;
             </a>
         </div>
         @endforeach
-        {{-- <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div>
-        <div class="Brands-item">
-            <a href="#">
-                <img src="https://trademarks.justia.com/media/og_image.php?serial=87185929" alt="BrandLogo">
-            </a>
-        </div> --}}
+      
             </div>
             <div  class="container ViewAllButton" >
             <a href="{{ route('brands') }}" target="_blank">View all</a>
@@ -326,120 +302,6 @@ use     App\hellpers\like_;
     --}}
     @endif
     <!-- Brands Slider -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
-    <style>
-        .slick-dots li.slick-active button:before{
-        color: #007B70;
-        }
-        .slick-dots li button::before
-        {
-        font-size: 12px;
-        }
-        .slick-slide img
-        {
-            width : 100% ;
-        }
-        .slick-next:before, .slick-prev:before
-        {
-            color:#007B70;
-            font-size:24px;
-        }
-        @media  (max-width: 600px) {
-            .slick-next:before
-        {
-            position: absolute;
-            right: 15px;
-        }
-            .slick-prev:before
-            {
-                position: absolute;
-                left: 15px;
-            }
-        }
-
-
-    </style>
-
-
-
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-            <script>
-                $('.BrandsSlider').slick(
-                    {
-                    slidesToShow : 5 ,
-                    slidesToScroll : 2 ,
-                    dots : false ,
-                    arrows : true ,
-                    autoplay : true ,
-                    autoplayspeed : 2000 ,
-                    infinite : true ,
-                    responsive: [
-                    {
-                    breakpoint: 1024,
-                    settings: {
-                    slidesToShow : 3 ,
-                    slidesToScroll : 3 ,
-                    dots : false ,
-                    arrows : true ,
-                    autoplay : true ,
-                    autoplayspeed : 2000 ,
-                    infinite : true ,
-                    }
-                    },
-
-                    {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                    },
-                    {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                    }
-                ]
-                    }
-                );
-
-            </script>
-    <!-- Brands Slider -->
-<!--
-    <section class="albums-home-box">
-        <div class="slider-title">
-            <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-            </div>
-            <div class="col-md-8">
-                <div class="albums-home-slider">
-                    @if ($books)
-                        @foreach ($books as $book)
-                            <div>
-                                <a href="{{ route('show-product', $book->slug) }}" class="cook-item"
-                                    style="background-image: url('{{ Voyager::image($book->image) }}');">
-                                    <div class="content">
-                                        <span class="auther">{{ $book->cookbook_author }}</span>
-                                        <h1>{{ $book->name }}</h1>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-
-        </div>
-
-    </section>
--->
-
     <section class="recipes-section">
         <div class="content-box">
             <h1 class="title-with-img">
@@ -488,6 +350,193 @@ use     App\hellpers\like_;
             </div>
             <br><br>
 
+                    <!------------------------ Recipes Slider ------------------------>
+            <!-- <div class="Recipes-Slider">
+            <div class="ft-recipe">
+                    <div class="ft-recipe__thumb">
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
+                    </div>
+                    <div class="ft-recipe__content">
+                        <header class="content__header">
+                            <div class="row-wrapper">
+                                <h2 class="recipe-title">Daoud Pasha</h2>
+                                <div class="user-rating"></div>
+                            </div>
+                            <ul class="recipe-details">
+                                <li class="recipe-details-item time">
+                                    <img src="/img/fi-rr-time-check.svg" alt="">
+                                    <span class="value">20</span><span class="title">Minutes</span>
+                                </li>
+                                <li class="recipe-details-item servings">
+                                    <img src="/img/fi-rr-users.svg" alt="">
+                                    <span class="value">4-6</span><span class="title">Serving</span>
+                                </li>
+                            </ul>
+                        </header>
+                        <p class="description">
+                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                            treat
+                            with your pup!!! Strawberries...</p>
+                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
+                    </div>
+            </div>
+
+
+                    <div class="ft-recipe">
+                    <div class="ft-recipe__thumb">
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
+                    </div>
+                    <div class="ft-recipe__content">
+                        <header class="content__header">
+                            <div class="row-wrapper">
+                                <h2 class="recipe-title">Daoud Pasha</h2>
+                                <div class="user-rating"></div>
+                            </div>
+                            <ul class="recipe-details">
+                                <li class="recipe-details-item time">
+                                    <img src="/img/fi-rr-time-check.svg" alt="">
+                                    <span class="value">20</span><span class="title">Minutes</span>
+                                </li>
+                                <li class="recipe-details-item servings">
+                                    <img src="/img/fi-rr-users.svg" alt="">
+                                    <span class="value">4-6</span><span class="title">Serving</span>
+                                </li>
+                            </ul>
+                        </header>
+                        <p class="description">
+                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                            treat
+                            with your pup!!! Strawberries...</p>
+                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
+                    </div>
+            </div>
+
+
+            <div class="ft-recipe">
+                    <div class="ft-recipe__thumb">
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
+                    </div>
+                    <div class="ft-recipe__content">
+                        <header class="content__header">
+                            <div class="row-wrapper">
+                                <h2 class="recipe-title">Daoud Pasha</h2>
+                                <div class="user-rating"></div>
+                            </div>
+                            <ul class="recipe-details">
+                                <li class="recipe-details-item time">
+                                    <img src="/img/fi-rr-time-check.svg" alt="">
+                                    <span class="value">20</span><span class="title">Minutes</span>
+                                </li>
+                                <li class="recipe-details-item servings">
+                                    <img src="/img/fi-rr-users.svg" alt="">
+                                    <span class="value">4-6</span><span class="title">Serving</span>
+                                </li>
+                            </ul>
+                        </header>
+                        <p class="description">
+                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                            treat
+                            with your pup!!! Strawberries...</p>
+                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
+                    </div>
+            </div>
+
+
+            <div class="ft-recipe">
+                    <div class="ft-recipe__thumb">
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
+                    </div>
+                    <div class="ft-recipe__content">
+                        <header class="content__header">
+                            <div class="row-wrapper">
+                                <h2 class="recipe-title">Daoud Pasha</h2>
+                                <div class="user-rating"></div>
+                            </div>
+                            <ul class="recipe-details">
+                                <li class="recipe-details-item time">
+                                    <img src="/img/fi-rr-time-check.svg" alt="">
+                                    <span class="value">20</span><span class="title">Minutes</span>
+                                </li>
+                                <li class="recipe-details-item servings">
+                                    <img src="/img/fi-rr-users.svg" alt="">
+                                    <span class="value">4-6</span><span class="title">Serving</span>
+                                </li>
+                            </ul>
+                        </header>
+                        <p class="description">
+                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                            treat
+                            with your pup!!! Strawberries...</p>
+                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
+                    </div>
+            </div>
+
+
+            <div class="ft-recipe">
+                    <div class="ft-recipe__thumb">
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
+                    </div>
+                    <div class="ft-recipe__content">
+                        <header class="content__header">
+                            <div class="row-wrapper">
+                                <h2 class="recipe-title">Daoud Pasha</h2>
+                                <div class="user-rating"></div>
+                            </div>
+                            <ul class="recipe-details">
+                                <li class="recipe-details-item time">
+                                    <img src="/img/fi-rr-time-check.svg" alt="">
+                                    <span class="value">20</span><span class="title">Minutes</span>
+                                </li>
+                                <li class="recipe-details-item servings">
+                                    <img src="/img/fi-rr-users.svg" alt="">
+                                    <span class="value">4-6</span><span class="title">Serving</span>
+                                </li>
+                            </ul>
+                        </header>
+                        <p class="description">
+                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                            treat
+                            with your pup!!! Strawberries...</p>
+                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
+                    </div>
+            </div>
+
+
+            <div class="ft-recipe">
+                    <div class="ft-recipe__thumb">
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
+                    </div>
+                    <div class="ft-recipe__content">
+                        <header class="content__header">
+                            <div class="row-wrapper">
+                                <h2 class="recipe-title">Daoud Pasha</h2>
+                                <div class="user-rating"></div>
+                            </div>
+                            <ul class="recipe-details">
+                                <li class="recipe-details-item time">
+                                    <img src="/img/fi-rr-time-check.svg" alt="">
+                                    <span class="value">20</span><span class="title">Minutes</span>
+                                </li>
+                                <li class="recipe-details-item servings">
+                                    <img src="/img/fi-rr-users.svg" alt="">
+                                    <span class="value">4-6</span><span class="title">Serving</span>
+                                </li>
+                            </ul>
+                        </header>
+                        <p class="description">
+                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                            treat
+                            with your pup!!! Strawberries...</p>
+                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
+                    </div>
+            </div>
+            </div>
+                </div> -->
+
+               
+                
+
+                  <!------------------------ Recipes Slider ------------------------>
 
                 {{-- <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
@@ -551,29 +600,7 @@ use     App\hellpers\like_;
         </div>
     </section>
 
-    <script>
-        $(document).ready(function() {
 
-            $(".home-slick").slick({
-                fade: true,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                pauseOnHover: false
-            });
-
-            $(window).scroll(function(event) {
-                var scroll = $(window).scrollTop();
-                if (scroll > 100) {
-                    $(".nav").addClass("is-scrolled");
-                } else {
-                }
-            });
-
-            $(".nav").removeClass("is-scrolled");
-
-        })
-
-    </script>
 
      <!-- shipping box -->
      <section id="ShippingBox">
@@ -619,23 +646,7 @@ use     App\hellpers\like_;
     <span class="fas fa-times"></span>
   </div>
 </div>
-<script>
-    $('.add-cart-btn').click(function(){
-  $('.alert').addClass("show");
-  $('.alert').removeClass("hide");
-  $('.alert').addClass("showAlert");
-  setTimeout(function(){
-    $('.alert').removeClass("show");
-    $('.alert').addClass("hide");
-  },2000);
-});
-$('.close-btn').click(function(){
-  $('.alert').removeClass("show");
-  $('.alert').addClass("hide");
-});
-$('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}});
 
-</script>
     <!-- adding to cart alert -->
 
 
@@ -652,7 +663,150 @@ $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}});
             height: auto;
 
         }
-    </style>
+        .slick-dots li.slick-active button:before{
+        color: #007B70;
+        }
+        .slick-dots li button::before
+        {
+        font-size: 12px;
+        }
+        .slick-slide img
+        {
+            width : 100% ;
+        }
+        .slick-next:before, .slick-prev:before
+        {
+            color:#007B70;
+            font-size:24px;
+        }
+        @media  (max-width: 600px) {
+            .slick-next:before
+        {
+            position: absolute;
+            right: 15px;
+        }
+            .slick-prev:before
+            {
+                position: absolute;
+                left: 15px;
+            }
+        }
 
+
+    
+    </style>
+    <script>
+         $('.BrandsSlider').slick(
+                    {
+                    slidesToShow : 5 ,
+                    slidesToScroll : 2 ,
+                    dots : false ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true ,
+                    responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                    slidesToShow : 3 ,
+                    slidesToScroll : 3 ,
+                    dots : false ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true ,
+                    }
+                    },
+
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                ]
+                    }
+                );
+                $('.Recipes-Slider').slick(
+                    {
+                    slidesToShow : 3 ,
+                    slidesToScroll : 3 ,
+                    dots : false ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true ,
+                    responsive: [
+                    {
+                    breakpoint: 1024,
+                    settings: {
+                    slidesToShow : 2 ,
+                    slidesToScroll : 2 ,
+                    dots : false ,
+                    arrows : true ,
+                    autoplay : true ,
+                    autoplayspeed : 2000 ,
+                    infinite : true ,
+                    }
+                    },
+
+                    {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    },
+                    {
+                    breakpoint: 480,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                    }
+                ]
+                    }
+                );
+                $(".home-slick").slick({
+                fade: true,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                pauseOnHover: false
+            });
+
+            $(window).scroll(function(event) {
+                var scroll = $(window).scrollTop();
+                if (scroll > 100) {
+                    $(".nav").addClass("is-scrolled");
+                } else {
+                }
+            });
+
+            $(".nav").removeClass("is-scrolled");
+
+                    $('.add-cart-btn').click(function(){
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function(){
+                $('.alert').removeClass("show");
+                $('.alert').addClass("hide");
+            },2000);
+            });
+            $('.close-btn').click(function(){
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+            });
+            $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}});
+    </script>
 
 @endsection
