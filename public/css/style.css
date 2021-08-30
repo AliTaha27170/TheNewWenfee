@@ -1570,6 +1570,89 @@ body .anim1 .counterrotate {
 .cart .counter .plus-btn:hover {
   background: #bbb;
 }
+/*My Order Page*/
+#My_Order_Title
+{
+  font-size: 26px;
+  position: relative;
+  margin: 20px auto;
+  text-align: center;
+  color: #007b70;
+  font-weight: 600;
+}
+#My_Order_Title::after {
+  content: '';
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: #007B70;
+  border-radius: 10px;
+  bottom: -12px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.table {
+  width: 98%;
+  border-collapse: collapse;
+  margin: 40px 1%;
+  padding: 0;
+}
+
+.table td,
+.table th {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 18px;
+}
+
+.table th {
+  background-color: #007b70;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #007b7040;
+}
+
+/*responsive*/
+
+@media (max-width: 600px) {
+  .table thead {
+    display: none;
+  }
+
+  .table,
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+  .table tr {
+    margin-bottom: 15px;
+  }
+  .table td {
+    padding-left: 50%;
+    text-align: left;
+    position: relative;
+  }
+  .table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
+
+
+/*End Of My Order*/
 /*Ribbon*/
 .ribbon {
   width: 140px;
@@ -2127,23 +2210,33 @@ textarea.input1 {
 }
 
 .my-cart .shopping-cart {
-  padding-left: 90px;
+  padding: 0 40px;
+}
+.OrderSummary
+{
+  color: #007b70;
+  font-size: 28px;
 }
 
 .my-cart .shopping-cart .title {
+  margin: 20px 0 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
+  -webkit-box-align: flex-end;
+      -ms-flex-align: flex-end ;
+          align-items: flex-end;
 }
-
+.OrderItems
+{
+  font-size: 22px;
+  color: #007b70;
+}
 .my-cart .shopping-cart hr.solid {
-  border-top: 1px solid #e7e7e7;
+  border-top: 1px solid #777;
 }
 
 .my-cart .shopping-cart .cart-page {

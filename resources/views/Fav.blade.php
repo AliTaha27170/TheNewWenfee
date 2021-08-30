@@ -6,7 +6,7 @@
     <div class="product-page">
         <div class="row">
             <div class="col-md-12">
-                <h2 id="Fav_Header">Your Favourite Products</h2>
+                <h2 id="Fav_Header">Your Favorite Products</h2>
 
                   <div class="container NumberOfProducts">
             <span><!--{{ $likes->count() }} --> Items</span>

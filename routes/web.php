@@ -47,7 +47,11 @@ Route::post('productCategory/{id}/products',  [App\Http\Controllers\PageControll
 
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 
+Route::get('/OrderSummary',                    [App\Http\Controllers\PageController::class, 'OrderSummary'])->name('OrderSummary');
+
 Route::get('/HowToOrder',                    [App\Http\Controllers\PageController::class, 'HowToOrder'])->name('HowToOrder');
+
+Route::get('/MyOrder',                    [App\Http\Controllers\PageController::class, 'MyOrder'])->name('MyOrder');
 
 Route::get('/Medical',                    [App\Http\Controllers\PageController::class, 'Medical'])->name('Medical');
 

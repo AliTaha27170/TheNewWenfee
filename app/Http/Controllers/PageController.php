@@ -68,6 +68,14 @@ class PageController extends Controller
    {
        return view('HowToOrder');
    }
+   public function MyOrder()
+   {
+       return view('MyOrder');
+   }
+   public function OrderSummary()
+   {
+       return view('OrderSummary');
+   }
    public function AccountSettings()
    {
        return view('AccountSettings');

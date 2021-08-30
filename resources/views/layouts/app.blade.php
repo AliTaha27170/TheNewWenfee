@@ -12,6 +12,7 @@
         <link rel='stylesheet' href="{{ asset('libs/slick/slick.css') }}" />
         <link rel='stylesheet' href="{{ asset('libs/slick/slick-theme.css') }}" />
         <link rel="stylesheet" href="{{ asset('libs/fi/css/uicons-regular-rounded.css') }}">
+        <link rel="stylesheet"  href="{{asset('css/bootstrap.css')}} ">
         <link rel="stylesheet" href="{{ asset('css/recipes.css') }}">
         <link rel="stylesheet" href="{{ asset('fonts/fonts.css') }}">
         <link rel='stylesheet' href="{{asset('css/add.css') }}" />
@@ -22,7 +23,6 @@
         <script src="{{ asset('js/main.js') }}"></script>
 
         {{-- nav and menu  --}}
-        <link rel="stylesheet"  href="{{asset('css/bootstrap.css')}} ">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="{{asset('css/Navbar.css')}} ">
 
