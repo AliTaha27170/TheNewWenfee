@@ -72,9 +72,9 @@ setcookie("total", $total, time() + (86400 * 30), "/");
 
 
   </ul> <!-- cd-cart-items -->
-
                 @if ( isset($_COOKIE['total'])  && ($_COOKIE['total'] != '0'))
                 <div class="cd-cart-total">
+                  <p>Your Zip Code <span><input id="ZIP_Code" type="number"></span></p> 
                   <p>Shipping <span>10$</span></p>
                   <p>Tax <span>10$</span></p>
                   <p>Total <span>${{ $total }}</span></p>
