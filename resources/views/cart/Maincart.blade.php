@@ -75,6 +75,8 @@ setcookie("total", $total, time() + (86400 * 30), "/");
 
                 @if ( isset($_COOKIE['total'])  && ($_COOKIE['total'] != '0'))
                 <div class="cd-cart-total">
+                  <p>Shipping <span>10$</span></p>
+                  <p>Tax <span>10$</span></p>
                   <p>Total <span>${{ $total }}</span></p>
                 </div> <!-- cd-cart-total -->
                 @else
