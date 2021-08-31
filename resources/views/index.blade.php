@@ -84,45 +84,126 @@ use     App\hellpers\like_;
 
         <!--____________________Section_____________________-->
 
-        <section class="Our-Categories" style =" display : none ;" >
+        <section class="Our-Categories" >
         <div class="container-fluid">
-            <h2 style="top: 25px;">Our Categories</h2>
             <div class="row">
-
-                <div class="col-md-4 col-sm-12 Feature">
-                    <img src="Images/1.png" alt="">
-                    <span>Shipping</span>
+            <h2 id="Categories-Title">Our Categories</h2>
+            <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-home"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Household</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                 </div>
-
-                <div class="col-md-2 col-sm-12 Feature">
-                    <img src="Images/2.png" alt="">
-                    <span>
-                    1
-                </span>
-                </div>
-
-                <div class="col-md-2 col-sm-12 Feature">
-                    <img src="Images/3.png" alt="">
-                    <span>
-                        2                  
-                    </span>
-                </div>
-
-                <div class="col-md-2 col-sm-12 Feature">
-                    <img src="Images/4.png" alt="">
-                    <span>
-                3
-                </span>
-                </div>
-
-                <div class="col-md-2 col-sm-12 Feature">
-                    <img src="Images/4.png" alt="">
-                    <span>
-                4
-                </span>
-                </div>
-
             </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-briefcase-medical"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Medical Supplies</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-female"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Beauty & Personal Care</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-glasses"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Eyewear & Accessories</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-baby-carriage"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Baby & Child</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-utensils"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Chef Wenfee Catering</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-hamburger"></i>
+                     </div>
+                    <h4 class="Categorie-Title">American Foods</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        <div class="col-md-3">
+                <a href="#">
+            <div class="Categories-box">
+                <div class="our-services settings">
+                    <div class="icon">
+                    <i class="fas fa-paw"></i>
+                     </div>
+                    <h4 class="Categorie-Title">Pet Care & Foods</h4>
+                    <p class="Categorie-Text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            </a>
+        </div>
+
+        
+
+        
+      </div>        
     </div>
 </section>
 

@@ -1650,9 +1650,82 @@ body .anim1 .counterrotate {
     text-align: left;
   }
 }
-
-
 /*End Of My Order*/
+/* Categories Section */
+#Categories-Title
+{
+    margin: 25px 0 10px 0;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    position: relative;
+}
+#Categories-Title::after
+{
+content: '';
+    position: absolute;
+    width: 100px;
+    height: 4px;
+    background: #007B70;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+.Our-Categories a
+{
+  color : #000 ;
+}
+.Categorie-Title
+{
+  color: #007b70;
+  margin: 10px 0 0 0;
+  font-weight: 500;
+}
+.Categorie-Text
+{
+  font-weight: 500;
+}
+.Categories-box {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px
+}
+
+.our-services {
+  margin: 40px 0;
+  padding-bottom: 30px;
+  padding: 0 60px;
+  min-height: 198px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all .4s ease-in-out;
+  box-shadow: 0 0 25px 0 rgba(20, 27, 202, .17);
+  cursor: pointer;
+}
+
+.our-services .icon {
+  margin-bottom: -21px;
+  transform: translateY(-50%);
+  text-align: center
+}
+.icon i
+{
+
+  color: #fff;
+  padding: 16px;
+  border-radius: 50%;
+  font-size: 36px;
+  background: #007b70;
+
+}
+
+
+
+
+/*End Of Categories Section */
 /*Ribbon*/
 .ribbon {
   width: 140px;
