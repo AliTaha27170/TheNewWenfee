@@ -47,7 +47,11 @@ Route::post('productCategory/{id}/products',  [App\Http\Controllers\PageControll
 
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 
+Route::get('/OrderSummary',                    [App\Http\Controllers\PageController::class, 'OrderSummary'])->name('OrderSummary');
+
 Route::get('/HowToOrder',                    [App\Http\Controllers\PageController::class, 'HowToOrder'])->name('HowToOrder');
+
+Route::get('/MyOrder',                    [App\Http\Controllers\PageController::class, 'MyOrder'])->name('MyOrder');
 
 Route::get('/Medical',                    [App\Http\Controllers\PageController::class, 'Medical'])->name('Medical');
 
@@ -94,6 +98,7 @@ Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class,'destroy
 Route::group(['prefix' => 'cart'], function () {
 
     Route::get('/', [CartController::class, 'index'])->name('cart.index');
+    Route::get('/order/{cart_id}', [CartController::class, 'order'])->name('order');
 
     Route::post('/store/{product}', [CartController::class, 'store'])->name('cart.store');
 
@@ -138,13 +143,13 @@ Route::post('search',[SearchController::class, 'search'])->name('magic_search');
 Route::post('brand/search',[SearchController::class, 'searchBrand'])->name('brand_search');
 
 
-//get products 
+//get products
 
 Route::get("products_list",function ()
 
 {
 
-    
+
 
     $products=Product::where('in_list', 1)->orderBy("category_name")->paginate(500);
 
@@ -158,7 +163,7 @@ Route::get("products_list",function ()
 
 });
 
-//get products 
+//get products
 
 
 
@@ -174,7 +179,7 @@ Route::get("mange_products",function ()
 
 {
 
-    
+
 
     $products=Product::where('in_list', 1)->orderBy("category_name")->paginate(250);
 
@@ -300,6 +305,6 @@ Route::get('/config-cache', function() {
 
 
 
-//get prodcts 
+//get prodcts
 
 Route::get('get_p/{id}',[PageController::class , 'getProducts'])->name('g_products');

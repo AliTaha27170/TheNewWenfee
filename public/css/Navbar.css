@@ -1357,6 +1357,18 @@ header271 {
 #cd-cart .cd-cart-total span {
   float: right;
 }
+#ZIP_Code
+{
+    width: 100px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .cart_img{
   float: right;
   margin-right: 50px;

@@ -104,7 +104,7 @@ button {
   -webkit-box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.07);
           box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.07);
   overflow: hidden;
-  margin-bottom: 55px;
+  margin: 10px 20px 50px 20px ;
   border-radius: 7px;
   overflow: hidden;
   -webkit-transition: 0.3s all;

@@ -26,7 +26,7 @@
     <ul class="characters-filter">
 		<li class="active"><a href="#">ALL</a></li>
         				            <li id=""><a href="#">0-9</a></li>
-                                    <li class=""><a href="#A">A</a></li>
+                                    <li class="" ><a href="#A">A</a></li>
                                     <li class=""><a href="#B">B</a></li>
                                     <li class=""><a href="#C">C</a></li>
                                     <li class=""><a href="#D">D</a></li>
@@ -557,8 +557,8 @@ btn.on('click', function(e) {
 
         .CustomLetter {
             position: relative;
-            margin-top: 20px;
-        }
+            padding-top: 114.8px;
+            margin-top: -114.8px;        }
 
         .CustomLetter h2 {
             background-color: #fff;
@@ -696,6 +696,12 @@ btn.on('click', function(e) {
   visibility: visible;
   border-radius : 50% ;
 }
+#A
+{
+    padding: 0;
+    margin-top: 20px;
+}
+
     </style>
 
 @endsection

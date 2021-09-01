@@ -15,7 +15,7 @@
 
 <a href="{{ route('Fav') }}">
 <span>
-  Favourite List
+Favorite List
   <i class="fas fa-heart" style="padding: 0 5px;"></i>
  </span> </a>
         <span style="color: #fff;padding: 0 5px;">|</span>
@@ -24,13 +24,18 @@
         <div class="User-avtar">
         <i class="fas fa-user User-Icon"></i>
         </div>
+        <form method="POST" action="{{ route('logout') }}">
+@csrf
           <ul class="User-Dropdown">
             <li><a href="#">Edit Profile</a><i class="fas fa-cog"></i></li>
-            <li  id="Fav_Mobile"><a href="#">Favourite List</a><i class="fas fa-heart"></i></li>
-            <li><a href="#">Logout</a> <i class="fas fa-sign-out-alt"></i> </li>
+            <li  id="Fav_Mobile"><a href="{{ route('Fav') }}">Favorite List</a><i class="fas fa-heart"></i></li>
+
+            <li  id="logout"><a href="#">Logout </a><i class="fas fa-sign-out-alt"></i></li>
+            <button id="logout_btn" hidden></button>
+        </form>
           </ul>
       </div>
-    
+
       </div>
 
       @else
@@ -176,4 +181,10 @@
       $('#cd-cart').load("{{ route('maincart') }}");
     }
   );
+
+  //logout
+  $("#logout").click(function(){
+    $("#logout_btn").trigger("click");
+ })
+
 </script>
