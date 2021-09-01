@@ -15,7 +15,7 @@
 
 <a href="<?php echo e(route('Fav')); ?>">
 <span>
-  Favourite List
+Favorite List
   <i class="fas fa-heart" style="padding: 0 5px;"></i>
  </span> </a>
         <span style="color: #fff;padding: 0 5px;">|</span>
@@ -24,13 +24,18 @@
         <div class="User-avtar">
         <i class="fas fa-user User-Icon"></i>
         </div>
+        <form method="POST" action="<?php echo e(route('logout')); ?>">
+<?php echo csrf_field(); ?>
           <ul class="User-Dropdown">
             <li><a href="#">Edit Profile</a><i class="fas fa-cog"></i></li>
-            <li  id="Fav_Mobile"><a href="#">Favourite List</a><i class="fas fa-heart"></i></li>
-            <li><a href="#">Logout</a> <i class="fas fa-sign-out-alt"></i> </li>
+            <li  id="Fav_Mobile"><a href="<?php echo e(route('Fav')); ?>">Favorite List</a><i class="fas fa-heart"></i></li>
+
+            <li  id="logout"><a href="#">Logout </a><i class="fas fa-sign-out-alt"></i></li>
+            <button id="logout_btn" hidden></button>
+        </form>
           </ul>
       </div>
-    
+
       </div>
 
       <?php else: ?>
@@ -173,5 +178,11 @@
       $('#cd-cart').load("<?php echo e(route('maincart')); ?>");
     }
   );
+
+  //logout
+  $("#logout").click(function(){
+    $("#logout_btn").trigger("click");
+ })
+
 </script>
 <?php /**PATH C:\wamp64\www\adham\resources\views/partials/nav-menu.blade.php ENDPATH**/ ?>
