@@ -4,39 +4,41 @@
       <form class="d-flex" action="<?php echo e(route('magic_search')); ?>" method="POST" id="Navbar_Search">
         <?php echo csrf_field(); ?>
         <input class="form-control me-2" type="search" placeholder="Search" name="search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
+        <button id="Nav_Bar_Search_Button" class="btn btn-outline-success" type="submit"><i class="fas fa-search"></i></button>
       </form>
 
       <?php if(isset(auth()->user()->id)): ?>
 
       <div class="Username">
-        <i class="fas fa-user User-Icon"></i>
-        <button style="
-    border: 0;
-    background: transparent;
-    color: #fff;
-    /* font-size: 17px; */
-    padding: 0;">
+
+
+
 <a href="<?php echo e(route('Fav')); ?>">
-<span>        <i class="fas fa-heart" style="padding: 0 5px;"></i>
-  Favourite List </span> </a>
-</button>
+<span>
+  Favourite List
+  <i class="fas fa-heart" style="padding: 0 5px;"></i>
+ </span> </a>
         <span style="color: #fff;padding: 0 5px;">|</span>
         <a href="#" class="FirstNavLinks"><?php echo e(auth()->user()->name); ?></a>
-        <div class="User-Menu" style="display: none;">
-      <ul>
-        <li><a href="#" style="display : none ;"> Account Settings<i class="fas fa-cog"></i></a></li>
-        <li><a href="#" > Logout <i class="fas fa-sign-out-alt"></i></a></li>
-      </ul>
-    </div>
+    <div class="User-area">
+        <div class="User-avtar">
+        <i class="fas fa-user User-Icon"></i>
+        </div>
+          <ul class="User-Dropdown">
+            <li><a href="#">Edit Profile</a><i class="fas fa-cog"></i></li>
+            <li  id="Fav_Mobile"><a href="#">Favourite List</a><i class="fas fa-heart"></i></li>
+            <li><a href="#">Logout</a> <i class="fas fa-sign-out-alt"></i> </li>
+          </ul>
+      </div>
+    
       </div>
 
       <?php else: ?>
       <div class="Registration">
-        <i class="fas fa-user User-Icon"></i>
         <a href="/login" class="FirstNavLinks">Login</a>
         <span id="NavSpan">|</span>
         <a href="/register" class="FirstNavLinks">Register</a>
+        <i class="fas fa-user User-Icon"></i>
       </div>
       <?php endif; ?>
     </div>

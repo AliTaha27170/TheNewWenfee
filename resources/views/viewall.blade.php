@@ -43,6 +43,12 @@ use     App\hellpers\like_;
                         <h2>Offer/Discount </h2>
                         <input type="checkbox" name="offer" {{ request()->offer ? 'checked' : '' }} id="box-1">
                         <label for="box-1">Offer</label>
+                        <h2>Is frozen </h2>
+                        <input type="checkbox" name="frozen" {{ request()->frozen ? 'checked' : '' }} id="box-2">
+                        <label for="box-2">frozen</label>
+                        <h2>Is refrigerated </h2>
+                        <input type="checkbox" name="refrigerated" {{ request()->refrigerated ? 'checked' : '' }} id="box-3">
+                        <label for="box-3">refrigerated</label>
                     </div>
                 </form>
             </div>

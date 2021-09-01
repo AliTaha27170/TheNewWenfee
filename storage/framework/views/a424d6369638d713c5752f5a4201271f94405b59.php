@@ -44,6 +44,12 @@ use     App\hellpers\like_;
                         <h2>Offer/Discount </h2>
                         <input type="checkbox" name="offer" <?php echo e(request()->offer ? 'checked' : ''); ?> id="box-1">
                         <label for="box-1">Offer</label>
+                        <h2>Is frozen </h2>
+                        <input type="checkbox" name="frozen" <?php echo e(request()->frozen ? 'checked' : ''); ?> id="box-2">
+                        <label for="box-2">frozen</label>
+                        <h2>Is refrigerated </h2>
+                        <input type="checkbox" name="refrigerated" <?php echo e(request()->refrigerated ? 'checked' : ''); ?> id="box-3">
+                        <label for="box-3">refrigerated</label>
                     </div>
                 </form>
             </div>
@@ -169,8 +175,15 @@ use     App\hellpers\like_;
   overflow: hidden;
   opacity: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: 400;
 }
+@media  (max-width: 1000px) {
+  .alert
+   {
+    width: 100%;
+  }
+ }
+
 </style>
 <script>
     $('.add-cart-btn').click(function(){
@@ -248,7 +261,6 @@ $('.close-btn').click(function(){
             .carousel{
                 display: none;
             }
-
     </style>
 <?php $__env->stopPush(); ?>
 

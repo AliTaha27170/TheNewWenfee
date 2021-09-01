@@ -210,12 +210,14 @@ class PageController extends Controller
           $products=$products->where('price','>=',(int)$request->minPrice)->where('price','<=',(int)$request->maxPrice);
         }
         if(isset($request->offer)){
-            $products=$products->where('is_offer',1)->orderBy('offer_n',"ASC");
+            $products=$products->where('is_offer',1)->orderBy('created_at',"ASC");
         }
         if(isset($request->keyword)){
             $products=$products->where('name','Like', '%' .$request->keyword. '%');
         }
-
+        if(isset($request->frozen)){
+            $products=$products->where('is_frozen',1)->orderBy('created_at',"ASC");
+        }
         $products=$products->get();
 
 

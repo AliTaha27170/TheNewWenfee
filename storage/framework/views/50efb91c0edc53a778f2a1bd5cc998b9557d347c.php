@@ -5,7 +5,6 @@
 <?php
 use     App\hellpers\like_;
 ?>
-<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 
 <script>
     var x=0;
@@ -123,20 +122,32 @@ use     App\hellpers\like_;
 
 
 
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            
+
     <?php if($slideCategories): ?>
         <div class="filter-box">
             <div class="filter-head">
                 <ul>
                     <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><button class="mbtn" onclick="getProducts(<?php echo e($item->id); ?>)" ><?php echo e($item->name); ?></button>
+                        <li><button class="mbtn" onclick="filter('.<?php echo e($item->slug); ?>', this)"><?php echo e($item->name); ?></button>
                         </li>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-           
-                <div name="product" id="products_view">
+
+            <script>
+                function filter(t, btn) {
+                    $(".filter-head .active").removeClass("active");
+                    $(".filter-box .grid").isotope({
+                        filter: t
+                    });
+                    $(btn).addClass("active");
+                }
+
+                $(document).ready(function() {
+                    $(".filter-head li button")[0].click();
+                })
+
+            </script>
 
                 </div>
 
@@ -336,6 +347,7 @@ use     App\hellpers\like_;
      <!-- shipping box -->
      <section id="ShippingBox">
 	<figure>
+    <i class="fas fa-times" id="Close_Shipping_Box"></i>
     <figcaption>
       <h3>
       Welcome To WenFee
