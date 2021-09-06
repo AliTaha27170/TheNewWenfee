@@ -61,11 +61,7 @@
                                 @endforeach
                             @endif
                             {{$recipes->links()}}
-
-
-
                         </div>
-
                     </div>
                 </div>
             </div>

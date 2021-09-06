@@ -230,24 +230,7 @@
   z-index: 10;
 }
 </style>
-<script>
-    $('.add-cart-btn').click(function(){
-  $('.alert').addClass("show");
-  $('.alert').removeClass("hide");
-  $('.alert').addClass("showAlert");
-  setTimeout(function(){
-    $('.alert').removeClass("show");
-    $('.alert').addClass("hide");
-  },2000);
-});
-$('.close-btn').click(function(){
-  $('.alert').removeClass("show");
-  $('.alert').addClass("hide");
-});
-</script>
-    <!-- adding to cart alert -->
 @endsection
-
 @push('styles')
     <style>
         /*Pagination*/

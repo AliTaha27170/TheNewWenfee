@@ -231,3 +231,56 @@ $(function (){
         });
     }, 300);
 })
+/*Account Settings */
+    //full name
+    $('#Edit_Full_Name').click(function(){
+        $("#Full_Name").select();
+        });
+        //address
+        $('#Edit_Address').click(function(){
+          $("#Address").select();
+        });
+        //number
+        $('#Edit_Number').click(function(){
+          $("#Number").select();
+        });
+        //email
+        $('#Edit_Email').click(function(){
+          $("#Email").select();
+        });
+        /* End Of Account Settings */
+        /* Brands */
+        var btn = $('#button');
+
+        $(window).scroll(function() {
+          if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+          } else {
+            btn.removeClass('show');
+          }
+        });
+        
+        btn.on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({scrollTop:0}, '300');
+        });
+        
+
+        /*Alert*/
+        $('.add-cart-btn').click(function(){
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function(){
+              $('.alert').removeClass("show");
+              $('.alert').addClass("hide");
+            },2000);
+          });
+          $('.close-btn').click(function(){
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+          });
+
+        /*End Of Alert*/
+        
+        /* End Of Brands */

@@ -88,7 +88,7 @@ use     App\hellpers\like_;
         <div class="container-fluid">
             <div class="row">
             <h2 id="Categories-Title">Our Categories</h2>
-            <div class="col-md-3">
+            <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -102,7 +102,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -116,7 +116,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -130,7 +130,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -144,7 +144,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -158,7 +158,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -172,7 +172,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -186,7 +186,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">

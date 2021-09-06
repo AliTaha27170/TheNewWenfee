@@ -16,41 +16,9 @@ use     App\hellpers\like_;
                     <h3 id="Ingredients_tittle">Ingredients</h3>
                 <ol class="continuous-list" id="Ingredients">
                     {!!$recipe->Ingredients!!}
-
                 </ol>
-
-                    <!-- <ul class="recipe-details">
-                        <li class="recipe-details-item time">
-                            <img src="/img/fi-rr-time-check.svg" alt="">
-                            <span class="value">{{$recipe->preparation_time}}</span><span class="title">Minutes</span>
-                        </li>
-                        <li class="recipe-details-item servings">
-                            <img src="/img/fi-rr-users.svg" alt="">
-                            <span class="value">{{$recipe->serving_range}}</span><span class="title">Serving</span>
-                        </li>
-                    </ul> -->
-
-                    {{--
-                    <div class="description">
-                            {!!$recipe->main_desc!!}
-                    </div>
-
-                     --}}
-
-                     {{--
-                    <div class="share-box">
-                        <strong>Share The Recipe</strong>
-                        <div class="social">
-                            <a href="#"><img src="{{ asset('img/sc/facebook.png') }}"></a>
-                            <a href="#"><img src="{{ asset('img/sc/instagram.png') }}"></a>
-                            <a href="#"><img src="{{ asset('img/sc/twitter.png') }}"></a>
-                        </div>
-
-                    </div> --}}
                 </div>
             </div>
-
-
             <div class="col-md-5">
                 <div class="slider-for">
                     <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="250px" height="auto" alt=""></div>
@@ -63,15 +31,9 @@ use     App\hellpers\like_;
                     <div class="product2"><imgsrc="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $recipe->recipe_image }}" width="70px" height="auto" alt=""></div>
                 </div>
             </div>
-
-
         </div>
-
     </div>
-
 </div>
-
-
 <div class="RecipesMethodBox">
         <div class="row">
                 <div class="col-md-10">
@@ -83,10 +45,8 @@ use     App\hellpers\like_;
                 <div class="col-md-2" id="chief_Image_Section">
                     <img src="https://i.ibb.co/j8vSrwP/chef-wenfee.png" id="chief_Image" alt="">
                 </div>
-</div>
-</div>
-
-
+            </div>
+            </div>
 <section class="products">
     <div class="heading">
         <h3>Ingredients </h3>
