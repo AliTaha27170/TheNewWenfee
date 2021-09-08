@@ -42,23 +42,9 @@
             <!--_____________________________________________________________________-->
 
     <div class="Medical-carousel">
-
-    <!--
-  <div class="slide">
-
-    <img src="https://wenfee.com/Slides/1.jpg" class="background-image" alt="Small succulent in round planter">
-  </div>
--->
   <div class="slide">
     <img src="https://wenfee.com/Slides/2.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
-
-  <!--
-    <div class="slide">
-
-    <img src="https://wenfee.com/Slides/3.jpg" class="background-image" alt="Small succulent in round planter">
-  </div>
--->
 
     <div class="slide">
 
@@ -76,42 +62,30 @@
     <img src="https://wenfee.com/Slides/6.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
 
-
-
-
-
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/8.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
-
 
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/9.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
 
-
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/10.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
-
-
 
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/11.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
 
-
-
   <div class="slide">
 
     <img src="https://wenfee.com/Slides/12.jpg" class="background-image" alt="Small succulent in round planter">
   </div>
-
-
 
   <div class="slide">
 
@@ -233,58 +207,6 @@
 @endsection
 @push('styles')
     <style>
-        /*Pagination*/
-        .pagination-div {
-            margin-top: 40px;
-        }
-
-        .pagination-div .pagination {
-            display: block;
-            margin-bottom: 0px;
-            list-style-type: none;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .pagination-div .pagination li {
-            display: inline-block;
-            color: #0056b3;
-        }
-
-        .pagination-div .pagination li a {
-            font-family: "Futura-Bold", sans-serif;
-            font-size: 14px;
-            background: #ffffff;
-            border: 1px solid #ffffff;
-            display: inline-block;
-            text-align: center;
-            height: 30px;
-            /* line-height: 26px; */
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .pagination-div .pagination li a:hover {
-            color: #000;
-        }
-
-        .pagination-div .pagination li a i {
-            margin: 0px 5px;
-        }
-
-        .pagination-div .pagination li a.page-number {
-            width: 30px;
-            border-radius: 100%;
-            color: #0056b3;
-        }
-
-        .pagination-div .pagination li a.page-number.current {
-            background: #0056b3;
-            border: 1px solid #0056b3;
-            color: #ffffff;
-        }
-
         /*Pagination*/
         .slide .background-image {
             margin : 0 ;

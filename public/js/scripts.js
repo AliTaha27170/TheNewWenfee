@@ -94,12 +94,15 @@ $(function () {
                     infinite: false,
                 }
             }
+
+            
             // You can unslick at a given breakpoint now by adding:
             // settings: "unslick"
             // instead of a settings object
         ]
 
     });
+    
 
     $("body").on("click", ".minus-btn", function () {
         var input = $(this).closest(".counter").find("input");

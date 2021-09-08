@@ -432,7 +432,7 @@ use     App\hellpers\like_;
             <br><br>
 
                     <!------------------------ Recipes Slider ------------------------>
-            <!-- <div class="Recipes-Slider">
+           <div class="Recipes-Slider">
             <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
                         <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
@@ -612,7 +612,7 @@ use     App\hellpers\like_;
                     </div>
             </div>
             </div>
-                </div> -->
+                </div>
 
                
                 

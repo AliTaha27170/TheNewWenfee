@@ -76,6 +76,10 @@ class PageController extends Controller
    {
        return view('OrderSummary');
    }
+   public function ThankYou()
+   {
+       return view('ThankYou');
+   }
    public function AccountSettings()
    {
        return view('AccountSettings');
