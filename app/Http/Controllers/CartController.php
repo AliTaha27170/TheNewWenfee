@@ -13,18 +13,45 @@ use Illuminate\Support\Facades\Validator;
 class CartController extends Controller
 {
 
+
+   // START  Maincart  >>>>>
+
+   public function Maincart()
+   {
+       $products =[];
+
+    foreach ($_COOKIE as $key => $value) {
+        if($key[0]=='p')
+        {
+            $product = Product::find($value);
+            array_push($products , $product );
+        }
+
+
+   }
+
+   $arr =$this->shipping_total_and_isOffer();
+
+   return view('cart.Maincart')->with(['shipping' => $arr['shipping_price']]);
+}
+
+
+   // END    Maincart  >>>>>
+
     //START index >>>>>
     public function index()
     {
+        $this->RefreashItems();
 
         // ckeck if there Active order
         $order = Order::where('active', 1)->first();
+
         if (!isset($order)) {
             $user_id =  null;
             $em_data =  "{}";
             $em_type =  "carts";
             $method  =  "POST";
-            $ac_id   =  Ac_api::server($em_type, $em_data, $method);
+            $ac_id   =   json_decode(Ac_api::server($em_type, $em_data, $method), true)['id'] ;
 
             if (isset(auth()->user()->id))
                 $user_id = auth()->user()->id;
@@ -36,13 +63,91 @@ class CartController extends Controller
         }
 
 
+
         //else create new (with americommerce )
 
-        return view('cart');
-    }
+        //refreash cart (delete and add items )
+
+
+
+
+        $arr =$this->shipping_total_and_isOffer();
+        return view('cart')->with(
+            [
+                 "cart_id" => $order->ac_id ,
+                 "offer"   =>  $arr['offer'],
+                 "free"    =>  $arr['free'],
+            ]       );
+                }
     //END  index >>>>>
 
 
+
+    public function RefreashItems()
+    {
+
+
+        $order = Order::where('active', 1)->first();
+        if (!isset($order)) {
+
+            $this->index();
+            return $this->RefreashItems();
+        }
+        $em_data    =  "{}";
+        $em_type    =  "carts/" . $order->ac_id. "/items";
+        $method     =  "DELETE";
+        $response   =  Ac_api::server($em_type, $em_data, $method);
+
+        $this->order_products_add($order->ac_id);
+
+
+
+
+    }
+
+// START shipping  >>>>>>>
+    public function shipping_total_and_isOffer(){
+
+        $order = Order::where('active', 1)->first();
+        if (!isset($order)) {
+
+           $this->index();
+           $this->shipping_total_and_isOffer();
+        }
+
+        $offer      =   0 ;
+        $free       =   0 ;
+        $em_data    =  "{}";
+        $zipCode    = isset($_COOKIE['zipCode']) ? $_COOKIE['zipCode'] : 00000;
+        $em_type    =  "carts/" . $order->ac_id. "/shipping?city=Round+Rock&state=TX&postal_code=".$zipCode."&country=US";
+        $method     =  "GET";
+        $response   =  Ac_api::server($em_type, $em_data, $method);
+
+        $response = json_decode($response, true);
+        $a = array();
+
+        for($i=0; $i<count($response['rates']) ;$i++ )
+        {
+            // if isset offer shipping or not
+            if( $response['rates'][$i]['identifier'] == "Custom;4;Offer | Free shipping")
+                $offer = 1;
+
+            if( $response['rates'][$i]['identifier'] == "Custom;3;Free Shiping")
+                $free = 1;
+
+
+            if( $response['rates'][$i]['description'] != "pick up" )
+            array_push($a,$response['rates'][$i]['total_charges']);
+        }
+
+        $arr = [
+            "shipping_price" => count($a) ? min($a) : 0,
+            "offer"          => $offer ,
+            "free"           => $free  ,
+        ];
+        return ($arr)  ;
+    }
+// END  shipping  >>>>>>>
 
 
 
@@ -50,10 +155,17 @@ class CartController extends Controller
     public function order($cart_id)
     {
        $this->order_products($cart_id);
-
     }
     //END ORDER >>>>>
 
+        //START ORDER >>>>>
+        public function place_order($cart_id,Request $request)
+        {
+
+            dd($request);
+
+        }
+        //END ORDER >>>>>
 
 
 /**
@@ -67,7 +179,7 @@ class CartController extends Controller
  */
 
     //START  order_products >>>>>
-    public function order_products($cart_id)
+    public function order_products_add($cart_id)
     {
         // ADD All products to cart
         foreach ($_COOKIE as $key => $value) {
@@ -175,4 +287,5 @@ class CartController extends Controller
 
         return response()->json(['success' => true]);
     }
+
 }

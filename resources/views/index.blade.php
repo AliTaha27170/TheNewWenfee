@@ -200,10 +200,10 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        
 
-        
-      </div>        
+
+
+      </div>
     </div>
 </section>
 
@@ -250,7 +250,7 @@ use     App\hellpers\like_;
             </a>
         </div>
         @endforeach
-      
+
             </div>
             <div  class="container ViewAllButton" >
             <a href="{{ route('brands') }}" target="_blank">View all</a>
@@ -614,8 +614,8 @@ use     App\hellpers\like_;
             </div>
                 </div>
 
-               
-                
+
+
 
                   <!------------------------ Recipes Slider ------------------------>
 
@@ -774,7 +774,7 @@ use     App\hellpers\like_;
         }
 
 
-    
+
     </style>
     <script>
          $('.BrandsSlider').slick(
@@ -887,7 +887,9 @@ use     App\hellpers\like_;
             $('.alert').removeClass("show");
             $('.alert').addClass("hide");
             });
-            $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}});
+            {{-- comment
+
+            $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}}); --}}
     </script>
 
 @endsection

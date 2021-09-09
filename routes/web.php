@@ -103,6 +103,10 @@ Route::group(['prefix' => 'cart'], function () {
 
     Route::get('/', [CartController::class, 'index'])->name('cart.index');
     Route::get('/order/{cart_id}', [CartController::class, 'order'])->name('order');
+    Route::Post('/order/{cart_id}', [CartController::class, 'place_order'])->name('place_order');
+    Route::get('/order/shipping/o', [CartController::class, 'shipping_total_and_isOffer'])->name('shipping_cu');
+    Route::get('/RefreashItems', [CartController::class, 'RefreashItems'])->name('RefreashItems');
+
 
     Route::post('/store/{product}', [CartController::class, 'store'])->name('cart.store');
 
@@ -248,8 +252,7 @@ Route::get('deleteProduct/{id}',function($id){
 // Cart with ameriecommerce
 
 Route::get('maincart/{id}/{q}' , [MainnCartController::class   , 'update']);
-
-Route::get('maincart'          , [MainnCartController::class   , 'index' ])->name('maincart');
+Route::get('maincart'          , [CartController::class   , 'Maincart' ])->name('maincart');
 
 
 
