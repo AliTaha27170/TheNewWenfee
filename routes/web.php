@@ -51,6 +51,8 @@ Route::get('/ThankYou',                    [App\Http\Controllers\PageController:
 
 Route::get('/OrderSummary',                    [App\Http\Controllers\PageController::class, 'OrderSummary'])->name('OrderSummary');
 
+Route::get('/Receipt',                    [App\Http\Controllers\PageController::class, 'Receipt'])->name('Receipt');
+
 Route::get('/HowToOrder',                    [App\Http\Controllers\PageController::class, 'HowToOrder'])->name('HowToOrder');
 
 Route::get('/MyOrder',                    [App\Http\Controllers\PageController::class, 'MyOrder'])->name('MyOrder');

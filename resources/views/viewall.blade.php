@@ -14,6 +14,20 @@ use     App\hellpers\like_;
                 <form id="search-form" action="{{ route('viewall') }}" method="GET">
 
                     <div class="left-panel">
+                        <!----------- New List ------------>
+                    <!-- <h2 id="Categories">Categories</h2>
+                        <ul id="List">
+                            <li><a href="#"> Vitamins & Dietary Supplements </a></li>
+                            <li><a href="#"> Pain Relievers </a></li>
+                            <li><a href="#"> Disposable Face Masks & Gloves </a></li>
+                            <li><a href="#"> Band Aids </a></li>
+                            <li><a href="#"> Sexual Wellness </a></li>
+                            <li><a href="#"> Pregnancy Tests </a></li>
+                            <li><a href="#"> Gift Bags </a></li>
+                        </ul> -->
+
+                          <!----------- End Of New List ------------>
+
                         <h2>Category</h2>
                         <div class="select">
                             <select name="slug">
@@ -55,7 +69,7 @@ use     App\hellpers\like_;
 
             <div class="col-md-9">
                 <div class="container Number-Of-Products">
-                  <span></span>
+                  <span>**Items</span>
                 </div>
                 <div class="right-panel">
                     <div class="products">

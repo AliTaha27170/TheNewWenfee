@@ -1593,54 +1593,54 @@ body .anim1 .counterrotate {
   right: 0;
   margin: 0 auto;
 }
-.table {
+.My-Order-Table {
   width: 98%;
   border-collapse: collapse;
   margin: 40px 1%;
   padding: 0;
 }
 
-.table td,
-.table th {
+.My-Order-Table td,
+.My-Order-TableMy-Order-Table th {
   padding: 12px 15px;
   border: 1px solid #ccc;
   text-align: center;
   font-size: 18px;
 }
 
-.table th {
+.My-Order-Table th {
   background-color: #007b70;
   color: #ffffff;
   font-weight: 500;
 }
 
-.table tbody tr:nth-child(even) {
+.My-Order-Table tbody tr:nth-child(even) {
   background-color: #007b7040;
 }
 
 /*responsive*/
 
-@media (max-width: 600px) {
-  .table thead {
+@media only screen and (max-width: 600px) {
+  .My-Order-Table thead {
     display: none;
   }
 
-  .table,
-  .table tbody,
-  .table tr,
-  .table td {
+  .My-Order-Table,
+  .My-Order-Table tbody,
+  .My-Order-Table tr,
+  .My-Order-Table td {
     display: block;
     width: 100%;
   }
-  .table tr {
+  .My-Order-Table tr {
     margin-bottom: 15px;
   }
-  .table td {
+  .My-Order-Table td {
     padding-left: 50%;
     text-align: left;
     position: relative;
   }
-  .table td::before {
+  .My-Order-Table td::before {
     content: attr(data-label);
     position: absolute;
     left: 0;
@@ -2781,14 +2781,37 @@ textarea.input1 {
   position: sticky;
   top: 0;
 }
-
+@media (min-width : 750px)
+{
+  .product-page .left-panel
+  {
+    padding: 1px 0%;
+    position: fixed;
+    top: 120px;
+    left: 30px;
+    width: 20%;
+  }
+}
 .product-page .left-panel h2 {
   font-size: 17px;
   margin-bottom: 6px;
   font-weight: bold;
   padding: 20px 0 0 2px;
 }
-
+#Categories
+{
+  font-size: 22px;
+  color: #007b70;
+}
+#List li
+{
+  margin: 10px 0;
+}
+#List a
+{
+  color: #000;
+  font-weight: 500;
+}
 .product-page .products {
   position: relative;
   padding-top: 20px;

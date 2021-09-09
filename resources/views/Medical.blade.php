@@ -20,8 +20,6 @@
                             <li><a href="#"> Pregnancy Tests </a></li>
                             <li><a href="#"> Gift Bags </a></li>
                         </ul>
-
-
                         <h2>Price</h2>
                         <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
                             type="text" id="maxPrice">
