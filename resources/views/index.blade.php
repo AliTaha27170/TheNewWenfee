@@ -83,7 +83,8 @@ use     App\hellpers\like_;
     <!--_____________________________________________________________________-->
 
         <!--____________________Section_____________________-->
-
+        {{ Breadcrumbs::render('home') }}
+        
         <section class="Our-Categories" >
         <div class="container-fluid">
             <div class="row">

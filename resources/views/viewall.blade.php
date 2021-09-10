@@ -5,8 +5,8 @@
 use     App\hellpers\like_;
 @endphp
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
-    <script src="/libs/wrunner/wrunner-native.js"></script>
-
+    <script src="/libs/wrunner/wrunner-native.js"></script>  
+    
     <div class="product-page">
         <div class="row">
 
@@ -55,7 +55,7 @@ use     App\hellpers\like_;
 
             <div class="col-md-9">
                 <div class="container Number-Of-Products">
-                  <span></span>
+                <span>{{$products->count()}}</span>
                 </div>
                 <div class="right-panel">
                     <div class="products">

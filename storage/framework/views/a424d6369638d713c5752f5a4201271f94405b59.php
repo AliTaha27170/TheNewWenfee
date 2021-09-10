@@ -5,8 +5,8 @@
 use     App\hellpers\like_;
 ?>
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
-    <script src="/libs/wrunner/wrunner-native.js"></script>
-
+    <script src="/libs/wrunner/wrunner-native.js"></script>  
+    
     <div class="product-page">
         <div class="row">
 

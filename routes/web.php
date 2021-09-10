@@ -44,6 +44,8 @@ use Composer\DependencyResolver\Request;
 
 Route::get('/',                       [App\Http\Controllers\PageController::class, 'landing'])->name('landing-page');
 Route::post('productCategory/{id}/products',  [App\Http\Controllers\PageController::class, 'getProducts'])->name('getProducts');
+Route::get('/cats',  [App\Http\Controllers\PageController::class, 'cats'])->name('cats');
+Route::get('/cats/{id}',  [App\Http\Controllers\PageController::class, 'subCats'])->name('subCats');
 
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 

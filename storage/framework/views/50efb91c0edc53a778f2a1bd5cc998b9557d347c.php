@@ -77,7 +77,9 @@ use     App\hellpers\like_;
     <!--_____________________________________________________________________-->
 
         <!--____________________Section_____________________-->
+        <?php echo e(Breadcrumbs::render('home')); ?>
 
+        
         <section class="Our-Categories" >
         <div class="container-fluid">
             <div class="row">

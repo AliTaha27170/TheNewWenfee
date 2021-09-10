@@ -35,8 +35,21 @@ class PageController extends Controller
        $books=Product::where('product_category_id',$cookbooks->id)->get();
 
        return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands','slideCategory'));
-   }
+    }
+    //cats 
+    public function cats(){
+        $cats=ProductCategory::where('parent_id',NULL)->get();
+        //dd($cats);
+        return view('cats',compact('cats'));
+    }
+    //cats 
+    public function subCats($id){
+        $subCats=ProductCategory::where('parent_id',$id)->get();
+        //dd($subCats);
+        return view('subCats',compact('subCats'));
+    }
 //Start 
+
    public function getProducts($id){
     
     if($id  ){
