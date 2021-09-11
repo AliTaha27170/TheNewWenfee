@@ -164,7 +164,7 @@ Favorite List
 <div id="cd-shadow-layer"></div>
 
 <div id="cd-cart">
-
+    <img alt="" class="hCL kVc L4E MIw" importance="auto" loading="auto" src="https://i.pinimg.com/originals/9e/91/7f/9e917f152f70800d105c76ceb7ac2b36.gif" width="550px">
 </div> <!-- cd-cart -->
 
 
@@ -173,13 +173,43 @@ Favorite List
 
 <!--_____________________________________________________________________-->
 {{-- Navbar and slider  --}}
+<script> var x =0 </script>
 <script src="{{ asset('js/Navbar.js') }}   "></script>
 <script src="{{ asset('js/jquery.js') }}   "></script>
 <script src="{{ asset('js/bootstrap.js') }}"></script>
 <script>
+    $('#cd-shadow-layer').click(
+        function(){
+            x+=1;
+        }
+    );
+
+
+
   $('#cd-cart-trigger').click(
     function() {
-      $('#cd-cart').load("{{ route('maincart') }}");
+        if(x % 2 == 0)
+        {
+            $('#cd-cart').html('<img alt="" class="hCL kVc L4E MIw" importance="auto" loading="auto" src="https://i.pinimg.com/originals/9e/91/7f/9e917f152f70800d105c76ceb7ac2b36.gif" width="550px"> <br><center> <h3>We`re calculating your bill</h3> </center>');
+
+            $.ajax({
+
+                url: "{{ route('maincart') }}",
+                dataType: 'html',
+                success: function(data) {
+                     //handle data object containing the html
+                     $('#cd-cart').html(data);
+                },
+                error: function(xhr, error){
+                    $('#cd-cart').load("{{ route('maincart') }}");
+                }
+
+            });
+
+        }
+
+        x+=1;
+
     }
   );
 

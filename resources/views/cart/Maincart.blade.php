@@ -5,11 +5,7 @@ $tax  = 0;
 $lbs  = 0;
 @endphp
 
-<script>
-  total =  '$ '+getCookie('total');
-  $('#total').text(total);
 
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {{--
 <script>
@@ -64,7 +60,6 @@ foreach ($_COOKIE as $key => $value) {
                   </li>
 
 
-<div id="div1" hidden></div>
 
 
 
@@ -88,17 +83,20 @@ setcookie("total", $total, time() + (86400 * 30), "/");
 
   </ul> <!-- cd-cart-items -->
 
-                @if ( isset($_COOKIE['total'])  && ($_COOKIE['total'] != '0'))
+                @if ($total!= '0')
                 <div class="cd-cart-total">
 
-                    <hr>
-                    <input type="number" maxlength="6" placeholder="Zip Code" id="zip" value="{{ isset($_COOKIE['zipCode']) ? $_COOKIE['zipCode'] : '' }}">
+                    <br>
+                    <small>Zip Code :</small>
+                    <input type="number" maxlength="6" placeholder="enter your zip code " id="zip" value="{{ isset($_COOKIE['zipCode']) ? $_COOKIE['zipCode'] : '' }}">
+                    <br>
+                    <br>
                     <hr>
                     <p>Subtotal : <span id="tot">{{ $total }}</span><span>$</span></p>
                     <p>Tax : <span id="tax">{{ $tax }}</span><span>$</span></p>
                     <p>Shipping  <small>{{ $lbs }} LBS </small> :  <span id="shipping">{{ $shipping }}</span><span>$</span></p>
                     <script>
-                        $('#totalp').text(+$('#tot').text() + +$('#shipping').text() + +$('#tax').text());
+                        $('#totalp').text(parseFloat(( +$('#tot').text() + +$('#shipping').text() + +$('#tax').text()).toFixed(2)) );
                     </script>
                     <p>Total : <span id="totalp"> {{ $total }}</span> <span>$</span> </p>
                 </div> <!-- cd-cart-total -->
@@ -113,7 +111,6 @@ setcookie("total", $total, time() + (86400 * 30), "/");
 
               <script>
                 $(document).ready(function(){
-                    $("#div1").load("../../../../../../cart/RefreashItems");
 
  //setup before functions
 var typingTimer;                //timer identifier
@@ -130,7 +127,7 @@ $('#zip').keyup(function(){
 //user is "finished typing," do something
 function doneTyping () {
     setCookie('zipCode',$('#zip').val(),30);
-    $('#cd-cart').load("../../../../../../maincart");
+    cart();
 }
                 });
                 </script>
