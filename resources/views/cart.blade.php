@@ -523,7 +523,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
 </script>
 
   <div class="OnePageCheckOut-checkoutArea checkout row m-0">
-    <div class="checkout-wrap col-xl-7">
+    <div class="checkout-wrap col-xl-12">
       <div class="errortext-wrap mb-2"> <div id="UpdatePanelErrorArea">
 	
         <div align="center">
@@ -1153,7 +1153,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                   <div class="CreditCard-number row">
                                     <div class="col-12">
                                       <label class="d-none">Card Number</label>
-                                      <div id="CardNumber"><input name="txtCardNumber" type="text" id="txtCardNumber" class="CreditCardTextbox form-control" autocomplete="off" data-lpignore="true"><input type="hidden" name="hfccToken" id="hfccToken" data-lpignore="true"><input type="hidden" name="hfGenerateCCToken" id="hfGenerateCCToken" value="0" data-lpignore="true"></div>
+                                      <div id="CardNumber"><input name="txtCardNumber" type="text" class="CreditCardTextbox form-control" autocomplete="off" data-lpignore="true"><input type="hidden" name="hfccToken" id="hfccToken" data-lpignore="true"><input type="hidden" name="hfGenerateCCToken" id="hfGenerateCCToken" value="0" data-lpignore="true"></div>
                                       
                                     </div>
                                   </div>
@@ -1161,7 +1161,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                 <div class="CreditCard-name row">
                                   <div class="col-12">
                                     <label class="d-none">Name on Card</label>
-                                    <input name="txtNameOnCard" type="text" maxlength="50" id="txtNameOnCard" class="CreditCardTextbox form-control" data-lpignore="true" placeholder="Name on card">
+                                    <input name="txtNameOnCard" type="text" maxlength="50" class="CreditCardTextbox form-control" data-lpignore="true" placeholder="Name on card">
                                     
                                   </div>
                                 </div>
@@ -1171,7 +1171,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
                                       Expiration Date
                                     </div>
                                     
-                                      <input name="txtCCExpiration" type="text" id="txtCCExpiration" class="form-control" data-lpignore="true" placeholder="Expiration Date (MM/YY)"> 
+                                      <input name="txtCCExpiration" type="text"  class="form-control" data-lpignore="true" placeholder="Expiration Date (MM/YY)"> 
                                       <span style="padding:0;clear:left;"></span>
                                       
                                     
@@ -1415,184 +1415,7 @@ Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'MainForm', ['fUpd
     </div>
 
     <!-- Order Summary -->
-    <div class="checkout-summary col-xl-5" sticky="True">  
-      <div class="checkout-summary-body side-totals-area card-body">
-        <!-- Checkout Cart -->
-
-        <div class="totalsArea-subtotal-headerWrap card-body bg-accent">
-          <div class="totalsArea-subtotal-header row row-cols-auto mx-0 mt-2 justify-content-between h4 border-bottom">
-            <div class="totalsArea-subtotal-label ShoppingCartTotals mb-3 fw-bold">
-              Order Summary
-            </div>
-            <div class="totalsArea-subtotal-text ShoppingCartPrice mb-3">
-              <a class="" href="/store/ShopCart.aspx"> Edit Cart </a>
-            </div>
-          </div>
-        </div>
-        <div id="UpdatePanelCartArea">
-	
-						
-          <div class="checkout-confirm card-body bg-accent mb-3">
-            <div class="checkout-cart-items d-none d-md-block">7 Item(s)</div>
-
-            <div class="checkout-confirm-table ShoppingCart OnePageCheckoutShoppingCart mt-sm-3">
-              
-										
-
-        <!--[ac]
-#####                         ###                     
-#     #   ##   #####  #####     #  ##### ###### #    # 
-#        #  #  #    #   #       #    #   #      ##  ## 
-#       #    # #    #   #       #    #   #####  # ## # 
-#       ###### #####    #       #    #   #      #    # 
-#     # #    # #   #    #       #    #   #      #    # 
-#####  #    # #    #   #      ###   #   ###### #    # 
-
--->
-        <div class="ShoppingCart-item ShoppingCartItem row row-cols-auto mb-2 m-0">
-          <div class="ShoppingCartItem-img d-none d-md-block col-md-auto p-0">
-            <img src="https://wenfeeusa.americommerce.com//resize?po=https%3a%2f%2fwenfee.com%2fjasmine%2fthenewwenfee%2fstorage%2fapp%2fpublic%2fproducts%2fMay2021%2fjZHle8MkXrQURQ5QIOhw.jpg&amp;bw=75&amp;lr=t" alt="Hot Lahmajun Halal">
-          </div>
-          <div class="ShoppingCartItem-desc col-auto col-lg-7 h5">
-            <span class="ShoppingCartItem-name"><span id="rpCartContents_ctl00_lblItemName" class="ShoppingCartItemName">Hot Lahmajun Halal</span></span>
-            <span class="ShoppingCartItem-nr small text-muted"> (<span id="rpCartContents_ctl00_lblItemNr" class="ShoppingCartItemNr">_MTSK003</span>) </span>
-            <div class="ShoppingCartItem-qty fw-bold">Qty: <span id="rpCartContents_ctl00_lblQuantity">5</span></div>
-            <div class="ShoppingCartItem-customized text-muted small mt-1 hide-no-text" style="display: none;">
-              <span class="ShoppingCartItem-variants"></span>
-              <span class="ShoppingCartItem-personal"></span>
-            </div>
-          </div>
-          <div class="ShoppingCartItem-priceWrap pe-0 ms-auto">
-            <div class="ShoppingCartItem-total col-12 pe-0 text-end"><span id="rpCartContents_ctl00_lblProductSubTotal">$94.95</span></div>
-            
-              <div class="ShoppingCartItem-price col-12 pe-0 text-end text-muted small"><span id="rpCartContents_ctl00_lblProductPrice">$18.99</span> each</div>
-            
-          </div>
-        </div>								
-   
-
-            <hr>
-
-
-            <div class="ShoppingCart-totalsWrap">
-              <div class="ShoppingCart-totals">
-                <div class="main-totals-area pad-20">
-                  <div class="totalsArea w-100 b-0 p-0">
-                    <div id="trSubtotal">
-                      <div class="totalsArea-subtotal row row-cols-auto m-0 justify-content-between">
-                        <div class="totalsArea-subtotal-label ShoppingCartTotals">
-                          <b>Subtotal:</b>
-                        </div>
-                        <div class="totalsArea-subtotal-text ShoppingCartPrice">
-                          <span id="lblSubtotalCart">$132.93</span>
-                        </div>
-                      </div>
-                    </div>
-                    
-                      <div id="trShipping" class="totalsArea-shipping row row-cols-auto m-0 justify-content-between">
-                        <div class="totalsArea-shipping-label ShoppingCartTotals">
-                          <b>Shipping:</b>
-                          <span id="lblShippingInfo">(14.00 lbs.)</span>
-                        </div>
-                        <div class="totalsArea-shipping-text ShoppingCartPrice"><span id="lblShippingTotal">$15.99</span></div>
-                      </div>
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                      <div id="trPointsEarned" class="totalsArea-reward body row row-cols-auto m-0 justify-content-between h5">
-                        <div class="totalsArea-reward-label ShoppingCartTotals">Points Earned</div>
-                        <div class="totalsArea-reward-text ShoppingCartPrice"><span id="lblPointsEarned">0</span></div>
-                      </div>
-                    
-                    
-                    
-                      <div class="totalArea-total row row-cols-auto m-0 justify-content-between border-top mt-2 pt-2 fw-bolder h3">
-                        <div class="totalArea-total-label ShoppingCartTotals"><b style="color: #007b70;">Total:</b></div>
-                        <div class="totalArea-total-text ShoppingCartPrice"><span id="lblTotal">$148.92</span></div>
-                      </div>
-                    
-                    
-                      <div class="totalArea-points orPoints">
-                        <div class="text-end fw-bold">
-                          <div class="small fw-bold">-or-</div>
-                          <div id="trTotalInPoints" class="">
-                            (<span class="totalArea-points-text ShoppingCartPrice"><span id="lblTotalInPoints">14892</span></span> 
-                            <span class="totalArea-points-label ShoppingCartTotals">Points</span>)
-                          </div>
-                        </div>
-                      </div>
-                    
-                    
-                    
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        
-						<div></div>
-						<input type="hidden" name="hdUsePaymentCart" id="hdUsePaymentCart" value="false" data-lpignore="true">
-						<input type="hidden" name="hdUseQuoteCart" id="hdUseQuoteCart" data-lpignore="true">
-                        <input type="hidden" name="hdPayPalOrderToken" id="hdPayPalOrderToken" data-lpignore="true">
-                        <input type="hidden" name="hfcartbalance" id="hfcartbalance" value="148.92" data-lpignore="true">
-                        <input type="submit" name="btnGetPayPalToken" value="" id="btnGetPayPalToken" style="display:none;">
-					
-</div></div>
-      <!-- END Checkout Cart -->
-
-      <!-- Checkout Item -->
-      
-      <!-- END Checkout Item -->
-    </div>
-
-    <!-- END Order Summary -->
-
-    <!-- One Page Checkout Script -->
     
-      <script>
-        Updater(() => {
-          addClass("[id*='rbShippingMethods']", "shipping-as-list");
-          addClass("[id*='rbShippingMethods'] tbody", "list-group");
-          addClass("[id*='rbShippingMethods'] tr", "list-group-item", "list-group-action");
-        });
-      </script>
-    
-    <script>
-      // Add classes 
-      Updater(() => {
-        addClass("input[type=text],textarea,select", "form-control");
-        addClass("#CustomerFieldsUpdatePanel,#UpdatePanelOrderCustomFields", "w-100", "d-grid", "gap-3");
-      });
-
-      // Update text
-      Updater("#btnApplyCreditCardPayment").register(el => el.value = "Add Card");
-      Updater("#btnApplyPoints").register(el => el.value = "Use Points");
-
-      // Themesetting
-      const floatSummary = "True".toLowerCase() == "true";
-      const showEach = "True".toLowerCase() == "true";
-      const themeDir = "/Shared/Themes/Foundation1/";
-      const currencySymbol = "$".trim();
-
-      // Move mailing list
-      Updater(".checkout-mailing").register(mailingListChk => {
-        const anchor = document.querySelector(".mailingListAnchor");
-        if(anchor.innerHTML == "") {
-          anchor.appendChild(mailingListChk);
-          mailingListChk.classList.remove("d-none");
-        }
-      });
-    </script>
-    <!-- END One Page Checkout Script --> 
-
-    
-  </div>
 
 
 
