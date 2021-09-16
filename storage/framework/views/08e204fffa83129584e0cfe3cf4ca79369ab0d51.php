@@ -139,8 +139,8 @@ Favorite List
 
     <div id="cd-cart-trigger">
       <a class=""></a>
-      <a href="#0" class="Shopping-cart">
-        <i class="fas fa-shopping-cart"></i><small></small><span class="PurchaseValue" id="total"> $ <?php echo e(isset($_COOKIE['total'] ) ? $_COOKIE['total'] : '0'); ?></span>
+      <a href="#0" class="Shopping-cart" >
+        <i class="fas fa-shopping-cart"></i><small></small><span class="PurchaseValue" >  SHOPPING CART</span>
 
       </a>
       <span class="total-qty">1</span>

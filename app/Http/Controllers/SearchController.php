@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\Models\Product;
 use App\Models\Brand;
 use App\Models\ProductCategory;
@@ -40,8 +40,10 @@ else{
 }
      
         $categories  =  ProductCategory::where('parent_id' , null)->get();
+        $today = Carbon::now()->subDays(7);
+        
 
-        return view('viewall',compact('categories','products',));
+        return view('viewall',compact('categories','products','today'));
 
 
 }

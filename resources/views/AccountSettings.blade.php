@@ -70,26 +70,4 @@
 </div>
 </div>
 </div>
-<script>
-    //full name
-$('#Edit_Full_Name').click(function(){
-  $("#Full_Name").select();
-    // $("#Full_Name").addClass("Editing-is-enabled");
-  });
-  //address
-  $('#Edit_Address').click(function(){
-    $("#Address").select();
-    // $("#Address").addClass("Editing-is-enabled");
-  });
-  //number
-  $('#Edit_Number').click(function(){
-    $("#Number").select();
-    // $("#Number").addClass("Editing-is-enabled");
-  });
-  //email
-  $('#Edit_Email').click(function(){
-    $("#Email").select();
-    // $("#Email").addClass("Editing-is-enabled");
-  });
-</script>
 @endsection

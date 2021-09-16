@@ -8,10 +8,10 @@ class Ac_api
  * $em_type: API URL
  * $em_data: DATA
  */
-static public function server ($em_type,$em_data,$method,$id=""){
+static public function server ($em_type,$em_data,$method){
 
     $token=env('ac_token');
-    $url="".env('ac_base_uri').$em_type.'/'.$id;
+    $url="".env('ac_base_uri').$em_type;
 
     $curl = curl_init();
 

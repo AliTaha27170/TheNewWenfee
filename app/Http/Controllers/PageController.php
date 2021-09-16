@@ -26,15 +26,18 @@ class PageController extends Controller
    public function landing()
    {
     $slideCategories  =  ProductCategory::where('is_homepage',1)->with('products')->get();    
-    $slideCategory    =  ProductCategory::where('is_homepage',1)->with('products')->inRandomOrder()->first();   
+    $slideCategory    =  ProductCategory::where('is_homepage',1)->with('products')->inRandomOrder()->first(); 
+    $cats=ProductCategory::where('parent_id',NULL)->get();
+    
     
        $slides=Slide::inRandomOrder()->get();
-       $recipes=Recipe::orderby('created_at','DESC')->take(3)->get();
+       $recipes=Recipe::orderby('created_at','DESC')->get();
        $brands=Brand::inRandomOrder()->get();
        $cookbooks=ProductCategory::where('slug','cook-books')->first();
        $books=Product::where('product_category_id',$cookbooks->id)->get();
+       //dd($today);
 
-       return view('index',compact('slides','books','slideCategories','recipes','cookbooks','brands','slideCategory'));
+       return view('index',compact('cats','slides','books','slideCategories','recipes','cookbooks','brands','slideCategory'));
     }
     //cats 
     public function cats(){
@@ -88,6 +91,14 @@ class PageController extends Controller
    public function OrderSummary()
    {
        return view('OrderSummary');
+   }
+   public function Receipt()
+   {
+       return view('Receipt');
+   }
+   public function ThankYou()
+   {
+       return view('ThankYou');
    }
    public function AccountSettings()
    {

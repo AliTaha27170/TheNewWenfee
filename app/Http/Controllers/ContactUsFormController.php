@@ -26,7 +26,6 @@ class ContactUsFormController extends Controller
         Contact::create($request->all());
         
                 // 
-                return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
-            }
+                return redirect(route('ThankYou'));            }
         
 }

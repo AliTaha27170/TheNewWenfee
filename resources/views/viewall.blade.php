@@ -6,14 +6,32 @@ use     App\hellpers\like_;
 @endphp
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>  
-    
     <div class="product-page">
         <div class="row">
-
             <div class="col-md-3">
                 <form id="search-form" action="{{ route('viewall') }}" method="GET">
-
                     <div class="left-panel">
+                        <!----------- New List ------------>
+                    <h2 id="Categories">Categories</h2>
+                        <ul id="List">
+                                @foreach ($categories as $item)
+                                @if (request()->slug)
+                                      {{ $item->slug == request()->slug }}
+                            <li><a href="#"> {{ $item->name }} </a></li>
+                            {{-- <li><a href="#"> Pain Relievers </a></li>
+                            <li><a href="#"> Disposable Face Masks & Gloves </a></li>
+                            <li><a href="#"> Band Aids </a></li>
+                            <li><a href="#"> Sexual Wellness </a></li>
+                            <li><a href="#"> Pregnancy Tests </a></li>
+                            <li><a href="#"> Gift Bags </a></li> --}}
+                            @else
+                            <li><a href="#"> {{ $item->name }} </a></li>
+                            @endif
+                            @endforeach
+                        </ul>
+                        
+                          <!----------- End Of New List ------------>
+{{-- 
                         <h2>Category</h2>
                         <div class="select">
                             <select name="slug">
@@ -30,7 +48,7 @@ use     App\hellpers\like_;
 
                             </select>
                             <div class="select__arrow"></div>
-                        </div>
+                        </div> --}}
 
                         <h2>Price</h2>
                         <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
@@ -87,12 +105,17 @@ use     App\hellpers\like_;
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
                                         <h4 style="height: 192px">{!! $prod->body  !!}
-                                        <span class="NewProduct">NEW</span>
-                             @if ($prod->frozen)
+                                                @if($prod->created_at > $today)
+                                                
+                                                <span class="NewProduct">NEW</span>
+                                                @endif
+                             @if ($prod->is_frozen)
+                             
                                 <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                             @endif
 
-                            @if ($prod->refrigerated)
+                            @if ($prod->is_ref)
+                            
                                  <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                             @endif
                                     </h4>
@@ -114,15 +137,15 @@ use     App\hellpers\like_;
                                             <a
                                             @if($prod->call_for_price)
                                             class="callforprice" href="{{ route('contact') }}"
-                                        @elseif($prod->out_of_stock)
+                                        @elseif($prod->out_stock)
                                         class="outofstock"
                                         @else
                                         class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);"
                                         @endif
                                             >
-                                            @if($prod->call_for_price)
+                                            @if($prod->call)
                                                 <span> call for price </span>
-                                        @elseif($prod->out_of_stock)
+                                        @elseif($prod->out_stock)
                                              <span> Out of stock </span>
                                         @else
                                         <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
@@ -203,58 +226,6 @@ $('.close-btn').click(function(){
 
 @push('styles')
     <style>
-        /*Pagination*/
-        .pagination-div {
-            margin-top: 40px;
-        }
-
-        .pagination-div .pagination {
-            display: block;
-            margin-bottom: 0px;
-            list-style-type: none;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .pagination-div .pagination li {
-            display: inline-block;
-            color: #0056b3;
-        }
-
-        .pagination-div .pagination li a {
-            font-family: "Futura-Bold", sans-serif;
-            font-size: 14px;
-            background: #ffffff;
-            border: 1px solid #ffffff;
-            display: inline-block;
-            text-align: center;
-            height: 30px;
-            /* line-height: 26px; */
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .pagination-div .pagination li a:hover {
-            color: #000;
-        }
-
-        .pagination-div .pagination li a i {
-            margin: 0px 5px;
-        }
-
-        .pagination-div .pagination li a.page-number {
-            width: 30px;
-            border-radius: 100%;
-            color: #0056b3;
-        }
-
-        .pagination-div .pagination li a.page-number.current {
-            background: #0056b3;
-            border: 1px solid #0056b3;
-            color: #ffffff;
-        }
-
         /*Pagination*/
             .carousel{
                 display: none;
