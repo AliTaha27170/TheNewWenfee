@@ -5,7 +5,10 @@
 @php
 use     App\hellpers\like_;
 @endphp
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<script>
+    var x=0;
+</script>
 
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -142,18 +145,19 @@ use     App\hellpers\like_;
    </section>
  
    {{-- categories with product section --}}
-
+   
    @if ($slideCategories)
         <div class="filter-box">
             <div class="filter-head">
                 <ul>
                     @foreach ($slideCategories as $item)
-                        <li><button class="mbtn" onclick="filter('.{{ $item->slug }}', this)">{{ $item->name }}</button>
-                        </li>
+                    <li><button class="mbtn" onclick="getProducts({{$item->id}})" >{{ $item->name }}</button>
+                    </li>
                     @endforeach
                 </ul>
             </div>
-
+            <div name="product" id="products_view">
+                
             {{-- <script>
                 function filter(t, btn) {
                     $(".filter-head .active").removeClass("active");
@@ -170,8 +174,8 @@ use     App\hellpers\like_;
             </script> --}}
       </div>
       @endif
--
- <div class="products">
+
+ {{-- <div class="products">
         <div class="grid">
             @foreach ($slideCategories as $item)
                 @foreach ($item->products as  $prod)
@@ -265,7 +269,7 @@ use     App\hellpers\like_;
                
       </div>
 
-   </div>
+   </div> --}}
        
   
         <section class="recipes-section">
@@ -614,7 +618,40 @@ use     App\hellpers\like_;
 
     <!-- adding to cart alert -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        .slick-dots li.slick-active button:before{
+        color: #007B70;
+        }
+        .slick-dots li button::before
+        {
+        font-size: 12px;
+        }
+        .slick-slide img
+        {
+            width : 100% ;
+        }
+        .slick-next:before, .slick-prev:before
+        {
+            color:#007B70;
+            font-size:24px;
+        }
+        @media  (max-width: 600px) {
+            .slick-next:before
+        {
+            position: absolute;
+            right: 15px;
+        }
+            .slick-prev:before
+            {
+                position: absolute;
+                left: 15px;
+            }
+        }
 
+
+    </style>
     <style>
 
         .BrandsSlider .slick-slide{

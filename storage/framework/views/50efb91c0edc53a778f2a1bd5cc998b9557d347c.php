@@ -5,7 +5,10 @@
 <?php
 use     App\hellpers\like_;
 ?>
-
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
+<script>
+    var x=0;
+</script>
 
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -136,117 +139,24 @@ use     App\hellpers\like_;
    </section>
  
    
-
+   
    <?php if($slideCategories): ?>
         <div class="filter-box">
             <div class="filter-head">
                 <ul>
                     <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><button class="mbtn" onclick="filter('.<?php echo e($item->slug); ?>', this)"><?php echo e($item->name); ?></button>
-                        </li>
+                    <li><button class="mbtn" onclick="getProducts(<?php echo e($item->id); ?>)" ><?php echo e($item->name); ?></button>
+                    </li>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </ul>
             </div>
-
+            <div name="product" id="products_view">
+                
             
       </div>
       <?php endif; ?>
--
- <div class="products">
-        <div class="grid">
-            <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                <?php $__currentLoopData = $item->products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $prod): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <div class="<?php echo e($item->slug); ?> filter-item">
-                        <div class="item">
-                                <a  class="fav-btn"><i class="<?php echo e((isset(auth()->user()->id) and like_::check($prod->id)) ? ' fas fa-heart ' : 'fi fi-rr-heart'); ?>"
 
-                                <?php if(isset(auth()->user()->id) and like_::check($item->id)): ?>
-                                    onclick="unLike(this,<?php echo e($prod->id); ?>)"
-                                <?php else: ?>
-                                    onclick="like(this,<?php echo e($prod->id); ?>)"
-
-                                <?php endif; ?>
-
-                                </i><!--class="fas fa-heart"--></a>
-                                <?php if($prod->is_ref): ?>
-                                    <div class="RefrigeratedProduct"><i class="fas fa-refrigerator"></i></div>
-                                <?php endif; ?>
-                                    <a href="<?php echo e(route('show-product', $prod->id)); ?>" class="content">
-                                        <?php if($prod->is_offer): ?>
-                                            <p class="sale"><?php echo e($prod->discount); ?>% OFF</p>
-                                        <?php endif; ?>
-                                        <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($prod->image); ?>');">
-                                        </div>
-
-                                        <h3>
-                                            <span class="brand"><?php echo e($prod->name); ?></span>
-                                            <span class="code">#<?php echo e($prod->code); ?></span>
-                                        </h3>
-
-
-                                        <h4 style="height: 150px"><?php echo $prod->body; ?></h4>
-                                         <?php if($prod->created_at > $today): ?>
-                                        <span class="NewProduct">NEW</span>
-                                        <?php endif; ?>
-                             <?php if($prod->frozen): ?>
-                                <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
-                            <?php endif; ?>
-
-                            <?php if($prod->refrigerated): ?>
-                                 <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
-                            <?php endif; ?>
-                                        <?php if($prod->discount): ?>
-                                            <p class="price">
-                                                <strong>$<?php echo e($prod->price - $prod->price * ($prod->discount / 100)); ?></strong>
-                                                <span><del>$<?php echo e($prod->price); ?></del></span>
-                                            </p>
-                                        <?php else: ?>
-                                            <p class="price"><strong>$<?php echo e($prod->price); ?></strong></p>
-                                        <?php endif; ?>
-                                    </a>
-                       <?php if(!$prod->out_stock): ?>
-                                    <div class="cart-pr">
-                                        <div class="cart">
-                                            <a
-                                            <?php if($prod->call_for_price): ?>
-                                              class="callforprice" href="<?php echo e(route('contact')); ?>"
-                                            <?php elseif($prod->out_of_stock): ?>
-                                              class="outofstock"
-                                            <?php else: ?>
-                                               class="add-cart-btn"  onclick="add_to_cart_main(<?php echo e($prod->ac_id); ?>,<?php echo e($prod->id); ?>);" href="javascript:void(0);"
-                                            <?php endif; ?>
-                                            >
-                                            <?php if($prod->call_for_price): ?>
-                                                <span> call for price </span>
-                                           <?php elseif($prod->out_of_stock): ?>
-                                               <span> Out of stock </span>
-                                           <?php else: ?>
-                                              <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                                Add to cart
-                                                    <?php endif; ?>
-
-
-                                            </a>
-                                            <div class="counter">
-                                                <button type="button" class="minus-btn"><img
-                                                        src="<?php echo e(asset('img/minus.svg')); ?>"></button>
-                                                <input readonly name="qty" type="text" value="1" id="qty<?php echo e($prod->id); ?>">
-                                                <button type="button" class="plus-btn"><img
-                                                        src="<?php echo e(asset('img/plus.svg')); ?>"></button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endif; ?>
-                     </div>
-                </div>
-
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-               
-      </div>
-
-   </div>
+ 
        
   
         <section class="recipes-section">
@@ -391,7 +301,40 @@ use     App\hellpers\like_;
 
     <!-- adding to cart alert -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        .slick-dots li.slick-active button:before{
+        color: #007B70;
+        }
+        .slick-dots li button::before
+        {
+        font-size: 12px;
+        }
+        .slick-slide img
+        {
+            width : 100% ;
+        }
+        .slick-next:before, .slick-prev:before
+        {
+            color:#007B70;
+            font-size:24px;
+        }
+        @media  (max-width: 600px) {
+            .slick-next:before
+        {
+            position: absolute;
+            right: 15px;
+        }
+            .slick-prev:before
+            {
+                position: absolute;
+                left: 15px;
+            }
+        }
 
+
+    </style>
     <style>
 
         .BrandsSlider .slick-slide{
