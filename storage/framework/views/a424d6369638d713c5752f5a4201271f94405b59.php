@@ -18,10 +18,10 @@ use     App\hellpers\like_;
                                 <?php if(request()->slug): ?>
                                       <?php echo e($item->slug == request()->slug); ?>
 
-                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
+                            <li><a href="/category/<?php echo e($item->slug); ?>"> <?php echo e($item->name); ?> </a></li>
                             
                             <?php else: ?>
-                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
+                            <li><a href="/category/<?php echo e($item->slug); ?>"> <?php echo e($item->name); ?> </a></li>
                             <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
