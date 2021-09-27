@@ -3837,6 +3837,7 @@ body .modal a.close-modal {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .page-brands img.brand_logo {
