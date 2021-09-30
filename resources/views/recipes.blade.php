@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
+<ul class="breadcrumbs">
+    <li class="breadcrumb-item pl-0">
+        <a href="{{ route('home') }}">Home</a>
+    </li>
+    <li class="breadcrumb-item pl-0">
+        <a href="{{ route('home') }}">Home</a>
+    </li>
+    
+</ul>
+</nav>
     <div class="recipes-page">
 
         <h1 class="title-with-img">
@@ -61,11 +71,7 @@
                                 @endforeach
                             @endif
                             {{$recipes->links()}}
-
-
-
                         </div>
-
                     </div>
                 </div>
             </div>

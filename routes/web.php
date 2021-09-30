@@ -46,10 +46,16 @@ Route::get('/',                       [App\Http\Controllers\PageController::clas
 Route::post('productCategory/{id}/products',  [App\Http\Controllers\PageController::class, 'getProducts'])->name('getProducts');
 Route::get('/cats',  [App\Http\Controllers\PageController::class, 'cats'])->name('cats');
 Route::get('/cats/{id}',  [App\Http\Controllers\PageController::class, 'subCats'])->name('subCats');
+Route::get('/cook/book/{slug}',       [App\Http\Controllers\PageController::class, 'showCookbook'])->name('show-cookbook');
+
 
 Route::get('/about',                    [App\Http\Controllers\PageController::class, 'about'])->name('about');
 
+Route::get('/ThankYou',                    [App\Http\Controllers\PageController::class, 'ThankYou'])->name('ThankYou');
+
 Route::get('/OrderSummary',                    [App\Http\Controllers\PageController::class, 'OrderSummary'])->name('OrderSummary');
+
+Route::get('/Receipt',                    [App\Http\Controllers\PageController::class, 'Receipt'])->name('Receipt');
 
 Route::get('/HowToOrder',                    [App\Http\Controllers\PageController::class, 'HowToOrder'])->name('HowToOrder');
 
@@ -101,6 +107,10 @@ Route::group(['prefix' => 'cart'], function () {
 
     Route::get('/', [CartController::class, 'index'])->name('cart.index');
     Route::get('/order/{cart_id}', [CartController::class, 'order'])->name('order');
+    Route::Post('/order/{cart_id}', [CartController::class, 'place_order'])->name('place_order');
+    Route::get('/order/shipping/o', [CartController::class, 'shipping_total_and_isOffer'])->name('shipping_cu');
+    Route::get('/RefreashItems', [CartController::class, 'RefreashItems'])->name('RefreashItems');
+
 
     Route::post('/store/{product}', [CartController::class, 'store'])->name('cart.store');
 
@@ -246,8 +256,7 @@ Route::get('deleteProduct/{id}',function($id){
 // Cart with ameriecommerce
 
 Route::get('maincart/{id}/{q}' , [MainnCartController::class   , 'update']);
-
-Route::get('maincart'          , [MainnCartController::class   , 'index' ])->name('maincart');
+Route::get('maincart'          , [CartController::class   , 'Maincart' ])->name('maincart');
 
 
 

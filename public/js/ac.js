@@ -160,9 +160,6 @@ function adjust_product_image(){
 	}
 }
 
-function show_checkout_dialog(){
-
-}
 
 function login(event){
 	var email=$("#login-form input[name='email']").val();
@@ -355,6 +352,32 @@ function add_to_cart_pview(){
 	add_to_cart(current_item_id,quantity);
 }
 
+function cart(){
+ 
+        $('#cd-cart').html('<img alt="" class="hCL kVc L4E MIw" importance="auto" loading="auto" src="https://i.pinimg.com/originals/9e/91/7f/9e917f152f70800d105c76ceb7ac2b36.gif" width="550px"> <br><center> <h3>We`re update your shopping cart </h3> </center>');
+
+        $.ajax({
+
+            url: "../../../maincart",
+            dataType: 'html',
+            success: function(data) {
+                 //handle data object containing the html
+                 $('#cd-cart').html(data);
+            },
+            error: function(xhr, error){
+                $('#cd-cart').load("../../../maincart");
+            }
+
+        });
+
+
+
+
+
+
+
+}
+
 function add_to_cart(id,quantity)
 {
 
@@ -365,23 +388,8 @@ function add_to_cart(id,quantity)
     console.log(item);
 
 	AC.cart.add(item, function(response) {
-		// show_badge();
 
-		//Adham
-
-
-
-
-
-		$('#cd-cart').load("../../../../../../maincart");
-
-
-			total =  '$ '+getCookie('total');
-			$('#total').text(total);
-
-
-		show_checkout_dialog();
-
+        cart();
 	});
 
 
@@ -415,15 +423,15 @@ function add_to_cart(id,quantity)
 }
 
 function checkout(){
-    /*
+
 	var cookies = document.cookie.split(";");
 for(var i=0; i < cookies.length; i++) {
     var equals = cookies[i].indexOf("=");
     var name = equals > -1 ? cookies[i].substr(0, equals) : cookies[i];
     document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
 }
-		window.location.href ='../../../../checkout222';*/
-        window.location.href ='../../../../cart';
+		window.location.href ='../../../../checkout222';
+        //window.location.href ='../../../../cart';
 
 }
 

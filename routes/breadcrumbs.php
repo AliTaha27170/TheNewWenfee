@@ -12,26 +12,29 @@ use Diglactic\Breadcrumbs\Generator as BreadcrumbTrail;
 Breadcrumbs::for('home', function (BreadcrumbTrail $trail) {
     $trail->push('Home', route('home'));
 });
-
-// Home > Category
-Breadcrumbs::for('cats', function (BreadcrumbTrail $trail) {
+Breadcrumbs::for('view-category', function (BreadcrumbTrail $trail, $categories) {
     $trail->parent('home');
-    $trail->push('cats', route('cats'));
+    $trail->push($categories->slug, route('view-category', $categories));
 });
-// Home > Category >subCategory
-Breadcrumbs::for('subCats', function (BreadcrumbTrail $trail , $subCats) {
-   //dd($trail);
-    $trail->parent('cats');
-    $trail->push($subCats,route('subCats',$subCats->id));
-});
-// // Home > Category > products
-// Breadcrumbs::for('products', function (BreadcrumbTrail $trail) {
-//     $trail->parent('Category');
-//     $trail->push('products', route('show-product'));
+// // Home > Category
+// Breadcrumbs::for('cats', function (BreadcrumbTrail $trail) {
+//     $trail->parent('home');
+//     $trail->push('cats', route('cats'));
 // });
+// // Home > Category >subCategory
+// Breadcrumbs::for('subCats', function (BreadcrumbTrail $trail , $subCats) {
+//    //dd($trail);
+//     $trail->parent('cats');
+//     $trail->push($subCats,route('subCats',$subCats->id));
+// });
+// // // Home > Category > products
+// // Breadcrumbs::for('products', function (BreadcrumbTrail $trail) {
+// //     $trail->parent('Category');
+// //     $trail->push('products', route('show-product'));
+// // });
 
-// Home > Category > products
-// Breadcrumbs::for('products', function (BreadcrumbTrail $trail, $categories) {
-//     $trail->parent('Category');
-//     $trail->push($categories->title, route('category', $categories));
-// });
+// // Home > Category > products
+// // Breadcrumbs::for('products', function (BreadcrumbTrail $trail, $categories) {
+// //     $trail->parent('Category');
+// //     $trail->push($categories->title, route('category', $categories));
+// // });

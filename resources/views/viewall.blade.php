@@ -14,7 +14,24 @@ use     App\hellpers\like_;
                 <form id="search-form" action="{{ route('viewall') }}" method="GET">
 
                     <div class="left-panel">
+                        <!----------- New List ------------>
+                    <!-- <h2 id="Categories">Categories</h2>
+                        <ul id="List">
+                            <li><a href="#"> Vitamins & Dietary Supplements </a></li>
+                            <li><a href="#"> Pain Relievers </a></li>
+                            <li><a href="#"> Disposable Face Masks & Gloves </a></li>
+                            <li><a href="#"> Band Aids </a></li>
+                            <li><a href="#"> Sexual Wellness </a></li>
+                            <li><a href="#"> Pregnancy Tests </a></li>
+                            <li><a href="#"> Gift Bags </a></li>
+                        </ul> -->
+                        
+                        
+                        
+                          <!----------- End Of New List ------------>
+
                         <h2>Category</h2>
+                        
                         <div class="select">
                             <select name="slug">
                                 <option value="">All Categories</option>
@@ -31,7 +48,7 @@ use     App\hellpers\like_;
                             </select>
                             <div class="select__arrow"></div>
                         </div>
-
+                        
                         <h2>Price</h2>
                         <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
                             type="text" id="maxPrice">
@@ -52,10 +69,23 @@ use     App\hellpers\like_;
                     </div>
                 </form>
             </div>
-
+            
             <div class="col-md-9">
                 <div class="container Number-Of-Products">
                 <span>{{$products->count()}}</span>
+                <nav>
+                    <ul class="breadcrumbs">
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="{{ route('home') }}">Home</a>
+                                    </li>
+                                    @if (request()->slug)
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="{{ route('view-category',request()->slug) }}">{{request()->slug}}</a>
+                                    </li>
+                                    @endif
+                                    
+                    </ul>
+                </nav>
                 </div>
                 <div class="right-panel">
                     <div class="products">
@@ -203,58 +233,6 @@ $('.close-btn').click(function(){
 
 @push('styles')
     <style>
-        /*Pagination*/
-        .pagination-div {
-            margin-top: 40px;
-        }
-
-        .pagination-div .pagination {
-            display: block;
-            margin-bottom: 0px;
-            list-style-type: none;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-        }
-
-        .pagination-div .pagination li {
-            display: inline-block;
-            color: #0056b3;
-        }
-
-        .pagination-div .pagination li a {
-            font-family: "Futura-Bold", sans-serif;
-            font-size: 14px;
-            background: #ffffff;
-            border: 1px solid #ffffff;
-            display: inline-block;
-            text-align: center;
-            height: 30px;
-            /* line-height: 26px; */
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .pagination-div .pagination li a:hover {
-            color: #000;
-        }
-
-        .pagination-div .pagination li a i {
-            margin: 0px 5px;
-        }
-
-        .pagination-div .pagination li a.page-number {
-            width: 30px;
-            border-radius: 100%;
-            color: #0056b3;
-        }
-
-        .pagination-div .pagination li a.page-number.current {
-            background: #0056b3;
-            border: 1px solid #0056b3;
-            color: #ffffff;
-        }
-
         /*Pagination*/
             .carousel{
                 display: none;

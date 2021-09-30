@@ -3,7 +3,7 @@
 @section('content')
 
 <h1 id="My_Order_Title">My Orders</h1> 
-<table class="table">
+<table class="My-Order-Table">
   <thead>
     <th>Order Number</th>
     <th>Total Price</th>

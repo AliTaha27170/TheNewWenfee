@@ -139,8 +139,8 @@ Favorite List
 
     <div id="cd-cart-trigger">
       <a class=""></a>
-      <a href="#0" class="Shopping-cart">
-        <i class="fas fa-shopping-cart"></i><small></small><span class="PurchaseValue" id="total"> $ <?php echo e(isset($_COOKIE['total'] ) ? $_COOKIE['total'] : '0'); ?></span>
+      <a href="#0" class="Shopping-cart" >
+        <i class="fas fa-shopping-cart"></i><small></small><span class="PurchaseValue" >  SHOPPING CART</span>
 
       </a>
       <span class="total-qty">1</span>
@@ -160,7 +160,7 @@ Favorite List
 <div id="cd-shadow-layer"></div>
 
 <div id="cd-cart">
-
+    <img alt="" class="hCL kVc L4E MIw" importance="auto" loading="auto" src="https://i.pinimg.com/originals/9e/91/7f/9e917f152f70800d105c76ceb7ac2b36.gif" width="550px">
 </div> <!-- cd-cart -->
 
 
@@ -169,13 +169,43 @@ Favorite List
 
 <!--_____________________________________________________________________-->
 
+<script> var x =0 </script>
 <script src="<?php echo e(asset('js/Navbar.js')); ?>   "></script>
 <script src="<?php echo e(asset('js/jquery.js')); ?>   "></script>
 <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
 <script>
+    $('#cd-shadow-layer').click(
+        function(){
+            x+=1;
+        }
+    );
+
+
+
   $('#cd-cart-trigger').click(
     function() {
-      $('#cd-cart').load("<?php echo e(route('maincart')); ?>");
+        if(x % 2 == 0)
+        {
+            $('#cd-cart').html('<img alt="" class="hCL kVc L4E MIw" importance="auto" loading="auto" src="https://i.pinimg.com/originals/9e/91/7f/9e917f152f70800d105c76ceb7ac2b36.gif" width="550px"> <br><center> <h3>We`re calculating your bill</h3> </center>');
+
+            $.ajax({
+
+                url: "<?php echo e(route('maincart')); ?>",
+                dataType: 'html',
+                success: function(data) {
+                     //handle data object containing the html
+                     $('#cd-cart').html(data);
+                },
+                error: function(xhr, error){
+                    $('#cd-cart').load("<?php echo e(route('maincart')); ?>");
+                }
+
+            });
+
+        }
+
+        x+=1;
+
     }
   );
 

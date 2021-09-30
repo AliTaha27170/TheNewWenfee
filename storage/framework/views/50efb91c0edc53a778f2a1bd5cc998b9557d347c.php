@@ -12,6 +12,7 @@ use     App\hellpers\like_;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    
     <!--_____________________________________________________________________-->
 
     <div class="carousel">
@@ -38,7 +39,9 @@ use     App\hellpers\like_;
 
     </div>
 
+    <?php echo e(Breadcrumbs::render('home')); ?>
 
+    
     <div class="features-box">
         <ul>
 
@@ -84,7 +87,7 @@ use     App\hellpers\like_;
         <div class="container-fluid">
             <div class="row">
             <h2 id="Categories-Title">Our Categories</h2>
-            <div class="col-md-3">
+            <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -98,7 +101,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -112,7 +115,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -126,7 +129,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -140,7 +143,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -154,7 +157,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -168,7 +171,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -182,7 +185,7 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-xl-3 col-lg-4 col-md-6">
                 <a href="#">
             <div class="Categories-box">
                 <div class="our-services settings">
@@ -196,10 +199,10 @@ use     App\hellpers\like_;
             </a>
         </div>
 
-        
 
-        
-      </div>        
+
+
+      </div>
     </div>
 </section>
 
@@ -246,7 +249,7 @@ use     App\hellpers\like_;
             </a>
         </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      
+
             </div>
             <div  class="container ViewAllButton" >
             <a href="<?php echo e(route('brands')); ?>" target="_blank">View all</a>
@@ -333,9 +336,15 @@ use     App\hellpers\like_;
                 <a href="/recipes" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
             </div>
             <br><br>
-
+            <section class="albums-home-box">
+                <div class="slider-title">
+                    <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
+                </div>
+                
+        
+            </section>
                     <!------------------------ Recipes Slider ------------------------>
-            <!-- <div class="Recipes-Slider">
+           <div class="Recipes-Slider">
             <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
                         <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
@@ -515,10 +524,10 @@ use     App\hellpers\like_;
                     </div>
             </div>
             </div>
-                </div> -->
+                </div>
 
-               
-                
+
+
 
                   <!------------------------ Recipes Slider ------------------------>
 
@@ -620,7 +629,7 @@ use     App\hellpers\like_;
         }
 
 
-    
+
     </style>
     <script>
          $('.BrandsSlider').slick(
@@ -733,7 +742,7 @@ use     App\hellpers\like_;
             $('.alert').removeClass("show");
             $('.alert').addClass("hide");
             });
-            $('#products_view').load("../../../../../get_p/" +<?php echo e($slideCategory->id); ?>);
+            
     </script>
 
 <?php $__env->stopSection(); ?>

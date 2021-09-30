@@ -4,6 +4,24 @@
 @php
 use     App\hellpers\like_;
 @endphp
+<nav>
+    <ul class="breadcrumbs">
+                    <li class="breadcrumb-item pl-0">
+                        <a href="{{ route('home') }}">Home</a>
+                    </li>
+                    @foreach($parent as $parent)
+                    <li class="breadcrumb-item pl-0">
+                        <a href="{{ route('view-category', $parent->name ) }}">{{$parent->slug}}</a>
+                    </li>
+                    @endforeach
+                    @if (request()->slug)
+                    <li class="breadcrumb-item pl-0">
+                        <a href="{{ route('show-product',request()->slug) }}">{{request()->slug}}</a>
+                    </li>
+                    @endif
+                    
+    </ul>
+</nav>
     <div class="pro-details-page">
         <div class="pro-details-box">
             <div class="row">
@@ -115,9 +133,27 @@ use     App\hellpers\like_;
 
                             <div class="cart-pr">
                                 <div class="cart">
-                                    <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }});" href="javascript:void(0);">
-                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                        Add to cart</a>
+
+                                    <a
+                                    @if($product->call_for_price)
+                                    class="callforprice" href="{{ route('contact') }}"
+                                @elseif($product->out_of_stock)
+                                class="outofstock"
+                                @else
+                                class="add-cart-btn"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }});" href="javascript:void(0);"
+                                @endif
+                                    >
+                                    @if($product->call_for_price)
+                                        <span> call for price </span>
+                                @elseif($product->out_of_stock)
+                                     <span> Out of stock </span>
+                                @else
+                                <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                Add to cart
+                                            @endif
+
+
+                                    </a>
                                     <div class="counter">
                                         <button type="button" class="minus-btn"><img
                                                 src="{{ asset('img/minus.svg') }}"></button>
@@ -130,7 +166,7 @@ use     App\hellpers\like_;
 
 
                         <div class="share-box">
-                            <strong>Share The Product</strong>
+                            <strong>Share The product</strong>
                             <div class="social">
                                 <a href="#" id="FB_Share" target="_blank"><img src="{{ asset('img/sc/facebook.png') }}"></a>
                                 <a href="#" id="Twitter_Share" target="_blank"><img src="{{ asset('img/sc/twitter.png') }}"></a>
@@ -193,7 +229,18 @@ use     App\hellpers\like_;
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                        <h4 style="height: 192px">{!! $prod->body  !!}</h4>
+
+                                        <h4 style="height: 192px">{!! $prod->body  !!}
+                                            <span class="NewProduct">NEW</span>
+                                 @if ($prod->frozen)
+                                    <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
+                                @endif
+
+                                @if ($prod->refrigerated)
+                                     <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
+                                @endif
+                                        </h4>
+
 
                                         @if ($prod->discount)
                                             <p class="price">
