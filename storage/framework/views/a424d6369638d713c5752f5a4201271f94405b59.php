@@ -50,11 +50,11 @@ use     App\hellpers\like_;
                 </form>
             </div>
             
-            </div>
-
             <div class="col-md-9">
+                
                 <div class="container Number-Of-Products">
                 <span><?php echo e($products->count()); ?></span>
+                
                 <nav>
                     <ul class="breadcrumbs">
                                     <li class="breadcrumb-item pl-0">
@@ -100,17 +100,12 @@ use     App\hellpers\like_;
                                         </h3>
                                         <h4 style="height: 192px"><?php echo $prod->body; ?>
 
-                                                <?php if($prod->created_at > $today): ?>
-                                                
-                                                <span class="NewProduct">NEW</span>
-                                                <?php endif; ?>
-                             <?php if($prod->is_frozen): ?>
-                             
+                                        <span class="NewProduct">NEW</span>
+                             <?php if($prod->frozen): ?>
                                 <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                             <?php endif; ?>
 
-                            <?php if($prod->is_ref): ?>
-                            
+                            <?php if($prod->refrigerated): ?>
                                  <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                             <?php endif; ?>
                                     </h4>
@@ -132,15 +127,15 @@ use     App\hellpers\like_;
                                             <a
                                             <?php if($prod->call_for_price): ?>
                                             class="callforprice" href="<?php echo e(route('contact')); ?>"
-                                        <?php elseif($prod->out_stock): ?>
+                                        <?php elseif($prod->out_of_stock): ?>
                                         class="outofstock"
                                         <?php else: ?>
                                         class="add-cart-btn"  onclick="add_to_cart_main(<?php echo e($prod->ac_id); ?>,<?php echo e($prod->id); ?>);" href="javascript:void(0);"
                                         <?php endif; ?>
                                             >
-                                            <?php if($prod->call): ?>
+                                            <?php if($prod->call_for_price): ?>
                                                 <span> call for price </span>
-                                        <?php elseif($prod->out_stock): ?>
+                                        <?php elseif($prod->out_of_stock): ?>
                                              <span> Out of stock </span>
                                         <?php else: ?>
                                         <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;

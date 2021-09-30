@@ -71,11 +71,11 @@ use     App\hellpers\like_;
                 </form>
             </div>
             
-            </div>
-
             <div class="col-md-9">
+                {{-- products count --}}
                 <div class="container Number-Of-Products">
                 <span>{{$products->count()}}</span>
+                {{-- breadcrumbs --}}
                 <nav>
                     <ul class="breadcrumbs">
                                     <li class="breadcrumb-item pl-0">
@@ -120,17 +120,12 @@ use     App\hellpers\like_;
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
                                         <h4 style="height: 192px">{!! $prod->body  !!}
-                                                @if($prod->created_at > $today)
-                                                
-                                                <span class="NewProduct">NEW</span>
-                                                @endif
-                             @if ($prod->is_frozen)
-                             
+                                        <span class="NewProduct">NEW</span>
+                             @if ($prod->frozen)
                                 <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                             @endif
 
-                            @if ($prod->is_ref)
-                            
+                            @if ($prod->refrigerated)
                                  <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                             @endif
                                     </h4>
@@ -152,15 +147,15 @@ use     App\hellpers\like_;
                                             <a
                                             @if($prod->call_for_price)
                                             class="callforprice" href="{{ route('contact') }}"
-                                        @elseif($prod->out_stock)
+                                        @elseif($prod->out_of_stock)
                                         class="outofstock"
                                         @else
                                         class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);"
                                         @endif
                                             >
-                                            @if($prod->call)
+                                            @if($prod->call_for_price)
                                                 <span> call for price </span>
-                                        @elseif($prod->out_stock)
+                                        @elseif($prod->out_of_stock)
                                              <span> Out of stock </span>
                                         @else
                                         <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
