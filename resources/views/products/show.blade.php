@@ -4,6 +4,24 @@
 @php
 use     App\hellpers\like_;
 @endphp
+<nav>
+    <ul class="breadcrumbs">
+                    <li class="breadcrumb-item pl-0">
+                        <a href="{{ route('home') }}">Home</a>
+                    </li>
+                    @foreach($parent as $parent)
+                    <li class="breadcrumb-item pl-0">
+                        <a href="{{ route('view-category', $parent->name ) }}">{{$parent->slug}}</a>
+                    </li>
+                    @endforeach
+                    @if (request()->slug)
+                    <li class="breadcrumb-item pl-0">
+                        <a href="{{ route('show-product',request()->slug) }}">{{request()->slug}}</a>
+                    </li>
+                    @endif
+                    
+    </ul>
+</nav>
     <div class="pro-details-page">
         <div class="pro-details-box">
             <div class="row">

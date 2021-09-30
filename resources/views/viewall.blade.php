@@ -70,10 +70,25 @@ use     App\hellpers\like_;
                     </div>
                 </form>
             </div>
+            
+            </div>
 
             <div class="col-md-9">
                 <div class="container Number-Of-Products">
                 <span>{{$products->count()}}</span>
+                <nav>
+                    <ul class="breadcrumbs">
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="{{ route('home') }}">Home</a>
+                                    </li>
+                                    @if (request()->slug)
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="{{ route('view-category',request()->slug) }}">{{request()->slug}}</a>
+                                    </li>
+                                    @endif
+                                    
+                    </ul>
+                </nav>
                 </div>
                 <div class="right-panel">
                     <div class="products">

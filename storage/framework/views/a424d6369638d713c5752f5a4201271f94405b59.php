@@ -18,10 +18,10 @@ use     App\hellpers\like_;
                                 <?php if(request()->slug): ?>
                                       <?php echo e($item->slug == request()->slug); ?>
 
-                            <li><a href="/category/<?php echo e($item->slug); ?>"> <?php echo e($item->name); ?> </a></li>
+                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
                             
                             <?php else: ?>
-                            <li><a href="/category/<?php echo e($item->slug); ?>"> <?php echo e($item->name); ?> </a></li>
+                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
                             <?php endif; ?>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
@@ -49,10 +49,25 @@ use     App\hellpers\like_;
                     </div>
                 </form>
             </div>
+            
+            </div>
 
             <div class="col-md-9">
                 <div class="container Number-Of-Products">
                 <span><?php echo e($products->count()); ?></span>
+                <nav>
+                    <ul class="breadcrumbs">
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="<?php echo e(route('home')); ?>">Home</a>
+                                    </li>
+                                    <?php if(request()->slug): ?>
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="<?php echo e(route('view-category',request()->slug)); ?>"><?php echo e(request()->slug); ?></a>
+                                    </li>
+                                    <?php endif; ?>
+                                    
+                    </ul>
+                </nav>
                 </div>
                 <div class="right-panel">
                     <div class="products">

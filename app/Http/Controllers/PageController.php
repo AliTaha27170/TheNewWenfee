@@ -134,7 +134,8 @@ class PageController extends Controller
    {
     $product=Product::where('id',$id)->first();
     $products = Product::where('id','<>',$product->id)->where('product_category_id', $product->product_category_id)->take(6)->inRandomOrder()->get();
-    return view('products.show',compact('product','products'));
+    $parent=ProductCategory::where('id',$product->product_category_id)->get();    
+    return view('products.show',compact('product','products','parent'));
    }
 
    public function recipes($slug=null)
