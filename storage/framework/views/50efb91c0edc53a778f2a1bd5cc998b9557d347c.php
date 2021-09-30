@@ -37,11 +37,7 @@ use     App\hellpers\like_;
 
 
 
-    </div>
-
-    <?php echo e(Breadcrumbs::render('home')); ?>
-
-    
+    </div>    
     <div class="features-box">
         <ul>
 
