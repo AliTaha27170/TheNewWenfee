@@ -632,7 +632,7 @@ use     App\hellpers\like_;
             $('.alert').removeClass("show");
             $('.alert').addClass("hide");
             });
-            
+            // 
     </script>
 
 <?php $__env->stopSection(); ?>

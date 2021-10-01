@@ -948,9 +948,9 @@ use     App\hellpers\like_;
             $('.alert').removeClass("show");
             $('.alert').addClass("hide");
             });
-            {{-- comment
+            // {{-- comment
 
-            $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}}); --}}
+            // $('#products_view').load("../../../../../get_p/" +{{$slideCategory->id}}); --}}
     </script>
 
 @endsection
