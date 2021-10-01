@@ -6,47 +6,29 @@ use     App\hellpers\like_;
 ?>
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>  
-    
     <div class="product-page">
         <div class="row">
-
             <div class="col-md-3">
                 <form id="search-form" action="<?php echo e(route('viewall')); ?>" method="GET">
-
                     <div class="left-panel">
                         <!----------- New List ------------>
-                    <!-- <h2 id="Categories">Categories</h2>
+                    <h2 id="Categories">Categories</h2>
                         <ul id="List">
-                            <li><a href="#"> Vitamins & Dietary Supplements </a></li>
-                            <li><a href="#"> Pain Relievers </a></li>
-                            <li><a href="#"> Disposable Face Masks & Gloves </a></li>
-                            <li><a href="#"> Band Aids </a></li>
-                            <li><a href="#"> Sexual Wellness </a></li>
-                            <li><a href="#"> Pregnancy Tests </a></li>
-                            <li><a href="#"> Gift Bags </a></li>
-                        </ul> -->
+                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if(request()->slug): ?>
+                                      <?php echo e($item->slug == request()->slug); ?>
+
+                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
+                            
+                            <?php else: ?>
+                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
+                            <?php endif; ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </ul>
+                        
                           <!----------- End Of New List ------------>
 
-                        <h2>Category</h2>
-                        
-                        <div class="select">
-                            <select name="slug">
-                                <option value="">All Categories</option>
-                                <?php $__currentLoopData = $categories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                    <?php if(request()->slug): ?>
-                                        <option value="<?php echo e($item->slug); ?>"
-                                            <?php echo e($item->slug == request()->slug ? 'selected' : ''); ?>><?php echo e($item->name); ?>
 
-                                        </option>
-                                    <?php else: ?>
-                                        <option value="<?php echo e($item->slug); ?>"><?php echo e($item->name); ?></option>
-                                    <?php endif; ?>
-                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-
-                            </select>
-                            <div class="select__arrow"></div>
-                        </div>
-                        
                         <h2>Price</h2>
                         <input hidden name="maxPrice" value="<?php echo e(request()->maxPrice ? request()->maxPrice : 100); ?>"
                             type="text" id="maxPrice">
@@ -69,8 +51,10 @@ use     App\hellpers\like_;
             </div>
             
             <div class="col-md-9">
+                
                 <div class="container Number-Of-Products">
                 <span><?php echo e($products->count()); ?></span>
+                
                 <nav>
                     <ul class="breadcrumbs">
                                     <li class="breadcrumb-item pl-0">

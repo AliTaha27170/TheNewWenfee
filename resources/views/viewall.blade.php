@@ -6,27 +6,32 @@ use     App\hellpers\like_;
 @endphp
     <link rel="stylesheet" href="/css/wrunner-default-theme.css">
     <script src="/libs/wrunner/wrunner-native.js"></script>  
-    
     <div class="product-page">
         <div class="row">
-
             <div class="col-md-3">
                 <form id="search-form" action="{{ route('viewall') }}" method="GET">
-
                     <div class="left-panel">
                         <!----------- New List ------------>
-                    <!-- <h2 id="Categories">Categories</h2>
+                    <h2 id="Categories">Categories</h2>
                         <ul id="List">
-                            <li><a href="#"> Vitamins & Dietary Supplements </a></li>
-                            <li><a href="#"> Pain Relievers </a></li>
+                                @foreach ($categories as $item)
+                                @if (request()->slug)
+                                      {{ $item->slug == request()->slug }}
+                            <li><a href="#"> {{ $item->name }} </a></li>
+                            {{-- <li><a href="#"> Pain Relievers </a></li>
                             <li><a href="#"> Disposable Face Masks & Gloves </a></li>
                             <li><a href="#"> Band Aids </a></li>
                             <li><a href="#"> Sexual Wellness </a></li>
                             <li><a href="#"> Pregnancy Tests </a></li>
-                            <li><a href="#"> Gift Bags </a></li>
-                        </ul> -->
+                            <li><a href="#"> Gift Bags </a></li> --}}
+                            @else
+                            <li><a href="#"> {{ $item->name }} </a></li>
+                            @endif
+                            @endforeach
+                        </ul>
+                        
                           <!----------- End Of New List ------------>
-
+{{-- 
                         <h2>Category</h2>
                         
                         <div class="select">
@@ -44,8 +49,8 @@ use     App\hellpers\like_;
 
                             </select>
                             <div class="select__arrow"></div>
-                        </div>
-                        
+                        </div> --}}
+
                         <h2>Price</h2>
                         <input hidden name="maxPrice" value="{{ request()->maxPrice ? request()->maxPrice : 100 }}"
                             type="text" id="maxPrice">
@@ -68,8 +73,10 @@ use     App\hellpers\like_;
             </div>
             
             <div class="col-md-9">
+                {{-- products count --}}
                 <div class="container Number-Of-Products">
                 <span>{{$products->count()}}</span>
+                {{-- breadcrumbs --}}
                 <nav>
                     <ul class="breadcrumbs">
                                     <li class="breadcrumb-item pl-0">

@@ -16,7 +16,7 @@ use     App\hellpers\like_;
                     @endforeach
                     @if (request()->slug)
                     <li class="breadcrumb-item pl-0">
-                        <a href="{{ route('show-product',request()->slug) }}">{{request()->slug}}</a>
+                        <a href="{{ route('show-product',request()->slug) }}">{{$product->slug}}</a>
                     </li>
                     @endif
                     
