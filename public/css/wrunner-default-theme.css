@@ -5,6 +5,11 @@ html {
   margin: 0;
 }
 
+body.is-loading,
+html.is-loading {
+  overflow: hidden;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -251,7 +256,6 @@ button {
   position: absolute;
   padding: 0.35rem;
   background-color: #f7b036;
-  width: 43px;
   text-align: center;
   color: #fff;
   font-size: 0.75rem;
@@ -260,8 +264,8 @@ button {
   cursor: default;
 }
 
-.wrunner__valueNote_theme_default.wrunner__valueNote::before {
-  content: '$';
+.wrunner__valueNote_theme_default.wrunner__valueNote::after {
+  content: '';
   position: absolute;
   display: block;
   height: 0;

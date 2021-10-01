@@ -5,6 +5,11 @@ html {
   margin: 0;
 }
 
+body.is-loading,
+html.is-loading {
+  overflow: hidden;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -84,9 +89,8 @@ button {
   display: -ms-flexbox;
   display: flex;
   padding: 30px 2%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
@@ -104,7 +108,7 @@ button {
   -webkit-box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.07);
           box-shadow: 0 3px 19px 0 rgba(0, 0, 0, 0.07);
   overflow: hidden;
-  margin: 10px 20px 50px 20px ;
+  margin-bottom: 55px;
   border-radius: 7px;
   overflow: hidden;
   -webkit-transition: 0.3s all;
@@ -154,10 +158,10 @@ button {
 }
 
 .ft-recipe .ft-recipe__content .content__header .row-wrapper .recipe-title {
-  font-weight: 500;
+  font-weight: 600;
   position: relative;
   z-index: 5;
-  font-size: 24px;
+  font-size: 20px;
   margin: 5px 0px;
   color: #009688;
 }
@@ -165,7 +169,7 @@ button {
 .ft-recipe .ft-recipe__content .content__header .recipe-details {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: none; /*flex*/ /*hidden*/
+  display: flex;
   list-style: none;
   padding: 1.4em 0 1em;
   margin: 0;
@@ -211,12 +215,9 @@ button {
 .ft-recipe .ft-recipe__content .description {
   margin: 0.3em 0 0.8em;
   color: #888;
-  font-size: 18px;
-  font-weight: 400;
-  min-height: 70px;
+  font-size: 14px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
-  display: none ;
 }
 
 .ft-recipe .ft-recipe__content .content__footer {
@@ -231,7 +232,7 @@ button {
   text-align: center;
   border-radius: 5px;
   color: #f7b036;
-  font-weight: bold;
+  font-weight: 500;
   letter-spacing: 0.2px;
   font-size: 17px;
   -webkit-transition: -webkit-transform 250ms ease, -webkit-box-shadow 250ms ease;
@@ -243,7 +244,6 @@ button {
 .ft-recipe:hover {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
-          border : 1px solid #007B70;
 }
 
 .ft-recipe:hover .recipe-details-item,

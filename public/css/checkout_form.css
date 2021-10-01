@@ -5,6 +5,11 @@ html {
   margin: 0;
 }
 
+body.is-loading,
+html.is-loading {
+  overflow: hidden;
+}
+
 body {
   overflow-x: hidden;
 }
@@ -34,6 +39,7 @@ a {
 
 .fi {
   vertical-align: middle;
+  line-height: 1;
 }
 
 button {
