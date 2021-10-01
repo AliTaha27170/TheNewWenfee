@@ -158,7 +158,34 @@ use     App\hellpers\like_;
 
  
        
-  
+   <section class="albums-home-box">
+        <div class="slider-title">
+            <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-8">
+                <div class="albums-home-slider">
+                    <?php if($books): ?>
+                        <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <div>
+                                <a href="<?php echo e(route('show-product', $book->slug)); ?>" class="cook-item"
+                                    style="background-image: url('<?php echo e(Voyager::image($book->image)); ?>');">
+                                    <div class="content">
+                                        <span class="auther"><?php echo e($book->cookbook_author); ?></span>
+                                        <h1><?php echo e($book->name); ?></h1>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
         <section class="recipes-section">
                 <div class="content-box">
                     <h1 class="title-with-img">
