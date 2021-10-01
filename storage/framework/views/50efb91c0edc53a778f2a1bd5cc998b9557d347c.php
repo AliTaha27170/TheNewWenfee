@@ -378,7 +378,7 @@ use     App\hellpers\like_;
                             <?php if($books): ?>
                                 <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div>
-                                        <a href="<?php echo e(route('show-product', $book->slug)); ?>" class="cook-item"
+                                        <a href="<?php echo e(route('show-product', $book->id)); ?>" class="cook-item"
                                             style="background-image: url('<?php echo e(Voyager::image($book->image)); ?>');">
                                             <div class="content">
                                                 <span class="auther"><?php echo e($book->cookbook_author); ?></span>
@@ -441,7 +441,6 @@ use     App\hellpers\like_;
 </div>
 
     <!-- adding to cart alert -->
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">

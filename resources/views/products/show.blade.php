@@ -62,8 +62,9 @@ use     App\hellpers\like_;
                         <h4 style="height: 192px">
                         <p class="ProductName" style="margin-top: 50px;">{!! $product->body  !!}</p>
                         </h4>
+                        @if ($product->updated_at > $today )
                         <span class="NewProduct">NEW</span>
-                        @if ($product->frozen)
+                        @endif                        @if ($product->frozen)
                         <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                     @endif
 

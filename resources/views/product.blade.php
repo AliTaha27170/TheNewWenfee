@@ -30,7 +30,9 @@
 
 
                             <h4 style="height: 192px">{!! $prod->body !!}</h4>
+                            @if ($prod->updated_at > $today)
                             <span class="NewProduct">NEW</span>
+                            @endif
                             <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                             <div class="RefrigeratedProduct"><i class="fas fa-temperature-low"></i><span>Refrigerated</span></div>
                             @if ($prod->discount)

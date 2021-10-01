@@ -694,7 +694,7 @@ use     App\hellpers\like_;
                             @if ($books)
                                 @foreach ($books as $book)
                                     <div>
-                                        <a href="{{ route('show-product', $book->slug) }}" class="cook-item"
+                                        <a href="{{ route('show-product', $book->id) }}" class="cook-item"
                                             style="background-image: url('{{ Voyager::image($book->image) }}');">
                                             <div class="content">
                                                 <span class="auther">{{ $book->cookbook_author }}</span>
@@ -757,7 +757,6 @@ use     App\hellpers\like_;
 </div>
 
     <!-- adding to cart alert -->
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">

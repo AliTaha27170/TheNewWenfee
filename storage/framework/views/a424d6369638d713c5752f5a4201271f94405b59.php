@@ -18,7 +18,7 @@ use     App\hellpers\like_;
                                 <?php if(request()->slug): ?>
                                       <?php echo e($item->slug == request()->slug); ?>
 
-                            <li><a href="#"> <?php echo e($item->name); ?> </a></li>
+                            <li><a href="#"> <?php echo e($item->slug); ?> </a></li>
                             
                             <?php else: ?>
                             <li><a href="#"> <?php echo e($item->name); ?> </a></li>
@@ -100,8 +100,9 @@ use     App\hellpers\like_;
                                         </h3>
                                         <h4 style="height: 192px"><?php echo $prod->body; ?>
 
-                                        <span class="NewProduct">NEW</span>
-                             <?php if($prod->frozen): ?>
+                                                <?php if($prod->updated_at > $today ): ?>
+                                                <span class="NewProduct">NEW</span>
+                                                <?php endif; ?>                             <?php if($prod->frozen): ?>
                                 <div class="FrozenProduct"><i class="fas fa-snowflake"></i><span>Frozen</span></div>
                             <?php endif; ?>
 
