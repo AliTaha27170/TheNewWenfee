@@ -76,8 +76,6 @@ use     App\hellpers\like_;
     <!--_____________________________________________________________________-->
 
         <!--____________________Section_____________________-->
-        <?php echo e(Breadcrumbs::render('home')); ?>
-
         
         <section class="Our-Categories" >
         <div class="container-fluid">
@@ -255,284 +253,147 @@ use     App\hellpers\like_;
 
 
 
-    <?php if($slideCategories): ?>
-        <div class="filter-box">
-            <div class="filter-head">
-                <ul>
-                    <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <li><button class="mbtn" onclick="filter('.<?php echo e($item->slug); ?>', this)"><?php echo e($item->name); ?></button>
+            <?php if($slideCategories): ?>
+            <div class="filter-box">
+                <div class="filter-head">
+                    <ul>
+                        <?php $__currentLoopData = $slideCategories; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <li><button class="mbtn" onclick="getProducts(<?php echo e($item->id); ?>)" ><?php echo e($item->name); ?></button>
                         </li>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                </ul>
-            </div>
-
-            <script>
-                function filter(t, btn) {
-                    $(".filter-head .active").removeClass("active");
-                    $(".filter-box .grid").isotope({
-                        filter: t
-                    });
-                    $(btn).addClass("active");
-                }
-
-                $(document).ready(function() {
-                    $(".filter-head li button")[0].click();
-                })
-
-            </script>
-
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    </ul>
                 </div>
+                <div name="product" id="products_view">
+               
+          </div>
+          <?php endif; ?>
+    
 
-    <?php endif; ?>
+    
     <!-- Brands Slider -->
     <section class="recipes-section">
-        <div class="content-box">
-            <h1 class="title-with-img">
-                <img src="/img/chef.png">
-                <div>
-                    <span>Best Recipes With</span><b>Chef Wenfee</b>
+            <div class="content-box">
+                <h1 class="title-with-img">
+                    <img src="/img/chef.png">
+                    <div>
+                        <span>Best Recipes With</span><b>Chef Wenfee</b>
+                    </div>
+                </h1>
+                <div class="recipes-box">
+                        <?php $__currentLoopData = $recipes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recipe): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <div class="ft-recipe">
+                        <div class="ft-recipe__thumb">
+                            <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($recipe->recipe_image); ?>" />
+                        </div>
+                        <div class="ft-recipe__content">
+                            <header class="content__header">
+                                <div class="row-wrapper">
+                                    <h2 class="recipe-title"><?php echo e($recipe->title); ?></h2>
+                                    <div class="user-rating"></div>
+                                </div>
+                                <ul class="recipe-details">
+                                    <li class="recipe-details-item time">
+                                        <img src="/img/fi-rr-time-check.svg" alt="">
+                                        <span class="value">20</span><span class="title">Minutes</span>
+                                    </li>
+                                    <li class="recipe-details-item servings">
+                                        <img src="/img/fi-rr-users.svg" alt="">
+                                        <span class="value">4-6</span><span class="title">Serving</span>
+                                    </li>
+                                </ul>
+                            </header>
+                            <p class="description">
+                                There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
+                                treat
+                                with your pup!!! Strawberries...</p>
+                            <footer class="content__footer"><a href="/recipe/preview/<?php echo e($recipe->slug); ?>">View Recipe</a></footer>
+                        </div>
+    
+                    </div>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    
+    
                 </div>
-            </h1>
-            <div class="recipes-box">
-                    <?php $__currentLoopData = $recipes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recipe): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <div class="ta-c">
+                    <a href="/recipes" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
+                </div>
+                <br><br>
+    
+                        <!------------------------ Recipes Slider ------------------------>
+               <div class="Recipes-Slider">
+                   <?php $__currentLoopData = $recipes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $recipe): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($recipe->recipe_image); ?>" />
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title"><?php echo e($recipe->title); ?></h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/<?php echo e($recipe->slug); ?>">View Recipe</a></footer>
-                    </div>
-
+                        <div class="ft-recipe__thumb">
+                            <img src="<?php echo e(Voyager::image($recipe->recipe_image)); ?>">
+                        </div>
+                        <div class="ft-recipe__content">
+                            <header class="content__header">
+                                <div class="row-wrapper">
+                                    <h2 class="recipe-title"><?php echo e($recipe->title); ?></h2>
+                                    <div class="user-rating"></div>
+                                </div>
+                                <ul class="recipe-details">
+                                    <li class="recipe-details-item time">
+                                        <img src="/img/fi-rr-time-check.svg" alt="">
+                                        <span class="value"><?php echo e($recipe->preparation_time); ?></span><span class="title">Minutes</span>
+                                    </li>
+                                    <li class="recipe-details-item servings">
+                                        <img src="/img/fi-rr-users.svg" alt="">
+                                        <span class="value"><?php echo e($recipe->serving_range); ?></span><span class="title">Serving</span>
+                                    </li>
+                                </ul>
+                            </header>
+                            <p class="description">
+                                    <?php echo e($recipe->short_desc); ?></p>
+                            <footer class="content__footer"><a href="/recipe/<?php echo e($recipe->slug); ?>">View Recipe</a></footer>
+                        </div>
                 </div>
+    
+    
+                        
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </div>
+                    </div>
+    
+                   
+                    
+    
+                      <!------------------------ Recipes Slider ------------------------>
+    
+                    
+    
+            </div>
+        </section>
 
 
-            </div>
-            <div class="ta-c">
-                <a href="/recipes" class="button mbtn c2">Show All Recipes<i class="fi fi-rr-arrow-small-right"></i></a>
-            </div>
-            <br><br>
-            <section class="albums-home-box">
+        <section class="albums-home-box">
                 <div class="slider-title">
                     <h1>Discover the most <span>delicious dishes</span> <b>around the world</b></h1>
                 </div>
-                
+                <div class="row">
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="albums-home-slider">
+                            <?php if($books): ?>
+                                <?php $__currentLoopData = $books; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $book): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <div>
+                                        <a href="<?php echo e(route('show-product', $book->slug)); ?>" class="cook-item"
+                                            style="background-image: url('<?php echo e(Voyager::image($book->image)); ?>');">
+                                            <div class="content">
+                                                <span class="auther"><?php echo e($book->cookbook_author); ?></span>
+                                                <h1><?php echo e($book->name); ?></h1>
+                                            </div>
+                                        </a>
+                                    </div>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+        
+                </div>
         
             </section>
-                    <!------------------------ Recipes Slider ------------------------>
-           <div class="Recipes-Slider">
-            <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title">Daoud Pasha</h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
-                    </div>
-            </div>
-
-
-                    <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title">Daoud Pasha</h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
-                    </div>
-            </div>
-
-
-            <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title">Daoud Pasha</h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
-                    </div>
-            </div>
-
-
-            <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title">Daoud Pasha</h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
-                    </div>
-            </div>
-
-
-            <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title">Daoud Pasha</h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
-                    </div>
-            </div>
-
-
-            <div class="ft-recipe">
-                    <div class="ft-recipe__thumb">
-                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/recipes/August2021/EYl3bDoRpuMBBgfYgoza.jpg">
-                    </div>
-                    <div class="ft-recipe__content">
-                        <header class="content__header">
-                            <div class="row-wrapper">
-                                <h2 class="recipe-title">Daoud Pasha</h2>
-                                <div class="user-rating"></div>
-                            </div>
-                            <ul class="recipe-details">
-                                <li class="recipe-details-item time">
-                                    <img src="/img/fi-rr-time-check.svg" alt="">
-                                    <span class="value">20</span><span class="title">Minutes</span>
-                                </li>
-                                <li class="recipe-details-item servings">
-                                    <img src="/img/fi-rr-users.svg" alt="">
-                                    <span class="value">4-6</span><span class="title">Serving</span>
-                                </li>
-                            </ul>
-                        </header>
-                        <p class="description">
-                            There’s no better way to celebrate May being National Strawberry Month than by sharing a sweet
-                            treat
-                            with your pup!!! Strawberries...</p>
-                        <footer class="content__footer"><a href="/recipe/preview/daoud-pasha">View Recipe</a></footer>
-                    </div>
-            </div>
-            </div>
-                </div>
-
-
-
-
-                  <!------------------------ Recipes Slider ------------------------>
-
-                
-
-        </div>
-    </section>
-
-
 
      <!-- shipping box -->
      <section id="ShippingBox">
@@ -582,6 +443,40 @@ use     App\hellpers\like_;
     <!-- adding to cart alert -->
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <style>
+        .slick-dots li.slick-active button:before{
+        color: #007B70;
+        }
+        .slick-dots li button::before
+        {
+        font-size: 12px;
+        }
+        .slick-slide img
+        {
+            width : 100% ;
+        }
+        .slick-next:before, .slick-prev:before
+        {
+            color:#007B70;
+            font-size:24px;
+        }
+        @media  (max-width: 600px) {
+            .slick-next:before
+        {
+            position: absolute;
+            right: 15px;
+        }
+            .slick-prev:before
+            {
+                position: absolute;
+                left: 15px;
+            }
+        }
+
+
+    </style>
     <style>
 
         .BrandsSlider .slick-slide{

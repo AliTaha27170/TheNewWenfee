@@ -25,9 +25,6 @@ use     App\hellpers\like_;
                             <li><a href="#"> Pregnancy Tests </a></li>
                             <li><a href="#"> Gift Bags </a></li>
                         </ul> -->
-                        
-                        
-                        
                           <!----------- End Of New List ------------>
 
                         <h2>Category</h2>
