@@ -10,7 +10,7 @@
             </div>
         </h1>
         <div class="row">
-            
+           
                 <div class="col-md-12">
                     <div class="right-panel">
 
@@ -19,7 +19,7 @@
                                 <?php $__currentLoopData = $recipes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="<?php echo e(Voyager::image($item->recipe_image)); ?>" />
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/<?php echo e($item->recipe_image); ?>" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">
@@ -41,23 +41,17 @@
                         <p class="description"><?php echo e($item->short_desc); ?></p>
                         <footer class="content__footer"><a href="<?php echo e(route('recipe-preview',$item->slug)); ?>">View Recipe</a></footer>
                     </div>
-                </div> 
+                </div>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                             <?php endif; ?>
                             <?php echo e($recipes->links()); ?>
 
-
-
-
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
-        
-</section>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\wamp64\www\adham\resources\views/recipes.blade.php ENDPATH**/ ?>
