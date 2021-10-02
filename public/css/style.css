@@ -2517,8 +2517,7 @@ textarea.input1 {
 
 .pro-details-page {
   background: #fff;
-  padding: 25px 0;
-  padding-top: 25px;
+
 }
 
 .pro-details-page .pro-details-box {
@@ -2779,17 +2778,6 @@ textarea.input1 {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-}
-@media (min-width : 750px)
-{
-  .product-page .left-panel
-  {
-    padding: 1px 0%;
-    position: fixed;
-    top: 120px;
-    left: 30px;
-    width: 20%;
-  }
 }
 .product-page .left-panel h2 {
   font-size: 17px;
@@ -4359,6 +4347,31 @@ ul {
   margin: 0 auto;
 }
 /*End Of About Page */
+/* breadcrumbs Style */
+.breadcrumbs
+{
+  display: flex;
+  margin: 10px 0 0 0;
+}
+.breadcrumbs a{
+  color: #007b70;
+  font-size: 20px;
+  font-weight: 500;
+}
+.breadcrumbs a:hover{
+  color: #006058;
+}
+#crumbs_viewall a
+{
+  color:#000
+}
+#crumbs_viewall a:hover
+{
+  color:#006058
+}
+
+/*End of breadcrumbs Style */
+
   /*Pagination*/
   .pagination-div {
     margin-top: 40px;

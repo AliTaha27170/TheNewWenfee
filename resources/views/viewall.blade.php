@@ -12,6 +12,22 @@ use     App\hellpers\like_;
                 <form id="search-form" action="{{ route('viewall') }}" method="GET">
                     <div class="left-panel">
                         <!----------- New List ------------>
+                        {{-- breadcrumbs --}}
+                <nav>
+                    <ul class="breadcrumbs" id="crumbs_viewall">
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="{{ route('home') }}">Home</a>
+                                    </li>
+                                    @if (request()->slug)
+                                    <li class="breadcrumb-item pl-0">
+                                        <a href="{{ route('view-category',request()->slug) }}">{{request()->slug}}</a>
+                                    </li>
+                                    @endif
+                                    
+                    </ul>
+                </nav>
+                      {{-- breadcrumbs --}}
+
                     <h2 id="Categories">Categories</h2>
                         <ul id="List">
                                 @foreach ($categories as $item)
@@ -74,21 +90,7 @@ use     App\hellpers\like_;
             <div class="col-md-9">
                 {{-- products count --}}
                 <div class="container Number-Of-Products">
-                <span>{{$products->count()}}</span>
-                {{-- breadcrumbs --}}
-                <nav>
-                    <ul class="breadcrumbs">
-                                    <li class="breadcrumb-item pl-0">
-                                        <a href="{{ route('home') }}">Home</a>
-                                    </li>
-                                    @if (request()->slug)
-                                    <li class="breadcrumb-item pl-0">
-                                        <a href="{{ route('view-category',request()->slug) }}">{{request()->slug}}</a>
-                                    </li>
-                                    @endif
-                                    
-                    </ul>
-                </nav>
+                <span>{{$products->count()}} products</span>
                 </div>
                 <div class="right-panel">
                     <div class="products">
