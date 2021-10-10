@@ -23,11 +23,33 @@ $(function () {
 
     $(".products-slider").slick({
         dots: true,
+        arrows : true ,
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
-        pauseOnHover: false
+        pauseOnHover: false,
+        responsive: [
+            {
+            breakpoint: 1330,
+            settings: {
+            slidesToShow : 2 ,
+            slidesToScroll : 2 ,
+            dots : true ,
+            arrows : true ,
+            autoplay : true ,
+            autoplayspeed : 2000 ,
+            infinite : true ,
+            }
+            },
+            {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+            },
+        ]
     });
 
     $('.slider-for').slick({
@@ -72,12 +94,15 @@ $(function () {
                     infinite: false,
                 }
             }
+
+            
             // You can unslick at a given breakpoint now by adding:
             // settings: "unslick"
             // instead of a settings object
         ]
 
     });
+    
 
     $("body").on("click", ".minus-btn", function () {
         var input = $(this).closest(".counter").find("input");
@@ -209,3 +234,56 @@ $(function (){
         });
     }, 300);
 })
+/*Account Settings */
+    //full name
+    $('#Edit_Full_Name').click(function(){
+        $("#Full_Name").select();
+        });
+        //address
+        $('#Edit_Address').click(function(){
+          $("#Address").select();
+        });
+        //number
+        $('#Edit_Number').click(function(){
+          $("#Number").select();
+        });
+        //email
+        $('#Edit_Email').click(function(){
+          $("#Email").select();
+        });
+        /* End Of Account Settings */
+        /* Brands */
+        var btn = $('#button');
+
+        $(window).scroll(function() {
+          if ($(window).scrollTop() > 300) {
+            btn.addClass('show');
+          } else {
+            btn.removeClass('show');
+          }
+        });
+        
+        btn.on('click', function(e) {
+          e.preventDefault();
+          $('html, body').animate({scrollTop:0}, '300');
+        });
+        
+
+        /*Alert*/
+        $('.add-cart-btn').click(function(){
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+            setTimeout(function(){
+              $('.alert').removeClass("show");
+              $('.alert').addClass("hide");
+            },2000);
+          });
+          $('.close-btn').click(function(){
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+          });
+
+        /*End Of Alert*/
+        
+        /* End Of Brands */

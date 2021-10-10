@@ -114,8 +114,6 @@
             </div>
         </div>
     </div>
-
-
     <script>
         function fun(event, sec) {
             $(".profile-list .active").removeClass("active");

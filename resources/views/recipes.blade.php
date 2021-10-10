@@ -10,7 +10,7 @@
             </div>
         </h1>
         <div class="row">
-            <!-- <div class="col-md-3" style="position: relative">
+           {{--  <div class="col-md-3" style="position: relative">
                 <div class="left-panel">
                     <h3>Recipes Categories</h3>
                     <ul class="recipes-cats-list">
@@ -22,11 +22,11 @@
                                 src="/img/cloche.svg" alt=""> <span>{{$cat->title}}</span></a></li>
                             @endforeach
                         @endif
-                      
+
                         </ul>
 
                     </div>
-                </div> -->
+                </div> --> --}}
                 <div class="col-md-12">
                     <div class="right-panel">
 
@@ -35,7 +35,7 @@
                                 @foreach ($recipes as $item)
                                     <div class="ft-recipe">
                     <div class="ft-recipe__thumb">
-                        <img src="{{Voyager::image($item->recipe_image)}}" />
+                        <img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $item->recipe_image }}" />
                     </div>
                     <div class="ft-recipe__content">
                         <header class="content__header">
@@ -57,15 +57,11 @@
                         <p class="description">{{$item->short_desc}}</p>
                         <footer class="content__footer"><a href="{{route('recipe-preview',$item->slug)}}">View Recipe</a></footer>
                     </div>
-                </div> 
+                </div>
                                 @endforeach
                             @endif
                             {{$recipes->links()}}
-
-
-
                         </div>
-
                     </div>
                 </div>
             </div>

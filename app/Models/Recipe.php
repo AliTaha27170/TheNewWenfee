@@ -13,4 +13,11 @@ class Recipe extends Model
     {
         return $this->belongsTo(RecipeCategory::class,'recipe_category_id');
     }
+
+
+    public function res_products()
+    {
+        return $this->hasMany(res_products::class, 'recipe_id', 'id');
+    }
+
 }

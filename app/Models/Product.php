@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Resizable;
+use App\Models;
 
 class Product extends Model
 {
@@ -14,6 +15,7 @@ class Product extends Model
         'ac_id',
         'ac_img_id',
         "in_list" ,
+        "offer_n" ,
         "price"
     ];
     public function category()
@@ -24,4 +26,8 @@ class Product extends Model
     {
         return $this->belongsTo(Brand::class,'brand_id');
     }
+    
+
+
+    
 }

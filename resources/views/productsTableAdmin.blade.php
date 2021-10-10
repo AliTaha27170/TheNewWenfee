@@ -12,7 +12,7 @@
 
 <div class="container">
   <h2>Wenfee</h2>
-  <p>All wenfee products</p>            
+  <p>All wenfee products</p>
   <table class="table table-hover">
     <thead>
       <tr>
@@ -33,13 +33,13 @@
           $i=1;
       @endphp
       @foreach ($products as $item)
-          
+
       <tr>
         <form class="g" action="{{ route('uProduct',$item->id) }}"   method="a{{ $item->id }}">
           @csrf
           @php
-           
-            $image="https://wenfee.com/strorge/";
+
+            $image="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/";
             $img=$item->image;
         @endphp
         <td>
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-       
+
          </td>
        <td>{{   $item->size }}  LBS</td>
 
@@ -100,7 +100,7 @@ $(".g").submit(function(e) {
 
   e.preventDefault(); // avoid to execute the actual submit of the form.
 
-  var form = $(this); 
+  var form = $(this);
   var url = form.attr('action');
   var btn=form.attr('method');
   var btn_ = '#'+btn;
@@ -121,7 +121,7 @@ $(".g").submit(function(e) {
          }
        });
 
-  
+
 });
   </script>
 

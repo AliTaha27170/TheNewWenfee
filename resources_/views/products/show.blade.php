@@ -8,7 +8,7 @@
                 <?php $images = json_decode($product->gallery); ?>
                 <div class="col-md-1 product_mob">
                     <div class="slider-nav">
-                        <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="70px" height="auto"
+                        <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image}}" width="70px" height="auto"
                                 alt=""></div>
                         @if ($images)
                             @if (count($images) > 0)
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-5">
                     <div class="slider-for">
-                        <div class="product2"><img src="https://wenfee.com/strorge/{{ $product->image}}" width="250px" height="auto"
+                        <div class="product2"><img src="https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $product->image}}" width="250px" height="auto"
                                 alt=""></div>
                         @if ($images)
                             @if (count($images) > 0)
@@ -39,7 +39,7 @@
                         <h3>
                             <span class="brand">{{ $product->name }}</span>
                         </h3>
-                        <h4 style="height: 150px">{!! $product->body  !!}</h4>
+                        <h4 style="height: 192px">{!! $product->body  !!}</h4>
 
                         <ul class="props-list">
                             <li>
@@ -59,7 +59,7 @@
                                 </li>
                             @endif
                             <li>
-                               
+
 
                                 @if ($product->size==0)
                                 <p>
@@ -75,7 +75,7 @@
                             @endif
 
 
-                               
+
                             </li>
                         </ul>
 
@@ -93,7 +93,7 @@
                         </div>
 
 
-                     
+
                             <div class="cart-pr">
                                 <div class="cart">
                                     <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $product->ac_id }},{{ $product->id }});" href="javascript:void(0);">
@@ -108,7 +108,7 @@
                                     </div>
                                 </div>
                             </div>
-                  
+
 
                         <div class="share-box">
                             <strong>Share The Product</strong>
@@ -147,13 +147,13 @@
                                         @endif
 
                                         <div class="background-image"
-                                            style="background-image: url('https://wenfee.com/strorge/{{ $prod->image}}');"></div>
+                                            style="background-image: url('https://wenfee.com/jasmine/thenewwenfee/storage/app/public/{{ $prod->image}}');"></div>
 
                                         <h3>
                                             <span class="brand">{{ $prod->name }}</span>
                                             <span class="code">#{{ $prod->code }}</span>
                                         </h3>
-                                        <h4 style="height: 150px">{!! $prod->body  !!}</h4>
+                                        <h4 style="height: 192px">{!! $prod->body  !!}</h4>
 
                                         @if ($prod->discount)
                                             <p class="price">
@@ -167,9 +167,26 @@
 
                                     <div class="cart-pr">
                                         <div class="cart">
-                                            <a  class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);">
-                                                <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
-                                                Add to cart</a>
+                                            <a
+                                            @if($prod->call_for_price)
+                                            class="callforprice" href="{{ route('contact') }}"
+                                        @elseif($prod->out_of_stock)
+                                        class="outofstock"
+                                        @else
+                                        class="add-cart-btn"  onclick="add_to_cart_main({{ $prod->ac_id }},{{ $prod->id }});" href="javascript:void(0);"
+                                        @endif
+                                            >
+                                            @if($prod->call_for_price)
+                                                <span> call for price </span>
+                                        @elseif($prod->out_of_stock)
+                                             <span> Out of stock </span>
+                                        @else
+                                        <i class="fi fi-rr-shopping-cart-add"></i>&nbsp;&nbsp;
+                                        Add to cart
+                                                    @endif
+
+
+                                            </a>
                                             <div class="counter">
                                                 <button type="button" class="minus-btn"><img
                                                         src="{{ asset('img/minus.svg') }}"></button>

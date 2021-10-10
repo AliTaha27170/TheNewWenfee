@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
@@ -44,4 +44,39 @@
         </div>
     </div>
 </div>
+<style>
+    .footer
+    {
+        display: none;
+    }
+    .card
+    {
+        margin: 100px 0;
+    }
+    .form-control
+    {
+        margin : 0 0 10px 0 ;
+    }
+    .btn-primary {
+    color: #fff;
+    background-color: #007b70;
+    border-color: #007b70;
+    }
+    .card-header
+    {
+    color: #007b70;
+    background: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    }
+    .btn-primary:hover
+    {
+        background : #036a60;
+    }
+    .col-form-label
+    {
+        font-size :20px ;
+        font-weight : 400 ;
+    }
+</style>
 @endsection

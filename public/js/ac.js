@@ -13,7 +13,7 @@ function setCookie(cname,cvalue,exdays) {
 	let expires = "expires=" + d.toGMTString();
 	document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
-  
+
   function getCookie(cname) {
 	let name = cname + "=";
 	let decodedCookie = decodeURIComponent(document.cookie);
@@ -101,10 +101,10 @@ function product_view(pid){
 	$('#product-view #weight').html('');
 	$('#product-view #price').html('');
 	$("#product-view #product-image #img").attr("src","");
-	
+
 	$('#product-view #bottom-panel').hide();
 	current_item_id=0;
-	
+
 	$.post("/json/modal/product",
 		{
 			service: "get_product",
@@ -131,20 +131,20 @@ function product_view(pid){
 			}
 		}
 	);
-	
+
 	document.getElementById('product-view').style.display='block';
 }
 
 function adjust_product_image(){
-	
-	if($(window).width()>768){	
+
+	if($(window).width()>768){
 		$("#product-view #product-image #img").height("auto");
 		$("#product-view #product-image #img").width("auto");
 		var w1=$("#product-view #product-image").innerWidth();
 		var h1=$("#product-view #product-image").innerHeight();
 		var w2=$("#product-view #product-image #img").outerWidth();
 		var h2=$("#product-view #product-image #img").outerHeight();
-		
+
 		if((w1/h1)>(w2/h2)){
 			$("#product-view #product-image #img").width("auto");
 			$("#product-view #product-image #img").height("100%");
@@ -160,9 +160,6 @@ function adjust_product_image(){
 	}
 }
 
-function show_checkout_dialog(){
-	
-}
 
 function login(event){
 	var email=$("#login-form input[name='email']").val();
@@ -171,7 +168,7 @@ function login(event){
 	$.ajax({
 		type:    "POST",
 		url:     "/login",
-		data:    {	
+		data:    {
 					email: email,
 					password: pass,
 					remember: remember
@@ -211,11 +208,11 @@ function register(event){
 	var phone=$("#register-form input[name='phone']").val();
 	var address=$("#register-form input[name='address']").val();
 	var agree=document.getElementById("agree").checked;
-	
+
 	$.ajax({
 	type:    "POST",
 	url:     "/register",
-	data:    {	
+	data:    {
 					fname: fname,
 					lname: lname,
 					email: email,
@@ -235,7 +232,7 @@ function register(event){
 		$.each(e.errors, function(index, element) {
 			$.each(element, function(index1, element1) {
 				errors += element1 + '<br>';
-			}); 
+			});
 		});
 		$("#reg-error").html(errors);
 	}
@@ -302,7 +299,7 @@ function animate_menu_toggler(obj)
 }
 function openSideNav()
 {
-	
+
 	document.getElementById("mySidenav").style.width = "250px";
 }
 function closeSideNav()
@@ -315,18 +312,37 @@ function add_to_cart_main(ac_id,id,del=0){
 
 	var qid="#qty"+id;
 	var quantity=$(qid).val();
-	
-	if(del)
-		quantity = 0 ; 
+
 
 	setCookie('p'+id,id,30);
 	setCookie('q'+id,quantity,30);
-	if( quantity == 0)
-	{
-		setCookie('q'+id,quantity,-930);
-		setCookie('p'+id,id,-9555);
-	}
-	
+
+    if(del ==1)
+        {
+            setCookie('p'+id,id,-999);
+            setCookie('q'+id,quantity,-999);
+            $("#qty"+id).val(0);
+
+        }
+    else
+    if(del ==2)
+    {
+        var qid="#number-product"+id;
+        var  quantity=$(qid).val();
+
+        setCookie('p'+id,id,30);
+        setCookie('q'+id,quantity,30);
+
+        $("#qty"+id).val(quantity);
+
+    }
+    else
+    {
+        $("#number-product"+id).val(quantity);
+
+    }
+
+
 	// sendItemToWenfee(id, quantity);
 	add_to_cart(ac_id,quantity);
 }
@@ -334,6 +350,32 @@ function add_to_cart_main(ac_id,id,del=0){
 function add_to_cart_pview(){
 	var quantity=$("#pview_qty").val();
 	add_to_cart(current_item_id,quantity);
+}
+
+function cart(){
+ 
+        $('#cd-cart').html('<img alt="" class="hCL kVc L4E MIw" importance="auto" loading="auto" src="https://i.pinimg.com/originals/9e/91/7f/9e917f152f70800d105c76ceb7ac2b36.gif" width="550px"> <br><center> <h3>We`re update your shopping cart </h3> </center>');
+
+        $.ajax({
+
+            url: "../../../maincart",
+            dataType: 'html',
+            success: function(data) {
+                 //handle data object containing the html
+                 $('#cd-cart').html(data);
+            },
+            error: function(xhr, error){
+                $('#cd-cart').load("../../../maincart");
+            }
+
+        });
+
+
+
+
+
+
+
 }
 
 function add_to_cart(id,quantity)
@@ -344,28 +386,13 @@ function add_to_cart(id,quantity)
 	item.itemId = id;
 	item.quantity = parseInt(quantity);
     console.log(item);
-	
+
 	AC.cart.add(item, function(response) {
-		// show_badge();
 
-		//Adham
-
-	
-
-
-		
-		$('#cd-cart').load("../../../../../../maincart");
-
-
-			total =  '$ '+getCookie('total');
-			$('#total').text(total);
-		 
-		 
-		show_checkout_dialog();
-
+        cart();
 	});
 
-	
+
 	/*
 	$.post("core/services.php",
 		{
@@ -396,11 +423,16 @@ function add_to_cart(id,quantity)
 }
 
 function checkout(){
-		document.cookie.split(';').forEach(function(c) {
-		document.cookie = c.trim().split('=')[0] + '=;' + 'expires=Thu, 01 Jan 1970 00:00:00 UTC;';
-		$('#total').text('$ 0');
-		});
-		window.location.href ='https://wenfeeusa.americommerce.com/store/shopcart.aspx';
+
+	var cookies = document.cookie.split(";");
+for(var i=0; i < cookies.length; i++) {
+    var equals = cookies[i].indexOf("=");
+    var name = equals > -1 ? cookies[i].substr(0, equals) : cookies[i];
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+}
+		window.location.href ='../../../../checkout222';
+        //window.location.href ='../../../../cart';
+
 }
 
 function add_to_cart_book(ac_id,id)
@@ -408,18 +440,18 @@ function add_to_cart_book(ac_id,id)
 	var qid="#qty"+id;
 	var quantity=$(qid).val();
 	var item={};
-	
+
 	item.itemId = ac_id;
 	item.quantity = parseInt(quantity);
-	
+
 	AC.cart.add(item, function(response) {
 		// show_badge();
 		//show_checkout_dialog();
 
 
-	
-	
-    
+
+
+
 	});
 	/*
 	$.post("core/services.php",
@@ -464,7 +496,7 @@ function sendItemToWenfee(itemId, qty){
         },
         error: function (jqXHR, textStatus, errorThrown)
         {
-     
+
         }
     });
 }
@@ -485,7 +517,7 @@ function show_badge(){
 
 window.acOnReady = function() {
   AC.init({ storeDomain: "wenfeeusa.americommerce.com" });
-  
+
 };
 
 // ==== BEGIN AC SYSTEM CODE ====

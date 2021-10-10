@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Brand;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use TCG\Voyager\Models\Category;
@@ -19,7 +20,7 @@ class SearchController extends Controller
         $validator   =   validator::make($request->all(), $rules);
 
     
-        if(strlen($request['search'])<=4)
+        if(strlen($request['search'])<=4 or 1==1)
 {
    
     $products    =  Product::where(
@@ -41,6 +42,27 @@ else{
         $categories  =  ProductCategory::where('parent_id' , null)->get();
 
         return view('viewall',compact('categories','products',));
+
+
+}
+public function searchBrand (Request $request)
+{
+    $rules = [
+        "Search"    => "required",
+    ];
+
+    $validator   =   validator::make($request->all(), $rules);
+
+
+    if(strlen($request['search'])<=4 or 1==1)
+{
+    $categories  =  ProductCategory::where('parent_id' , null)->get();
+    $products  =  Product::all();
+$brands    =  Brand::where(
+    'name'          , 'Like','%' .$request->search. '%')->get();
+
+    }
+    return view('brandsearch',compact('brands'));
 
 
 }

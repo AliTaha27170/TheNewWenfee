@@ -15,6 +15,8 @@ class Controller extends BaseController
 
     public function __construct()
     {
+        ini_set('max_execution_time', 300);
+        
         $cats=ProductCategory::whereNull('parent_id')->with('children')->orderBy('order','asc')->get();   
         
         View::share('cats', $cats);

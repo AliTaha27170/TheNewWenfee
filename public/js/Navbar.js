@@ -1,7 +1,7 @@
 // NavBar //
 
 $(document).ready(function () {
-    $('.navbar-light .dmenu').hover(function () {
+    $('.navbar-light .dmenu').click(function () {
             $(this).find('.sm-menu').first().stop(true, true).slideDown(200);
         }, function () {
             $(this).find('.sm-menu').first().stop(true, true).slideUp(0)
@@ -89,4 +89,25 @@ $(document).ready(function () {
       $("#ShippingBox").animate({right: '0px'});
       } 
       });
+      $("#Close_Shipping_Box").click(function() { 
+        $("#ShippingBox").animate({right: '-500px'}, 2000);
+      });
+      
+});
+
+
+
+
+// $(".User-Icon").click(function(){
+//   $(".User-Menu").fadeToggle();
+// });
+
+
+$('.User-avtar').click(function(){
+  if( $(".User-Dropdown").hasClass( "U-open" ) ){
+          $('.User-Dropdown').removeClass("U-open");
+  }
+  else {
+          $('.User-Dropdown').addClass("U-open");
+  }
 });
