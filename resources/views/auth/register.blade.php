@@ -3,6 +3,7 @@
 <div class="container">
     <div class="title">Registration</div>
     <div class="content">
+
       <form  action="{{route('register')}}" method="POST">
         {{ csrf_field() }}
         <div class="user-details">
@@ -29,6 +30,7 @@
           <div class="input-box">
             <span class="details">Confirm Password</span>
             <input type="text" placeholder="Confirm your password" id="password_confirmation" name="password_confirmation" required>
+
           </div>
         </div>
         <div class="button">
